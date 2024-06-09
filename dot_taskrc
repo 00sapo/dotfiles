@@ -39,6 +39,7 @@ data.location=/home/federico/.task
 #include solarized-light-256.theme
 #include no-color.theme
 
+urgency.due.coefficient=50
 urgency.user.project.Laudare.coefficient=+6
 urgency.user.tag.review.coefficient=-4
 uda.reviewed.type=date
@@ -48,3 +49,19 @@ report._reviewed.columns=uuid
 report._reviewed.sort=reviewed+,modified+
 report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )
 tasksh.autoclear=1
+
+context.MSCA.read=pro:MSCA
+context.MSCA.write=pro:MSCA
+
+uda.weight.type=string
+uda.weight.label=Weight
+uda.weight.values=L,LM,M,MW,W
+uda.weight.default=M
+urgency.uda.weight.L.coefficient=-6
+urgency.uda.weight.LM.coefficient=-3
+urgency.uda.weight.M.coefficient=0
+urgency.uda.weight.MW.coefficient=+3
+urgency.uda.weight.W.coefficient=+6
+report.next.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Weight,Urg
+report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,weight,urgency
+news.version=2.6.0

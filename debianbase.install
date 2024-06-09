@@ -106,6 +106,7 @@ iproute2
 iputils-ping
 isc-dhcp-client
 isc-dhcp-common
+jan
 jq
 kaccounts-providers
 kde-config-gtk-style
@@ -432,6 +433,7 @@ libzvbi0
 libzzip-0-13
 linux-cpupower
 linux-image-amd64
+lm-sensors
 locales
 login
 logrotate
@@ -573,6 +575,8 @@ task-kde-desktop
 task-laptop
 tasksel
 tasksel-data
+tasksh
+taskwarrior
 texlive-bibtex-extra
 texlive-binaries
 texlive-fonts-extra
