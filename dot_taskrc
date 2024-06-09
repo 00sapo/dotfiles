@@ -39,6 +39,8 @@ data.location=/home/federico/.task
 #include solarized-light-256.theme
 #include no-color.theme
 
+include .taskrc_pass
+
 urgency.due.coefficient=50
 urgency.user.project.Laudare.coefficient=+6
 urgency.user.tag.review.coefficient=-4
