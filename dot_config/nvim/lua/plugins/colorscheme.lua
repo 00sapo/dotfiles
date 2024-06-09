@@ -32,4 +32,8 @@ return {
       end,
     },
   },
+  {
+    "vigoux/notifier.nvim",
+    opts = {}, -- needed to force call to setup
+  },
 }

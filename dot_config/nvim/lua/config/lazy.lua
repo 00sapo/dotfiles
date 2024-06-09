@@ -14,6 +14,8 @@ require("lazy").setup({
     { import = "plugins" },
     { "mini.pairs", enabled = false },
     { "vimtex", enabled = false },
+    { "noice.nvim", enabled = false },
+    { "nvim-notify", enabled = false },
     -- { "mini.ai", enabled = false },
     -- { "bufferline.nvim", enabled = false },
   },
