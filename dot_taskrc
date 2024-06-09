@@ -41,3 +41,10 @@ data.location=/home/federico/.task
 
 urgency.user.project.Laudare.coefficient=+6
 urgency.user.tag.review.coefficient=-4
+uda.reviewed.type=date
+uda.reviewed.label=Reviewed
+report._reviewed.description=Tasksh review report.  Adjust the filter to your needs.
+report._reviewed.columns=uuid
+report._reviewed.sort=reviewed+,modified+
+report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )
+tasksh.autoclear=1
