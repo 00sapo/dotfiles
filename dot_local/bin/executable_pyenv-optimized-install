@@ -1,0 +1,12 @@
+#!/bin/env sh
+
+# if no arguments, use `-l`
+if [ -z "$1" ]; then
+	set -- -l
+fi
+env PYTHON_CONFIGURE_OPTS='--enable-optimizations --with-lto' PYTHON_CFLAGS='-march=native -mtune=native' PROFILE_TASK='-m test.regrtest --pgo -j0' pyenv install $1
+
+if [ "$1" = "-l" ]; then
+	echo
+	echo "For installing one of the above versions, specify one of them as argument."
+fi

@@ -1,0 +1,9 @@
+git:
+  paging:
+    colorArg: always
+    pager: delta --paging=never --side-by-side --true-color=never
+os:
+  edit: "nvim {{filename}}"
+  editAtLine: "nvim +{{line}} {{filename}}"
+  editAtLineAndWait: "nvim --block +{{line}} {{filename}}"
+  editInTerminal: true

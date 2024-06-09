@@ -1,0 +1,40 @@
+#!/bin/env sh
+# check systemctl command is "suspend", "reboot", or "poweroff"
+if [ "$1" != "suspend" ] && [ "$1" != "reboot" ] && [ "$1" != "poweroff" ]; then
+	echo "Usage: topoff [command]"
+	echo ""
+	echo "Examples"
+	echo "> topoff reboot"
+	echo "> topoff poweroff"
+	exit 1
+fi
+
+# use sudo to update system and flatpak apps
+sudo env "PATH=$PATH" topgrade -y --no-retry --skip-notify --only system
+if [ $? -ne 0 ]; then
+	echo "Error: topgrade as root failed"
+	exit 2
+fi
+sudo env "PATH=$PATH" flatpak update -y --system
+if [ $? -ne 0 ]; then
+	echo "Error: flatpak as root failed"
+	exit 2
+fi
+sudo env "PATH=$PATH" npm update -g
+if [ $? -ne 0 ]; then
+	echo "Error: npm as root failed"
+	exit 2
+fi
+flatpak update -y --user
+if [ $? -ne 0 ]; then
+	echo "Error: flatpak as user failed"
+	exit 2
+fi
+# update user repos, etc.
+topgrade -y --no-retry --skip-notify --disable system --disable flatpak --disable node
+if [ $? -ne 0 ]; then
+	echo "Error: topgrade as user failed"
+	exit 3
+fi
+# execute systemctl command
+systemctl $1

@@ -1,0 +1,200 @@
+theme = "everforest_light"
+
+[editor]
+line-number = "relative"
+mouse = true
+auto-format = true
+true-color = true
+color-modes = true
+
+[editor.lsp]
+display-messages = false
+display-inlay-hints = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.whitespace]
+[editor.whitespace.render]
+nbsp = "all"
+tab = "all"
+newline = "all"
+
+[editor.whitespace.characters]
+nbsp = "⍽"
+tab = "▏"
+newline = "⏎"
+
+[editor.statusline]
+left = [
+  "mode",
+  "spacer",
+  "version-control",
+  "spacer",
+  "spinner",
+  "workspace-diagnostics",
+]
+center = ["file-name"]
+right = [
+  "selections",
+  "position",
+  "position-percentage",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+]
+
+[editor.file-picker]
+git-ignore = true
+hidden = false
+
+[keys.normal]
+C-s = ":update"         # C-s for saving
+x = ["extend_line", "select_mode"] # prefer selection with movement: hjkl
+X = ["extend_line", "select_mode", "flip_selections"] # same as the above but prepare for going up
+# the cursor should show where you are going to as in any text editor, let's change a and i
+i = ["collapse_selection", "insert_mode"]
+a = ["collapse_selection", "append_mode"]
+# same thing for d and r
+D = ["collapse_selection", "delete_selection"]
+R = ["collapse_selection", "replace"]
+C-r = ["replace_with_yanked"]                  # this is mapped to R by default...
+# with these changes, collapse selection is not needed so much, let's swap it with flip_selection
+"A-;" = "collapse_selection"
+";" = "flip_selections"
+
+# let's selections easily
+A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-k = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_up",
+  "paste_before",
+]
+
+# Use neovim for find-replace globally, e.g. using vim-esearch
+A-n = ":sh kitty nvim"
+
+H = ["select_mode", "goto_line_start", "normal_mode"]
+L = ["select_mode", "goto_line_end", "normal_mode"]
+K = "extend_next_word_end"
+
+### External commands ###
+
+# I need a snippet, but they are still not available AFAIK
+# so let's input it via shortcut
+A-i = [
+  "open_above",
+  ":insert-output echo '__import__(\"ipdb\").set_trace()'",
+  "join_selections",
+  "normal_mode",
+  ":w",
+]
+
+# ChatGPT
+A-g = ":pipe sgpt --code --model gpt-4 --temperature 0.3 --no-cache 'Using this code, apply changes as indicated in the comments starting with \"# GPT:\"'"
+C-n = [
+  ":insert-output echo '# FILL'",
+  "join_selections",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  ":pipe sgpt --code --model gpt-3.5-turbo --temperature 0.3 --no-cache 'Using this code, fill the line having the comment \"# FILL\". Return the whole code, including previous and next lines.'",
+]
+
+[keys.select]
+
+A-i = [
+  "open_above",
+  ":insert-output echo '__import__(\"ipdb\").set_trace()'",
+  "join_selections",
+  "normal_mode",
+  ":w",
+]
+
+# ChatGPT
+A-g = ":pipe sgpt --code --model gpt-4 --temperature 0.3 --no-cache 'Using this code, apply changes as indicated in the comments starting with \"# GPT:\"'"
+C-n = [
+  ":insert-output echo '# FILL'",
+  "join_selections",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  ":pipe sgpt --code --model gpt-3.5-turbo --temperature 0.3 --no-cache 'Using this code, fill the line having the comment \"# FILL\". Return the whole code, including previous and next lines.'",
+]
+
+"A-;" = "collapse_selection"
+";" = "flip_selections"
+
+
+[keys.insert]
+A-i = [
+  "open_above",
+  ":insert-output echo '__import__(\"ipdb\").set_trace()'",
+  "join_selections",
+  "normal_mode",
+  ":w",
+]
+
+# ChatGPT
+A-g = ":pipe sgpt --code --model gpt-4 --temperature 0.3 --no-cache 'Using this code, apply changes as indicated in the comments starting with \"# GPT:\"'"
+C-n = [
+  ":insert-output echo '# FILL'",
+  "join_selections",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_above",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  "extend_line_below",
+  ":pipe sgpt --code --model gpt-3.5-turbo --temperature 0.3 --no-cache 'Using this code, fill the line having the comment \"# FILL\". Return the whole code, including previous and next lines.'",
+]
+
+j = { k = "normal_mode" }        # Maps `jk` to exit insert mode.
+C-s = [":update", "normal_mode"] # C-s for saving
+
+
+[keys.normal."space"]
+# I like changing colors during the day":
+t = { d = ":theme tokyonight_storm", l = ":theme catppuccin_latte", s = ":theme everforest_light", b = ":theme boo_berry" }
+
+# I like searching my .venv directory sometimes:
+F = { a = ":toggle file-picker.git-ignore", F = "file_picker_in_current_directory" }

@@ -1,0 +1,18 @@
+#!/bin/env bash
+
+echo "Insert your Bitwarden password:"
+export BW_SESSION=$(bw unlock --raw | tail -n 1)
+# if secret-tool exists as a command
+if [[ $(command -v secret-tool) ]]; then
+	# 1. password for rclone configuration
+	bw get password rclone | secret-tool store --label='rclone-config' rclone config
+
+	# 2. password for OPENAI_API_KEY
+	bw get password openai_key | secret-tool store --label='openai-key' openai api_key
+elif [[ $(command -v kwallet-query) ]]; then
+	# 1. password for rclone configuration
+	bw get password rclone | tail -n 1 | kwallet-query -w 'rclone-config' -f Passwords kdewallet
+
+	# 2. password for OPENAI_API_KEY
+	bw get password openai_key | tail -n 1 | kwallet-query -w 'openai-key' -f Passwords kdewallet
+fi
