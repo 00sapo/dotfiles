@@ -16,4 +16,7 @@ if status is-interactive
 
     command -v thefuck >/dev/null; and thefuck --alias | source
 
+    # show task summary
+    command -v task >/dev/null; and task limit:10
+
 end
