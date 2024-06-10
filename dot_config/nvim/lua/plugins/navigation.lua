@@ -1,5 +1,21 @@
 local M = {
   {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {
+      restricted_keys = {
+        ["b"] = { "n", "x" },
+        ["B"] = { "n", "x" },
+        ["w"] = { "n", "x" },
+        ["W"] = { "n", "x" },
+        ["e"] = { "n", "x" },
+        ["E"] = { "n", "x" },
+      },
+      enabled = true,
+    },
+    event = "VeryLazy",
+  },
+  {
     "simrat39/symbols-outline.nvim",
     cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
     config = function()
