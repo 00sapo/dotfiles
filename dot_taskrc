@@ -41,9 +41,9 @@ data.location=/home/federico/.task
 
 include .taskrc_pass
 
-urgency.due.coefficient=50
-urgency.user.project.Laudare.coefficient=+6
-urgency.user.tag.review.coefficient=-4
+urgency.due.coefficient=12
+urgency.user.project.Laudare.coefficient=+2
+urgency.user.tag.review.coefficient=-1
 uda.reviewed.type=date
 uda.reviewed.label=Reviewed
 report._reviewed.description=Tasksh review report.  Adjust the filter to your needs.
@@ -59,11 +59,11 @@ uda.weight.type=string
 uda.weight.label=Weight
 uda.weight.values=L,LM,M,MW,W
 uda.weight.default=M
-urgency.uda.weight.L.coefficient=-6
-urgency.uda.weight.LM.coefficient=-3
+urgency.uda.weight.L.coefficient=-2
+urgency.uda.weight.LM.coefficient=-1
 urgency.uda.weight.M.coefficient=0
-urgency.uda.weight.MW.coefficient=+3
-urgency.uda.weight.W.coefficient=+6
+urgency.uda.weight.MW.coefficient=+1
+urgency.uda.weight.W.coefficient=+3
 report.next.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Weight,Urg
 report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,weight,urgency
 news.version=2.6.0
