@@ -15,13 +15,13 @@
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=/home/federico/.task
+# data.location=/home/federico/.task
 
 # To use the default location of the XDG directories,
 # move this configuration file from ~/.taskrc to ~/.config/task/taskrc and uncomment below
 
-#data.location=~/.local/share/task
-#hooks.location=~/.config/task/hooks
+data.location=~/.local/share/task
+hooks.location=~/.config/task/hooks
 
 # Color theme (uncomment one to use)
 #include light-16.theme
@@ -32,18 +32,22 @@ data.location=/home/federico/.task
 #include dark-green-256.theme
 #include dark-blue-256.theme
 #include dark-violets-256.theme
-#include dark-yellow-green.theme
+include dark-yellow-green.theme
 #include dark-gray-256.theme
 #include dark-gray-blue-256.theme
 #include solarized-dark-256.theme
 #include solarized-light-256.theme
 #include no-color.theme
 
-include .taskrc_pass
+include ~/.wingtask_certs/taskrc
 
 news.version=2.6.0
 
+urgency.annotations.coefficient=0
+urgency.tags.coefficient=0
+urgency.project.coefficient=0
 urgency.due.coefficient=12
+
 urgency.user.project.Laudare.coefficient=+2
 urgency.user.tag.review.coefficient=-1
 uda.reviewed.type=date
@@ -67,9 +71,7 @@ urgency.uda.weight.M.coefficient=0
 urgency.uda.weight.MW.coefficient=+1
 urgency.uda.weight.W.coefficient=+3
 
-uda.duehard.type=date
-uda.duehard.label=Due Hard
-urgency.uda.duehard.coefficient=1000
+urgency.user.tag.duehard.coefficient=+6
 
-report.next.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Due Hard,Until,Description,Weight,Urg
-report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,duehard.relative,until.remaining,description,weight,urgency
+report.next.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Weight,Urg
+report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,weight,urgency
