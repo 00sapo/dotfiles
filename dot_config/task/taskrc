@@ -31,8 +31,8 @@ hooks.location=~/.config/task/hooks
 #include dark-red-256.theme
 #include dark-green-256.theme
 #include dark-blue-256.theme
-#include dark-violets-256.theme
-include dark-yellow-green.theme
+include dark-violets-256.theme
+#include dark-yellow-green.theme
 #include dark-gray-256.theme
 #include dark-gray-blue-256.theme
 #include solarized-dark-256.theme
@@ -70,8 +70,12 @@ urgency.uda.weight.LM.coefficient=-1
 urgency.uda.weight.M.coefficient=0
 urgency.uda.weight.MW.coefficient=+1
 urgency.uda.weight.W.coefficient=+3
+urgency.blocking.coefficient=1
+urgency.blocked.coefficient=-1
 
 urgency.user.tag.duehard.coefficient=+6
 
 report.next.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Weight,Urg
 report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,weight,urgency
+confirmation=off
+bulk=0
