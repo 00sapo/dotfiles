@@ -82,3 +82,9 @@ report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,s
 confirmation=off
 bulk=0
 urgency.inherit=1
+
+{{- if eq .chezmoi.hostname "cucchia" }}
+recurrence=on
+{{- else }}
+recurrence=off
+{{- end }}
