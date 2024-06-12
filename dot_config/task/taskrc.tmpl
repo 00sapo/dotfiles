@@ -65,13 +65,15 @@ uda.weight.type=string
 uda.weight.label=Weight
 uda.weight.values=L,LM,M,MW,W
 uda.weight.default=M
+uda.obsidian.type=string
+uda.obsidian.label=Obsidian
 urgency.uda.weight.L.coefficient=-2
 urgency.uda.weight.LM.coefficient=-1
 urgency.uda.weight.M.coefficient=0
 urgency.uda.weight.MW.coefficient=+1
 urgency.uda.weight.W.coefficient=+3
-urgency.blocking.coefficient=1
-urgency.blocked.coefficient=-1
+urgency.blocking.coefficient=0
+urgency.blocked.coefficient=0
 
 urgency.user.tag.duehard.coefficient=+6
 
@@ -79,3 +81,4 @@ report.next.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Descriptio
 report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,weight,urgency
 confirmation=off
 bulk=0
+urgency.inherit=1
