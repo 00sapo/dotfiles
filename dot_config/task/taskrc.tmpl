@@ -87,6 +87,12 @@ confirmation=off
 bulk=0
 urgency.inherit=1
 
+report.dash.labels=ID,Deps,P,Project,Tag,Recur,Due,Description,Ur
+report.dashboard.columns=id,depends,priority,project,tags,recur,due.relative,description,urgency
+report.dash.description=Dashboard report for shell starting.
+report.dashboard.filter=+PENDING or +WAITING or +READY or +ACTIVE
+report.dash.sort=urgency-
+
 {{- if eq .chezmoi.hostname "cucchia" }}
 recurrence=on
 {{- else }}
