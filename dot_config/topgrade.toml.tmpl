@@ -15,7 +15,11 @@
 # sudo_command = "sudo"
 
 # Disable specific steps - same options as the command line flag
-# disable = ["nix"]
+{{- if eq .chezmoi.hostname "amadeus" }}
+disable = ["mamba", "conda"]
+{{- else if eq .chezmoi.hostname "brian" }}
+disable = ["system"]
+{{- end }}
 
 # Ignore failures for these steps
 # ignore_failures = ["powershell"]
