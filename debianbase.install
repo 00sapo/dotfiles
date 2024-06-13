@@ -59,6 +59,7 @@ e2fsprogs
 earlyoom
 environment-modules
 exfatprogs
+fd-find
 fdisk
 ffmpegthumbs
 file
@@ -440,6 +441,7 @@ logrotate
 logsave
 lsb-release
 lsof
+lsyncd
 lvm2
 man-db
 manpages
@@ -461,6 +463,7 @@ netselect-apt
 network-manager-openvpn
 network-manager-ssh
 nftables
+nmap
 node-agent-base
 node-get-stream
 node-https-proxy-agent
@@ -486,6 +489,7 @@ os-prober
 oxygen-sounds
 p11-kit
 p11-kit-modules
+pacup
 partitionmanager
 passt
 passwd
@@ -525,6 +529,7 @@ python3-hatch-vcs
 python3-hatchling
 python3-jsonschema
 python3-pathspec
+python3-pdm
 python3-pluggy
 python3-reportbug
 python3-setuptools-scm
