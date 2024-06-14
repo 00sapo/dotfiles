@@ -9,3 +9,5 @@ abbr -a -- brianproxy 'ssh -D 8989 -C -q -N -o ControlMaster=no brian.lim.di.uni
 abbr -a -- distrobox-update 'curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local'
 abbr -a -- dhe distrobox-host-exec
 abbr -a -- reverse-ssh 'ssh -C -q -N -o ControlMaster=no -R 4833:localhost:4833'
+abbr -a --set-cursor=% -- ` 'gh copilot explain "%"'
+abbr -a --set-cursor=% -- , 'gh copilot suggest "%"'
