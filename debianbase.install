@@ -73,6 +73,7 @@ flatpak
 fwupd-amd64-signed
 fzf
 gamemode
+gamescope
 gcc
 gcc-12-base
 gettext-base
@@ -215,6 +216,8 @@ libgcc-s1
 libgcrypt20
 libgdbm-compat4
 libgdbm6t64
+libgles-nvidia1:i386
+libgles-nvidia2:i386
 libglib2.0-0
 libglibmm-2.4-1v5
 libgmp10
@@ -301,13 +304,16 @@ libnorm1
 libnpth0
 libnss-systemd
 libnvidia-allocator1
+libnvidia-allocator1:i386
 libnvidia-egl-gbm1
+libnvidia-encode1:i386
 libnvidia-rtcore
 libnvme1
 libonig5
 libopenconnect5
 libopencore-amrnb0
 libopencore-amrwb0
+libopengl0:i386
 libopenmpt0
 liborc-0.4-0
 libosp5
@@ -445,9 +451,11 @@ logsave
 lsb-release
 lsof
 lsyncd
+lutris
 lvm2
 man-db
 mangohud
+mangohud:i386
 manpages
 mawk
 media-types
@@ -456,6 +464,7 @@ mesa-utils
 milou
 mime-support
 mount
+nala
 nano
 ncurses-base
 ncurses-bin
@@ -482,8 +491,10 @@ nvidia-cudnn
 nvidia-detect
 nvidia-driver
 nvidia-driver-libs
+nvidia-driver-libs:i386
 nvidia-opencl-icd
 nvidia-profiler
+nvidia-vulkan-icd:i386
 ocl-icd-opencl-dev
 openjade
 openrgb
@@ -569,6 +580,7 @@ sonic-visualiser
 spice-html5
 spice-vdagent
 spice-webdavd
+steam-installer
 sudo
 surge-xt
 swig
