@@ -1,6 +1,9 @@
 # basic
 set --export PATH "$HOME/.local/bin/:$PATH"
 
+# asdf
+source $HOME/.asdf/asdf.fish
+
 # snap
 set --export PATH "/snap/bin:$PATH"
 
