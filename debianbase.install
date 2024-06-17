@@ -72,15 +72,18 @@ fish
 flatpak
 fwupd-amd64-signed
 fzf
+gamemode
 gcc
 gcc-12-base
 gettext-base
 gfortran
+gh
 git
 git-delta
 gnome-boxes
 gnome-keyring
 gnome-keyring-pkcs11
+golang
 golang-go
 gpg
 gpgv
@@ -444,6 +447,7 @@ lsof
 lsyncd
 lvm2
 man-db
+mangohud
 manpages
 mawk
 media-types

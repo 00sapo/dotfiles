@@ -30,6 +30,7 @@ org.kde.okular
 org.ksnip.ksnip
 org.libreoffice.LibreOffice
 org.mozilla.firefox
+org.qxmledit.QXmlEdit
 org.rncbc.qpwgraph
 org.videolan.VLC
 org.zotero.Zotero
