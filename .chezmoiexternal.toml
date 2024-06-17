@@ -1,20 +1,27 @@
 [".tmux/plugins/tpm"]
-  type = "archive"
-  url = "https://github.com/tmux-plugins/tpm/archive/refs/heads/master.zip"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "168h"
+type = "archive"
+url = "https://github.com/tmux-plugins/tpm/archive/refs/heads/master.zip"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"
 
 [".config/alacritty/themes/"]
-  type = "archive"
-  url = "https://github.com/alacritty/alacritty-theme/archive/refs/heads/master.zip"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "168h"
+type = "archive"
+url = "https://github.com/alacritty/alacritty-theme/archive/refs/heads/master.zip"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"
 
 [".fonts/SourceCodePro/"]
-  type = "archive"
-  url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCodePro.zip"
-  exact = true
-  stripComponents = 0
-  refreshPeriod = "168h"
+type = "archive"
+url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCodePro.zip"
+exact = true
+stripComponents = 0
+refreshPeriod = "168h"
+
+[".asdf"]
+type = "archive"
+url = "https://github.com/asdf-vm/asdf/archive/refs/heads/master.zip"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"
