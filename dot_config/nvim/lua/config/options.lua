@@ -7,12 +7,11 @@ vim.opt.backup = true
 vim.opt.backupdir = vim.fn.expand("~/.cache/nvim/backups/")
 vim.opt.breakindent = true
 vim.opt.breakindentopt = { "shift:2", "sbr" }
-vim.opt.guicursor = "n-v:block-blinkon100,i:ver100-blinkon0,o:hor100-blinkon100,c:hor100-blinkon100"
+vim.opt.guicursor = "n-v:block-blinkon0,i:ver100-blinkon0,o:hor100-blinkon0,c:hor100-blinkon0"
 vim.opt.relativenumber = true
 vim.opt.formatoptions:remove("t")
 vim.opt.inccommand = "nosplit" -- live substitution
 vim.opt.textwidth = 88
-vim.opt.cursorcolumn = true
 
 -- indentation
 vim.o.foldmethod = "expr"

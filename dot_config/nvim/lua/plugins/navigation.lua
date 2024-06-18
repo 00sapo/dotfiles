@@ -2,36 +2,6 @@ local M = {
   {
     "m4xshen/hardtime.nvim",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    opts = {
-      restricted_keys = {
-        ["b"] = { "n", "x" },
-        ["B"] = { "n", "x" },
-        ["w"] = { "n", "x" },
-        ["W"] = { "n", "x" },
-        ["e"] = { "n", "x" },
-        ["E"] = { "n", "x" },
-      },
-      hints = {
-        ["[dc][ftTF]"] = {
-          message = function(key)
-            return "use " .. key:sub(1, 1) .. "s instead of " .. key:sub(1, 2) .. " "
-          end,
-          length = 2,
-        },
-      },
-      disabled_keys = {
-        ["df"] = { "n", "x" },
-        ["dF"] = { "n", "x" },
-        ["dt"] = { "n", "x" },
-        ["dT"] = { "n", "x" },
-        ["cf"] = { "n", "x" },
-        ["cF"] = { "n", "x" },
-        ["ct"] = { "n", "x" },
-        ["cT"] = { "n", "x" },
-      },
-      enabled = true,
-    },
-    event = "VimEnter",
   },
   {
     "simrat39/symbols-outline.nvim",
