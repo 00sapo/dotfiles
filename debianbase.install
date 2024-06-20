@@ -28,7 +28,6 @@ busybox
 bzip2
 ca-certificates
 calf-plugins
-cargo
 console-setup
 coreutils
 cpio

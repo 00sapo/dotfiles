@@ -14,3 +14,5 @@ abbr -a --set-cursor=% -- , 'gh copilot suggest "%"'
 abbr -a -- t task
 abbr -a -- ta 'task add'
 abbr -a -- ts 'task sync'
+abbr -a -- tc 'task context'
+abbr -a -- td 'task done'
