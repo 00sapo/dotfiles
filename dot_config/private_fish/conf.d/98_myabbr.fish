@@ -11,3 +11,6 @@ abbr -a -- dhe distrobox-host-exec
 abbr -a -- reverse-ssh 'ssh -C -q -N -o ControlMaster=no -R 4833:localhost:4833'
 abbr -a --set-cursor=% -- ` 'gh copilot explain "%"'
 abbr -a --set-cursor=% -- , 'gh copilot suggest "%"'
+abbr -a -- t task
+abbr -a -- ta 'task add'
+abbr -a -- ts 'task sync'
