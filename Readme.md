@@ -18,11 +18,11 @@ xargs flatpak install < flatpak.install
 setup-my-keys # this maybe doesn't work
 ```
 
-6. Install the pacstall packages (neovim and git-delta will be ok in Trixie):
+6. Install the devbox packages (neovim and git-delta will be ok in Trixie):
 
 ```
-sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install)"
-pacstall neovim-app git-delta-deb lazygit megasync-deb
+curl -fsSL https://get.jetify.com/devbox | bash
+devbox global init
 ```
 
 6. install remaining system packages (see below)
