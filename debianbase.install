@@ -83,6 +83,7 @@ git-delta
 gnome-boxes
 gnome-keyring
 gnome-keyring-pkcs11
+gop
 gpg
 gpgv
 grep
@@ -541,7 +542,6 @@ python3-hatch-vcs
 python3-hatchling
 python3-jsonschema
 python3-pathspec
-python3-pdm
 python3-pluggy
 python3-reportbug
 python3-setuptools-scm
