@@ -4,20 +4,12 @@ set --export PATH "$HOME/.local/bin/:$PATH"
 # asdf
 source $HOME/.asdf/asdf.fish
 
-# fish
-if command -vq devbox
-	devbox global shellenv --init-hook | source
-end
-
 # snap
 set --export PATH "/snap/bin:$PATH"
 
 # editor
 set --export EDITOR (which nvim)
 set --export SYSTEM_EDITOR (which nvim)
-
-# nim
-set --export PATH "$HOME/.nimble/bin:$PATH"
 
 # ruby
 set --export PATH "$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"

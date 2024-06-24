@@ -1,10 +1,10 @@
 this_path=$(realpath "$0")
 if command -v devbox >/dev/null; then
-	devbox global run lazygit
+	devbox global run lazygit $@
 else
 	for c in $(which -a "lazygit"); do
     if test "$(realpath $c)" != "$this_path"; then
-			$c
+			$c $@
       exit
 		fi
 	done

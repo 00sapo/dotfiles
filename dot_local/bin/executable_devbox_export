@@ -3,11 +3,11 @@
 cat <<EOF >"$HOME"/.local/bin/"$1"
 this_path=\$(realpath "\$0")
 if command -v devbox >/dev/null; then
-	devbox global run $1
+	devbox global run $1 \$@
 else
 	for c in \$(which -a "$1"); do
     if test "\$(realpath \$c)" != "\$this_path"; then
-			\$c
+			\$c \$@
       exit
 		fi
 	done
