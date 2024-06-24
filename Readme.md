@@ -18,11 +18,11 @@ xargs flatpak install < flatpak.install
 setup-my-keys # this maybe doesn't work
 ```
 
-6. Install the devbox packages (neovim and git-delta will be ok in Trixie):
+6. Install the brew packages (neovim and git-delta will be ok in Trixie):
 
 ```
-curl -fsSL https://get.jetify.com/devbox | bash
-devbox global init
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install neovim git-delta lazygit
 ```
 
 6. install remaining system packages (see below)
@@ -47,8 +47,7 @@ It's also useful to check suspend mechanism.
 9. flatpak
 10. pipewire-audio
 11. Jack and pipewire-jack (see further configuration on Debian wiki)
-12. nodejs (topgrade fails while upgrading npm if installed via devbox)
-13. python build dependencies (if installed in devbox, they are slow)
+12. python build dependencies
 
 ### Music software
 
@@ -64,5 +63,8 @@ This software is installed in the base system for performance reasons.
 ### Packages that should be migrated to flatpak
 
 1. btrfs-assistant (from OBS repos)
-2. megasync (flatpak version freezes when syncing)
-3. alacritty (could be installed via cargo)
+2. megasync (flatpak version freezes when syncing, needs the sources apt list)
+
+```
+
+```
