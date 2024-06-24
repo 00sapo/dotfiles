@@ -1,2 +1,12 @@
-#!/bin/sh
-devbox global run delta
+this_path=$(realpath "$0")
+if command -v devbox >/dev/null; then
+	devbox global run delta
+else
+	for c in $(which -a "delta"); do
+    if test "$(realpath $c)" != "$this_path"; then
+			$c
+      exit
+		fi
+	done
+  echo "Command not found: delta"
+fi

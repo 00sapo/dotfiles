@@ -1,2 +1,12 @@
-#!/bin/sh
-devbox global run lazygit
+this_path=$(realpath "$0")
+if command -v devbox >/dev/null; then
+	devbox global run lazygit
+else
+	for c in $(which -a "lazygit"); do
+    if test "$(realpath $c)" != "$this_path"; then
+			$c
+      exit
+		fi
+	done
+  echo "Command not found: lazygit"
+fi
