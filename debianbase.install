@@ -43,6 +43,7 @@ debconf-i18n
 debian-archive-keyring
 debian-faq
 debianutils
+debsecan
 diffutils
 discover
 distro-info-data
@@ -69,6 +70,8 @@ firmware-realtek
 firmware-sof-signed
 fish
 flatpak
+fontconfig
+fonts-liberation
 fwupd-amd64-signed
 fzf
 gamemode
@@ -79,11 +82,9 @@ gettext-base
 gfortran
 gh
 git
-git-delta
 gnome-boxes
 gnome-keyring
 gnome-keyring-pkcs11
-gop
 gpg
 gpgv
 grep
@@ -136,7 +137,6 @@ kwrited
 kxstudio-repos
 laptop-detect
 latexmk
-lazygit
 less
 libacl1
 libapparmor1
@@ -176,6 +176,7 @@ libcdio19
 libcom-err2
 libcrack2
 libcrypt1
+libcrypt1:i386
 libcryptsetup12
 libcu++-dev
 libcuda1
@@ -200,6 +201,7 @@ libegl-nvidia0
 libelf1
 libevent-2.1-7
 libevent-core-2.1-7
+libexpat1:i386
 libfdisk1
 libffi-dev
 libffi8
@@ -211,9 +213,10 @@ libftdi1-2
 libfuse2
 libgav1-1
 libgcc-s1
+libgcc-s1:i386
 libgcrypt20
 libgdbm-compat4
-libgdbm6t64
+libgdbm6
 libgles-nvidia1:i386
 libgles-nvidia2:i386
 libglib2.0-0
@@ -385,6 +388,7 @@ libssh2-1
 libssl-dev
 libssl3
 libstdc++6
+libstdc++6:i386
 libstoken1
 libsystemd-shared
 libsystemd0
@@ -415,8 +419,18 @@ libvlc-bin
 libweather-ion7
 libwmflite-0.2-7
 libwrap0
+libx11-6:i386
+libx11-xcb1:i386
 libxatracker2
+libxau6:i386
+libxcb-dri2-0:i386
+libxcb-dri3-0:i386
+libxcb-glx0:i386
+libxcb-present0:i386
+libxcb-sync1:i386
 libxcb1-dev
+libxcb1:i386
+libxdmcp6:i386
 libxencall1
 libxendevicemodel1
 libxenevtchn1
@@ -427,11 +441,14 @@ libxenmisc4.17
 libxenstore4
 libxentoolcore1
 libxentoollog1
+libxext6:i386
+libxfixes3:i386
 libxml2-dev
 libxmlsec1-dev
 libxt6
 libxtables12
 libxxf86dga1
+libxxf86vm1:i386
 libxxhash0
 libzbar0
 libzip4
@@ -467,7 +484,6 @@ nano
 ncurses-base
 ncurses-bin
 ncurses-term
-neovim
 netbase
 netcat-traditional
 netselect-apt
@@ -492,7 +508,6 @@ nvidia-driver-libs
 nvidia-driver-libs:i386
 nvidia-opencl-icd
 nvidia-profiler
-nvidia-vulkan-icd:i386
 ocl-icd-opencl-dev
 openjade
 openrgb
@@ -625,6 +640,7 @@ vim-common
 vim-tiny
 vlc-plugin-base
 vlc-plugin-video-output
+vulkan-tools:i386
 wamerican
 wget
 whiptail
@@ -632,9 +648,15 @@ wireless-tools
 wireplumber
 wpasupplicant
 xcb
+xdg-desktop-portal
+xdg-desktop-portal-gtk
+xdg-desktop-portal-kde
+xdg-utils
 xpdf
 xserver-xorg
+xterm
 xz-utils
+zenity
 zip
 zlib1g
 zlib1g-dev
