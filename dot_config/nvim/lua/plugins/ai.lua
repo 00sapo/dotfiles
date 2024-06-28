@@ -159,22 +159,6 @@ M = {
       },
     },
   },
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   opts = {
-  --     sources = {
-  --       -- snippets
-  --       { name = "luasnip" },
-  --       -- Copilot Source
-  --       { name = "copilot" },
-  --       -- { name = "codeium" },
-  --       -- Other Sources
-  --       { name = "nvim_lsp" },
-  --       { name = "buffer" },
-  --       { name = "path" },
-  --     },
-  --   },
-  -- },
 }
 
 return M

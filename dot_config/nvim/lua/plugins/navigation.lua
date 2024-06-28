@@ -1,16 +1,5 @@
 local M = {
   {
-    "m4xshen/hardtime.nvim",
-    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-  },
-  {
-    "simrat39/symbols-outline.nvim",
-    cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
-    config = function()
-      require("symbols-outline").setup({})
-    end,
-  },
-  {
     "folke/which-key.nvim",
     opts = {
       defaults = {
@@ -68,6 +57,12 @@ local M = {
       resize = {
         enable_default_keybindings = true,
       },
+    },
+  },
+  {
+    "aerial.nvim",
+    keys = {
+      { "<leader>n", "<cmd>AerialNavToggle<cr>", desc = "AerialNavToggle" },
     },
   },
 }
