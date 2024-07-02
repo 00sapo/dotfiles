@@ -31,16 +31,16 @@ hooks.location=~/.config/task/hooks
 #include dark-red-256.theme
 #include dark-green-256.theme
 #include dark-blue-256.theme
-include dark-violets-256.theme
-#include dark-yellow-green.theme
+#include dark-violets-256.theme
+include dark-yellow-green.theme
 #include dark-gray-256.theme
 #include dark-gray-blue-256.theme
 #include solarized-dark-256.theme
 #include solarized-light-256.theme
 #include no-color.theme
--color.recurring=rgb010
--color.due=rgb310
--color.due.today=rgb510
+#color.recurring=rgb010
+#color.due=rgb310
+#color.due.today=rgb510
 
 include ~/.wingtask_certs/taskrc
 
@@ -117,8 +117,8 @@ urgency.uda.weight.LM.coefficient=-0.5
 urgency.uda.weight.M.coefficient=0
 urgency.uda.weight.MW.coefficient=+0.5
 urgency.uda.weight.W.coefficient=+1
-urgency.blocking.coefficient=1
-urgency.blocked.coefficient=0
+urgency.blocking.coefficient=+0.25
+urgency.blocked.coefficient=-0.25
 
 urgency.user.tag.duehard.coefficient=+6
 
