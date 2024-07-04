@@ -18,7 +18,7 @@
 {{- if eq .chezmoi.hostname "amadeus" }}
 disable = ["mamba", "conda", "chezmoi"]
 {{- else if eq .chezmoi.hostname "brian" }}
-disable = ["system", "chezmoi"]
+disable = ["chezmoi"]
 {{- else if eq .chezmoi.hostname "cucchia" }}
 disable = ["chezmoi"]
 {{- end }}
