@@ -1,19 +1,5 @@
 local M = {
   {
-    "aerial.nvim",
-    opts = {
-      float = {
-        relative = "win",
-      },
-      nav = {
-        preview = true,
-      },
-    },
-    keys = {
-      { "n", "<leader>n", require("aerial").nav_toggle, desc = "Toggle Aerial" },
-    },
-  },
-  {
     "m4xshen/hardtime.nvim",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
   },
