@@ -20,6 +20,7 @@ bind9-host
 bluedevil
 breeze-gtk-theme
 bsdutils
+btrfs-assistant
 btrfs-compsize
 btrfs-progs
 bubblewrap
@@ -28,7 +29,6 @@ busybox
 bzip2
 ca-certificates
 calf-plugins
-chromium
 console-setup
 coreutils
 cpio
@@ -271,7 +271,6 @@ libkpipewirerecord5
 libkpmcore12
 libkrb5-3
 libkrb5support0
-libksignalplotter9
 libkuserfeedbackcore1
 liblirc-client0
 liblocale-gettext-perl
@@ -459,9 +458,7 @@ libzstd1
 libzvbi0
 libzzip-0-13
 linux-cpupower
-linux-headers-amd64
 linux-image-amd64
-linux-image-rt-amd64
 lm-sensors
 locales
 login
@@ -650,7 +647,6 @@ wget
 whiptail
 wireless-tools
 wireplumber
-wmctrl
 wpasupplicant
 xcb
 xdg-desktop-portal
