@@ -24,3 +24,20 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end
   end,
 })
+
+-- run custom commands when background is set to light or to dark
+vim.api.nvim_create_autocmd("OptionSet", {
+  pattern = "background",
+  callback = function()
+    if vim.v.option_new == "light" then
+      -- commands to run when background is set to light
+      vim.cmd("highlight Visual guibg=#DAF7A6")
+      vim.cmd("highlight CursorLine guibg=#E9EBF1")
+    else
+      -- commands to run when background is set to dark
+      -- set highlight cursorline and visual
+      vim.cmd("highlight CursorLine guibg=#30194D")
+      vim.cmd("highlight Visual guibg=#4D1935")
+    end
+  end,
+})
