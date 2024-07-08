@@ -13,6 +13,7 @@ base-files
 base-passwd
 bash
 bash-completion
+beep
 bespokesynth
 biber
 bind9-dnsutils
@@ -593,6 +594,7 @@ sensible-utils
 shim-signed
 sioyek
 sonic-visualiser
+spdx-licenses
 spice-html5
 spice-vdagent
 spice-webdavd
