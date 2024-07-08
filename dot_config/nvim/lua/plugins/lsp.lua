@@ -117,7 +117,7 @@ return {
           on_attach = function(client, bufnr)
             -- setup ltex_extra
             require("ltex_extra").setup({
-              load_langs = { "it-IT", "en-GB" },
+              load_langs = { "en-US", "it-IT" },
               path = vim.fn.expand("~") .. "/.local/share/ltex",
             })
           end,
