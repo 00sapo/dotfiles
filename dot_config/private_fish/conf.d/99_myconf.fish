@@ -5,7 +5,7 @@ set --export PATH "$HOME/.local/bin/:$PATH"
 source $HOME/.asdf/asdf.fish
 
 # brew
-if command -vq brew
+if test -e /home/linuxbrew/.linuxbrew/bin/brew
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     if test -d (brew --prefix)"/share/fish/completions"
         set -p fish_complete_path (brew --prefix)/share/fish/completions
