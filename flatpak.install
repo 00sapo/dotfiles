@@ -7,13 +7,13 @@ com.vivaldi.Vivaldi
 io.dbeaver.DBeaverCommunity
 io.github.dimtpap.coppwr
 io.github.slgobinath.SafeEyes
+it.mijorus.gearlever
 jp.yvt.OpenSpades
 net.davidotek.pupgui2
 net.sourceforge.VMPK
 net.sourceforge.jpdftweak.jPdfTweak
 net.sourceforge.kmidimon
 org.ardour.Ardour
-org.audacityteam.Audacity
 org.chromium.Chromium
 org.fontforge.FontForge
 org.freedesktop.Piper
@@ -31,7 +31,6 @@ org.mozilla.firefox
 org.musescore.MuseScore
 org.qxmledit.QXmlEdit
 org.rncbc.qpwgraph
-org.telegram.desktop
 org.videolan.VLC
 org.zotero.Zotero
 us.zoom.Zoom
