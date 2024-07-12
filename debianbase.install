@@ -30,6 +30,7 @@ bzip2
 ca-certificates
 calf-plugins
 chromium
+cmake
 console-setup
 coreutils
 cpio
@@ -148,6 +149,7 @@ libarchive13
 libargon2-1
 libaribb24-0
 libasound2
+libasound2-dev
 libatasmart4
 libatk-bridge2.0-0
 libatk1.0-0
@@ -554,6 +556,7 @@ plugdata-vst3
 podman
 polkit-kde-agent-1
 popularity-contest
+portaudio19-dev
 powerdevil
 procps
 python3
@@ -654,11 +657,13 @@ wireless-tools
 wireplumber
 wmctrl
 wpasupplicant
+x42-plugins
 xcb
 xdg-desktop-portal
 xdg-desktop-portal-gtk
 xdg-desktop-portal-kde
 xdg-utils
+xdotool
 xpdf
 xserver-xorg
 xterm
