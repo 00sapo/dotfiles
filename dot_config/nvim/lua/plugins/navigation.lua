@@ -28,10 +28,10 @@ local M = {
     "folke/which-key.nvim",
     opts = {
       defaults = {
-        ["<leader>a"] = { name = "+AI" },
-        ["<leader>ag"] = { name = "+generate into..." },
-        ["<leader>au"] = { name = "+user's prompts" },
-        ["<leader>m"] = { name = "+Marks" },
+        { "<leader>a", group = "AI" },
+        { "<leader>ag", group = "generate into..." },
+        { "<leader>au", group = "user's prompts" },
+        { "<leader>m", group = "Marks" },
       },
     },
   },
