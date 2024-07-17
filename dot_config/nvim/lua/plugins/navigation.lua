@@ -27,7 +27,7 @@ local M = {
   {
     "folke/which-key.nvim",
     opts = {
-      defaults = {
+      spec = {
         { "<leader>a", group = "AI" },
         { "<leader>ag", group = "generate into..." },
         { "<leader>au", group = "user's prompts" },

@@ -18,6 +18,7 @@ bespokesynth
 biber
 bind9-dnsutils
 bind9-host
+birdtray
 bluedevil
 breeze-gtk-theme
 bsdutils
@@ -30,6 +31,7 @@ bzip2
 ca-certificates
 calf-plugins
 chromium
+clawsker
 cmake
 console-setup
 coreutils
@@ -629,6 +631,7 @@ texlive-publishers
 texlive-science
 texlive-xetex
 thefuck
+thunderbird
 tk-dev
 tlp
 tmux

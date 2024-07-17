@@ -2,19 +2,7 @@
     "accounts": [
         {
             "color": "#0000ff",
-            "path": "/home/federico/.thunderbird/9t379bm9.default-default/ImapMail/imap.gmail.com/INBOX.msf"
-        },
-        {
-            "color": "#0000ff",
-            "path": "/home/federico/.thunderbird/9t379bm9.default-default/ImapMail/imap.gmail.com/[Gmail].sbd/All Mail.msf"
-        },
-        {
-            "color": "#0000ff",
-            "path": "/home/federico/.thunderbird/9t379bm9.default-default/ImapMail/imap.zoho.com/INBOX.msf"
-        },
-        {
-            "color": "#0000ff",
-            "path": "/home/federico/.thunderbird/9t379bm9.default-default/ImapMail/disroot.org/INBOX.msf"
+            "path": "/home/federico/.thunderbird/9t379bm9.default-default/Mail/smart mailboxes/Inbox.msf"
         }
     ],
     "advanced/blinkingusealpha": false,
