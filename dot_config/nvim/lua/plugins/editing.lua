@@ -1,43 +1,6 @@
 local M = {
   { "sindrets/diffview.nvim" },
   {
-    "andrewferrier/debugprint.nvim",
-    dependencies = {
-      "echasnovski/mini.nvim", -- Needed to enable :ToggleCommentDebugPrints for NeoVim <= 0.9
-      "nvim-treesitter/nvim-treesitter", -- Needed to enable treesitter for NeoVim 0.8
-    },
-    opts = {
-      keymaps = {
-        normal = {
-          plain_below = "<leader>dp",
-          plain_above = "<leader>dP",
-          variable_below = "<leader>dv",
-          variable_above = "<leader>dV",
-          variable_below_alwaysprompt = nil,
-          variable_above_alwaysprompt = nil,
-          textobj_below = "<leader>do",
-          textobj_above = "<leader>dO",
-          toggle_comment_debug_prints = nil,
-          delete_debug_prints = nil,
-        },
-        visual = {
-          variable_below = "<leader>dv",
-          variable_above = "<leader>dV",
-        },
-      },
-    },
-    keys = {
-      { "<leader>d", mode = "n", desc = "Debug print" },
-      { "<leader>d", mode = "x", desc = "Debug print" },
-    },
-    cmd = {
-      "ToggleCommentDebugPrints",
-      "DeleteDebugPrints",
-    },
-    -- avoid development versions
-    version = "*",
-  },
-  {
     "cosmicboots/unicode_picker.nvim",
     dependencies = {
       "uga-rosa/utf8.nvim",
@@ -102,6 +65,18 @@ local M = {
       end
 
       vim.api.nvim_create_autocmd("TextYankPost", { callback = copy })
+    end,
+  },
+  { -- use Ctrl+Enter to confirm in place of Enter
+    "hrsh7th/nvim-cmp",
+    opts = function(_, opts)
+      local cmp = require("cmp")
+
+      opts.mapping = vim.tbl_extend("force", opts.mapping, {
+        ["<C-l>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      })
+
+      opts.mapping["<CR>"] = nil
     end,
   },
 }
