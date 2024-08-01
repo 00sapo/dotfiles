@@ -16,11 +16,11 @@
 
 # Disable specific steps - same options as the command line flag
 {{- if eq .chezmoi.hostname "amadeus" }}
-disable = ["mamba", "conda", "chezmoi"]
+disable = ["mamba", "conda", "chezmoi", "vim"]
 {{- else if eq .chezmoi.hostname "brian" }}
-disable = ["chezmoi"]
+disable = ["chezmoi", "vim"]
 {{- else if eq .chezmoi.hostname "cucchia" }}
-disable = ["chezmoi"]
+disable = ["chezmoi", "vim"]
 {{- end }}
 
 # Ignore failures for these steps
