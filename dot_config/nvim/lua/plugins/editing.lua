@@ -71,9 +71,17 @@ local M = {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
       local cmp = require("cmp")
+      local complete = cmp.mapping.complete()
+      local confirm = cmp.mapping.confirm({ select = true })
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
-        ["<C-l>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ["<C-Space>"] = function(fallback)
+          if cmp.visible() then
+            return confirm(fallback)
+          else
+            return complete(fallback)
+          end
+        end,
       })
 
       opts.mapping["<CR>"] = nil
