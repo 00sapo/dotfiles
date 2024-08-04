@@ -771,6 +771,7 @@ systemd
 systemd-sysv
 systemd-timesyncd
 sysvinit-utils
+tabby-terminal
 tar
 task-desktop
 task-english
@@ -812,7 +813,6 @@ vlc-plugin-base
 vlc-plugin-video-output
 vulkan-tools:i386
 wamerican
-warp-terminal
 wget
 whiptail
 wireless-tools
