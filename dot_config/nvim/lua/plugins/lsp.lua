@@ -144,14 +144,4 @@ return {
     ft = { "markdown", "tex" },
     dependencies = { "neovim/nvim-lspconfig" },
   },
-  {
-    "zeioth/garbage-day.nvim",
-    dependencies = "neovim/nvim-lspconfig",
-    event = "VeryLazy",
-    opts = {
-      aggressive_mode = true,
-      excluded_lsp_clients = {},
-      grace_period = 60,
-    },
-  },
 }
