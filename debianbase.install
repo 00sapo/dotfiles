@@ -34,7 +34,6 @@ busybox
 bzip2
 ca-certificates
 calf-plugins
-chromium
 cmake
 console-setup
 coreutils
@@ -105,6 +104,7 @@ gwenview
 gzip
 hostname
 htop
+hugo
 hunspell-en-us
 iannix
 ibus-data
@@ -117,6 +117,7 @@ init-system-helpers
 initramfs-tools
 installation-report
 intel-microcode
+inxi
 iproute2
 iputils-ping
 isc-dhcp-client
@@ -632,6 +633,7 @@ mangohud:i386
 manpages
 mariadb-client-core
 mariadb-server-core
+materia-kde
 mawk
 media-types
 megasync
@@ -741,6 +743,7 @@ reportbug
 ripgrep
 rpm-common
 rpm2cpio
+screenfetch
 sddm
 sddm-theme-debian-breeze
 sddm-theme-debian-elarun
