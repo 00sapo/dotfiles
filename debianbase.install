@@ -513,6 +513,7 @@ libreadline-dev
 libreadline8
 libruby3.1
 libsasl2-modules-kdexoauth2
+libsaxon-java
 libscope-guard-perl
 libseccomp2
 libselinux1
@@ -613,6 +614,7 @@ libzita-alsa-pcmi0
 libzstd1
 libzvbi0
 libzzip-0-13
+lilypond
 linux-cpupower
 linux-headers-amd64
 linux-image-amd64
@@ -830,6 +832,7 @@ xdg-desktop-portal-kde
 xdg-utils
 xdotool
 xpdf
+xprintidle
 xserver-xorg
 xterm
 xz-utils
