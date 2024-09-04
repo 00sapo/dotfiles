@@ -1,9 +1,11 @@
+com.calibre_ebook.calibre
 com.discordapp.Discord
 com.github.IsmaelMartinez.teams_for_linux
 com.github.d4nj1.tlpui
 com.github.jeromerobert.pdfarranger
 com.github.tchx84.Flatseal
 com.vivaldi.Vivaldi
+dev.aunetx.deezer
 io.dbeaver.DBeaverCommunity
 io.github.dimtpap.coppwr
 io.github.slgobinath.SafeEyes
@@ -20,6 +22,7 @@ org.freedesktop.Piper
 org.gimp.GIMP
 org.gustavoperedo.FontDownloader
 org.inkscape.Inkscape
+org.jabref.jabref
 org.kde.filelight
 org.kde.gwenview
 org.kde.marble
