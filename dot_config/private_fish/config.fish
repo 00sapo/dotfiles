@@ -16,9 +16,7 @@ if status is-interactive
 
     command -v thefuck >/dev/null; and thefuck --alias | source
 
-    # # show task summary
-    # command -v task >/dev/null; and task dash limit:5
+    # show task summary
+    command -v task >/dev/null; and task dash limit:5
 
 end
-abbr setclip "xclip -selection c"
-abbr getclip "xclip -selection c -o"
