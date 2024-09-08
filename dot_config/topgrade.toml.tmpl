@@ -92,7 +92,6 @@ no_retry = true
 "Export flatpaks" = "flatpak list --columns=application --app > ~/flatpak.install"
 "Export brew packages" = "brew leaves > ~/brew.install"
 "Export snap packages" = "snap list | awk '{print $1}' | tail -n +2 > ~/snap.install"
-"Export pacstall packages" = "pacstall --list > ~/pacstall.install"
 "Export base packages" = "apt-mark showmanual > ~/debianbase.install"
 {{- end }}
 
