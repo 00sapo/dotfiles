@@ -16,4 +16,6 @@ if status is-interactive
 
     command -v thefuck >/dev/null; and thefuck --alias | source
 
+    command -v cbonsai >/dev/null; and cbonsai --base (random 1 3) --life (random 10 100)
+
 end
