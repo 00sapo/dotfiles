@@ -1,4 +1,5 @@
 acpi-call-dkms
+adb
 adduser
 akonadi-backend-mysql
 akonadi-contacts-data
@@ -34,9 +35,12 @@ busybox
 bzip2
 ca-certificates
 calf-plugins
+cbonsai
+chromium
 cmake
 console-setup
 coreutils
+cowsay
 cpio
 cron
 cron-daemon-common
@@ -67,6 +71,7 @@ e2fsprogs
 earlyoom
 environment-modules
 exfatprogs
+fastboot
 fd-find
 fdisk
 ffmpegthumbs
@@ -80,6 +85,7 @@ fish
 flatpak
 fontconfig
 fonts-liberation
+fortune-mod
 fwupd-amd64-signed
 fzf
 gamemode
@@ -88,7 +94,6 @@ gcc
 gcc-12-base
 gettext-base
 gfortran
-gh
 git
 gnome-boxes
 gnome-keyring
@@ -674,6 +679,7 @@ nvidia-opencl-icd
 nvidia-profiler
 ocl-icd-opencl-dev
 okular
+oneko
 openjade
 openrgb
 openssh-client
@@ -686,6 +692,7 @@ partitionmanager
 passt
 passwd
 pciutils
+pdftk
 perl
 perl-base
 pipewire-alsa
@@ -795,7 +802,6 @@ texlive-publishers
 texlive-science
 texlive-xetex
 thefuck
-thunderbird
 tk-dev
 tlp
 tmux

@@ -93,7 +93,7 @@ local M = {
       plugins = {
         tmux = { enabled = true }, -- disables the tmux statusline
         todo = { enabled = true }, -- if set to "true", todo-comments.nvim highlights will be disabled
-        alacritty = { enabled = true },
+        alacritty = { enabled = true, font = "16" },
         options = {
           enabled = true,
           ruler = false, -- disables the ruler text in the cmd line area
@@ -128,10 +128,18 @@ local M = {
         vim.api.nvim_set_option_value("spelllang", "it", {})
         -- disable diagnostics
         vim.diagnostic.enable(false)
+        -- disable autocomplete
+        require("cmp").setup.buffer({ enabled = false })
+        -- disable noice
+        require("noice").setup({ enabled = false })
+        -- limit maximum number of characters per line
+        vim.api.nvim_set_option_value("textwidth", 20, {})
       end,
       on_close = function()
         -- enable diagnostics
         vim.diagnostic.enable(true)
+        require("cmp").setup.buffer({ enabled = true })
+        require("noice").setup({ enabled = true })
       end,
     },
     dependencies = { "folke/twilight.nvim" },
