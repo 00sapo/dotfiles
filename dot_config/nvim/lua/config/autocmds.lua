@@ -41,12 +41,3 @@ vim.api.nvim_create_autocmd("OptionSet", {
     end
   end,
 })
-
--- add custom mappings to copilot-chat buffer
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "copilot-*",
-  callback = function()
-    -- C-q to accept and save the last buffer and to close neovim
-    vim.keymap.set({ "n", "i" }, "<A-q>", "<esc><C-y>q:w<cr>:qa<cr>", { buffer = true, remap = true })
-  end,
-})
