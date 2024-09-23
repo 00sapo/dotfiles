@@ -127,7 +127,6 @@ iproute2
 iputils-ping
 isc-dhcp-client
 isc-dhcp-common
-jan
 jq
 juk
 kaccounts-providers
@@ -232,8 +231,6 @@ libdvdread8
 libdw1
 libeac3
 libedit2
-libefiboot1t64
-libefivar1t64
 libegl-nvidia0
 libelf1
 libemail-abstract-perl
@@ -305,7 +302,6 @@ libjaylink0
 libjq1
 libjson-c5
 libjxr-tools
-libjxr0t64
 libk5crypto3
 libkeyutils1
 libkf5akonadi-data
@@ -422,7 +418,6 @@ libmount1
 libmpeg2encpp-2.1-0
 libmpg123-0
 libmplex2-2.1-0
-libmspack0t64
 libmtdev1
 libmtp9
 libmxml1
@@ -462,7 +457,6 @@ libopengl0:i386
 libopenmpt0
 liborc-0.4-0
 libosp5
-libostyle1t64
 libp11-kit0
 libpackage-deprecationmanager-perl
 libpam-gnome-keyring
@@ -742,7 +736,6 @@ qml-module-org-kde-kirigami-addons-labs-mobileform
 qml-module-org-kde-runnermodel
 qml-module-org-kde-solid
 qml-module-org-kde-userfeedback
-quarto
 ratbagd
 rclone
 re2c
@@ -764,17 +757,14 @@ sed
 sensible-utils
 shim-signed
 sioyek
-slimbookbattery
 sonic-visualiser
 spamassassin
 spamc
-spdx-licenses
 spice-html5
 spice-vdagent
 spice-webdavd
 steam-installer
 sudo
-surge-xt
 sweeper
 swig
 switcheroo-control
@@ -783,7 +773,6 @@ systemd
 systemd-sysv
 systemd-timesyncd
 sysvinit-utils
-tabby-terminal
 tar
 task-desktop
 task-english
