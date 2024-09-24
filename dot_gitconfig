@@ -1,0 +1,16 @@
+[user]
+	email = 22996003+00sapo@users.noreply.github.com
+	name = Federico Simonetta
+[github]
+	user = 00sapo
+[merge]
+	tool = lazygit
+[gui]
+	editor = nvim
+[global]
+[diff]
+	tool = nvimdiff
+[pull]
+	rebase = false
+[merge "ours"]
+	driver = true
