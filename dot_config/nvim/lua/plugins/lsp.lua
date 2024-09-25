@@ -101,15 +101,7 @@ return {
             },
           },
         },
-        -- pyright = {
-        --   settings = {
-        --     python = {
-        --       analysis = {
-        --         typeCheckingMode = "off",
-        --       },
-        --     },
-        --   },
-        -- },
+        pyright = { enable = false }, -- only use ruff
         ltex = {
           mason = true,
           autostart = true,

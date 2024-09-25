@@ -12,9 +12,11 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins
     { import = "plugins" },
-    { "mini.pairs", enabled = false },
+    -- { "mini.pairs", enabled = false },
     { "vimtex", enabled = false },
     { "nvim-dap-virtual-text", enabled = false },
+    { "noice.nvim", enabled = false },
+    { "nvim-notify", enabled = false },
     -- { "mini.ai", enabled = false },
     -- { "bufferline.nvim", enabled = false },
   },
