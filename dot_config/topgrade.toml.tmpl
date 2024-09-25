@@ -88,8 +88,8 @@ no_retry = true
 # Commands to run before anything
 [pre_commands]
 "01. Send notification" = "notify-send 'Topgrade' 'Starting the upgrade process on host cucchia'"
-"02. Take sudo permissions for 1h" = "sudo -v -B"
-"03. Take ssh-agent permissions for 1h" = "ssh-add -t 3600"
+"02. Take sudo permissions for 15m" = "sudo -v -B"
+"03. Take ssh-agent permissions for 1h" = "fish_ssh_agent; ssh-add -t 1h"
 {{- if eq .chezmoi.hostname "cucchia" }}
 "04. Export flatpaks" = "flatpak list --columns=application --app > ~/flatpak.install"
 "05. Export brew packages" = "brew leaves > ~/brew.install"
