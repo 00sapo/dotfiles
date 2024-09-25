@@ -38,11 +38,10 @@ set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 command -v pyenv >/dev/null; and status is-login; and pyenv init --path | source
 
 # golang
-if set -q $GOBIN
-    set --export PATH "$GOBIN/bin:$PATH"
-else
-    set --export PATH "$HOME/go/bin:$PATH"
+if not set -q GOBIN
+    set --export GOBIN "$HOME/go/bin"
 end
+set --export PATH "$GOBIN/bin:$PATH"
 set --export GOCACHE "$HOME/go/cache"
 
 # rust
