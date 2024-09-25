@@ -87,13 +87,12 @@ no_retry = true
 
 # Commands to run before anything
 [pre_commands]
-"01. Send notification with sound" = "notify-send 'Topgrade' 'Starting update on {{.chezmoi.hostname}}' -i system-software-update && paplay /usr/share/sounds/freedesktop/stereo/complete.oga"
 {{- if eq .chezmoi.hostname "cucchia" }}
-"02. Export flatpaks" = "flatpak list --columns=application --app > ~/flatpak.install"
-"03. Export brew packages" = "brew leaves > ~/brew.install"
-"04. Export snap packages" = "snap list | awk '{print $1}' | tail -n +2 > ~/snap.install"
-"05. Export base packages" = "apt-mark showmanual > ~/debianbase.install"
-"06. General sync" = "mysync"
+"01. Export flatpaks" = "flatpak list --columns=application --app > ~/flatpak.install"
+"02. Export brew packages" = "brew leaves > ~/brew.install"
+"03. Export snap packages" = "snap list | awk '{print $1}' | tail -n +2 > ~/snap.install"
+"04. Export base packages" = "apt-mark showmanual > ~/debianbase.install"
+"05. General sync" = "mysync"
 {{- end }}
 
 # Commands to run after anything
