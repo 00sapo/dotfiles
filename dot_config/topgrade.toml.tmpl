@@ -87,16 +87,15 @@ no_retry = true
 
 # Commands to run before anything
 [pre_commands]
-"Send notification" = "notify-send 'Topgrade' 'Starting the upgrade process on host {{ .chezmoi.hostname }}'"
-"Take sudo permissions for 1h" = "sudo -v -B -A -T 3600"
-"Take ssh-agent permissions for 1h" = "ssh-add -t 3600"
-# "Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
+"01. Send notification" = "notify-send 'Topgrade' 'Starting the upgrade process on host cucchia'"
+"02. Take sudo permissions for 1h" = "sudo -v -B -T 3600"
+"03. Take ssh-agent permissions for 1h" = "ssh-add -t 3600"
 {{- if eq .chezmoi.hostname "cucchia" }}
-"Export flatpaks" = "flatpak list --columns=application --app > ~/flatpak.install"
-"Export brew packages" = "brew leaves > ~/brew.install"
-"Export snap packages" = "snap list | awk '{print $1}' | tail -n +2 > ~/snap.install"
-"Export base packages" = "apt-mark showmanual > ~/debianbase.install"
-"General sync" = "mysync"
+"04. Export flatpaks" = "flatpak list --columns=application --app > ~/flatpak.install"
+"05. Export brew packages" = "brew leaves > ~/brew.install"
+"06. Export snap packages" = "snap list | awk '{print $1}' | tail -n +2 > ~/snap.install"
+"07. Export base packages" = "apt-mark showmanual > ~/debianbase.install"
+"08. General sync" = "mysync"
 {{- end }}
 
 # Commands to run after anything
