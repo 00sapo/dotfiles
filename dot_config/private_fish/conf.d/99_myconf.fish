@@ -41,7 +41,7 @@ command -v pyenv >/dev/null; and status is-login; and pyenv init --path | source
 if not set -q GOBIN
     set --export GOBIN "$HOME/go/bin"
 end
-set --export PATH "$GOBIN/bin:$PATH"
+set --export PATH "$GOBIN:$PATH"
 set --export GOCACHE "$HOME/go/cache"
 
 # rust
