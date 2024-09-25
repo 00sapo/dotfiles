@@ -9,3 +9,4 @@ abbr -a -- distrobox-update 'curl -s https://raw.githubusercontent.com/89luca89/
 abbr -a -- dhe distrobox-host-exec
 abbr -a -- reverse-ssh 'ssh -C -q -N -o ControlMaster=no -R 4833:localhost:4833'
 abbr -a -- defrankestein 'aptitude search -F "%p %O %v %d Dependants:%r" "?narrow(?and(?not(?automatic),?installed),?or(?not(?archive(stable)),?not(?origin(debian))))"'
+abbr -a -- mytopgrade 'sudo -v; ssh-add; topgrade'
