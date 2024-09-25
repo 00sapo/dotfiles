@@ -726,6 +726,7 @@ python3-hatchling
 python3-jsonschema
 python3-pathspec
 python3-pluggy
+python3-pynvim
 python3-reportbug
 python3-setuptools-scm
 python3-trove-classifiers
