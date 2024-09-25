@@ -52,7 +52,6 @@ local M = {
   },
   {
     "ojroques/nvim-osc52",
-    enabled = vim.fn.has("nvim-0.10") ~= 1,
     config = function()
       require("osc52").setup({
         max_length = 0, -- Maximum length of selection (0 for no limit)
@@ -92,6 +91,7 @@ local M = {
     "folke/zen-mode.nvim",
     opts = {
       plugins = {
+        tmux = { enabled = true }, -- disables the tmux statusline
         todo = { enabled = true }, -- if set to "true", todo-comments.nvim highlights will be disabled
         alacritty = { enabled = true, font = "16" },
         options = {
@@ -130,19 +130,16 @@ local M = {
         vim.diagnostic.enable(false)
         -- disable autocomplete
         require("cmp").setup.buffer({ enabled = false })
+        -- disable noice
+        require("noice").setup({ enabled = false })
         -- limit maximum number of characters per line
-        vim.api.nvim_set_option_value("textwidth", 60, {})
-        -- disable tmux statusline and panes
-        vim.fn.system([[tmux set status off]])
-        vim.fn.system([[tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z]])
+        vim.api.nvim_set_option_value("textwidth", 20, {})
       end,
       on_close = function()
         -- enable diagnostics
         vim.diagnostic.enable(true)
         require("cmp").setup.buffer({ enabled = true })
-        -- restore tmux statusline and panes
-        vim.fn.system([[tmux set status on]])
-        vim.fn.system([[tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z]])
+        require("noice").setup({ enabled = true })
       end,
     },
     dependencies = { "folke/twilight.nvim" },

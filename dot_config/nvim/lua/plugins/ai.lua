@@ -41,7 +41,7 @@ local copilot_prompts = {
     prompt = "Create a resume of the most important concepts in a language that is proper for presentation. The language should be simple and clear, suitable for an international public. Write the output in simple markdown and discoursive text. Only return the code snippet in markdown.",
     description = "Create a resume of a paper extract for a presentation",
   },
-  PaperReview = {
+  Review = {
     system_prompt = "You are a researcher in computer science, revieweing a paper.",
     prompt = "Summarize the comments, make them more polite, and easier to understand. Also correct the grammar. Some words may be enclosed in [[ ]], you should translate them from italian into english, e.g. [[sopra il tavolo]] -> on the table. Only return the snippet.",
     description = "Review and summarize comments",
@@ -146,10 +146,10 @@ M = {
         mode = { "n", "v" },
       },
       {
-        "<A-s>",
+        "<leader>as",
         "<cmd>CopilotChatShell<cr>",
         desc = "AI - Shell prompt",
-        mode = { "i", "n", "v" },
+        mode = { "n", "v" },
       },
       {
         "<leader>aa",

@@ -1,5 +1,3 @@
-# This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
-name = Federico Simonetta
-email = 22996003+00sapo@users.noreply.github.com
+	email = fede@brian
+	name = Federico Simonetta

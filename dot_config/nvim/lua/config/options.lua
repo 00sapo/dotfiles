@@ -11,24 +11,9 @@ vim.opt.guicursor = "n-v:block-blinkon0,i:ver100-blinkon0,o:hor100-blinkon0,c:ho
 vim.opt.relativenumber = true
 vim.opt.formatoptions:remove("t")
 vim.opt.inccommand = "nosplit" -- live substitution
-vim.opt.textwidth = 100
+vim.opt.textwidth = 88
 
--- vim.o wants the standard vim's syntax for options
+-- indentation
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.clipboard = vim.o.clipboard .. ",unnamedplus"
-
-if vim.fn.has("nvim-0.10") == 1 then
-  -- otherwise, see editing.lua, "ojroques/nvim-osc52"
-  vim.g.clipboard = {
-    name = "OSC 52",
-    copy = {
-      ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-      ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-    },
-    paste = {
-      ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-      ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
-    },
-  }
-end
