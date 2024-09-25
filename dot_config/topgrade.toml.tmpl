@@ -55,7 +55,7 @@ assume_yes = true
 no_retry = true
 
 # Run inside tmux (default: false)
-run_in_tmux = true
+# run_in_tmux = true
 
 # Cleanup temporary or old files (default: false)
 # cleanup = true
@@ -87,6 +87,9 @@ run_in_tmux = true
 
 # Commands to run before anything
 [pre_commands]
+"Send notification" = "notify-send 'Topgrade' 'Starting the upgrade process on host {{ .chezmoi.hostname }}'"
+"Take sudo permissions for 1h" = "sudo -v -B -A -T 3600"
+"Take ssh-agent permissions for 1h" = "ssh-add -t 3600"
 # "Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
 {{- if eq .chezmoi.hostname "cucchia" }}
 "Export flatpaks" = "flatpak list --columns=application --app > ~/flatpak.install"
