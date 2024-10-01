@@ -93,7 +93,7 @@ local M = {
     opts = {
       plugins = {
         todo = { enabled = true }, -- if set to "true", todo-comments.nvim highlights will be disabled
-        alacritty = { enabled = true, font = "16" },
+        wezterm = { enabled = true, font = "+4" },
         options = {
           enabled = true,
           ruler = false, -- disables the ruler text in the cmd line area

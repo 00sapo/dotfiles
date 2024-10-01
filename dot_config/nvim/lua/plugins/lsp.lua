@@ -44,14 +44,13 @@ require("lint").linters.cython = {
   end,
 }
 
-return {
+local M = {
   {
     "mfussenegger/nvim-lint",
     opts = {
       linters_by_ft = {
         fish = { "fish" },
         cmake = { "cmakelint" },
-        markdown = { "markdownlint" },
         pyrex = { "cython" },
         -- python = { "cython" },
       },
@@ -137,3 +136,4 @@ return {
     dependencies = { "neovim/nvim-lspconfig" },
   },
 }
+return M

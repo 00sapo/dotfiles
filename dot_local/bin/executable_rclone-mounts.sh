@@ -4,7 +4,7 @@
 remotes=(laudare dropbox koofr)
 
 # array of local paths
-locals=($HOME/Rclone/ateneopv $HOME/Rclone/laudare $HOME/Rclone/dropbox $HOME/Rclone/koofr)
+locals=($HOME/Rclone/laudare $HOME/Rclone/dropbox $HOME/Rclone/koofr)
 
 if [[ -e /run/.containerenv || -e /.dockerenv ]]; then
   # we are inside a container

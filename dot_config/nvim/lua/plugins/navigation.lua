@@ -73,16 +73,8 @@ local M = {
     end,
   },
   {
-    "aserowy/tmux.nvim",
-    keys = { "<C-h>", "<C-j>", "<C-k>", "<C-l>", "<A-h>", "<A-j>", "<A-k>", "<A-l>" },
-    opts = {
-      navigation = {
-        enable_default_keybindings = true,
-      },
-      resize = {
-        enable_default_keybindings = true,
-      },
-    },
+    "mrjones2014/smart-splits.nvim",
+    lazy = false,
   },
 }
 return M
