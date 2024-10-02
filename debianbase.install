@@ -815,6 +815,7 @@ vlc-plugin-base
 vlc-plugin-video-output
 vulkan-tools:i386
 wamerican
+wezterm
 wget
 whiptail
 wireless-tools
