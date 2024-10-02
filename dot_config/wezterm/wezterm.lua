@@ -3,6 +3,7 @@ local act = wezterm.action
 
 local config = {}
 
+-- appearance
 config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = {
 	left = 0,
@@ -11,6 +12,7 @@ config.window_padding = {
 	bottom = 0,
 }
 
+-- keybindings
 config.keys = {
 	{ key = "h", mods = "CTRL|ALT", action = act.ActivateTabRelativeNoWrap(-1) },
 	{ key = "l", mods = "CTRL|ALT", action = act.ActivateTabRelativeNoWrap(1) },
@@ -56,6 +58,7 @@ config.keys = {
 	},
 }
 
+-- navigation (nvim integration)
 local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
 smart_splits.apply_to_config(config)
 
@@ -79,6 +82,46 @@ wezterm.on("user-var-changed", function(window, pane, name, value)
 			overrides.font_size = number_value
 			overrides.enable_tab_bar = false
 		end
+	end
+	window:set_config_overrides(overrides)
+end)
+
+-- password notification
+PASSWORD_NOTIFICATIONS = {}
+local function has_been_notified(pane)
+	for _, id in ipairs(PASSWORD_NOTIFICATIONS) do
+		if pane:pane_id() == id then
+			return true
+		end
+	end
+	return false
+end
+local function remove_notification(pane)
+	for i, id in ipairs(PASSWORD_NOTIFICATIONS) do
+		if pane:pane_id() == id then
+			table.remove(PASSWORD_NOTIFICATIONS, i)
+			return
+		end
+	end
+end
+
+wezterm.on("update-status", function(window, pane)
+	local meta = pane:get_metadata() or {}
+	local overrides = window:get_config_overrides() or {}
+	if meta.password_input then
+		overrides.color_scheme = "Red Alert"
+		if not has_been_notified(pane) then
+			table.insert(PASSWORD_NOTIFICATIONS, pane:pane_id())
+			-- activate window if possible
+			window:focus()
+			-- activate pane if possible
+			pane:activate()
+			-- send notification to /dev/pts/0
+			os.execute("echo 'Password input detected in tab " .. pane:tab():tab_id() .. "!' > /dev/pts/0")
+		end
+	else
+		overrides.color_scheme = nil
+		remove_notification(pane)
 	end
 	window:set_config_overrides(overrides)
 end)
