@@ -5,7 +5,7 @@ set --export PATH "$HOME/.local/bin/:$PATH"
 source $HOME/.asdf/asdf.fish
 
 # brew
-if test -e /home/linuxbrew/.linuxbrew/bin/brew
+if status is-interactive; and test -e /home/linuxbrew/.linuxbrew/bin/brew
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     if test -d (brew --prefix)"/share/fish/completions"
         set -p fish_complete_path (brew --prefix)/share/fish/completions
@@ -35,7 +35,7 @@ set --export JAVA_HOME ""
 set -x PATH "$HOME/.pyenv/bin:$PATH"
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
-command -v pyenv >/dev/null; and status is-login; and pyenv init --path | source
+command -v pyenv >/dev/null; and status is-interactive; and pyenv init --path | source
 
 # golang
 if not set -q GOBIN
