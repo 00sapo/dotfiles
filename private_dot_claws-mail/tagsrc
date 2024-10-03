@@ -1,4 +1,4 @@
-max_id 32
+max_id 33
 26	$labelvivAM24
 32	$Phishing
 25	$MailFlagBit1
@@ -10,3 +10,4 @@ max_id 32
 22	$MailFlagBit0
 28	Submarine
 27	$labelvivVillaSerafina47
+33	GSSI
