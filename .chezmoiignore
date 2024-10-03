@@ -1,0 +1,7 @@
+.claws-mail/imapcache
+.claws-mail/tmp
+.claws-mail/avatarcache
+.claws-mail/newscache
+.claws-mail/RSSyl/My\ Feeds\ \(RSSyl\)/*
+.claws-mail/*.backup
+.claws-mail/.bak
