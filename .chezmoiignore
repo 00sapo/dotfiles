@@ -4,4 +4,4 @@
 .claws-mail/newscache
 .claws-mail/RSSyl/My\ Feeds\ \(RSSyl\)/*
 .claws-mail/*.backup
-.claws-mail/.bak
+.claws-mail/*.bak
