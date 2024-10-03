@@ -19,7 +19,6 @@ org.chromium.Chromium
 org.fontforge.FontForge
 org.freedesktop.Piper
 org.gimp.GIMP
-org.gustavoperedo.FontDownloader
 org.inkscape.Inkscape
 org.jabref.jabref
 org.kde.filelight
