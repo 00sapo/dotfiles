@@ -4,7 +4,7 @@
 
 [filtering]
 enabled rulename "" from matchcase "@gssi.it" | to_or_cc matchcase "@gssi.it" color 4
-enabled rulename "" from matchcase "Library GSSI <library@gssi.it>" mark_as_read
+enabled rulename "" to_or_cc matchcase "allusers@gssi.it" | to_or_cc matchcase "newsletter@gssi.it" mark_as_read
 enabled rulename "" to_or_cc matchcase "michele.flammini" | from matchcase "michele.flammini" color 1
 enabled rulename "" from matchcase "studenti.unimi.it" | to_or_cc matchcase "studenti.unimi.it" color 3
 enabled rulename "" to matchcase "laudare@gssi.it" color 1
