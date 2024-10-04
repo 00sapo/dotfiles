@@ -6,7 +6,9 @@ source $HOME/.asdf/asdf.fish
 
 # brew
 if test -e /home/linuxbrew/.linuxbrew/bin/brew
+    set xdg_data_dir "$XDG_DATA_DIRS" # backup xdg-data-dir env variable
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    set --global --export XDG_DATA_DIRS "$xdg_data_dir /home/linuxbrew/.linuxbrew/share" # reset the old xdg-data-dir overridden by linuxbrew
     if test -d (brew --prefix)"/share/fish/completions"
         set -p fish_complete_path (brew --prefix)/share/fish/completions
     end
@@ -16,7 +18,7 @@ if test -e /home/linuxbrew/.linuxbrew/bin/brew
 end
 
 # snap
-set --export PATH "/snap/bin:$PATH"
+# set --export PATH "/snap/bin:$PATH"
 
 # editor
 set --export EDITOR (which nvim)
