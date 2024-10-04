@@ -9,4 +9,5 @@ enabled rulename "" to_or_cc matchcase "michele.flammini" | from matchcase "mich
 enabled rulename "" from matchcase "studenti.unimi.it" | to_or_cc matchcase "studenti.unimi.it" color 3
 enabled rulename "" to matchcase "laudare@gssi.it" color 1
 enabled rulename "" from matchcase "giacomo.pirani" | from matchcase "francesco.zimei" | from matchcase "lucia.marchi" | from matchcase "letizia.bartocci" | to_or_cc matchcase "giacomo.pirani" | to_or_cc matchcase "francesco.zimei" | to_or_cc matchcase "lucia.marchi" | to_or_cc matchcase "letizia.bartocci" color 1
+enabled rulename "" subject matchcase "[ISMIR-Community]" mark_as_read
 

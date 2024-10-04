@@ -2,6 +2,10 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
+-- remove lazyvim's autocmd wrap_spell (I prefer using ltex or turn builtin spellcheck on
+-- manually)
+vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
 -- If file is latex, then setup CTRL-B and CTRL-I to \textbf{} and \textit{} when in
 -- visual mode and the same in insert mode but the cursor ends before the }
 vim.api.nvim_create_autocmd("BufEnter", {
