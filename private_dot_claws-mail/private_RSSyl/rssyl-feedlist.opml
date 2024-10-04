@@ -2,12 +2,12 @@
 <opml version="1.1">
 	<head>
 		<title>RSSyl Feed List Export</title>
-		<dateCreated>Thu,  3 Oct 2024 20:08:24 GMT</dateCreated>
+		<dateCreated>Fri,  4 Oct 2024 13:10:09 GMT</dateCreated>
 	</head>
 	<body>
 		<outline title="La Provincia Pavese - News, inchieste e approfondimenti pavia" text="La Provincia Pavese - News, inchieste e approfondimenti pavia" description="La Provincia Pavese - News, inchieste e approfondimenti pavia" type="rss" xmlUrl="https://laprovinciapavese.gelocal.it/rss/finegil/laprovinciapavese/feed.rss"/>
-		<outline title="Il Giorno" text="Il Giorno" description="Il Giorno" type="rss" xmlUrl="https://www.ilgiorno.it/pavia/rss"/>
+		<outline title="Tutte le notizie di Pavia oggi - Giorno" text="Tutte le notizie di Pavia oggi - Giorno" description="Tutte le notizie di Pavia oggi - Giorno" type="rss" xmlUrl="https://www.ilgiorno.it/pavia/rss"/>
 		<outline title="Senato.it - DDL S. 1240 - XIX Legislatura" text="Senato.it - DDL S. 1240 - XIX Legislatura" description="Senato.it - DDL S. 1240 - XIX Legislatura" type="rss" xmlUrl="https://www.senato.it/leg/19/BGT/Schede/Ddliter/rss/58531.xml"/>
-		<outline title="DI" text="DI" description="DI" type="rss" xmlUrl="https://politepol.com/fd/OZpq5UoD8svm.xml"/>
+		<outline title="News | Dipartimento di Informatica "Giovanni Degli Antoni"" text="News | Dipartimento di Informatica "Giovanni Degli Antoni"" description="News | Dipartimento di Informatica "Giovanni Degli Antoni"" type="rss" xmlUrl="https://politepol.com/fd/OZpq5UoD8svm.xml"/>
 	</body>
 </opml>
