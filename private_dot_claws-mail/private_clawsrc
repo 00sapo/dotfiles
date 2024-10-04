@@ -1,6 +1,6 @@
 [Common]
 config_version=4
-use_ext_inc=1
+use_ext_inc=0
 ext_inc_path=/usr/bin/mh/inc
 autochk_newmail=1
 autochk_interval=310
@@ -210,7 +210,7 @@ sourcewin_width=600
 sourcewin_height=500
 compose_width=1280
 compose_height=661
-compose_notebook_height=130
+compose_notebook_height=148
 compose_x=312
 compose_y=138
 enable_color=1
