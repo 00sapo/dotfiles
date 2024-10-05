@@ -12,4 +12,5 @@ enabled rulename "Laudare" from matchcase "giacomo.pirani" | from matchcase "fra
 enabled rulename "Studenti" from matchcase "studenti.unimi.it" | to_or_cc matchcase "studenti.unimi.it" color 3
 enabled rulename "Mailing Lists" from matchcase "bonetta@comune.pv.it" | subject matchcase "[ISMIR-Community]" | subject matchcase "[Aimi]" | from matchcase "noreply@marketing.18tickets.it" | from matchcase "redazione@comune.pv.it" | from matchcase "comunicazione@arci.it" | from matchcase "relest@unipv.it" | subject matchcase "[IAPR-TC11] " mark_as_read color 6
 enabled rulename "GSSI Mailing Lists" to_or_cc matchcase "allusers@gssi.it" | to_or_cc matchcase "newsletter@gssi.it" | subject matchcase "[cs-postdoc]" mark_as_read color 6
+enabled rulename "" all execute "bash $HOME/.local/bin/unifiedclaws.sh %F $HOME/All"
 
