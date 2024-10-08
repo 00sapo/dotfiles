@@ -3,14 +3,15 @@
 [postglobal]
 
 [filtering]
-enabled rulename "Submarine" from matchcase "oblo@thesubmarine.it" color 5
-enabled rulename "VillaSerafina47" from matchcase "rriva@bancaetica.com" | to_or_cc matchcase "rriva@bancaetica.com" | to_or_cc matchcase "alepassino3@yahoo.it" | from matchcase "alepassino3@yahoo.it" | from matchcase "pvca3@tecnocasa.it" | to_or_cc matchcase "pvca3@tecnocasa.it" color 2
-enabled rulename "GSSI" from matchcase "@gssi.it" | to_or_cc matchcase "@gssi.it" color 4
-enabled rulename "Laudare" to_or_cc matchcase "michele.flammini" | from matchcase "michele.flammini" color 1
-enabled rulename "Laudare" to matchcase "laudare@gssi.it" color 1
-enabled rulename "Laudare" from matchcase "giacomo.pirani" | from matchcase "francesco.zimei" | from matchcase "lucia.marchi" | from matchcase "letizia.bartocci" | to_or_cc matchcase "giacomo.pirani" | to_or_cc matchcase "francesco.zimei" | to_or_cc matchcase "lucia.marchi" | to_or_cc matchcase "letizia.bartocci" color 1
-enabled rulename "Studenti" from matchcase "studenti.unimi.it" | to_or_cc matchcase "studenti.unimi.it" color 3
-enabled rulename "Mailing Lists" from matchcase "bonetta@comune.pv.it" | subject matchcase "[ISMIR-Community]" | subject matchcase "[Aimi]" | from matchcase "noreply@marketing.18tickets.it" | from matchcase "redazione@comune.pv.it" | from matchcase "comunicazione@arci.it" | from matchcase "relest@unipv.it" | subject matchcase "[IAPR-TC11] " mark_as_read color 6
-enabled rulename "GSSI Mailing Lists" to_or_cc matchcase "allusers@gssi.it" | to_or_cc matchcase "newsletter@gssi.it" | subject matchcase "[cs-postdoc]" mark_as_read color 6
+disabled rulename "Self BCC" from matchcase "federicosimonetta@zoho.com" | from matchcase "federicosimonetta@outlook.it" | from matchcase "federico.simonetta@gssi.it" | from matchcase "federicosimonetta@zohomail.com" mark_as_read
+enabled rulename "Submarine" from matchcase "oblo@thesubmarine.it" color 5 stop
+enabled rulename "VillaSerafina47" from matchcase "rriva@bancaetica.com" | to_or_cc matchcase "rriva@bancaetica.com" | to_or_cc matchcase "alepassino3@yahoo.it" | from matchcase "alepassino3@yahoo.it" | from matchcase "pvca3@tecnocasa.it" | to_or_cc matchcase "pvca3@tecnocasa.it" color 2 stop
+enabled rulename "Laudare" to_or_cc matchcase "michele.flammini" | from matchcase "michele.flammini" color 1 stop
+enabled rulename "Laudare" to matchcase "laudare@gssi.it" color 1 stop
+enabled rulename "Laudare" from matchcase "giacomo.pirani" | from matchcase "francesco.zimei" | from matchcase "lucia.marchi" | from matchcase "letizia.bartocci" | to_or_cc matchcase "giacomo.pirani" | to_or_cc matchcase "francesco.zimei" | to_or_cc matchcase "lucia.marchi" | to_or_cc matchcase "letizia.bartocci" color 1 stop
+enabled rulename "Studenti" from matchcase "studenti.unimi.it" | to_or_cc matchcase "studenti.unimi.it" color 3 stop
+enabled rulename "Mailing Lists" from matchcase "bonetta@comune.pv.it" | subject matchcase "[ISMIR-Community]" | subject matchcase "[Aimi]" | from matchcase "noreply@marketing.18tickets.it" | from matchcase "redazione@comune.pv.it" | from matchcase "comunicazione@arci.it" | from matchcase "relest@unipv.it" | subject matchcase "[IAPR-TC11] " mark_as_read color 6 stop
+enabled rulename "GSSI Mailing Lists" to_or_cc matchcase "allusers@gssi.it" | to_or_cc matchcase "newsletter@gssi.it" | subject matchcase "[cs-postdoc]" mark_as_read color 6 stop
+enabled rulename "GSSI" from matchcase "@gssi.it" | to_or_cc matchcase "@gssi.it" color 4 stop
 disabled rulename "" all execute "bash $HOME/.local/bin/unifiedclaws.sh %F $HOME/All"
 

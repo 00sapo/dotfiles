@@ -19,11 +19,11 @@ config.keys = {
 	{ key = "l", mods = "CTRL|ALT", action = act.ActivateTabRelativeNoWrap(1) },
 	{ key = "k", mods = "CTRL|ALT", action = act.ScrollByLine(-1) },
 	{ key = "j", mods = "CTRL|ALT", action = act.ScrollByLine(1) },
+	{ key = "d", mods = "ALT", action = act.ActivateLastTab },
 	{
-		key = "d",
+		key = "e",
 		mods = "ALT",
 		action = act.Multiple({
-			act.ActivateLastTab,
 			act.SendKey({ key = "\n" }),
 			act.SendKey({ key = "\n" }),
 			act.SendKey({ key = "\n" }),

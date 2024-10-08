@@ -317,8 +317,8 @@ always_encrypt=0
 save_copy_to_folder=0
 folder_color=#000000
 enable_processing=0
-enable_processing_when_opening=0
-newmailcheck=0
+enable_processing_when_opening=1
+newmailcheck=1
 offlinesync=1
 offlinesync_days=30
 remove_old_bodies=1
@@ -337,6 +337,7 @@ forward_override_from_format=
 forward_quotemark=
 forward_body_format=
 config_version=4
+
 [#imap/GSSI/Spam]
 enable_default_from=0
 default_from=
