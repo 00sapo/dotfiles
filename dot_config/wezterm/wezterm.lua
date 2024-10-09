@@ -21,7 +21,7 @@ config.keys = {
 	{ key = "j", mods = "CTRL|ALT", action = act.ScrollByLine(1) },
 	{ key = "d", mods = "ALT", action = act.ActivateLastTab },
 	{
-		key = "e",
+		key = "c",
 		mods = "ALT",
 		action = act.Multiple({
 			act.SendKey({ key = "\n" }),
