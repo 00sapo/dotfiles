@@ -662,6 +662,7 @@ spice-html5
 spice-vdagent
 spice-webdavd
 steam-installer
+stopwatch
 sudo
 swig
 switcheroo-control
@@ -705,7 +706,6 @@ util-linux
 util-linux-extra
 vim-common
 vim-tiny
-vivaldi-stable
 vlc-plugin-base
 vlc-plugin-video-output
 vulkan-tools:i386
