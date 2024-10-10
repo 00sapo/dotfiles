@@ -36,38 +36,62 @@ create_backup() {
   fi
 }
 
-existing_mounts=$(mount | grep fuse.rclone)
-# create mount points if they don't exist and mount
-for ((i = 0; i < ${#remotes[@]}; ++i)); do
-  # if the remote is already mounted, skip it
-  if echo "$existing_mounts" | grep -q "${locals[$i]}"; then
-    echo "${remotes[$i]} is already mounted to ${locals[$i]}"
-    continue
-  fi
-  if [ ! -d "${locals[$i]}" ]; then
-    mkdir -p "${locals[$i]}"
+_mount() {
+  if [ ! -d "$1" ]; then
+    mkdir -p "$1"
   else
-    create_backup "${locals[$i]}"
+    create_backup "$1"
   fi
-  parent=$(dirname "${locals[$i]}")
+  parent=$(dirname "$1")
   nohup rclone mount --password-command="$cmd" \
     --vfs-cache-mode full \
     --vfs-cache-max-size 2G \
     --vfs-cache-max-age 720h \
     --vfs-write-back 1s \
     --log-level INFO \
-    "${remotes[$i]}": "${locals[$i]}" >$parent/${remotes[$i]}.log 2>&1 &
+    "$2": "$1" >$parent/$2.log 2>&1 &
   # get the output of the last command (if it failed, print an error message)
   sleep 5
   if [ $? -eq 0 ]; then
-    echo "Mounted ${remotes[$i]} to ${locals[$i]}"
-    rsync -a "${locals[$i]}.bak/" "${locals[$i]}/"
+    echo "Mounted $2 to $1"
+    rsync -a "$1.bak/" "$1/"
     if [ $? -eq 0 ]; then
-      echo "Successfully merged ${locals[$i]}.bak to ${locals[$i]}"
+      echo "Successfully merged $1.bak to $1"
     else
-      echo "!!! Failed to merge ${locals[$i]}.bak to ${locals[$i]} !!!"
+      echo "!!! Failed to merge $1.bak to $1 !!!"
     fi
   else
-    echo "!!! Failed to mount ${remotes[$i]} to ${locals[$i]} !!!"
+    echo "!!! Failed to mount $2 to $1 !!!"
   fi
-done
+}
+
+existing_mounts=$(mount | grep fuse.rclone)
+# create mount points if they don't exist and mount
+# if some argument is give, mount only the remote passed as $1
+# otherwise, mount all remotes
+if [ $# -eq 1 ]; then
+  for ((i = 0; i < ${#remotes[@]}; ++i)); do
+    if [ "$1" = "${remotes[$i]}" ]; then
+      loc=${locals[$i]}
+      rem=${remotes[$i]}
+      _mount "$loc" "$rem"
+      exit 0
+    fi
+  done
+  echo "Remote $1 not found"
+  exit 1
+elif [ $# -eq 0 ]; then
+  for ((i = 0; i < ${#remotes[@]}; ++i)); do
+    loc=${locals[$i]}
+    rem=${remotes[$i]}
+    # if the remote is already mounted, skip it
+    if echo "$existing_mounts" | grep -q "$loc"; then
+      echo "$rem is already mounted to $loc"
+      continue
+    fi
+    _mount "$loc" "$rem"
+  done
+else
+  echo "Usage: rclone-mounts [remote]"
+  exit 1
+fi
