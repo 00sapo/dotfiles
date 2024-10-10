@@ -1,6 +1,4 @@
 -- Autocmds are automatically loaded on the VeryLazy event
--- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
--- Add any additional autocmds here
 
 -- remove lazyvim's autocmd wrap_spell (I prefer using ltex or turn builtin spellcheck on
 -- manually)
@@ -19,13 +17,18 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 -- Load file nvim-dap.json in current working directory if it exists
-vim.api.nvim_create_autocmd("VimEnter", {
+-- Using this trick of OnlyOnce because VimEnter doesn't work for some reason
+-- but BufEnter does
+vim.api.nvim_create_augroup("OnlyOnce", {})
+vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*",
-  callback = function(ev)
+  group = "OnlyOnce",
+  callback = function()
     local file = vim.fn.expand(".")
     if vim.fn.filereadable(file .. "/nvim-dap.json") then
       require("dap.ext.vscode").load_launchjs(file .. "/nvim-dap.json")
     end
+    vim.api.nvim_del_augroup_by_name("OnlyOnce")
   end,
 })
 
