@@ -13,9 +13,7 @@ if [[ -e /run/.containerenv || -e /.dockerenv ]]; then
 fi
 
 # command for retrieving rclone password
-if [[ $(command -v rbw) ]]; then
-  cmd="rbw get rclone"
-elif [[ $(command -v kwallet-query) ]]; then
+if [[ $(command -v kwallet-query) ]]; then
   cmd="kwallet-query -r rclone-config kdewallet"
 elif [[ $(command -v secret-tool) ]]; then
   # note, secret-tool is installed by homebrew as a dependency of poppler and of some
