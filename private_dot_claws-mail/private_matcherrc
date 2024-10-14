@@ -5,7 +5,7 @@
 [filtering]
 enabled rulename "Self BCC" from matchcase "federicosimonetta@zoho.com" | from matchcase "federicosimonetta@outlook.it" | from matchcase "federico.simonetta@gssi.it" | from matchcase "federicosimonetta@zohomail.com" mark_as_read
 enabled rulename "Submarine" from matchcase "oblo@thesubmarine.it" color 5 stop
-enabled rulename "VillaSerafina47" from matchcase "rriva@bancaetica.com" | to_or_cc matchcase "rriva@bancaetica.com" | to_or_cc matchcase "alepassino3@yahoo.it" | from matchcase "alepassino3@yahoo.it" | from matchcase "pvca3@tecnocasa.it" | to_or_cc matchcase "pvca3@tecnocasa.it" color 2 stop
+enabled rulename "VillaSerafina47" from matchcase "rriva@bancaetica.com" | to_or_cc matchcase "rriva@bancaetica.com" | to_or_cc matchcase "alepassino3@yahoo.it" | from matchcase "alepassino3@yahoo.it" | from matchcase "pvca3@tecnocasa.it" | to_or_cc matchcase "pvca3@tecnocasa.it" | to_or_cc matchcase "dott.lavezza@studiolavezza.eu" | from matchcase "dott.lavezza@studiolavezza.eu" color 2 stop
 enabled rulename "Laudare" to_or_cc matchcase "michele.flammini" | from matchcase "michele.flammini" color 1 stop
 enabled rulename "Laudare" to matchcase "laudare@gssi.it" color 1 stop
 enabled rulename "Laudare" from matchcase "giacomo.pirani" | from matchcase "francesco.zimei" | from matchcase "lucia.marchi" | from matchcase "letizia.bartocci" | to_or_cc matchcase "giacomo.pirani" | to_or_cc matchcase "francesco.zimei" | to_or_cc matchcase "lucia.marchi" | to_or_cc matchcase "letizia.bartocci" color 1 stop

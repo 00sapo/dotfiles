@@ -1,2 +1,11 @@
+berkeley-db@5
+expat
 git-delta
 lazygit
+libassuan
+libnsl
+mpdecimal
+pcre2
+python-packaging
+sqlite
+xz

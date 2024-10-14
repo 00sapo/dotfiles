@@ -1,3 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <address-book name="Common addresses" >
+  <person uid="730853062" first-name="" last-name="" nick-name="" cn="Eventi Zapier" >
+    <address-list>
+      <address uid="730853063" alias="" email="events.t3yrk8@zapiermail.com" remarks="" />
+    </address-list>
+    <attribute-list>
+    </attribute-list>
+  </person>
+  <person uid="730853064" first-name="" last-name="" nick-name="" cn="Raffaele Lavezza" >
+    <address-list>
+      <address uid="730853065" alias="" email="dott.lavezza@studiolavezza.eu" remarks="" />
+    </address-list>
+    <attribute-list>
+    </attribute-list>
+  </person>
 </address-book>

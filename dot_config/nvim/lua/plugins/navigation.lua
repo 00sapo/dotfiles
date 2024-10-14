@@ -45,6 +45,14 @@ local M = {
     priority = 1001,
   },
   {
+    "tris203/precognition.nvim",
+    opts = {
+      hints = {
+        Caret = { text = "_", prio = 2 },
+      },
+    },
+  },
+  {
     "tomasky/bookmarks.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
     event = "VimEnter",

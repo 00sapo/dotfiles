@@ -40,8 +40,8 @@ M = {
           elements = {
             -- "console",
             -- { id = "breakpoints", size = 0.25 },
-            { id = "stacks", size = 0.25 },
             { id = "watches", size = 0.75 },
+            { id = "stacks", size = 0.25 },
           },
           size = 10,
           position = "bottom", -- Can be "bottom" or "top"

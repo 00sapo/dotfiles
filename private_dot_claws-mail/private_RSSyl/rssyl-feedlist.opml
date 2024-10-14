@@ -2,15 +2,16 @@
 <opml version="1.1">
 	<head>
 		<title>RSSyl Feed List Export</title>
-		<dateCreated>Thu, 10 Oct 2024 16:17:27 GMT</dateCreated>
+		<dateCreated>Sun, 13 Oct 2024 20:17:39 GMT</dateCreated>
 	</head>
 	<body>
 		<outline title="La Provincia Pavese - News, inchieste e approfondimenti pavia" text="La Provincia Pavese - News, inchieste e approfondimenti pavia" description="La Provincia Pavese - News, inchieste e approfondimenti pavia" type="rss" xmlUrl="https://laprovinciapavese.gelocal.it/rss/finegil/laprovinciapavese/feed.rss"/>
 		<outline title="Tutte le notizie di Pavia oggi - Giorno" text="Tutte le notizie di Pavia oggi - Giorno" description="Tutte le notizie di Pavia oggi - Giorno" type="rss" xmlUrl="https://www.ilgiorno.it/pavia/rss"/>
 		<outline title="Senato.it - DDL S. 1240 - XIX Legislatura" text="Senato.it - DDL S. 1240 - XIX Legislatura" description="Senato.it - DDL S. 1240 - XIX Legislatura" type="rss" xmlUrl="https://www.senato.it/leg/19/BGT/Schede/Ddliter/rss/58531.xml"/>
-		<outline title="News | Dipartimento di Informatica "Giovanni Degli Antoni"" text="News | Dipartimento di Informatica "Giovanni Degli Antoni"" description="News | Dipartimento di Informatica "Giovanni Degli Antoni"" type="rss" xmlUrl="https://politepol.com/fd/OZpq5UoD8svm.xml"/>
+		<outline title="News | Dipartimento di Informatica "Giovanni Degli Antoni"" text="News | Dipartimento di Informatica "Giovanni Degli Antoni"" description="News | Dipartimento di Informatica "Giovanni Degli Antoni"" type="rss" xmlUrl="https://morss.it/:items=%7C%7C*[class=unimi-card]/https://di.unimi.it/it/news-ed-eventi/news"/>
 		<outline title="Jacobin Italia" text="Jacobin Italia" description="Jacobin Italia" type="rss" xmlUrl="https://jacobinitalia.it/feed/"/>
 		<outline title="ADI - Associazione Dottorandi e Dottori di Ricerca in Italia" text="ADI - Associazione Dottorandi e Dottori di Ricerca in Italia" description="ADI - Associazione Dottorandi e Dottori di Ricerca in Italia" type="rss" xmlUrl="https://dottorato.it/rss.xml"/>
 		<outline title="ROARS" text="ROARS" description="ROARS" type="rss" xmlUrl="https://www.roars.it/feed/"/>
+		<outline title="Scioperi | Commissione Garanzia Sciopero" text="Ricerca Scioperi | Commissione Garanzia Sciopero" description="Ricerca Scioperi | Commissione Garanzia Sciopero" type="rss" xmlUrl="https://morss.it/:items=%7C%7C*[class=a-row-settore]/https://www.cgsse.it/calendario-scioperi?data_inizio=&amp;data_fine=&amp;azienda%5B%5D=1229&amp;azienda%5B%5D=8468&amp;azienda%5B%5D=9871&amp;azienda%5B%5D=19085&amp;azienda%5B%5D=8997&amp;azienda%5B%5D=7182&amp;azienda%5B%5D=14975&amp;azienda%5B%5D=14985&amp;azienda%5B%5D=5705"/>
 	</body>
 </opml>

@@ -1,2 +1,2 @@
-xdg-open %s
 xdg-open '%s'
+xdg-open %s

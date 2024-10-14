@@ -12,11 +12,13 @@ get_unread() {
 
 old_unread=0
 while true; do
-  new_unread=$(get_unread)
-  tot_unread=$((new_unread - old_unread))
-  if [[ $tot_unread -gt 0 ]]; then
-    notify-send -a "Claws Mail" -h "string:desktop-entry:claws-mail" "$tot_unread unread emails."
+  if pgrep claws-mail >/dev/null; then
+    new_unread=$(get_unread)
+    tot_unread=$((new_unread - old_unread))
+    if [[ $tot_unread -gt 0 ]]; then
+      notify-send -a "Claws Mail" -h "string:desktop-entry:claws-mail" "$tot_unread unread emails."
+    fi
+    old_unread=$new_unread
   fi
-  old_unread=$new_unread
   sleep 5
 done
