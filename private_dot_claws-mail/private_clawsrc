@@ -37,6 +37,7 @@ compose_subject_format=
 compose_body_format=Hello,\n
 show_compose_margin=0
 type_any_header=1
+notify_pasted_attachments=1
 linewrap_length=72
 linewrap_quotation=1
 linewrap_pastes=1
@@ -75,35 +76,35 @@ normal_font_gtk2=Sans 10
 bold_font_gtk2=Sans Bold 10
 use_different_print_font=0
 derive_from_normal_font=1
-custom_color1=#e66100
+custom_color1=#e65f00
 custom_colorlabel1=Laudare
-custom_color2=#865e3c
+custom_color2=#865e3b
 custom_colorlabel2=ViaVillaSerafina47
-custom_color3=#813d9c
+custom_color3=#7f3d9c
 custom_colorlabel3=Studenti
-custom_color4=#1c71d8
+custom_color4=#1a6fd7
 custom_colorlabel4=GSSI
-custom_color5=#26a269
+custom_color5=#25a067
 custom_colorlabel5=Submarine
-custom_color6=#9a9996
+custom_color6=#989796
 custom_colorlabel6=Mailing Lists
 custom_color7=#663333
 custom_colorlabel7=Brown
-custom_color8=#aaaaaa
+custom_color8=#a8a8a8
 custom_colorlabel8=Grey
-custom_color9=#c07254
+custom_color9=#bf7253
 custom_colorlabel9=Light brown
-custom_color10=#c00000
+custom_color10=#bf0000
 custom_colorlabel10=Dark red
-custom_color11=#cc1074
+custom_color11=#cc0e73
 custom_colorlabel11=Dark pink
-custom_color12=#5094cd
+custom_color12=#4f94cd
 custom_colorlabel12=Steel blue
 custom_color13=#ffd500
 custom_colorlabel13=Gold
-custom_color14=#00d800
+custom_color14=#00d700
 custom_colorlabel14=Bright green
-custom_color15=#c060c0
+custom_color15=#bf5fbf
 custom_colorlabel15=Magenta
 display_image=1
 resize_image=1
@@ -164,8 +165,8 @@ summary_col_size_locked=13
 summary_col_size_tags=88
 folderwin_x=16
 folderwin_y=16
-folderview_width=273
-folderview_height=499
+folderview_width=279
+folderview_height=621
 folderview_visible=1
 folder_col_show_folder=1
 folder_col_show_new=0
@@ -184,24 +185,24 @@ folder_default_thread_collapsed=0
 folder_default_hide_read_threads=0
 folder_default_hide_read_msgs=0
 folder_default_hide_del_msgs=0
-summaryview_width=1916
-summaryview_height=367
+summaryview_width=1064
+summaryview_height=314
 main_messagewin_x=256
 main_messagewin_y=210
-messageview_width=1642
-messageview_height=499
+messageview_width=1064
+messageview_height=306
 messageview_visible=1
-mainview_x=375
-mainview_y=114
-mainview_width=1916
-mainview_height=999
-mainwin_x=375
-mainwin_y=114
-mainwin_maximised=1
+mainview_x=380
+mainview_y=71
+mainview_width=1064
+mainview_height=753
+mainwin_x=380
+mainwin_y=71
+mainwin_maximised=0
 mainwin_fullscreen=0
 mainwin_menubar=1
-mainwin_width=1920
-mainwin_height=999
+mainwin_width=1348
+mainwin_height=753
 messagewin_width=960
 messagewin_height=999
 mimeview_tree_height=139
@@ -213,17 +214,17 @@ compose_notebook_height=242
 compose_x=375
 compose_y=137
 enable_color=1
-quote_level1_color=#0000b3
-quote_level2_color=#0000b3
-quote_level3_color=#0000b3
+quote_level1_color=#0000b1
+quote_level2_color=#0000b1
+quote_level3_color=#0000b1
 enable_bgcolor=0
 quote_level1_bgcolor=#cccccc
 quote_level2_bgcolor=#d4d4d4
 quote_level3_bgcolor=#dddddd
 uri_color=#007f00
 emphasis_color=#0000cf
-target_folder_color=#da1cca
-signature_color=#797979
+target_folder_color=#d81ac8
+signature_color=#777777
 recycle_quote_colors=0
 default_header_color=#000000
 default_header_bgcolor=#f5f6be
@@ -232,7 +233,7 @@ tags_bgcolor=#f5f6be
 qs_active_color=#000000
 qs_active_bgcolor=#f5f6be
 qs_error_color=#000000
-qs_error_bgcolor=#ff7070
+qs_error_bgcolor=#ff6f6f
 display_header_pane=0
 display_header=1
 display_xface=1
@@ -255,7 +256,7 @@ attach_load_directory=/home/federico/MEGAsync/Documents/Burocrazia/VillaSerafina
 mime_textviewer=
 mime_open_command=xdg-open '%s'
 show_inline_attachments=1
-layout_mode=4
+layout_mode=0
 open_selected_message_on_folder_open=0
 open_selected_message_on_search_results=0
 open_selected_message_on_prevnext=0
@@ -280,7 +281,7 @@ immediate_execution=0
 nextunreadmsg_dialog=1
 summary_from_show=0
 pixmap_theme_path=INTERNAL_DEFAULT
-enable_alpha_svg=1
+enable_alpha_svg=0
 enable_pixmap_scaling=1
 pixmap_scaling_auto=1
 pixmap_scaling_ppi=140
@@ -320,7 +321,7 @@ log_in_color=#000000
 log_out_color=#0000ef
 log_status_ok_color=#00af00
 log_status_nok_color=#0000af
-log_status_skip_color=#aa00aa
+log_status_skip_color=#a800a8
 enable_filtering_debug=0
 filtering_debug_level=1
 enable_filtering_debug_inc=1
@@ -331,7 +332,7 @@ enable_filtering_debug_post_proc=0
 filtering_debug_clip_log=1
 filtering_debug_log_length=500
 gtk_enable_accels=1
-color_new=#0000b3
+color_new=#0000b1
 filteringwin_width=1280
 filteringwin_height=661
 filteringactionwin_width=1115
@@ -369,7 +370,7 @@ editaccountwin_width=700
 editaccountwin_height=550
 accountswin_width=500
 accountswin_height=405
-logwin_width=933
+logwin_width=1574
 logwin_height=400
 filtering_debugwin_width=600
 filtering_debugwin_height=400
@@ -403,6 +404,8 @@ cache_min_keep_time=15
 thread_by_subject_max_age=10
 last_opened_folder=
 goto_last_folder_on_startup=0
+startup_folder=
+goto_folder_on_startup=0
 summary_quicksearch_sticky=1
 summary_quicksearch_dynamic=0
 summary_quicksearch_autorun=1
@@ -433,9 +436,9 @@ two_line_vertical=1
 inherit_folder_properties=0
 flush_metadata=0
 nav_history_length=50
-diff_added_color=#008b8b
+diff_added_color=#008989
 diff_deleted_color=#6a5acd
-diff_hunk_color=#a52a2a
+diff_hunk_color=#a52929
 folder_search_wildcard=1
 address_search_wildcard=1
 enable_avatars=0
@@ -453,17 +456,21 @@ proxy_pass=
 qs_press_timeout=500
 
 [Plugins_Common]
+/usr/lib/x86_64-linux-gnu/claws-mail/plugins/newmail.so
 
 [Plugins_GTK3]
 /usr/lib/x86_64-linux-gnu/claws-mail/plugins/address_keeper.so
-/usr/lib/x86_64-linux-gnu/claws-mail/plugins/archive.so
 /usr/lib/x86_64-linux-gnu/claws-mail/plugins/attachwarner.so
 /usr/lib/x86_64-linux-gnu/claws-mail/plugins/att_remover.so
 /usr/lib/x86_64-linux-gnu/claws-mail/plugins/fancy.so
+/usr/lib/x86_64-linux-gnu/claws-mail/plugins/keyword_warner.so
 /usr/lib/x86_64-linux-gnu/claws-mail/plugins/libravatar.so
+/usr/lib/x86_64-linux-gnu/claws-mail/plugins/mailmbox.so
 /usr/lib/x86_64-linux-gnu/claws-mail/plugins/notification.so
-/usr/lib/x86_64-linux-gnu/claws-mail/plugins/pdf_viewer.so
 /usr/lib/x86_64-linux-gnu/claws-mail/plugins/rssyl.so
+pgpcore.so
+/usr/lib/x86_64-linux-gnu/claws-mail/plugins/smime.so
+/usr/lib/x86_64-linux-gnu/claws-mail/plugins/spamassassin.so
 
 [Python]
 console_win_width=-1
@@ -502,7 +509,7 @@ rename=0
 unlink=0
 
 [SpamAssassin]
-enable=0
+enable=1
 transport=1
 hostname=localhost
 port=783
@@ -560,12 +567,10 @@ enable_plugins=0
 open_external=1
 zoom_level=100
 enable_java=0
-enable_proxy=0
-proxy_server=http://SERVERNAME:PORT
 stylesheet=
 
 [NotificationPlugin]
-include_mail=0
+include_mail=1
 include_news=0
 include_rss=0
 include_calendar=0

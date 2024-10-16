@@ -1,8 +1,9 @@
-max_id 55
+max_id 56
 52	$labelvivAM24
 45	$MailFlagBit1
 51	$MDNSent
 50	$labelvivSecurityNotification
+56	GSSI
 49	$labelvivStudenti
 55	$Phishing
 48	$labelvivLaudare

@@ -2,7 +2,7 @@
 <opml version="1.1">
 	<head>
 		<title>RSSyl Feed List Export</title>
-		<dateCreated>Sun, 13 Oct 2024 20:17:39 GMT</dateCreated>
+		<dateCreated>Tue, 15 Oct 2024 22:54:27 GMT</dateCreated>
 	</head>
 	<body>
 		<outline title="La Provincia Pavese - News, inchieste e approfondimenti pavia" text="La Provincia Pavese - News, inchieste e approfondimenti pavia" description="La Provincia Pavese - News, inchieste e approfondimenti pavia" type="rss" xmlUrl="https://laprovinciapavese.gelocal.it/rss/finegil/laprovinciapavese/feed.rss"/>
@@ -13,5 +13,6 @@
 		<outline title="ADI - Associazione Dottorandi e Dottori di Ricerca in Italia" text="ADI - Associazione Dottorandi e Dottori di Ricerca in Italia" description="ADI - Associazione Dottorandi e Dottori di Ricerca in Italia" type="rss" xmlUrl="https://dottorato.it/rss.xml"/>
 		<outline title="ROARS" text="ROARS" description="ROARS" type="rss" xmlUrl="https://www.roars.it/feed/"/>
 		<outline title="Scioperi | Commissione Garanzia Sciopero" text="Ricerca Scioperi | Commissione Garanzia Sciopero" description="Ricerca Scioperi | Commissione Garanzia Sciopero" type="rss" xmlUrl="https://morss.it/:items=%7C%7C*[class=a-row-settore]/https://www.cgsse.it/calendario-scioperi?data_inizio=&amp;data_fine=&amp;azienda%5B%5D=1229&amp;azienda%5B%5D=8468&amp;azienda%5B%5D=9871&amp;azienda%5B%5D=19085&amp;azienda%5B%5D=8997&amp;azienda%5B%5D=7182&amp;azienda%5B%5D=14975&amp;azienda%5B%5D=14985&amp;azienda%5B%5D=5705"/>
+		<outline title="Scienza In Rete" text="" description="" type="rss" xmlUrl="https://www.scienzainrete.it/rss"/>
 	</body>
 </opml>
