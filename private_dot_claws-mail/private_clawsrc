@@ -192,12 +192,12 @@ main_messagewin_y=210
 messageview_width=1064
 messageview_height=306
 messageview_visible=1
-mainview_x=380
-mainview_y=71
+mainview_x=300
+mainview_y=74
 mainview_width=1064
 mainview_height=753
-mainwin_x=380
-mainwin_y=71
+mainwin_x=300
+mainwin_y=74
 mainwin_maximised=0
 mainwin_fullscreen=0
 mainwin_menubar=1
@@ -509,7 +509,7 @@ rename=0
 unlink=0
 
 [SpamAssassin]
-enable=1
+enable=0
 transport=1
 hostname=localhost
 port=783

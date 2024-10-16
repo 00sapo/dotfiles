@@ -12,7 +12,7 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
-config.font_size = 10.0
+config.font_size = 10.5
 
 -- keybindings
 config.keys = {
