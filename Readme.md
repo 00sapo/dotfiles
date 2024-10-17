@@ -60,10 +60,20 @@ This software is installed in the base system for performance reasons.
 5. BespokeSynth
 6. Ardour
 
-### Packages that should be migrated to flatpak
+### Packages that should be migrated to appimage/flatpaks
 
 1. btrfs-assistant (from OBS repos)
 2. megasync (flatpak version freezes when syncing, needs the sources apt list)
+
+### Other notes
+
+#### Evolution
+
+Evolution flatpak is a mess.
+The debian one easily remains behin third-party provider changes (microsoft, google, etc.)
+Right now archlinux distrobox is the best option, but needs some dbus files installed in the base system: `apt
+install evolution-data-server`.
+Moreover, archlinux also provides evolution-on for the system-tray icon.
 
 ```
 
