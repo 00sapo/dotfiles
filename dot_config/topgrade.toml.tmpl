@@ -90,7 +90,7 @@ no_retry = true
 {{- if eq .chezmoi.hostname "cucchia" }}
 "01. Export flatpaks" = "flatpak list --columns=application --app > ~/flatpak.install"
 # "02. Export brew packages" = "fish -c 'brew leaves > ~/brew.install'"
-"02. Export distrobox binaries" = "distrobox enter archlinux -- distrobox-export --list-binaries | awk '{print $1}' | sed s/\'//g > ~/distrobox.install"
+"02. Export distrobox binaries" = "distrobox enter archlinux -- distrobox-export --list-binaries | awk '{print $1}' | sed s/\\\'//g > ~/distrobox.install"
 "03. Export AM packages" = "am -f --byname | awk '/◆/{print $2}' > ~/am.install"
 # "03. Export snap packages" = "snap list | awk '{print $1}' | tail -n +2 > ~/snap.install"
 "04. Export base packages" = "apt-mark showmanual > ~/debianbase.install"
