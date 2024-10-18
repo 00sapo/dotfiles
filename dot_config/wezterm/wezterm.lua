@@ -13,6 +13,8 @@ config.window_padding = {
 	bottom = 0,
 }
 config.font_size = 10.5
+config.initial_rows = 36
+config.initial_cols = 120
 
 -- keybindings
 config.keys = {
