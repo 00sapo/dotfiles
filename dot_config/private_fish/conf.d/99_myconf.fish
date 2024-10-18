@@ -21,8 +21,10 @@ source $HOME/.asdf/asdf.fish
 # set --export PATH "/snap/bin:$PATH"
 
 # editor
-set --export EDITOR (which nvim)
-set --export SYSTEM_EDITOR (which nvim)
+if command -v nvim >/dev/null
+    set --export EDITOR (which nvim)
+    set --export SYSTEM_EDITOR (which nvim)
+end
 
 # ruby
 set --export PATH "$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
