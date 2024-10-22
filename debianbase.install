@@ -83,7 +83,6 @@ firmware-misc-nonfree
 firmware-realtek
 firmware-sof-signed
 fish
-flatpak
 fontconfig
 fonts-liberation
 fonts-noto
@@ -206,6 +205,7 @@ libdb5.3
 libdbd-sqlite3-perl
 libdbi-perl
 libdbix-simple-perl
+libdbus-glib-1-2
 libdebconfclient0
 libdebuginfod1
 libdevel-overloadinfo-perl
@@ -475,6 +475,7 @@ libreadline-dev
 libreadline8
 libregexp-wildcards-perl
 libreoffice-gtk3
+libreoffice-java-common
 libreoffice-writer
 librhythmbox-core10
 librsync2
@@ -683,7 +684,6 @@ pipewire-jack
 pipx
 pkexec
 plasma-desktop
-plasma-discover-backend-flatpak
 plasma-wallpapers-addons
 plasma-workspace
 plugdata
@@ -795,6 +795,7 @@ util-linux-extra
 vim-common
 vim-tiny
 vino
+vnstat
 vulkan-tools:i386
 wamerican
 wezterm
