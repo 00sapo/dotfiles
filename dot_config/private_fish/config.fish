@@ -18,7 +18,13 @@ if status is-interactive
 
     command -v cbonsai >/dev/null; and cbonsai --base (random 1 2) --life (random 10 80) --multiplier (random 2 18) --message (fortune -as)
 
-    if status is-interactive && ! functions -q fisher
+    if ! functions -q fisher
         curl -sL https://git.io/fisher | source && fisher update
+    end
+
+    if command -v distrobox-enter >/dev/null; and command -v notify-send >/dev/null
+        if test -n "$(distrobox-enter archlinux -- arch-audit -u)"
+            notify-send -a Archlinux -h "string:desktop-entry:Archlinux" Security update needed!
+        end
     end
 end
