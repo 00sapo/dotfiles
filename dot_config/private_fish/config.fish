@@ -22,9 +22,4 @@ if status is-interactive
         curl -sL https://git.io/fisher | source && fisher update
     end
 
-    if command -v distrobox-enter >/dev/null; and command -v notify-send >/dev/null
-        if test -n "$(distrobox-enter archlinux -- arch-audit -u)"
-            notify-send -a Archlinux -h "string:desktop-entry:Archlinux" Security update needed!
-        end
-    end
 end
