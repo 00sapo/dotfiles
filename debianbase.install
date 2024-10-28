@@ -97,6 +97,7 @@ gedit
 gettext-base
 gfortran
 git
+gnome-boxes
 gpg
 gpgv
 grep
@@ -616,6 +617,7 @@ lsb-release
 lsof
 lsyncd
 lvm2
+lynis
 lynx
 lzop
 man-db
@@ -728,6 +730,7 @@ re2c
 readline-common
 remmina
 remmina-common
+remmina-plugin-vnc
 reportbug
 rhythmbox
 rhythmbox-data
