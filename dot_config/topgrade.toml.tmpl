@@ -90,11 +90,11 @@ no_retry = true
 {{- if eq .chezmoi.hostname "cucchia" }}
 # "01. Export flatpaks" = "flatpak list --columns=application --app > ~/flatpak.install"
 # "02. Export brew packages" = "fish -c 'brew leaves > ~/brew.install'"
-"01. Export distrobox binaries" = "distrobox enter archlinux -- distrobox-export --list-binaries | awk '{print $1}' | sed s/\\'//g > ~/distrobox.install"
-"02. Export AM packages" = "am -f --byname | awk '/◆/{print $2}' > ~/am.install"
+# "01. Export distrobox binaries" = "distrobox enter archlinux -- distrobox-export --list-binaries | awk '{print $1}' | sed s/\\'//g > ~/distrobox.install"
+"01. Export AM packages" = "am -f --byname | awk '/◆/{print $2}' > ~/am.install"
 # "03. Export snap packages" = "snap list | awk '{print $1}' | tail -n +2 > ~/snap.install"
 "03. Export base packages" = "apt-mark showmanual > ~/debianbase.install"
-"04. General sync" = "fish --command mysync"
+"02. General sync" = "fish --command mysync"
 {{- end }}
 
 # Commands to run after anything
