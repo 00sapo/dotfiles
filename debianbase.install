@@ -71,7 +71,10 @@ duperemove
 e2fsprogs
 earlyoom
 environment-modules
+evolution
 evolution-data-server
+evolution-ews
+evolution-plugins-experimental
 exfatprogs
 fastboot
 fd-find
@@ -789,6 +792,7 @@ tzdata
 ucf
 udev
 udisks2
+unrar
 unzip
 upower
 usbutils

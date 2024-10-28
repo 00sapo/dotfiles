@@ -20,6 +20,13 @@ source $HOME/.asdf/asdf.fish
 # snap
 # set --export PATH "/snap/bin:$PATH"
 
+if status is-interactive
+    if command -v devbox >/dev/null
+        SHELL=(which fish) devbox global shellenv --init-hook | source
+        devbox completion fish | source
+    end
+end
+
 # editor
 if command -v nvim >/dev/null
     set --export EDITOR (which nvim)

@@ -5,7 +5,17 @@
       "last_modified": "2021-01-14T13:26:31Z",
       "resolved": "github:NixOS/nixpkgs/956afcd713a4f94a4acb4460d339dc638bac3d0a#gitAndTools.delta",
       "source": "devbox-search",
-      "version": "0.5.1"
+      "version": "0.5.1",
+      "systems": {
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "path": "/nix/store/z58qqcizsjb7h88x8v811zdbcmpqsfrm-delta-0.5.1",
+              "default": true
+            }
+          ]
+        }
+      }
     },
     "lazygit@latest": {
       "last_modified": "2024-10-13T23:44:06Z",
