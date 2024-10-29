@@ -5,7 +5,17 @@
     "gitAndTools.delta@latest",
     "rbw@latest",
     "neovim@latest",
-    "rclone@latest"
+    "rclone@latest",
+    "zoom@latest",
+    "zotero@latest",
+    "telegram-desktop@latest",
+    "rustdesk@latest",
+    "obsidian@latest",
+    "discord@latest",
+    "brave@latest",
+    "tor-browser@latest",
+    "musescore@latest",
+    "btrfs-assistant@latest"
   ],
   "shell": {
     "init_hook": [

@@ -10,23 +10,16 @@ fc-cache
 chsh
 ```
 
-5. Now, re-login. If on a desktop, continue with:
+3. Now, re-login. If on a desktop, continue with:
 
 ```
-sudo apt install flatpak
-xargs flatpak install < flatpak.install
+curl -fsSL https://get.jetify.com/devbox | bash
+devbox install
 setup-my-keys # this maybe doesn't work
 ```
 
-6. Install the brew packages (neovim and git-delta will be ok in Trixie):
-
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install neovim git-delta lazygit
-```
-
-6. install remaining system packages (see below)
-7. reboot
+4. install remaining system packages (see below)
+5. reboot
 
 ## System config
 
@@ -44,10 +37,9 @@ It's also useful to check suspend mechanism.
 6. tlp
 7. zram-tools
 8. grub-btrfs (from Kali repos)
-9. flatpak
-10. pipewire-audio
-11. Jack and pipewire-jack (see further configuration on Debian wiki)
-12. python build dependencies
+9. pipewire-audio
+10. Jack and pipewire-jack (see further configuration on Debian wiki)
+11. python build dependencies
 
 ### Music software
 
@@ -60,21 +52,12 @@ This software is installed in the base system for performance reasons.
 5. BespokeSynth
 6. Ardour
 
-### Packages that should be migrated to appimage/flatpaks
+### Packages that should be migrated somewhere else
 
 1. btrfs-assistant (from OBS repos)
-2. megasync (flatpak version freezes when syncing, needs the sources apt list)
 
 ### Other notes
 
 #### Evolution
 
-Evolution flatpak is a mess.
-The debian one easily remains behin third-party provider changes (microsoft, google, etc.)
-Right now archlinux distrobox is the best option, but needs some dbus files installed in the base system: `apt
-install evolution-data-server`.
-Moreover, archlinux also provides evolution-on for the system-tray icon.
-
-```
-
-```
+Evolution login in Debian stable is not working for Microsoft, so I'm taking it from devbox.

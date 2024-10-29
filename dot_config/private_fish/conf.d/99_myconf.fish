@@ -21,9 +21,9 @@ source $HOME/.asdf/asdf.fish
 # set --export PATH "/snap/bin:$PATH"
 
 if status is-interactive
-    if command -v devbox >/dev/null
-        SHELL=(which fish) devbox global shellenv --init-hook | source
-        devbox completion fish | source
+    if command -v /usr/local/bin/devbox >/dev/null
+        SHELL=(which fish) /usr/local/bin/devbox global shellenv --init-hook | source
+        /usr/local/bin/devbox completion fish | source
     end
 end
 
