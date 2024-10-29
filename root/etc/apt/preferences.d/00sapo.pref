@@ -1,0 +1,19 @@
+Package: *
+Pin: release n=bookworm
+Pin-Priority: 900
+
+Package: *
+Pin: release n=bookworm-security
+Pin-Priority: 900
+
+Package: *
+Pin: release n=bookworm-updates
+Pin-Priority: 900
+
+Package: *
+Pin: release a=focal
+Pin-Priority: 300
+
+Package: *
+Pin: release a=bionic
+Pin-Priority: 300

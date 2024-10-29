@@ -1,0 +1,3 @@
+Package: lynis
+Pin: origin packages.cisofy.com
+Pin-Priority: 950
