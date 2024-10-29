@@ -2,9 +2,9 @@
 
 /usr/local/bin/devbox $argv
 
-if test $argv[1] = global -a (test $argv[2] = install -o $argv[2] = rm)
+if test "$argv[1]" = global
     for i in $HOME/.local/share/devbox/global/default/.devbox/nix/profile/default/share/applications/*.desktop
-        sed "s/Exec=/Exec=\/usr\/local\/bin\/devbox global run /" $i >$HOME/.local/share/applications/(basename $i)
+        sed "s/Exec=/Exec=\/usr\/local\/bin\/devbox global run -- /" $i >$HOME/.local/share/applications/(basename $i)
     end
 
     for i in $HOME/.local/share/applications/*.desktop
