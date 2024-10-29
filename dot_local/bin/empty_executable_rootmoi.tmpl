@@ -25,7 +25,7 @@ fi
 # shellcheck disable=SC2016
 mkdir -p '{{ $configDir }}' '{{ $cacheDir }}'
 
-sudo exec --preserve-env=PATH -- \
+sudo -s exec --preserve-env=PATH -- \
   "${executable}" "$@" \
   --config='{{ $configFile }}' \
   --persistent-state='{{ $persistentStateFile }}' \
