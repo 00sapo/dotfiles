@@ -3,7 +3,32 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # from https://github.com/twpayne/chezmoi/discussions/1510#discussioncomment-7808924
 
-# {{ template "scripts-library" }}
+function log_color() {
+  local color_code="$1"
+  shift
+
+  printf "\033[${color_code}m%s\033[0m\n" "$*" >&2
+}
+
+function log_task() {
+  log_blue "🔃" "$@"
+}
+
+function log_c() {
+  log_yellow "👉" "$@"
+}
+
+function log_blue() {
+  log_color "0;34" "$@"
+}
+
+function log_green() {
+  log_color "1;32" "$@"
+}
+
+function log_yellow() {
+  log_color "1;33" "$@"
+}
 
 # The following line is for ShellCheck to correctly identify the above include
 # true || source ../.chezmoitemplates/scripts-library
