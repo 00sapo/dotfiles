@@ -1,18 +1,20 @@
-#!/bin/env bash
+#!/bin/env fish
 
-/usr/local/bin/devbox "$@"
+/usr/local/bin/devbox $argv
 
-for i in "$HOME"/.local/share/devbox/global/default/.devbox/nix/profile/default/share/applications/*.desktop; do
-  sed "s/Exec=/Exec=\/usr\/local\/bin\/devbox global run /" "$i" >"$HOME"/.local/share/applications/"$(basename "$i")"
-done
+if test $argv[1] = global -a (test $argv[2] = install -o $argv[2] = rm)
+    for i in $HOME/.local/share/devbox/global/default/.devbox/nix/profile/default/share/applications/*.desktop
+        sed "s/Exec=/Exec=\/usr\/local\/bin\/devbox global run /" $i >$HOME/.local/share/applications/(basename $i)
+    end
 
-for i in "$HOME"/.local/share/applications/*.desktop; do
-  # take the first word of the Exec= line
-  exec="$(grep -oP '^Exec=\K[^ ]+' "$i")"
-  # check if the first word doesnt exists as a command in the path
-  for exec in $exec; do
-    if ! command -v "$exec" &>/dev/null; then
-      echo "$i should be removed because $exec doesn't exists"
-    fi
-  done
-done
+    for i in $HOME/.local/share/applications/*.desktop
+        # take the first word of the Exec= line
+        set exec (grep -oP '^Exec=\K[^ ]+' $i)
+        # check if the first word doesn't exist as a command in the path
+        for e in $exec
+            if not command -v $e >/dev/null
+                echo "$i should be removed because $e doesn't exist" >&2
+            end
+        end
+    end
+end
