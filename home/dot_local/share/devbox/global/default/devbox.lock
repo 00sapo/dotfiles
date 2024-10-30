@@ -236,8 +236,8 @@
       }
     },
     "obsidian@latest": {
-      "last_modified": "2024-10-22T11:15:56Z",
-      "resolved": "github:NixOS/nixpkgs/782740762fb281404740b6b7084d356c3dab1173#obsidian",
+      "last_modified": "2024-10-24T16:50:28Z",
+      "resolved": "github:NixOS/nixpkgs/63487b2f26fa065cfeeaa47dddb08e2856ba53e8#obsidian",
       "source": "devbox-search",
       "version": "1.7.4",
       "systems": {
@@ -255,11 +255,11 @@
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/iwcdqcaf1w5dyn7ks7jyq3pb8biqrjqz-obsidian-1.7.4",
+              "path": "/nix/store/zf33ia1r8nhvk6lk90difzi7g4r5m6cx-obsidian-1.7.4",
               "default": true
             }
           ],
-          "store_path": "/nix/store/iwcdqcaf1w5dyn7ks7jyq3pb8biqrjqz-obsidian-1.7.4"
+          "store_path": "/nix/store/zf33ia1r8nhvk6lk90difzi7g4r5m6cx-obsidian-1.7.4"
         },
         "x86_64-darwin": {
           "outputs": [
@@ -275,11 +275,11 @@
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/a07fm1icp1w83j3misfdl2gvjnsbn5g0-obsidian-1.7.4",
+              "path": "/nix/store/0mjhr5a2sw6ca4z28pnd3k3v4x1nf9hj-obsidian-1.7.4",
               "default": true
             }
           ],
-          "store_path": "/nix/store/a07fm1icp1w83j3misfdl2gvjnsbn5g0-obsidian-1.7.4"
+          "store_path": "/nix/store/0mjhr5a2sw6ca4z28pnd3k3v4x1nf9hj-obsidian-1.7.4"
         }
       }
     },
