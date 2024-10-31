@@ -7,57 +7,59 @@
 sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply 00sapo
 sudo apt install fish
 fc-cache
-chsh
-```
-
-3. Now, re-login. If on a desktop, continue with:
-
-```
-curl -fsSL https://get.jetify.com/devbox | bash
-devbox install
-setup-my-keys # this maybe doesn't work
 ```
 
 4. install remaining system packages (see below)
-5. reboot
+5. install `AppMan` and `asdf` packages
+6. reboot
 
 ## System config
 
 It's also useful to check suspend mechanism.
 
 - `cat /sys/power/mem_sleep`: if [s2idle] is selected, the suspend state is fast but not very saving energy, Better putting deep: add `mem_sleep_default=deep` as a kernel parameter to the `/etc/default/grub` file and run `sudo grub-mkconfig -o /boot/grub/grub.cfg`.
+- for host named `cucchia`, the above rule is already setup by `rootmoi` (see `root/etc/default/grub.tmpl`).
 
-## Packages that need to be installed in the main system
+## Packages
 
-1. kde-plasma-desktop
-2. pkexec
-3. nvidia-detect
-4. nvidia-driver
-5. mesa-utils
-6. tlp
-7. zram-tools
-8. grub-btrfs (from Kali repos)
-9. pipewire-audio
-10. Jack and pipewire-jack (see further configuration on Debian wiki)
-11. python build dependencies
+### Debian
 
-### Music software
+See `$HOME/debianbase.install` for a list of packages installed after a minimal installation.
 
-This software is installed in the base system for performance reasons.
+In general:
 
-1. din is noise
-2. surge-xt (from .deb file)
-3. zynaddsubfx
-4. calf-plugins
-5. BespokeSynth
-6. Ardour
+- a DE (plasma-desktop, sddm)
+- a terminal emulator (wezterm)
+- a browser (brave)
+- document utilities (okular, libreoffice, evolution)
+- any other tool: nvim, apt, tlp, zram-tools, zoxide, ripgrep, openrgb, lsyncd, curl, earlyoom, etc.
 
-### Packages that should be migrated somewhere else
+### Appman
 
-1. btrfs-assistant (from OBS repos)
+Install from `$HOME/am.install`:
+> `cat $HOME/am.install | xargs appman -i`
 
-### Other notes
+### asdf
+
+- Use the following
+
+```fish
+for tool in "python golang nodejs rust delta lazygit"
+  asdf plugin-add $tool
+  asdf install $tool latest
+end
+```
+
+```
+```
+
+## Other notes
+
+#### Trixie
+
+Trixie will include git-delta (currently using asdf).
 
 #### Evolution
 
-Evolution login in Debian stable is not working for Microsoft, so I'm taking it from devbox.
+Evolution login in Debian stable is not working for Microsoft, so you need to use an updated version
+to login (e.g. via flatpak or distrobox), then you can use Debian's version.
