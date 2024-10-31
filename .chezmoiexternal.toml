@@ -11,10 +11,3 @@ url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCo
 exact = false
 stripComponents = 0
 refreshPeriod = "168h"
-
-[".asdf"]
-type = "archive"
-url = "https://github.com/asdf-vm/asdf/archive/refs/heads/master.zip"
-exact = false
-stripComponents = 1
-refreshPeriod = "168h"
