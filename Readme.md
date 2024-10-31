@@ -1,17 +1,8 @@
 # Installation
 
-1. run: `mkdir -p ~/.ssh/sockets`
-2. execute:
-
 ```
 sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply 00sapo
-sudo apt install fish
-fc-cache
 ```
-
-4. install remaining system packages (see below)
-5. install `AppMan` and `asdf` packages
-6. reboot
 
 ## System config
 
@@ -32,7 +23,7 @@ In general:
 - a terminal emulator (wezterm)
 - a browser (brave)
 - document utilities (okular, libreoffice, evolution)
-- any other tool: nvim, apt, tlp, zram-tools, zoxide, ripgrep, openrgb, lsyncd, curl, earlyoom, etc.
+- any other tool: fish, nvim, apt, tlp, zram-tools, zoxide, ripgrep, openrgb, lsyncd, curl, earlyoom, etc.
 
 ### Appman
 
@@ -48,9 +39,6 @@ for tool in "python golang nodejs rust delta lazygit"
   asdf plugin-add $tool
   asdf install $tool latest
 end
-```
-
-```
 ```
 
 ## Other notes
