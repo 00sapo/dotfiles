@@ -93,18 +93,22 @@ no_retry = true
 # "01. Export distrobox binaries" = "distrobox enter archlinux -- distrobox-export --list-binaries | awk '{print $1}' | sed s/\\'//g > ~/distrobox.install"
 # "03. Export snap packages" = "snap list | awk '{print $1}' | tail -n +2 > ~/snap.install"
 {{- if eq .chezmoi.hostname "cucchia" }}
-"01. Export AppMan packages" = "appman -f --byname | awk '/◆/{print $2}' > ~/am.install"
-"02. Export base packages" = "apt-mark showmanual > ~/debianbase.install"
-"03. General sync" = "fish --command mysync"
+"General sync" = "fish --command mysync"
 {{- end }}
 
 # Commands to run after anything
 [post_commands]
 # "Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
+{{- if eq .chezmoi.hostname "cucchia" }}
+"Export AppMan packages" = "appman -f --byname | awk '/◆/{print $2}' > ~/am.install"
+"Export Base packages" = "apt-mark showmanual > ~/debianbase.install"
+{{- end }}
 
 
 # Custom commands
 [commands]
+"lazygit" = "asdf install lazygit latest"
+"git-delta" = "asdf install delta latest"
 # "Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 # "Custom command using interactive shell (unix)" = "-i vim_upgrade"
 
