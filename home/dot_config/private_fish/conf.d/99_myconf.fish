@@ -4,9 +4,6 @@ set --export PATH "$HOME/.local/bin/:$PATH"
 # asdf
 source $HOME/.asdf/asdf.fish
 
-# junest
-set --export PATH "$HOME/.local/share/junest/bin:$PATH:$HOME/.junest/usr/bin_wrappers"
-
 # editor
 if command -v nvim >/dev/null
     set --export EDITOR (which nvim)
@@ -32,8 +29,11 @@ command -v pyenv >/dev/null; and status is-interactive; and pyenv init --path | 
 if not set -q GOBIN
     set --export GOBIN "$HOME/go/bin"
 end
+# set --export GOROOT /usr/lib/go/
 set --export PATH "$GOBIN:$PATH"
 set --export GOCACHE "$HOME/go/cache"
+# set --export GOPATH "$HOME/go"
+# set --export GOMODCACHE "$HOME/go/pkg/mod"
 
 # rust
 set --export PATH "$HOME/.cargo/bin:$PATH"
