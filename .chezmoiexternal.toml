@@ -1,10 +1,3 @@
-[".tmux/plugins/tpm"]
-type = "archive"
-url = "https://github.com/tmux-plugins/tpm/archive/refs/heads/master.zip"
-exact = true
-stripComponents = 1
-refreshPeriod = "168h"
-
 [".fonts/SourceCodePro/"]
 type = "archive"
 url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCodePro.zip"
