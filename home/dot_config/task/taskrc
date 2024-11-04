@@ -29,7 +29,7 @@ include ~/.wingtask_certs/taskrc
 #include light-16.theme
 #include light-256.theme
 #include dark-16.theme
-#include dark-256.theme
+include dark-256.theme
 #include dark-red-256.theme
 #include dark-green-256.theme
 #include dark-blue-256.theme
@@ -40,10 +40,12 @@ include ~/.wingtask_certs/taskrc
 #include solarized-dark-256.theme
 #include solarized-light-256.theme
 #include no-color.theme
+color.active=
 
 # Projects
 urgency.user.project.Laudare.coefficient=1.5
 urgency.user.project.Laudare.Data.coefficient=1.5
+urgency.user.project.Laudare.DB.coefficient=2.5
 urgency.user.project.Composer.coefficient=2
 
 # Define UDAs
@@ -56,6 +58,7 @@ uda.completion_date.label = Expected Completion Date
 
 # Adjust urgency to prioritize long tasks
 urgency.uda.estimated.coefficient = 1.0   # Increase urgency for tasks with longer estimated durations
+urgency.active.coefficient = 0.0
 
 # Urgencies for each estimation value
 urgency.uda.estimated.PT1H.coefficient = 1
@@ -101,6 +104,7 @@ report.next.columns=id,start.age,entry.age,depends,recur,urgency,project,tags,de
 report.next.labels=ID,Active,Age,Deps,Recur,Urgency,Project,Tags,Description,Estimated,Due,Expected,Time Map
 news.version=2.6.0
 
+recurrence.confirmation=no
 confirmation=off
 bulk=0
 report.dash.labels=ID,Deps,P,Project,Tag,Recur,Due,Description,Ur
@@ -108,7 +112,6 @@ report.dash.columns=id,depends,priority,project,tags,recur,due.relative,descript
 report.dash.description=Dashboard report for shell starting.
 report.dash.sort=urgency-
 report.dash.filter=status:pending -WAITING limit:5
-
 recurrence=on
 
 urgency.annotations.coefficient=0
