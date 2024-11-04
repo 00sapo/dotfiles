@@ -1,0 +1,151 @@
+#!/bin/env python3
+""" """
+
+import subprocess
+import tomllib
+import json
+from datetime import datetime, timedelta
+from pathlib import Path
+import argparse
+
+config_dir = Path.home() / ".config/task"
+data_dir = Path.home() / ".local/share/task"
+
+arg_parser = argparse.ArgumentParser()
+arg_parser.add_argument(
+    "-v", "--verbose", action="store_true", help="increase output verbosity"
+)
+arg_parser.add_argument(
+    "-t",
+    "--today",
+    action="store",
+    default=0,
+    help="how many hours are available today; values are forcedly limited to today's time_map",
+)
+
+args = arg_parser.parse_args()
+
+
+# Load working hours and exceptions from TOML file
+def load_working_hours():
+    with open(config_dir / "time_maps.toml", "rb") as f:
+        config = tomllib.load(f)
+    with open(data_dir / "exceptions.toml", "rb") as f:
+        exceptions = tomllib.load(f)
+    return config["time_maps"], exceptions["exceptions"]
+
+
+# Get tasks from Taskwarrior and sort by urgency
+def get_tasks():
+    result = subprocess.run(["task", "export"], capture_output=True, text=True)
+    tasks = json.loads(result.stdout)
+    return sorted(
+        (task for task in tasks if "estimated" in task),
+        key=lambda t: -t.get("urgency", 0),
+    )
+
+
+# Calculate available working hours for a given date, considering exceptions
+def get_available_hours(time_map, date, exceptions):
+    date_str = date.isoformat()
+    if date_str in exceptions:
+        return exceptions[date_str]  # Use exception hours if available
+    day_of_week = date.strftime("%A").lower()
+    return time_map.get(day_of_week, 0)
+
+
+# Check if tasks can be completed on time sequentially
+def check_tasks_sequentially(tasks, working_hours, exceptions):
+    current_date = datetime.today().date()
+    hours_current_date = args.today
+    todo = [True] * len(tasks)
+
+    while any(todo):
+        for i, task in enumerate(tasks):
+            if not todo[i]:
+                # skipping tasks already completed
+                continue
+
+            due_date = (
+                datetime.strptime(task["due"], "%Y%m%dT%H%M%SZ").date()
+                if "due" in task
+                else None
+            )
+            estimated_hours = (
+                float(task["estimated"][2:-1]) if "estimated" in task else None
+            )  # Remove trailing "PT" and "H"
+            time_map_names = (
+                task.get("time_map").split(",") if "time_map" in task else None
+            )
+            if estimated_hours is None or time_map_names is None:
+                todo[i] = False
+                continue
+
+            task_remaining_hours = estimated_hours
+
+            # Simulate work day-by-day until task is complete or past due
+            while task_remaining_hours > 0:
+                daily_hours = 0
+                for time_map_name in time_map_names:
+                    if time_map_name not in working_hours:
+                        raise ValueError(f"Time map '{time_map_name}' does not exist.")
+                    time_map = working_hours[time_map_name]
+                    daily_hours += get_available_hours(
+                        time_map, current_date, exceptions
+                    )
+                hours_current_date = min(daily_hours, hours_current_date)
+                if args.verbose:
+                    print(
+                        f"Avaliable hours for {current_date}: {hours_current_date} (time map reports {daily_hours} hours)"
+                    )
+
+                if hours_current_date > 0:
+                    if task_remaining_hours <= hours_current_date:
+                        hours_current_date -= task_remaining_hours
+                        task_remaining_hours = 0
+                        todo[i] = False
+                        if args.verbose:
+                            print(
+                                f"Task {task['id']} ('{task['description']}') can be completed on {current_date}"
+                            )
+                            print(
+                                f"Remaining hours for {current_date}: {hours_current_date}"
+                            )
+                    else:
+                        current_date += timedelta(days=1)
+                        task_remaining_hours -= hours_current_date
+                        if args.verbose:
+                            print(
+                                f"Working for {hours_current_date} hours on task {task['id']}  on {current_date}"
+                            )
+                        hours_current_date = 99999  # Reset to a large number
+                else:
+                    current_date += timedelta(days=1)
+                    hours_current_date = 99999  # Reset to a large number
+
+                if not todo[i]:
+                    task["completion_date"] = current_date.isoformat()
+                    subprocess.run(
+                        [
+                            "task",
+                            str(task["id"]),
+                            "modify",
+                            f"completion_date:{task['completion_date']}",
+                        ],
+                        stdout=subprocess.DEVNULL,
+                    )
+                    if due_date is not None and current_date > due_date:
+                        # print in bold red using ANSI escape codes
+                        print(
+                            f"\033[1;31mTask {task['id']} ({task['description']}') may not be completed on time\033[0m"
+                        )
+                        subprocess.run(
+                            ["task", str(task["id"]), "modify", "risky:yes"],
+                            stdout=subprocess.DEVNULL,
+                        )
+
+
+# Load data and check tasks
+working_hours, exceptions = load_working_hours()
+tasks = get_tasks()
+check_tasks_sequentially(tasks, working_hours, exceptions)
