@@ -1,0 +1,78 @@
+# [Created by task 2.6.2 11/3/2024 23:49:10]
+# Taskwarrior program configuration file.
+# For more documentation, see https://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# You can also refence environment variables:
+#   variable=$HOME/task
+#   variable=$VALUE
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Files
+# data.location=/home/federico/.task
+
+# To use the default location of the XDG directories,
+# move this configuration file from ~/.taskrc to ~/.config/task/taskrc and uncomment below
+
+data.location=~/.local/share/task
+hooks.location=~/.config/task/hooks
+
+include ~/.wingtask_certs/taskrc
+
+# Color theme (uncomment one to use)
+#include light-16.theme
+#include light-256.theme
+#include dark-16.theme
+#include dark-256.theme
+#include dark-red-256.theme
+#include dark-green-256.theme
+#include dark-blue-256.theme
+#include dark-violets-256.theme
+#include dark-yellow-green.theme
+#include dark-gray-256.theme
+#include dark-gray-blue-256.theme
+#include solarized-dark-256.theme
+#include solarized-light-256.theme
+#include no-color.theme
+
+# Define UDAs
+uda.time_map.type = string
+uda.time_map.label = Time Map
+uda.estimated.type = duration
+uda.estimated.label = Estimated Time
+uda.completion_date.type = date
+uda.completion_date.label = Expected Completion Date
+
+# Adjust urgency to prioritize long tasks
+urgency.uda.estimated.coefficient = 1.0   # Increase urgency for tasks with longer estimated durations
+
+# Sort tasks by urgency
+report.next.sort=urgency-
+report.next.columns=id,start.age,depends,recur,urgency,project,tags,due,description,estimated,completion_date,time_map
+report.next.labels=ID,Active,Age,Deps,Recur,Urgency,Project,Tags,Due,Description,Estimated,Expected,Time Map
+news.version=2.6.0
+
+confirmation=off
+bulk=0
+urgency.inherit=1
+report.dash.labels=ID,Deps,P,Project,Tag,Recur,Due,Description,Ur
+report.dash.columns=id,depends,priority,project,tags,recur,due.relative,description,urgency
+report.dash.description=Dashboard report for shell starting.
+report.dash.sort=urgency-
+report.dash.filter=status:pending -WAITING limit:5
+{{- if eq .chezmoi.hostname "cucchia" }}
+recurrence=on
+{{- else }}
+recurrence=off
+{{- end }}
+
+urgency.annotations.coefficient=0
+urgency.tags.coefficient=0
+urgency.project.coefficient=0
+urgency.due.coefficient=12
