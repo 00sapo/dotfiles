@@ -109,11 +109,7 @@ report.dash.description=Dashboard report for shell starting.
 report.dash.sort=urgency-
 report.dash.filter=status:pending -WAITING limit:5
 
-{{- if eq .chezmoi.hostname "cucchia" }}
 recurrence=on
-{{- else }}
-recurrence=off
-{{- end }}
 
 urgency.annotations.coefficient=0
 urgency.tags.coefficient=0
