@@ -56,9 +56,10 @@ uda.estimated.label = Estimated Time
 uda.completion_date.type = date
 uda.completion_date.label = Expected Completion Date
 
-# Adjust urgency to prioritize long tasks
+# Adjust urgency for taskcheck
 urgency.uda.estimated.coefficient = 1.0   # Increase urgency for tasks with longer estimated durations
 urgency.active.coefficient = 0.0
+urgency.waiting.coefficient = 0.0
 
 # Urgencies for each estimation value
 urgency.uda.estimated.PT1H.coefficient = 1
@@ -99,6 +100,7 @@ urgency.uda.estimated.PT35H.coefficient = 11.89
 urgency.uda.estimated.PT36H.coefficient = 11.96
 
 # Sort tasks by urgency
+report.next.filter=status:pending or status:waiting
 report.next.sort=urgency-
 report.next.columns=id,start.age,entry.age,depends,recur,urgency,project,tags,description,estimated,due,completion_date,time_map
 report.next.labels=ID,Active,Age,Deps,Recur,Urgency,Project,Tags,Description,Estimated,Due,Expected,Time Map

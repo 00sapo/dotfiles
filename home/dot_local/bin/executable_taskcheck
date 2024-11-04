@@ -112,9 +112,7 @@ def convert_to_hours(duration_str):
         return days * 24 + hours
 
 
-def get_long_range_time_map(
-    time_maps, time_map_names, used_hours, days_ahead, exceptions
-):
+def get_long_range_time_map(time_maps, time_map_names, days_ahead, exceptions):
     key = ",".join(time_map_names)
     if key in long_range_time_map:
         task_time_map = long_range_time_map[key]
@@ -146,10 +144,16 @@ def _schedule_task_on_d(
     task_time_map,
     today,
     used_hours,
+    wait,
 ):
     # we can schedule task on this day
     employable_hours = task_time_map[d] - used_hours[d]
     current_date = today + timedelta(days=d + 1)
+    if wait and current_date < wait:
+        if args.verbose:
+            print(f"Skipping date {current_date} because of wait date {wait}")
+        return start_date, end_date, task_remaining_hours, _starting
+
     if _starting:
         if args.verbose:
             print(
@@ -226,6 +230,11 @@ def check_tasks_sequentially(tasks, config, exceptions):
                 if "due" in task
                 else None
             )
+            wait_date = (
+                datetime.strptime(task["wait"], "%Y%m%dT%H%M%SZ").date()
+                if "wait" in task
+                else None
+            )
             estimated_hours = (
                 convert_to_hours(task["estimated"]) if "estimated" in task else None
             )  # Remove trailing "PT" and "H"
@@ -239,12 +248,15 @@ def check_tasks_sequentially(tasks, config, exceptions):
                         f"Task {task['id']} ('{task['description']}') has no estimated time or time map: {estimated_hours}, {time_map_names}"
                     )
                 continue
+            if args.verbose:
+                print(
+                    f"Checking task {task['id']} ('{task['description']}') with estimated hours: {estimated_hours} and wait date: {wait_date}"
+                )
 
             task_remaining_hours = estimated_hours
             task_time_map = get_long_range_time_map(
                 time_maps,
                 time_map_names,
-                used_hours,
                 config["scheduler"]["days_ahead"],
                 exceptions,
             )
@@ -265,6 +277,7 @@ def check_tasks_sequentially(tasks, config, exceptions):
                             task_time_map,
                             today,
                             used_hours,
+                            wait_date,
                         )
                     )
 
