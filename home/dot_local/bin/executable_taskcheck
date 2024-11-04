@@ -41,9 +41,6 @@ uda.estimated.type = duration
 uda.estimated.label = Estimated Time
 uda.completion_date.type = date
 uda.completion_date.label = Expected Completion Date
-uda.risky.type = string
-uda.risky.label = Risky
-urgency.uda.risky.yes.coefficient = 99.0      # Increase urgency for risky tasks
 ```
 
 OPTIONS:
@@ -104,6 +101,19 @@ def get_available_hours(time_map, date, exceptions):
     return time_map.get(day_of_week, 0)
 
 
+def convert_to_hours(duration_str):
+    # string format is P#DT#H
+    # with D and H optional
+    duration_str = duration_str[1:]  # Remove leading "P"
+    days, hours = 0, 0
+    if "D" in duration_str:
+        days, duration_str = duration_str.split("D")
+        days = int(days)
+    if "H" in duration_str:
+        hours = int(duration_str.split("T")[1].split("H")[0])
+        return days * 24 + hours
+
+
 # Check if tasks can be completed on time sequentially
 def check_tasks_sequentially(tasks, working_hours, exceptions):
     current_date = datetime.today().date()
@@ -122,7 +132,7 @@ def check_tasks_sequentially(tasks, working_hours, exceptions):
                 else None
             )
             estimated_hours = (
-                float(task["estimated"][2:-1]) if "estimated" in task else None
+                convert_to_hours(task["estimated"]) if "estimated" in task else None
             )  # Remove trailing "PT" and "H"
             time_map_names = (
                 task.get("time_map").split(",") if "time_map" in task else None
@@ -188,10 +198,6 @@ def check_tasks_sequentially(tasks, working_hours, exceptions):
                         # print in bold red using ANSI escape codes
                         print(
                             f"\033[1;31mTask {task['id']} ({task['description']}') may not be completed on time\033[0m"
-                        )
-                        subprocess.run(
-                            ["task", str(task["id"]), "modify", "risky:yes"],
-                            stdout=subprocess.DEVNULL,
                         )
 
 
