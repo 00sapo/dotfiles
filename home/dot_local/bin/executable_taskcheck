@@ -1,5 +1,55 @@
 #!/bin/env python3
-""" """
+"""
+This script checks if tasks can be completed on time, considering estimated time and working hours.
+
+CONFIGURATION:
+1. Create a TOML file at ~/.config/task/time_maps.toml with the following format:
+```toml
+[time_maps]
+[time_maps.work]
+monday = 8
+tuesday = 8
+wednesday = 8
+thursday = 8
+friday = 8
+saturday = 0
+sunday = 0
+
+[time_maps.extra]
+monday = 0
+tuesday = 1
+wednesday = 0
+thursday = 1
+friday = 0
+saturday = 1
+sunday = 3
+```
+
+2. Create a TOML file at ~/.local/share/task/exceptions.toml with the following format:
+```toml
+[exceptions]
+2021-01-01 = 0
+2021-01-02 = 3
+2021-12-25 = 0
+```
+
+3. Add the UDAs:
+```
+uda.time_map.type = string
+uda.time_map.label = Time Map
+uda.estimated.type = duration
+uda.estimated.label = Estimated Time
+uda.completion_date.type = date
+uda.completion_date.label = Expected Completion Date
+uda.risky.type = string
+uda.risky.label = Risky
+urgency.uda.risky.yes.coefficient = 99.0      # Increase urgency for risky tasks
+```
+
+OPTIONS:
+-v, --verbose: increase output verbosity
+-t, --today: how many hours are available today; values are forcedly limited to today's time_map
+"""
 
 import subprocess
 import tomllib
