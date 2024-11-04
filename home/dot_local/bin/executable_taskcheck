@@ -133,7 +133,79 @@ def get_long_range_time_map(
             task_time_map.append(daily_hours)
         long_range_time_map[key] = task_time_map
 
-    return [max(task_time_map[i] - used_hours[i], 0) for i in range(days_ahead)]
+    return task_time_map
+
+
+def _schedule_task_on_d(
+    _starting,
+    d,
+    end_date,
+    start_date,
+    task,
+    task_remaining_hours,
+    task_time_map,
+    today,
+    used_hours,
+):
+    # we can schedule task on this day
+    employable_hours = task_time_map[d] - used_hours[d]
+    current_date = today + timedelta(days=d + 1)
+    if _starting:
+        if args.verbose:
+            print(
+                f"Starting task {task['id']} ('{task['description']}') on {current_date}"
+            )
+        _starting = False
+        start_date = current_date
+
+    if task_remaining_hours <= employable_hours:
+        # consume all the remaining task's hours
+        used_hours[d] += task_remaining_hours
+        task_remaining_hours = 0
+        end_date = current_date
+        if args.verbose:
+            print(
+                f"Task {task['id']} ('{task['description']}') can be completed on {current_date}"
+            )
+            print(f"Used hours on {current_date}: {used_hours[d]}")
+    else:
+        # consume all the available hours on this task
+        task_remaining_hours -= employable_hours
+        used_hours[d] += employable_hours
+        if args.verbose:
+            print(
+                f"Working for {employable_hours} hours on task {task['id']}  on {current_date}"
+            )
+    return start_date, end_date, task_remaining_hours, _starting
+
+
+def _mark_end_date(config, due_date, end_date, i, start_date, task, todo):
+    todo[i] = False
+
+    if config["scheduler"]["use_start_end_fields"]:
+        start_end_fields = [
+            f"start:{start_date}",
+            f"end:{end_date}",
+        ]
+    else:
+        start_end_fields = []
+
+    subprocess.run(
+        [
+            "task",
+            str(task["id"]),
+            "modify",
+            f"completion_date:{end_date}",
+            *start_end_fields,
+        ],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    if due_date is not None and end_date > due_date:
+        # print in bold red using ANSI escape codes
+        print(
+            f"\033[1;31mTask {task['id']} ({task['description']}') may not be completed on time\033[0m"
+        )
 
 
 # Check if tasks can be completed on time sequentially
@@ -181,64 +253,30 @@ def check_tasks_sequentially(tasks, config, exceptions):
             _starting = True
             start_date = end_date = None
             for d in range(len(task_time_map)):
-                if task_time_map[d] > 0:
-                    current_date = today + timedelta(days=d + 1)
-                    if _starting:
-                        if args.verbose:
-                            print(
-                                f"Starting task {task['id']} ('{task['description']}') on {current_date}"
-                            )
-                        _starting = False
-                        start_date = current_date
-
-                    if task_remaining_hours <= task_time_map[d]:
-                        task_remaining_hours = 0
-                        used_hours[d] += task_remaining_hours
-                        todo[i] = False
-                        end_date = current_date
-                        if args.verbose:
-                            print(
-                                f"Task {task['id']} ('{task['description']}') can be completed on {current_date}"
-                            )
-                            print(f"Used hours on {current_date}: {used_hours[d]}")
-                    else:
-                        task_remaining_hours -= task_time_map[d]
-                        used_hours[d] += task_time_map[d]
-                        if args.verbose:
-                            print(
-                                f"Working for {task_time_map[d]} hours on task {task['id']}  on {current_date}"
-                            )
+                if task_time_map[d] > used_hours[d]:
+                    (start_date, end_date, task_remaining_hours, _starting) = (
+                        _schedule_task_on_d(
+                            _starting,
+                            d,
+                            end_date,
+                            start_date,
+                            task,
+                            task_remaining_hours,
+                            task_time_map,
+                            today,
+                            used_hours,
+                        )
+                    )
 
                 if args.verbose:
                     print(
                         f"Task {task['id']} ('{task['description']}') remaining hours: {task_remaining_hours} - end date: {end_date} - todo: {todo[i]}"
                     )
 
-                if not todo[i] and end_date is not None:
-                    if config["scheduler"]["use_start_end_fields"]:
-                        start_end_fields = [
-                            f"scheduled:{start_date}",
-                            f"end:{end_date}",
-                        ]
-                    else:
-                        start_end_fields = []
-
-                    subprocess.run(
-                        [
-                            "task",
-                            str(task["id"]),
-                            "modify",
-                            f"completion_date:{end_date}",
-                            *start_end_fields,
-                        ],
-                        stdout=subprocess.DEVNULL,
-                        stderr=subprocess.DEVNULL,
+                if end_date is not None:
+                    _mark_end_date(
+                        config, due_date, end_date, i, start_date, task, todo
                     )
-                    if due_date is not None and end_date > due_date:
-                        # print in bold red using ANSI escape codes
-                        print(
-                            f"\033[1;31mTask {task['id']} ({task['description']}') may not be completed on time\033[0m"
-                        )
                     break
 
 
