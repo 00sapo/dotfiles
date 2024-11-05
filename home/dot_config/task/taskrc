@@ -40,7 +40,7 @@ include dark-256.theme
 #include solarized-dark-256.theme
 #include solarized-light-256.theme
 #include no-color.theme
-color.active=
+# color.active=
 
 # Projects
 urgency.user.project.Laudare.coefficient=1.5
@@ -58,7 +58,7 @@ uda.completion_date.label = Expected Completion Date
 
 # Adjust urgency for taskcheck
 urgency.uda.estimated.coefficient = 1.0   # Increase urgency for tasks with longer estimated durations
-urgency.active.coefficient = 0.0
+# urgency.active.coefficient = 0.0
 urgency.waiting.coefficient = 0.0
 
 # Urgencies for each estimation value
@@ -109,11 +109,11 @@ news.version=2.6.0
 recurrence.confirmation=no
 confirmation=off
 bulk=0
-report.dash.labels=ID,Deps,P,Project,Tag,Recur,Due,Description,Ur
-report.dash.columns=id,depends,priority,project,tags,recur,due.relative,description,urgency
+report.dash.labels=ID,Deps,P,Proj,Tag,Due,Descr,Ur,Compl
+report.dash.columns=id,depends,priority,project,tags,due.relative,description,urgency,completion_date
 report.dash.description=Dashboard report for shell starting.
 report.dash.sort=urgency-
-report.dash.filter=status:pending -WAITING limit:5
+report.dash.filter=+READY
 recurrence=on
 
 urgency.annotations.coefficient=0

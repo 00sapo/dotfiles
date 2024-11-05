@@ -60,6 +60,13 @@ data_dir = Path.home() / ".local/share/task"
 
 arg_parser = argparse.ArgumentParser()
 arg_parser.add_argument(
+    "-t",
+    "--today",
+    action="store",
+    help="specify how many hours you have already worked today (default: 0)",
+    default=0,
+)
+arg_parser.add_argument(
     "-v", "--verbose", action="store_true", help="increase output verbosity"
 )
 
@@ -121,7 +128,7 @@ def get_long_range_time_map(time_maps, time_map_names, days_ahead, exceptions):
             print(f"Calculating long range time map for {key}")
         task_time_map = []
         for d in range(days_ahead):
-            date = datetime.today().date() + timedelta(days=d + 1)
+            date = datetime.today().date() + timedelta(days=d)
             daily_hours = 0
             for time_map_name in time_map_names:
                 if time_map_name not in time_maps:
@@ -134,12 +141,11 @@ def get_long_range_time_map(time_maps, time_map_names, days_ahead, exceptions):
     return task_time_map
 
 
-def _schedule_task_on_d(
-    _starting,
-    d,
-    end_date,
+def schedule_task_on_day(
+    is_starting,
+    day_offset,
     start_date,
-    task,
+    end_date,
     task_remaining_hours,
     task_time_map,
     today,
@@ -147,59 +153,44 @@ def _schedule_task_on_d(
     wait,
 ):
     # we can schedule task on this day
-    employable_hours = task_time_map[d] - used_hours[d]
-    current_date = today + timedelta(days=d + 1)
+    employable_hours = task_time_map[day_offset] - used_hours[day_offset]
+    current_date = today + timedelta(days=day_offset)
     if wait and current_date < wait:
         if args.verbose:
             print(f"Skipping date {current_date} because of wait date {wait}")
-        return start_date, end_date, task_remaining_hours, _starting
+        return start_date, end_date, task_remaining_hours, is_starting
 
-    if _starting:
+    if is_starting:
         if args.verbose:
-            print(
-                f"Starting task {task['id']} ('{task['description']}') on {current_date}"
-            )
-        _starting = False
+            print(f"Starting task on {current_date}")
+        is_starting = False
         start_date = current_date
 
     if task_remaining_hours <= employable_hours:
         # consume all the remaining task's hours
-        used_hours[d] += task_remaining_hours
+        used_hours[day_offset] += task_remaining_hours
         task_remaining_hours = 0
         end_date = current_date
         if args.verbose:
-            print(
-                f"Task {task['id']} ('{task['description']}') can be completed on {current_date}"
-            )
-            print(f"Used hours on {current_date}: {used_hours[d]}")
+            print(f"Task can be completed on {current_date}")
+            print(f"Used hours on {current_date}: {used_hours[day_offset]}")
     else:
         # consume all the available hours on this task
         task_remaining_hours -= employable_hours
-        used_hours[d] += employable_hours
+        used_hours[day_offset] += employable_hours
         if args.verbose:
-            print(
-                f"Working for {employable_hours} hours on task {task['id']}  on {current_date}"
-            )
-    return start_date, end_date, task_remaining_hours, _starting
+            print(f"Working for {employable_hours} hours on task on {current_date}")
+    return start_date, end_date, task_remaining_hours, is_starting
 
 
-def _mark_end_date(config, due_date, end_date, i, start_date, task, todo):
-    todo[i] = False
-
-    if config["scheduler"]["use_start_end_fields"]:
-        start_end_fields = [
-            f"start:{start_date}",
-            f"end:{end_date}",
-        ]
-    else:
-        start_end_fields = []
+def mark_end_date(due_date, end_date, start_date, id, description=None):
+    start_end_fields = [f"scheduled:{start_date}", f"completion_date:{end_date}"]
 
     subprocess.run(
         [
             "task",
-            str(task["id"]),
+            str(id),
             "modify",
-            f"completion_date:{end_date}",
             *start_end_fields,
         ],
         stdout=subprocess.DEVNULL,
@@ -207,9 +198,8 @@ def _mark_end_date(config, due_date, end_date, i, start_date, task, todo):
     )
     if due_date is not None and end_date > due_date:
         # print in bold red using ANSI escape codes
-        print(
-            f"\033[1;31mTask {task['id']} ({task['description']}') may not be completed on time\033[0m"
-        )
+        description = "('" + description + "')" if description is not None else ""
+        print(f"\033[1;31mTask {id} {description} may not be completed on time\033[0m")
 
 
 # Check if tasks can be completed on time sequentially
@@ -217,7 +207,7 @@ def check_tasks_sequentially(tasks, config, exceptions):
     time_maps = config["time_maps"]
     today = datetime.today().date()
     todo = [True if t["status"] not in AVOID_STATUS else False for t in tasks]
-    used_hours = [0] * config["scheduler"]["days_ahead"]
+    used_hours = [args.today] + [0] * config["scheduler"]["days_ahead"]
 
     while any(todo):
         for i, task in enumerate(tasks):
@@ -262,17 +252,16 @@ def check_tasks_sequentially(tasks, config, exceptions):
             )
 
             # Simulate work day-by-day until task is complete or past due
-            _starting = True
+            is_starting = True
             start_date = end_date = None
-            for d in range(len(task_time_map)):
-                if task_time_map[d] > used_hours[d]:
-                    (start_date, end_date, task_remaining_hours, _starting) = (
-                        _schedule_task_on_d(
-                            _starting,
-                            d,
-                            end_date,
+            for offset in range(len(task_time_map)):
+                if task_time_map[offset] > used_hours[offset]:
+                    (start_date, end_date, task_remaining_hours, is_starting) = (
+                        schedule_task_on_day(
+                            is_starting,
+                            offset,
                             start_date,
-                            task,
+                            end_date,
                             task_remaining_hours,
                             task_time_map,
                             today,
@@ -287,8 +276,9 @@ def check_tasks_sequentially(tasks, config, exceptions):
                     )
 
                 if end_date is not None:
-                    _mark_end_date(
-                        config, due_date, end_date, i, start_date, task, todo
+                    todo[i] = False
+                    mark_end_date(
+                        due_date, end_date, start_date, task["id"], task["description"]
                     )
                     break
 
