@@ -1,4 +1,5 @@
 if status is-interactive
+
     # Set up vim mode
     set -g fish_key_bindings fish_vi_key_bindings
     bind -M insert \cc kill-whole-line repaint
@@ -24,7 +25,6 @@ if status is-interactive
 
     command -v usercheck.fish >/dev/null; and usercheck.fish
 
-    command -v task >/dev/null; and task dash
-    command -v taskcheck >/dev/null; and taskcheck
+    command -v task >/dev/null; and task ready
 
 end
