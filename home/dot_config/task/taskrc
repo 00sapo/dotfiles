@@ -51,6 +51,7 @@ urgency.user.project.Composer.coefficient=2
 # Define UDAs
 uda.time_map.type = string
 uda.time_map.label = Time Map
+uda.time_map.default = work
 uda.estimated.type = duration
 uda.estimated.label = Estimated Time
 uda.completion_date.type = date
