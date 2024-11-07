@@ -58,8 +58,9 @@ uda.completion_date.type = date
 uda.completion_date.label = Expected Completion Date
 
 # Adjust urgency for taskcheck
-urgency.active.coefficient = 0.0
+urgency.active.coefficient = 3.0
 urgency.waiting.coefficient = 0.0
+urgency.scheduled.coefficient = 0.0
 
 # Urgencies for each estimation value
 urgency.uda.estimated.PT1H.coefficient = 1
