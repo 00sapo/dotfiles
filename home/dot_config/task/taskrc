@@ -42,6 +42,9 @@ include dark-256.theme
 #include no-color.theme
 # color.active=
 
+# removing unuseful history
+journal.info=0
+
 # Projects
 urgency.user.project.Laudare.coefficient=1.5
 urgency.user.project.Laudare.Data.coefficient=1.5
@@ -56,6 +59,8 @@ uda.estimated.type = duration
 uda.estimated.label = Estimated Time
 uda.completion_date.type = date
 uda.completion_date.label = Expected Completion Date
+uda.scheduling.type = string
+uda.scheduling.label = Scheduling
 
 # Adjust urgency for taskcheck
 urgency.active.coefficient = 3.0
@@ -100,12 +105,16 @@ urgency.uda.estimated.PT34H.coefficient = 11.81
 urgency.uda.estimated.PT35H.coefficient = 11.89
 urgency.uda.estimated.PT36H.coefficient = 11.96
 
-# Sort tasks by urgency
+# Sort next report by scheduling date
 report.next.filter=status:pending or status:waiting
-report.next.sort=urgency-
+report.next.sort=scheduled+,urgency-,priority-,due+,id+
 report.next.columns=id,start.age,entry.age,depends,recur,urgency,project,tags,description,estimated,scheduled,completion_date,due,time_map
 report.next.labels=ID,Active,Age,Deps,Rec,Ur,Proj,Tags,Descr,Est,Sched,Exp,Due,Time Map
 news.version=2.6.0
+
+# sort ready report by urgency and add due date
+report.ready.sort=urgency-,priority-,due+,id+
+report.ready.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.relative,due.relative,until.remaining,description,urgency
 
 recurrence.confirmation=no
 confirmation=off
