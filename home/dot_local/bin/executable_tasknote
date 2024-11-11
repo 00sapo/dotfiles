@@ -1,0 +1,10 @@
+#!/bin/sh
+# name this script "tasknotes.sh" adn give +x permissions (chmod +x tasknotes.sh)
+# use it like tasknotes.sh <ids>
+
+for id in "$@"; do 
+  task _get "$id".notes >> /tmp/tasknote.md 
+done 
+nvim /tmp/tasknote.md 
+task "$@" mo note:"$(cat /tmp/tasknote.md)" 
+rm /tmp/tasknote.md
