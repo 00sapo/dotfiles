@@ -13,6 +13,7 @@
   "cmp-git": { "branch": "main", "commit": "ec049036e354ed8ed0215f2427112882e1ea7051" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "39e2eda76828d88b773cc27a3f61d2ad782c922d" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
+  "cmp-zotcite": { "branch": "main", "commit": "281f43726bed2c5eb96bea1544edcf2e069795db" },
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
   "conform.nvim": { "branch": "master", "commit": "d28ccf945374edd9f1c34a82f6c22261dbd8ab98" },
   "copilot-cmp": { "branch": "master", "commit": "b6e5286b3d74b04256d0a7e3bd2908eabec34b44" },
@@ -90,5 +91,6 @@
   "vim-github-url": { "branch": "master", "commit": "fb805c07a652b3ef3c8fecebe46ac16526132848" },
   "vimtex": { "branch": "master", "commit": "be2c13c76eb4c72b2d036900aa17b4b8200ddfb5" },
   "which-key.nvim": { "branch": "main", "commit": "68e37e12913a66b60073906f5d3f14dee0de19f2" },
-  "zen-mode.nvim": { "branch": "main", "commit": "29b292bdc58b76a6c8f294c961a8bf92c5a6ebd6" }
+  "zen-mode.nvim": { "branch": "main", "commit": "29b292bdc58b76a6c8f294c961a8bf92c5a6ebd6" },
+  "zotcite": { "branch": "master", "commit": "23944514f4f5b593bb21d959be08c2759a746acc" }
 }

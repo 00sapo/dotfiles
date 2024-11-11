@@ -41,7 +41,7 @@ config.keys = {
 		mods = "CTRL|ALT",
 		action = act.QuickSelectArgs({
 			patterns = {
-				"https?://\\S+",
+				"\\S+?://\\S+",
 			},
 			action = wezterm.action_callback(function(window, pane)
 				local url = window:get_selection_text_for_pane(pane)
