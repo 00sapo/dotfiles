@@ -109,6 +109,7 @@ local M = {
             -- setup ltex_extra
             require("ltex_extra").setup({
               load_langs = { "it", "en-US" },
+              init_check = true,
               path = vim.fn.expand("~") .. "/.local/share/ltex",
             })
           end,

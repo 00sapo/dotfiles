@@ -61,6 +61,11 @@ uda.completion_date.type = date
 uda.completion_date.label = Expected Completion Date
 uda.scheduling.type = string
 uda.scheduling.label = Scheduling
+uda.min_block.type = numeric
+uda.min_block.label = Minimum Time Block
+uda.min_block.default = 1
+uda.notes.type = string
+uda.notes.label = Notes
 
 # Adjust urgency for taskcheck
 urgency.active.coefficient = 3.0
