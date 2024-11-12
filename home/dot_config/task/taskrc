@@ -29,9 +29,9 @@ include ~/.wingtask_certs/taskrc
 #include light-16.theme
 #include light-256.theme
 #include dark-16.theme
-include dark-256.theme
+#include dark-256.theme
 #include dark-red-256.theme
-#include dark-green-256.theme
+include dark-green-256.theme
 #include dark-blue-256.theme
 #include dark-violets-256.theme
 #include dark-yellow-green.theme
@@ -45,71 +45,25 @@ include dark-256.theme
 # removing unuseful history
 journal.info=0
 
-# Projects
+# Custom urgencies
 urgency.user.project.Laudare.coefficient=1.5
 urgency.user.project.Laudare.Data.coefficient=1.5
 urgency.user.project.Laudare.DB.coefficient=2.5
 urgency.user.project.Composer.coefficient=2
+urgency.active.coefficient = 3.0
+urgency.annotations.coefficient=0
+urgency.tags.coefficient=0
+urgency.age.coefficient=12
+urgency.due.coefficient=12
 
-# Define UDAs
-uda.time_map.type = string
-uda.time_map.label = Time Map
-uda.time_map.default = work
-uda.estimated.type = duration
-uda.estimated.label = Estimated Time
-uda.completion_date.type = date
-uda.completion_date.label = Expected Completion Date
-uda.scheduling.type = string
-uda.scheduling.label = Scheduling
-uda.min_block.type = numeric
-uda.min_block.label = Minimum Time Block
-uda.min_block.default = 1
+
+# Custom UDA
 uda.notes.type = string
 uda.notes.label = Notes
+uda.zotero.type = string
+uda.zotero.label = Zotero
 
-# Adjust urgency for taskcheck
-urgency.active.coefficient = 3.0
-urgency.waiting.coefficient = 0.0
-urgency.scheduled.coefficient = 0.0
-
-# Urgencies for each estimation value
-urgency.uda.estimated.PT1H.coefficient = 1
-urgency.uda.estimated.PT2H.coefficient = 2.32
-urgency.uda.estimated.PT3H.coefficient = 3.67
-urgency.uda.estimated.PT4H.coefficient = 4.64
-urgency.uda.estimated.PT5H.coefficient = 5.39
-urgency.uda.estimated.PT6H.coefficient = 6.02
-urgency.uda.estimated.PT7H.coefficient = 6.56
-urgency.uda.estimated.PT8H.coefficient = 7.03
-urgency.uda.estimated.PT9H.coefficient = 7.45
-urgency.uda.estimated.PT10H.coefficient = 7.82
-urgency.uda.estimated.PT11H.coefficient = 8.16
-urgency.uda.estimated.PT12H.coefficient = 8.47
-urgency.uda.estimated.PT13H.coefficient = 8.75
-urgency.uda.estimated.PT14H.coefficient = 9.01
-urgency.uda.estimated.PT15H.coefficient = 9.25
-urgency.uda.estimated.PT16H.coefficient = 9.47
-urgency.uda.estimated.PT17H.coefficient = 9.68
-urgency.uda.estimated.PT18H.coefficient = 9.87
-urgency.uda.estimated.PT19H.coefficient = 10.05
-urgency.uda.estimated.PT20H.coefficient = 10.22
-urgency.uda.estimated.PT21H.coefficient = 10.38
-urgency.uda.estimated.PT22H.coefficient = 10.53
-urgency.uda.estimated.PT23H.coefficient = 10.67
-urgency.uda.estimated.PT24H.coefficient = 10.80
-urgency.uda.estimated.PT25H.coefficient = 10.93
-urgency.uda.estimated.PT26H.coefficient = 11.05
-urgency.uda.estimated.PT27H.coefficient = 11.16
-urgency.uda.estimated.PT28H.coefficient = 11.27
-urgency.uda.estimated.PT29H.coefficient = 11.37
-urgency.uda.estimated.PT30H.coefficient = 11.47
-urgency.uda.estimated.PT31H.coefficient = 11.56
-urgency.uda.estimated.PT32H.coefficient = 11.65
-urgency.uda.estimated.PT33H.coefficient = 11.73
-urgency.uda.estimated.PT34H.coefficient = 11.81
-urgency.uda.estimated.PT35H.coefficient = 11.89
-urgency.uda.estimated.PT36H.coefficient = 11.96
-
+# Reports
 # Sort next report by scheduling date
 report.next.filter=status:pending or status:waiting
 report.next.sort=scheduled+,urgency-,priority-,due+,id+
@@ -119,23 +73,65 @@ news.version=2.6.0
 
 # sort ready report by urgency and add due date
 report.ready.sort=urgency-,priority-,due+,id+
-report.ready.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.relative,due.relative,until.remaining,description,urgency
+report.ready.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.relative,due.relative,until.remaining,description,scheduling,urgency
+report.ready.labels=ID,Active,Age,Deps,P,Proj,Tags,Rec,Sched,Due,Rem,Descr,Sched,Ur
 
-recurrence.confirmation=no
+# other
 confirmation=off
-bulk=0
-report.dash.labels=ID,Deps,P,Proj,Tag,Due,Descr,Ur,Compl
-report.dash.columns=id,depends,priority,project,tags,due.relative,description,urgency,completion_date
-report.dash.description=Dashboard report for shell starting.
-report.dash.sort=urgency-
-report.dash.filter=+READY
 recurrence=on
 
-urgency.annotations.coefficient=0
-urgency.tags.coefficient=0
-urgency.project.coefficient=1
-urgency.due.coefficient=12
-
-# fixing inheritance and dependencies
+# taskcheck
+recurrence.confirmation=no
 urgency.inherit=1
-urgency.blocking.coefficient=2
+urgency.blocked.coefficient=0
+urgency.blocking.coefficient=0
+urgency.waiting.coefficient=0
+urgency.scheduled.coefficient=0
+uda.time_map.type=string
+uda.time_map.label=Time Map
+uda.time_map.default=work
+uda.estimated.type=duration
+uda.estimated.label=Estimated Time
+uda.completion_date.type=date
+uda.completion_date.label=Expected Completion Date
+uda.scheduling.type=string
+uda.scheduling.label=Scheduling
+uda.min_block.type=numeric
+uda.min_block.label=Minimum Time Block
+uda.min_block.default=2
+urgency.uda.estimated.PT1H.coefficient=1
+urgency.uda.estimated.PT2H.coefficient=2.32
+urgency.uda.estimated.PT3H.coefficient=3.67
+urgency.uda.estimated.PT4H.coefficient=4.64
+urgency.uda.estimated.PT5H.coefficient=5.39
+urgency.uda.estimated.PT6H.coefficient=6.02
+urgency.uda.estimated.PT7H.coefficient=6.56
+urgency.uda.estimated.PT8H.coefficient=7.03
+urgency.uda.estimated.PT9H.coefficient=7.45
+urgency.uda.estimated.PT10H.coefficient=7.82
+urgency.uda.estimated.PT11H.coefficient=8.16
+urgency.uda.estimated.PT12H.coefficient=8.47
+urgency.uda.estimated.PT13H.coefficient=8.75
+urgency.uda.estimated.PT14H.coefficient=9.01
+urgency.uda.estimated.PT15H.coefficient=9.25
+urgency.uda.estimated.PT16H.coefficient=9.47
+urgency.uda.estimated.PT17H.coefficient=9.68
+urgency.uda.estimated.PT18H.coefficient=9.87
+urgency.uda.estimated.PT19H.coefficient=10.05
+urgency.uda.estimated.PT20H.coefficient=10.22
+urgency.uda.estimated.PT21H.coefficient=10.38
+urgency.uda.estimated.PT22H.coefficient=10.53
+urgency.uda.estimated.PT23H.coefficient=10.67
+urgency.uda.estimated.PT24H.coefficient=10.80
+urgency.uda.estimated.PT25H.coefficient=10.93
+urgency.uda.estimated.PT26H.coefficient=11.05
+urgency.uda.estimated.PT27H.coefficient=11.16
+urgency.uda.estimated.PT28H.coefficient=11.27
+urgency.uda.estimated.PT29H.coefficient=11.37
+urgency.uda.estimated.PT30H.coefficient=11.47
+urgency.uda.estimated.PT31H.coefficient=11.56
+urgency.uda.estimated.PT32H.coefficient=11.65
+urgency.uda.estimated.PT33H.coefficient=11.73
+urgency.uda.estimated.PT34H.coefficient=11.81
+urgency.uda.estimated.PT35H.coefficient=11.89
+urgency.uda.estimated.PT36H.coefficient=11.96
