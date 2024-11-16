@@ -25,6 +25,6 @@ if status is-interactive
 
     command -v usercheck.fish >/dev/null; and usercheck.fish
 
-    command -v task >/dev/null; and task ready
+    command -v taskcheck >/dev/null; and taskcheck --report today
 
 end

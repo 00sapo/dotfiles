@@ -46,16 +46,18 @@ include dark-green-256.theme
 journal.info=0
 
 # Custom urgencies
-urgency.user.project.Laudare.coefficient=1.5
-urgency.user.project.Laudare.Data.coefficient=1.5
-urgency.user.project.Laudare.DB.coefficient=2.5
-urgency.user.project.Composer.coefficient=2
-urgency.active.coefficient = 3.0
+urgency.user.project.Laudare.coefficient=1
+urgency.user.project.Laudare.Data.coefficient=2
+urgency.user.project.Laudare.DB.coefficient=2
+urgency.user.project.Composer.coefficient=1.5
+urgency.active.coefficient = 1.5
 urgency.annotations.coefficient=0
 urgency.tags.coefficient=0
-urgency.age.coefficient=12
-urgency.due.coefficient=12
-
+urgency.age.coefficient=3
+urgency.due.coefficient=16
+urgency.priority.H.coefficient=1.5
+urgency.priority.M.coefficient=0
+urgency.priority.L.coefficient=-1.5
 
 # Custom UDA
 uda.notes.type = string
@@ -66,7 +68,7 @@ uda.zotero.label = Zotero
 # Reports
 # Sort next report by scheduling date
 report.next.filter=status:pending or status:waiting
-report.next.sort=scheduled+,urgency-,priority-,due+,id+
+report.next.sort=urgency-,priority-,due+,id+
 report.next.columns=id,start.age,entry.age,depends,recur,urgency,project,tags,description,estimated,scheduled,completion_date,due,time_map
 report.next.labels=ID,Active,Age,Deps,Rec,Ur,Proj,Tags,Descr,Est,Sched,Exp,Due,Time Map
 news.version=2.6.0
