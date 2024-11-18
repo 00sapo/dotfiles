@@ -79,6 +79,7 @@ fastboot
 fasttrack-archive-keyring
 fd-find
 fdisk
+feh
 file
 findutils
 firmware-iwlwifi
@@ -673,6 +674,7 @@ nvidia-opencl-icd
 nvidia-profiler
 ocl-icd-opencl-dev
 okular
+okular-extra-backends
 oneko
 openjade
 openrgb
@@ -735,6 +737,7 @@ qml-module-org-kde-kholidays
 qml-module-org-kde-solid
 qml-module-org-kde-userfeedback
 qpwgraph
+quickemu
 ratbagd
 re2c
 readline-common
@@ -762,6 +765,7 @@ spamassassin
 spamc
 spice-html5
 spice-webdavd
+steam-installer
 stopwatch
 sudo
 swig
@@ -840,6 +844,7 @@ zenity
 zip
 zlib1g
 zlib1g-dev
+zotero
 zoxide
 zram-tools
 zstd
