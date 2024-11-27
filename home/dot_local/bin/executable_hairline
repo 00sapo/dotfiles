@@ -1,47 +1,60 @@
-#!/usr/bin/env wish
+#!/usr/bin/env python3
 
-# Full-screen crosshairs
+import tkinter as tk
+import argparse
 
-wm withdraw .
 
-# We use four toplevels as line segments. The horizontal and vertical crosshairs are split to allow click-through.
-toplevel .hlineL
-toplevel .hlineR
-toplevel .vlineT
-toplevel .vlineB
+class CrosshairApp:
+    def __init__(self, root, thickness):
+        self.root = root
+        self.root.withdraw()
 
-set ::period 16 ;# polling period in milliseconds
-set ::colour #7F7F7F
+        self.period = 16  # polling period in milliseconds
+        self.colour = "#7F7F7F"
+        self.thickness = thickness
 
-foreach line {.hlineL .hlineR .vlineT .vlineB} {
-    wm overrideredirect $line 1
-    wm attributes $line -topmost 1
-    $line config -bg $::colour
-}
+        self.hlineL = tk.Toplevel(root)
+        self.hlineR = tk.Toplevel(root)
+        self.vlineT = tk.Toplevel(root)
+        self.vlineB = tk.Toplevel(root)
 
-proc every {ms body} {
-    uplevel 1 $body
-    after $ms [info level 0]
-}
+        for line in [self.hlineL, self.hlineR, self.vlineT, self.vlineB]:
+            line.overrideredirect(True)
+            line.attributes("-topmost", True)
+            line.configure(bg=self.colour)
 
-proc moveOffscreen {} {
-    foreach line {.hlineL .hlineR .vlineT .vlineB} {
-        wm geometry $line 0x0+-1+-1
-    }
-}
+        self.move_offscreen()
+        self.update_crosshairs()
 
-every $::period {
-    lassign [winfo pointerxy .] x y
-    
-    # Handle being on another screen (-1,-1)
-    if {$x == -1 || $y == -1} {
-        moveOffscreen
-    } else {
-        # Note special handling of the (literal) edge cases of being at x=0 or y=0 (Tk will draw a pixel there otherwise):
-        wm geometry .hlineL ${x}x1+[expr {$x <= 0 ? -1 : 0}]+${y}
-        wm geometry .hlineR [expr {[winfo screenwidth .] - $x}]x1+[expr {$x + 1}]+${y}
-            
-        wm geometry .vlineT 1x${y}+${x}+[expr {$y <= 0 ? -1 : 0}]
-        wm geometry .vlineB 1x[expr {[winfo screenheight .] - $y}]+${x}+[expr {$y + 1}]
-    }
-}
+    def move_offscreen(self):
+        for line in [self.hlineL, self.hlineR, self.vlineT, self.vlineB]:
+            line.geometry("0x0+-1+-1")
+
+    def update_crosshairs(self):
+        x, y = self.root.winfo_pointerxy()
+
+        if x == -1 or y == -1:
+            self.move_offscreen()
+        else:
+            screen_width = self.root.winfo_screenwidth()
+            screen_height = self.root.winfo_screenheight()
+
+            self.hlineL.geometry(f"{x}x{self.thickness}+{0 if x > 0 else -1}+{y}")
+            self.hlineR.geometry(f"{screen_width - x}x{self.thickness}+{x + 1}+{y}")
+
+            self.vlineT.geometry(f"{self.thickness}x{y}+{x}+{0 if y > 0 else -1}")
+            self.vlineB.geometry(f"{self.thickness}x{screen_height - y}+{x}+{y + 1}")
+
+        self.root.after(self.period, self.update_crosshairs)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Full-screen crosshairs")
+    parser.add_argument(
+        "-t", "--thickness", type=int, default=3, help="Thickness of the crosshairs"
+    )
+    args = parser.parse_args()
+
+    root = tk.Tk()
+    app = CrosshairApp(root, args.thickness)
+    root.mainloop()
