@@ -3,14 +3,27 @@
 import tkinter as tk
 import argparse
 
+# Define a dictionary of color names with their corresponding hex values
+COLOR_DICT = {
+    "red": "#FF0000",
+    "green": "#00FF00",
+    "blue": "#0000FF",
+    "yellow": "#FFFF00",
+    "cyan": "#00FFFF",
+    "magenta": "#FF00FF",
+    "gray": "#7F7F7F",
+    "black": "#000000",
+    "white": "#FFFFFF",
+}
+
 
 class CrosshairApp:
-    def __init__(self, root, thickness):
+    def __init__(self, root, thickness, color):
         self.root = root
         self.root.withdraw()
 
         self.period = 16  # polling period in milliseconds
-        self.colour = "#7F7F7F"
+        self.colour = color
         self.thickness = thickness
 
         self.hlineL = tk.Toplevel(root)
@@ -53,8 +66,22 @@ if __name__ == "__main__":
     parser.add_argument(
         "-t", "--thickness", type=int, default=3, help="Thickness of the crosshairs"
     )
+    parser.add_argument(
+        "-c", "--color", type=str, default="gray", help="Color of the crosshairs"
+    )
     args = parser.parse_args()
 
+    # Determine the color to use
+    if args.color in COLOR_DICT:
+        color = COLOR_DICT[args.color]
+    elif args.color.startswith("#"):
+        color = args.color
+    else:
+        print(
+            f"Warning: Color '{args.color}' not recognized. Using default color 'gray'."
+        )
+        color = COLOR_DICT["gray"]
+
     root = tk.Tk()
-    app = CrosshairApp(root, args.thickness)
+    app = CrosshairApp(root, args.thickness, color)
     root.mainloop()
