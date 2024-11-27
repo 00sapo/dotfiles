@@ -1,0 +1,47 @@
+#!/usr/bin/env wish
+
+# Full-screen crosshairs
+
+wm withdraw .
+
+# We use four toplevels as line segments. The horizontal and vertical crosshairs are split to allow click-through.
+toplevel .hlineL
+toplevel .hlineR
+toplevel .vlineT
+toplevel .vlineB
+
+set ::period 16 ;# polling period in milliseconds
+set ::colour #7F7F7F
+
+foreach line {.hlineL .hlineR .vlineT .vlineB} {
+    wm overrideredirect $line 1
+    wm attributes $line -topmost 1
+    $line config -bg $::colour
+}
+
+proc every {ms body} {
+    uplevel 1 $body
+    after $ms [info level 0]
+}
+
+proc moveOffscreen {} {
+    foreach line {.hlineL .hlineR .vlineT .vlineB} {
+        wm geometry $line 0x0+-1+-1
+    }
+}
+
+every $::period {
+    lassign [winfo pointerxy .] x y
+    
+    # Handle being on another screen (-1,-1)
+    if {$x == -1 || $y == -1} {
+        moveOffscreen
+    } else {
+        # Note special handling of the (literal) edge cases of being at x=0 or y=0 (Tk will draw a pixel there otherwise):
+        wm geometry .hlineL ${x}x1+[expr {$x <= 0 ? -1 : 0}]+${y}
+        wm geometry .hlineR [expr {[winfo screenwidth .] - $x}]x1+[expr {$x + 1}]+${y}
+            
+        wm geometry .vlineT 1x${y}+${x}+[expr {$y <= 0 ? -1 : 0}]
+        wm geometry .vlineB 1x[expr {[winfo screenheight .] - $y}]+${x}+[expr {$y + 1}]
+    }
+}
