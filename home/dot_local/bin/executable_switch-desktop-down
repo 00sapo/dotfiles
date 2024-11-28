@@ -1,0 +1,14 @@
+#!/bin/env fish
+
+set current_mode (wmctrl -m | grep 'showing the desktop')
+set showing_desktop (string match -r '.* ON$' -- $current_mode)
+set current_desktop (wmctrl -d | grep '\*' | awk '{print $1}')
+set last_desktop (wmctrl -d | tail -n 1 | awk '{print $1}')
+set desired_desktop (math $current_desktop + 1)
+
+if test $current_desktop != $last_desktop
+    wmctrl -s $desired_desktop
+end
+if test $showing_desktop
+    wmctrl -k on
+end
