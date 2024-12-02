@@ -121,7 +121,7 @@ wezterm.on("update-status", function(window, pane)
 			-- activate pane if possible
 			pane:activate()
 			-- send notification to /dev/pts/0
-			os.execute("echo 'Password input detected in tab " .. pane:tab():tab_id() .. "!' > /dev/pts/0")
+			os.execute("notify-send -a 'Wezterm' 'Password input detected in tab " .. pane:tab():tab_id() .. "!'")
 		end
 	else
 		overrides.color_scheme = nil
