@@ -1,6 +1,11 @@
 # Installation
 
 ```
+curl https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER
+sh AM-INSTALLER
+appman -i rbw
+rbw config set email "mybitwarden@email.com"
+rbw login
 sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --ssh --apply 00sapo
 ```
 
