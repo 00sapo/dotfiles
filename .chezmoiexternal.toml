@@ -1,6 +1,0 @@
-[".fonts/SourceCodePro/"]
-type = "archive"
-url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCodePro.zip"
-exact = false
-stripComponents = 0
-refreshPeriod = "168h"
