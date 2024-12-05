@@ -1,0 +1,9 @@
+sourceDir: "/home/federico/.local/share/chezmoi/root"
+
+destDir: "/"
+
+verbose: true
+
+data:
+  non_root_user: "federico"
+  
