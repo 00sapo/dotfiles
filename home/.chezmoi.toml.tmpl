@@ -1,0 +1,8 @@
+encryption = "gpg"
+[gpg]
+    symmetric = true
+    args = ["--batch", "--passphrase-file", "<(rbw get chezmoi)", "--no-symkey-cache"]
+
+[git]
+    autoCommit = true
+    autoPush = true
