@@ -1,13 +1,13 @@
 Package: *
-Pin: release n=trixie
+Pin: release n=bookworm
 Pin-Priority: 900
 
 Package: *
-Pin: release n=trixie-security
+Pin: release n=bookworm-security
 Pin-Priority: 900
 
 Package: *
-Pin: release n=trixie-updates
+Pin: release n=bookworm-updates
 Pin-Priority: 900
 
 Package: *
