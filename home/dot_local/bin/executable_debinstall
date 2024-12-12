@@ -12,6 +12,10 @@ wget -qO- https://raw.githubusercontent.com/retorquere/zotero-deb/master/install
 curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg
 echo 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
 
+######### Bespokesynth
+echo 'deb http://download.opensuse.org/repositories/home:/bespokesynth/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/home:bespokesynth.list
+curl -fsSL https://download.opensuse.org/repositories/home:bespokesynth/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_bespokesynth.gpg >/dev/null
+
 ######### Install
 sudo apt update
-sudo apt install wezterm zotero brave-browser
+sudo apt install wezterm zotero brave-browser bespokesynth
