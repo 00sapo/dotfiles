@@ -70,5 +70,9 @@ M = {
       "LiadOz/nvim-dap-repl-highlights",
     },
   },
+  {
+    "LiadOz/nvim-dap-repl-highlights",
+    opts = true,
+  },
 }
 return M
