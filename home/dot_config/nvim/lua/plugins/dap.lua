@@ -44,17 +44,6 @@ M = {
     "rcarriga/nvim-dap-ui",
     keys = {
       { "<leader>dw", add_to_watches, desc = "Add to watches", mode = { "n", "v" } },
-      {
-        "<leader>dL",
-        function()
-          local file = vim.fn.expand(".")
-          if vim.fn.filereadable(file .. "/nvim-dap.json") then
-            require("dap.ext.vscode").load_launchjs(file .. "/nvim-dap.json")
-          end
-        end,
-        desc = "Reload nvim-dap.json",
-        mode = { "n" },
-      },
     },
     opts = {
       layouts = {
