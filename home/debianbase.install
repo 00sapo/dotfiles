@@ -251,6 +251,7 @@ gnome-tweaks
 gnome-user-share
 gnupg
 gnupg2
+golang
 google-android-platform-tools-installer
 gparted
 gpgv
@@ -449,6 +450,7 @@ libxxhash0
 libzstd1
 linux-cpupower
 linux-headers-amd64
+linux-image-6.1.0-29-amd64
 linux-image-amd64
 linux-kbuild-6.1
 lm-sensors
@@ -496,6 +498,7 @@ nvidia-driver
 nvidia-driver-full
 nvidia-smi
 obsidian-icon-theme
+okular
 ooo-thumbnailer
 openfortivpn
 openrgb
