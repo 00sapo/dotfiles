@@ -1,11 +1,5 @@
 return {
   -- {
-  --   "nvzone/typr",
-  --   cmd = "TyprStats",
-  --   dependencies = "nvzone/volt",
-  --   opts = {},
-  -- },
-  -- {
   --   "LazyVim/LazyVim",
   --   opts = {
   --     colorscheme = "catppuccin",

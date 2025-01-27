@@ -1,23 +1,26 @@
 M = {
   {
     "nvim-treesitter",
-    opts = {
-      ensure_installed = { "dap_repl" },
-      textobjects = {
-        select = {
-          enable = true,
-          lookahead = true,
-          keymaps = {
-            ["af"] = "@function.outer",
-            ["if"] = "@function.inner",
-            ["ac"] = "@class.outer",
-            ["ic"] = "@class.inner",
-            ["aa"] = "@parameter.outer",
-            ["ia"] = "@parameter.inner",
-          },
+    opts = function(_, opts)
+      require("nvim-dap-repl-highlights").setup()
+
+      -- ensure_installed = { "dap_repl" }
+      vim.tbl_extend("force", opts.ensure_installed, { "dap_repl" })
+      opts.textobjects.select = {
+        enable = true,
+        lookahead = true,
+        keymaps = {
+          ["af"] = "@function.outer",
+          ["if"] = "@function.inner",
+          ["ac"] = "@class.outer",
+          ["ic"] = "@class.inner",
+          ["aa"] = "@parameter.outer",
+          ["ia"] = "@parameter.inner",
         },
-      },
-    },
+      }
+
+      return opts
+    end,
     dependencies = { "LiadOz/nvim-dap-repl-highlights" },
   },
   {

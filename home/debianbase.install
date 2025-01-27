@@ -34,6 +34,7 @@ bc
 bespokesynth
 bluetooth
 bluez-firmware
+brave-browser
 bridge-utils
 broadcom-sta-common
 broadcom-sta-dkms
@@ -147,18 +148,13 @@ firmware-ti-connectivity
 firmware-zd1211
 fish
 flac
-flatpak
 fonts-cantarell
 fonts-dejavu
 fonts-droid-fallback
 fonts-hack-ttf
 fonts-liberation
-fonts-noto
-fonts-noto-cjk
-fonts-noto-color-emoji
 fonts-roboto
 fonts-ubuntu
-fuse3
 fzf
 gawk
 gcc
@@ -251,7 +247,6 @@ gnome-tweaks
 gnome-user-share
 gnupg
 gnupg2
-golang
 google-android-platform-tools-installer
 gparted
 gpgv
@@ -354,7 +349,6 @@ libffi8
 libfile-find-rule-perl
 libfile-mimeinfo-perl
 libfishcamp1
-libfuse2
 libgcc-s1
 libgcrypt20
 libgdbm-compat4
@@ -450,7 +444,6 @@ libxxhash0
 libzstd1
 linux-cpupower
 linux-headers-amd64
-linux-image-6.1.0-29-amd64
 linux-image-amd64
 linux-kbuild-6.1
 lm-sensors
@@ -479,11 +472,9 @@ musepack-tools
 nano
 nautilus-admin
 nautilus-extension-gnome-terminal
-nautilus-megasync
 nautilus-share
 ncurses-base
 ncurses-bin
-neofetch
 neovim
 netbase
 netcat-openbsd
@@ -495,10 +486,8 @@ nss-passwords
 ntfs-3g
 numlockx
 nvidia-driver
-nvidia-driver-full
 nvidia-smi
 obsidian-icon-theme
-okular
 ooo-thumbnailer
 openfortivpn
 openrgb
@@ -506,7 +495,6 @@ openssh-server
 openssl
 os-prober
 oss-compat
-ovmf
 p7zip
 p7zip-full
 packagekit
@@ -547,8 +535,6 @@ pwgen
 python3-btrfsutil
 python3-psutil
 python3-smbc
-qemu-system-x86
-qemu-utils
 qt5-gtk2-platformtheme
 qt5-style-kvantum
 qt5-xdgdesktopportal-platformtheme
@@ -577,7 +563,6 @@ squashfs-tools
 ssh-askpass-gnome
 steam-installer
 sudo
-swtpm-tools
 synaptic
 syslinux
 syslinux-common
@@ -640,6 +625,9 @@ xbacklight
 xbitmaps
 xcalib
 xclip
+xdg-desktop-portal
+xdg-desktop-portal-gnome
+xdg-desktop-portal-gtk
 xdg-user-dirs-gtk
 xfonts-100dpi
 xfonts-75dpi

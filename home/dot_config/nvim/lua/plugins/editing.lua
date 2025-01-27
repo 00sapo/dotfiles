@@ -68,14 +68,25 @@ local M = {
       vim.api.nvim_create_autocmd("TextYankPost", { callback = copy })
     end,
   },
-  {
-    "saghen/blink.cmp",
-    opts = {
-      keymap = {
-        preset = "enter",
-        ["<C-space>"] = { "show", "select_and_accept" },
-      },
-    },
+  { -- use Ctrl+Enter to confirm in place of Enter
+    "hrsh7th/nvim-cmp",
+    opts = function(_, opts)
+      local cmp = require("cmp")
+      local complete = cmp.mapping.complete()
+      local confirm = cmp.mapping.confirm({ select = true })
+
+      opts.mapping = vim.tbl_extend("force", opts.mapping, {
+        ["<C-Space>"] = function(fallback)
+          if cmp.visible() then
+            return confirm(fallback)
+          else
+            return complete(fallback)
+          end
+        end,
+      })
+
+      opts.mapping["<CR>"] = nil
+    end,
   },
   {
     "folke/zen-mode.nvim",
@@ -118,7 +129,7 @@ local M = {
         -- disable diagnostics
         vim.diagnostic.enable(false)
         -- disable autocomplete
-        vim.b.completion = false
+        require("cmp").setup.buffer({ enabled = false })
         -- limit maximum number of characters per line
         vim.api.nvim_set_option_value("textwidth", 60, {})
         -- disable tmux statusline and panes
@@ -128,7 +139,7 @@ local M = {
       on_close = function()
         -- enable diagnostics
         vim.diagnostic.enable(true)
-        vim.b.completion = true
+        require("cmp").setup.buffer({ enabled = true })
         -- restore tmux statusline and panes
         vim.fn.system([[tmux set status on]])
         vim.fn.system([[tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z]])
