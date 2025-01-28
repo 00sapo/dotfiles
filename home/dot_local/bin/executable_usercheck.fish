@@ -38,6 +38,7 @@ for user in (cut -d: -f1 /etc/passwd)
             set last_login (date -d @$last_login_seconds -I)
             echo "User $user doesn't login since $last_login. You can delete this user with: "
             echo "sudo userdel -r $user"
+            continue
         end
 
         # same with the creation date
@@ -48,6 +49,7 @@ for user in (cut -d: -f1 /etc/passwd)
             set creation_date (date -d @$creation_seconds -I)
             echo "User $user was created on $creation_date. You can delete this user with: "
             echo "sudo userdel -r $user"
+            continue
         end
 
         # if option -v is used, print $user and $last_login
