@@ -19,15 +19,26 @@ for user in (cut -d: -f1 /etc/passwd)
     set user_groups (id -nG $user)
     # if echo $user_groups | grep -qE '\b(student|faculty)\b'
     if test -d /home/$user -o (echo $user_groups | grep -cE '\b(student|faculty)\b') -gt 0
+
         # if the user has no home, alert
-        if test -z /home/$user
+        set home_dir (getent passwd $user | cut -d: -f6)
+
+        # Get the last status change of its home
+        set last_login_seconds (stat -c %Z $home_dir)
+        # Get the user creation date
+        set creation_seconds (stat -c %W $home_dir)
+
+        # if option -v is used, print $user and $last_login
+        if set -q _flag_v
+            set last_login (date -d @$last_login_seconds -I)
+            set creation_date (date -d @$creation_seconds -I)
+            printf "%-20s %-20s %-20s\n" $user $last_login $creation_date
+        end
+        if test -z $home_dir
             echo "$user has no home. You can delete this user with: "
             echo "sudo userdel -r $user"
             continue
         end
-
-        # Get the last status change of its home
-        set last_login_seconds (stat -c %Z /home/$user)
 
         # Calculate the difference in seconds
         set diff (math "$current_date-$last_login_seconds")
@@ -41,22 +52,14 @@ for user in (cut -d: -f1 /etc/passwd)
             continue
         end
 
-        # same with the creation date
-        # Get the user creation date
-        set creation_seconds (stat -c %W /home/$user)
+        # same with the creation date but only for users not in faculty
         set diff_creation (math "$current_date-$creation_seconds")
-        if test $diff_creation -gt $one_year_seconds
+        if test $diff_creation -gt $one_year_seconds -a (echo $user_groups | grep -cE '\bfaculty\b') -eq 0
             set creation_date (date -d @$creation_seconds -I)
             echo "User $user was created on $creation_date. You can delete this user with: "
             echo "sudo userdel -r $user"
             continue
         end
 
-        # if option -v is used, print $user and $last_login
-        if set -q _flag_v
-            set last_login (date -d @$last_login_seconds -I)
-            set creation_date (date -d @$creation_seconds -I)
-            printf "%-20s %-20s %-20s\n" $user $last_login $creation_date
-        end
     end
 end
