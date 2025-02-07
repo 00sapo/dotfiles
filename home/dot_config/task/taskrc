@@ -49,6 +49,7 @@ journal.info=0
 urgency.user.project.Laudare.coefficient=1
 urgency.user.project.Laudare.Data.coefficient=2
 urgency.user.project.Laudare.DB.coefficient=2
+urgency.user.project.Composer.coefficient=1.5
 urgency.active.coefficient = 1.5
 urgency.annotations.coefficient=0
 urgency.tags.coefficient=0
