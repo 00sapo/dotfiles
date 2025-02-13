@@ -72,6 +72,7 @@ debian-keyring
 debianutils
 deborphan
 debsums
+default-jre
 dialog
 diffutils
 dkms
@@ -632,6 +633,7 @@ vlc-plugin-visualization
 wezterm
 wget
 whiptail
+wireguard
 wireless-regdb
 wmctrl
 wpasupplicant

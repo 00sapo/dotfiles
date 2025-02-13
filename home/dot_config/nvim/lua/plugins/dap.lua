@@ -48,19 +48,17 @@ M = {
     opts = {
       layouts = {
         {
-          elements = {},
-          size = 0,
-          position = "left", -- Can be "left" or "right"
+          elements = { "stacks", "console", "breakpoints" },
+          size = 40,
+          position = "right", -- Can be "left" or "right" or "top" or "bottom"
         },
         {
           elements = {
-            -- "console",
-            -- { id = "breakpoints", size = 0.25 },
-            { id = "watches", size = 0.75 },
-            { id = "stacks", size = 0.25 },
+            { id = "watches", size = 0.5 },
+            { id = "repl", size = 0.5 },
           },
           size = 10,
-          position = "bottom", -- Can be "bottom" or "top"
+          position = "bottom",
         },
       },
     },
