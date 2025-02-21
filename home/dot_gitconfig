@@ -20,3 +20,5 @@
 	initializenew = true
 [push]
 	recurseSubmodules = check
+[diff]
+	tool = nvimdiff

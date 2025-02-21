@@ -69,7 +69,7 @@ local M = {
                 auxDirectory = "/tmp/texlab",
                 pdfDirectory = "/tmp/texlab",
                 onSave = true,
-                forwardSearchAfter = true,
+                -- forwardSearchAfter = true,
               },
               chktex = {
                 onEdit = false,
@@ -83,13 +83,21 @@ local M = {
               },
               forwardSearch = {
                 -- see nvim-texlabconfig
+                -- executable = "zathura",
+                -- args = {
+                --   "--synctex-editor-command",
+                --   [[nvim-texlabconfig -file '%%%{input}' -line %%%{line} -server ]] .. vim.v.servername,
+                --   "--synctex-forward",
+                --   "%l:1:%f",
+                --   "%p",
+                -- },
                 executable = "sioyek",
                 args = {
                   "--reuse-window",
                   "--execute-command",
                   "toggle_synctex", -- Open Sioyek in synctex mode.
                   "--inverse-search",
-                  [[nvim-texlabconfig -file %%%1 -line %%%2 -server ]] .. vim.v.servername,
+                  'nvim-texlabconfig -file "%%%1" -line "%%%2" -server ' .. vim.v.servername,
                   "--forward-search-file",
                   "%f",
                   "--forward-search-line",
@@ -120,11 +128,12 @@ local M = {
   {
     "f3fora/nvim-texlabconfig",
     config = function()
+      vim.o.updatetime = 500 -- used by CursorHold for automatic forward search
       require("texlabconfig").setup()
     end,
     ft = { "tex", "bib" }, -- Lazy-load on filetype
-    build = "go build",
-    -- build = 'go build -o ~/.bin/' if e.g. ~/.bin/ is in $PATH
+    -- build = "go build",
+    build = "go build -o ~/.local/bin/",
   },
   {
     "linux-cultist/venv-selector.nvim",
@@ -136,5 +145,13 @@ local M = {
     ft = { "markdown", "tex" },
     dependencies = { "neovim/nvim-lspconfig" },
   },
+  -- {
+  --   "lervag/vimtex",
+  --   lazy = false,
+  --   init = function()
+  --     -- VimTeX configuration goes here, e.g.
+  --     vim.g.vimtex_view_method = "zathura"
+  --   end,
+  -- },
 }
 return M
