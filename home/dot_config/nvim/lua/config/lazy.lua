@@ -16,7 +16,6 @@ require("lazy").setup({
     { "vimtex", enabled = false },
     { "nvim-dap-virtual-text", enabled = false },
     -- { "noice.nvim", enabled = false },
-    -- { "nvim-notify", enabled = false },
     -- { "mini.ai", enabled = false },
     -- { "bufferline.nvim", enabled = false },
   },
