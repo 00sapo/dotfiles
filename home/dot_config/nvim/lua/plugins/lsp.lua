@@ -94,8 +94,8 @@ local M = {
                 executable = "sioyek",
                 args = {
                   "--reuse-window",
-                  "--execute-command",
-                  "toggle_synctex", -- Open Sioyek in synctex mode.
+                  -- "--execute-command",
+                  -- "toggle_synctex", -- Open Sioyek in synctex mode.
                   "--inverse-search",
                   'nvim-texlabconfig -file "%%%1" -line "%%%2" -server ' .. vim.v.servername,
                   "--forward-search-file",
@@ -132,6 +132,7 @@ local M = {
       require("texlabconfig").setup()
     end,
     ft = { "tex", "bib" }, -- Lazy-load on filetype
+    keys = { { "<leader><", "<cmd>TexlabForward<cr>", desc = "Forward Search (LaTeX)" } },
     -- build = "go build",
     build = "go build -o ~/.local/bin/",
   },
