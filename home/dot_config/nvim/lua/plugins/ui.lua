@@ -1,10 +1,15 @@
 return {
-  -- {
-  --   "nvzone/typr",
-  --   cmd = "TyprStats",
-  --   dependencies = "nvzone/volt",
-  --   opts = {},
-  -- },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      lsp = {
+        progress = {
+          enabled = false,
+        },
+      },
+    },
+  },
   -- {
   --   "LazyVim/LazyVim",
   --   opts = {
@@ -39,21 +44,4 @@ return {
   --     end,
   --   },
   -- },
-  -- {
-  --   "vigoux/notifier.nvim",
-  --   opts = {}, -- needed to force call to setup
-  -- },
-  {
-    "snacks.nvim",
-    opts = {
-      -- indent = { enabled = true },
-      -- input = { enabled = true },
-      notifier = { enabled = false },
-      -- scope = { enabled = true },
-      -- scroll = { enabled = true },
-      -- statuscolumn = { enabled = false }, -- we set this in options.lua
-      -- toggle = { map = LazyVim.safe_keymap_set },
-      -- words = { enabled = true },
-    },
-  },
 }
