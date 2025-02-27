@@ -109,6 +109,7 @@ exfatprogs
 f2fs-tools
 fancontrol
 fasttrack-archive-keyring
+fd-find
 fdisk
 ffmpeg
 ffmpegthumbnailer
@@ -482,6 +483,7 @@ nautilus-admin
 nautilus-extension-gnome-terminal
 nautilus-megasync
 nautilus-share
+ncdu
 ncurses-base
 ncurses-bin
 neofetch
@@ -495,6 +497,7 @@ nftables
 nss-passwords
 ntfs-3g
 numlockx
+nvidia-cuda-toolkit
 nvidia-driver
 nvidia-driver-full
 nvidia-smi
@@ -570,6 +573,7 @@ sensible-utils
 shared-mime-info
 shim-signed
 simple-scan
+sioyek
 smartmontools
 snapper-gui
 software-properties-gtk
@@ -592,8 +596,10 @@ tar
 tasksel
 tasksel-data
 taskwarrior
+texlive-full
 thin-provisioning-tools
 tlp
+tmux
 traceroute
 transmission-cli
 transmission-gtk
@@ -665,6 +671,7 @@ xserver-xorg-video-all
 xserver-xorg-video-qxl
 yaru-theme-gnome-shell
 yaru-theme-gtk
+zathura
 zenity
 zip
 zlib1g
