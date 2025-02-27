@@ -85,6 +85,9 @@ for i in "${!original_args[@]}"; do
   args+=("${original_args[i]}")
 done
 
-log_task "Applying root dotfiles"
-log_c "rootmoi" "${args[@]}"
-exec "${rootmoi_path}" "${args[@]}"
+# if hostname is girolamo or cucchia, otherwise do nothing
+if [[ "$(hostname)" == "girolamo" || "$(hostname)" == "cucchia" ]]; then
+  log_task "Applying root dotfiles"
+  log_c "rootmoi" "${args[@]}"
+  exec "${rootmoi_path}" "${args[@]}"
+fi
