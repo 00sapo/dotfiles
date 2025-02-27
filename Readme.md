@@ -1,11 +1,13 @@
 # Installation
 
 ```
-curl https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER
+curl -O https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER
 sh AM-INSTALLER
 appman -i rbw
 rbw config set email "mybitwarden@email.com"
 rbw login
+mkdir .ssh
+rbw get Claude > .ssh/id_rsa
 sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --ssh --apply 00sapo
 ```
 
@@ -40,7 +42,7 @@ Install from `$HOME/am.install`:
 - Use the following
 
 ```fish
-for tool in "python golang nodejs rust delta lazygit"
+for tool in "python golang nodejs rust"
   asdf plugin-add $tool
   asdf install $tool latest
 end
@@ -50,9 +52,4 @@ end
 
 #### Trixie
 
-Trixie will include git-delta (currently using asdf).
-
-#### Evolution
-
-Evolution login in Debian stable is not working for Microsoft, so you need to use an updated version
-to login (e.g. via flatpak or distrobox), then you can use Debian's version.
+Trixie will include git-delta (currently using appman).
