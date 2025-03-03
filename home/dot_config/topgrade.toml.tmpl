@@ -22,6 +22,8 @@ disable = ["mamba", "conda", "chezmoi", "vim", "pnpm", "asdf"]
 disable = ["chezmoi", "vim", "pnpm", "asdf"]
 {{- else if eq .chezmoi.hostname "cucchia" }}
 disable = ["chezmoi", "vim", "pnpm", "asdf"]
+{{- else }}
+disable = ["chezmoi", "vim", "pnpm", "asdf"]
 {{- end }}
 
 # Ignore failures for these steps
