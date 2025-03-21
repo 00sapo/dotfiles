@@ -10,7 +10,6 @@ alsa-topology-conf
 alsa-ucm-conf
 alsa-utils
 amd64-microcode
-apptainer
 apt
 apt-file
 apt-listchanges
@@ -301,7 +300,6 @@ i965-va-driver-shaders
 iamerican
 iat
 ifupdown
-imagemagick
 indi-dsi
 init
 init-system-helpers
@@ -401,7 +399,6 @@ libnftnl11
 libnotify-bin
 libnss-mdns
 libnumber-compare-perl
-libopenblas0-pthread
 libp11-kit0
 libpam-gnome-keyring
 libpam-modules
@@ -470,7 +467,6 @@ lvm2
 lzip
 lzma
 lzop
-marble
 mawk
 media-player-info
 mediainfo
@@ -494,7 +490,6 @@ neofetch
 neovim
 netbase
 netcat-openbsd
-netpbm
 network-manager
 network-manager-gnome
 network-manager-openvpn-gnome
@@ -558,7 +553,6 @@ python3-psutil
 python3-smbc
 qemu-system-x86
 qemu-utils
-qgis
 qt5-gtk2-platformtheme
 qt5-style-kvantum
 qt5-xdgdesktopportal-platformtheme
@@ -604,7 +598,6 @@ tasksel-data
 taskwarrior
 texlive-full
 thin-provisioning-tools
-tigervnc-viewer
 tlp
 tmux
 traceroute
@@ -651,7 +644,6 @@ wireless-regdb
 wmctrl
 wpasupplicant
 x11-apps
-x11vnc
 xbacklight
 xbitmaps
 xcalib
@@ -677,7 +669,6 @@ xserver-xorg-input-mutouch
 xserver-xorg-input-wacom
 xserver-xorg-video-all
 xserver-xorg-video-qxl
-xvfb
 yaru-theme-gnome-shell
 yaru-theme-gtk
 zathura

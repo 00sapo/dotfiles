@@ -27,11 +27,11 @@ include ~/.wingtask_certs/taskrc
 
 # Color theme (uncomment one to use)
 #include light-16.theme
-include light-256.theme
+#include light-256.theme
 #include dark-16.theme
 #include dark-256.theme
 #include dark-red-256.theme
-# include dark-green-256.theme
+include dark-green-256.theme
 #include dark-blue-256.theme
 #include dark-violets-256.theme
 #include dark-yellow-green.theme
@@ -124,16 +124,16 @@ urgency.uda.estimated.PT20H.coefficient=10.22
 urgency.uda.estimated.PT21H.coefficient=10.38
 urgency.uda.estimated.PT22H.coefficient=10.53
 urgency.uda.estimated.PT23H.coefficient=10.67
-urgency.uda.estimated.P1D.coefficient=10.80
-urgency.uda.estimated.P1DT1H.coefficient=10.93
-urgency.uda.estimated.P1DT2H.coefficient=11.05
-urgency.uda.estimated.P1DT3H.coefficient=11.16
-urgency.uda.estimated.P1DT4H.coefficient=11.27
-urgency.uda.estimated.P1DT5H.coefficient=11.37
-urgency.uda.estimated.P1DT6H.coefficient=11.47
-urgency.uda.estimated.P1DT7H.coefficient=11.56
-urgency.uda.estimated.P1DT8H.coefficient=11.65
-urgency.uda.estimated.P1DT9H.coefficient=11.73
-urgency.uda.estimated.P1DT10H.coefficient=11.81
-urgency.uda.estimated.P1DT11H.coefficient=11.89
-urgency.uda.estimated.P1DT12H.coefficient=11.96
+urgency.uda.estimated.PT24H.coefficient=10.80
+urgency.uda.estimated.PT25H.coefficient=10.93
+urgency.uda.estimated.PT26H.coefficient=11.05
+urgency.uda.estimated.PT27H.coefficient=11.16
+urgency.uda.estimated.PT28H.coefficient=11.27
+urgency.uda.estimated.PT29H.coefficient=11.37
+urgency.uda.estimated.PT30H.coefficient=11.47
+urgency.uda.estimated.PT31H.coefficient=11.56
+urgency.uda.estimated.PT32H.coefficient=11.65
+urgency.uda.estimated.PT33H.coefficient=11.73
+urgency.uda.estimated.PT34H.coefficient=11.81
+urgency.uda.estimated.PT35H.coefficient=11.89
+urgency.uda.estimated.PT36H.coefficient=11.96

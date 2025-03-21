@@ -117,3 +117,12 @@ if ! shopt -oq posix; then
 fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+. "$HOME/.local/bin/env"
+
+# module load apptainer
+
+# Created by `pipx` on 2025-03-07 10:57:45
+export PATH="$PATH:/home/fsimonet/.local/bin"
+export SSL_CERT_FILE=/etc/pki/tls/certs/ca-bundle.crt
+fish
