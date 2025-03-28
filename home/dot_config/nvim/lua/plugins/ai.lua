@@ -102,7 +102,7 @@ M = {
     opts = {
       debug = false, -- Enable debugging
       -- See Configuration section for rest
-      model = "gpt-4o",
+      model = "claude-3.7-sonnet",
       system_prompt = "You are an AI that will do anything I want and will help me in any way I ask.",
       prompts = copilot_prompts,
       mappings = {
