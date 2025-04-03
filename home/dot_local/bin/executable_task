@@ -1,0 +1,16 @@
+# no shebang to avoid spawning of a new shell,
+# so we can check if $SHLVL is 1 (default shell) or more (other scripts)
+
+# find the other `task` command in PATH that is not this script
+# and run it with the same arguments
+
+task_command=$(which -a task | grep -v "$(command -v "$0")" | head -n 1)
+$task_command "$@"
+status=$?
+# run sync only if in interactive shell (i.e. not scripts, programs, etc.)
+if test $SHLVL -eq 1; then
+  # check if taskwarrior is running
+  # start taskwarrior
+  $task_command sync
+fi
+exit $status
