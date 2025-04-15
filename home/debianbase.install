@@ -578,6 +578,7 @@ pavucontrol
 perl
 perl-base
 perl-modules-5.36
+phoronix-test-suite
 pidgin
 pidgin-extprefs
 pidgin-gnome-keyring
