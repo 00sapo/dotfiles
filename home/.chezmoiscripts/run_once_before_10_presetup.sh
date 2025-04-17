@@ -11,5 +11,5 @@ echo setup ssh sockets
 mkdir -p ~/.ssh/sockets
 
 echo import GPG keys
-GPG_TTY=$(tty) rbw get "GPG-PUBLIC" | gpg --import
-GPG_TTY=$(tty) rbw get "GPG-PRIVATE" | gpg --import
+rbw get "GPG-PUBLIC" | gpg --batch --import
+rbw get "GPG-PRIVATE" | gpg --batch --import
