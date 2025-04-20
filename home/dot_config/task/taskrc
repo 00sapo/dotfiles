@@ -55,9 +55,17 @@ urgency.annotations.coefficient=0
 urgency.tags.coefficient=0
 urgency.age.coefficient=3
 urgency.due.coefficient=16
-urgency.priority.H.coefficient=1.5
-urgency.priority.M.coefficient=0
-urgency.priority.L.coefficient=-1.5
+
+# priority
+uda.priority.label=Priority
+uda.priority.type=string
+uda.priority.values=HHH,HH,H,L,LL,LLL
+urgency.uda.priority.HHH.coefficient=6
+urgency.uda.priority.HH.coefficient=3
+urgency.uda.priority.H.coefficient=1.5
+urgency.uda.priority.L.coefficient=-1.5
+urgency.uda.priority.LL.coefficient=-3
+urgency.uda.priority.LLL.coefficient=-6
 
 # Custom UDA
 uda.notes.type = string
