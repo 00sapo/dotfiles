@@ -204,6 +204,22 @@ return {
         adapter = "copilot",
       },
     },
+    adapters = {
+      openai = function()
+        return require("codecompanion.adapters").extend("openai", {
+          env = {
+            api_key = "cmd:rbw get openai_key",
+          },
+        })
+      end,
+      gemini = function()
+        return require("codecompanion.adapters").extend("gemini", {
+          env = {
+            api_key = "cmd:rbw get gemini_key",
+          },
+        })
+      end,
+    },
     prompt_library = prompt_library,
   },
   keys = {
