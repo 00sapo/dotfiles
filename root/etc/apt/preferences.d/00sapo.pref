@@ -1,14 +1,26 @@
 Package: *
-Pin: release n=bookworm
+Pin: release a=stable
 Pin-Priority: 900
 
 Package: *
-Pin: release n=bookworm-security
+Pin: release a=stable-security
 Pin-Priority: 900
 
 Package: *
-Pin: release n=bookworm-updates
+Pin: release a=stable-updates
 Pin-Priority: 900
+
+Package: *
+Pin: release a=testing
+Pin-Priority: -1
+
+Package: *
+Pin: release a=testing-security
+Pin-Priority: -1
+
+Package: *
+Pin: release a=unstable
+Pin-Priority: -1
 
 Package: *
 Pin: release a=focal
