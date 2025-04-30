@@ -12,10 +12,6 @@ local M = {
     end,
   },
   {
-    "max397574/better-escape.nvim",
-    opts = {},
-  },
-  {
     "lambdalisue/suda.vim",
     cmd = { "SudaWrite", "SudaRead" },
   },

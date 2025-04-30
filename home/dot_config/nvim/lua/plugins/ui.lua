@@ -10,6 +10,14 @@ return {
       },
     },
   },
+  {
+    "bufferline.nvim",
+    keys = { {
+      "<leader>`",
+      "<cmd>BufferLinePick<cr>",
+      desc = "Pick a buffer",
+    } },
+  },
   -- {
   --   "LazyVim/LazyVim",
   --   opts = {
