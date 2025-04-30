@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 
 local config = {}
-config.default_prog = { "/usr/bin/fish", "-l" }
+config.default_prog = { "fish", "-l" }
 
 -- appearance
 config.hide_tab_bar_if_only_one_tab = true
