@@ -3,7 +3,9 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("n", "<C-p>", "<cmd>Telescope commands<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>sm", "<cmd>Telescope bookmarks list<cr>", { desc = "Select bookmark" })
 vim.keymap.set("n", "<leader><cr>", "<C-/>!!<cr>", { remap = true, desc = "Run command in toggled terminal" })
+vim.keymap.set("n", "<leader>n", require("aerial").nav_toggle, { desc = "Toggle Aerial" })
 
 -- movements across splits
 -- resizing splits

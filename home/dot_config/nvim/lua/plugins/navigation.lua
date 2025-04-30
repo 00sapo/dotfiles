@@ -14,6 +14,10 @@ local M = {
     },
   },
   {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+  },
+  {
     "simrat39/symbols-outline.nvim",
     cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
     config = function()
@@ -67,13 +71,6 @@ local M = {
       })
       require("telescope").load_extension("bookmarks")
     end,
-    keys = {
-      {
-        "<leader>sm",
-        "<cmd>Telescope bookmarks list<cr>",
-        desc = "Select bookmark",
-      },
-    },
   },
   {
     "mrjones2014/smart-splits.nvim",
