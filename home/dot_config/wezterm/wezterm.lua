@@ -80,7 +80,7 @@ config.keys = {
 }
 
 -- navigation (nvim integration)
-local smart_splits = wezterm.plugin.require("https://github.com/00sapo/smart-splits.nvim")
+local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
 smart_splits.apply_to_config(config)
 
 -- allow nvim-zenmode to setup wezterm
