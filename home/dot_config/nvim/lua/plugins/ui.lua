@@ -10,12 +10,13 @@ return {
       },
     },
   },
-  -- {
-  --   "LazyVim/LazyVim",
-  --   opts = {
-  --     colorscheme = "catppuccin",
-  --   },
-  -- },
+  { "EdenEast/nightfox.nvim" },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "dawnfox",
+    },
+  },
   -- {
   --   "catppuccin/nvim",
   --   name = "catppuccin",

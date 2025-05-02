@@ -16,22 +16,24 @@ config.font_size = 10.5
 config.initial_rows = 36
 config.initial_cols = 120
 
-local function sync_theme()
-	local appearance
-	if wezterm.gui then
-		-- wezterm.gui is not available to the mux server, so take care to
-		-- do something reasonable when this config is evaluated by the mux
-		appearance = wezterm.gui.get_appearance()
-	else
-		appearance = "Dark"
-	end
-	if appearance:find("Dark") then
-		return "Builtin Dark"
-	else
-		return "Builtin Light"
-	end
-end
-config.color_scheme = sync_theme()
+-- local function sync_theme()
+-- 	local appearance
+-- 	if wezterm.gui then
+-- 		-- wezterm.gui is not available to the mux server, so take care to
+-- 		-- do something reasonable when this config is evaluated by the mux
+-- 		appearance = wezterm.gui.get_appearance()
+-- 	else
+-- 		appearance = "Light"
+-- 	end
+-- 	if appearance:find("Dark") then
+-- 		config.color_scheme = "Selenized Dark (Gogh)"
+-- 	else
+-- 		config.color_scheme = "Selenized Light (Gogh)"
+-- 	end
+-- end
+-- config.color_scheme = sync_theme()
+config.color_scheme_dirs = { "~/.local/share/nvim/lazy/nightfox.nvim/extra" }
+config.color_scheme = "dawnfox"
 
 -- keybindings
 config.keys = {
