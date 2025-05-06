@@ -30,3 +30,8 @@ if status is-interactive
     command -v taskcheck >/dev/null; and taskcheck --report today
 
 end
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /home/federico/.lmstudio/bin
+# End of LM Studio CLI section
+
