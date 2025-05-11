@@ -1,29 +1,29 @@
 local M = {
-  {
-    "aerial.nvim",
-    opts = {
-      float = {
-        relative = "win",
-      },
-      nav = {
-        preview = true,
-      },
-    },
-    keys = {
-      { "n", "<leader>n", require("aerial").nav_toggle, desc = "Toggle Aerial" },
-    },
-  },
-  {
-    "m4xshen/hardtime.nvim",
-    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-  },
-  {
-    "simrat39/symbols-outline.nvim",
-    cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
-    config = function()
-      require("symbols-outline").setup({})
-    end,
-  },
+  -- {
+  --   "aerial.nvim",
+  --   opts = {
+  --     float = {
+  --       relative = "win",
+  --     },
+  --     nav = {
+  --       preview = true,
+  --     },
+  --   },
+  --   keys = {
+  --     { "n", "<leader>n", require("aerial").nav_toggle, desc = "Toggle Aerial" },
+  --   },
+  -- },
+  -- {
+  --   "m4xshen/hardtime.nvim",
+  --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+  -- },
+  -- {
+  --   "simrat39/symbols-outline.nvim",
+  --   cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
+  --   config = function()
+  --     require("symbols-outline").setup({})
+  --   end,
+  -- },
   {
     "folke/which-key.nvim",
     opts = {
@@ -47,7 +47,13 @@ local M = {
   {
     "tomasky/bookmarks.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
-    event = "VimEnter",
+    keys = {
+      {
+        "<leader>sm",
+        "<cmd>Telescope bookmarks list<cr>",
+        desc = "Select bookmark",
+      },
+    },
     config = function()
       require("bookmarks").setup({
         sign_priority = 8, --set bookmark sign priority to cover other sign

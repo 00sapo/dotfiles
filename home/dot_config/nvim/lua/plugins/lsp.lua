@@ -58,6 +58,11 @@ local M = {
   },
   {
     "neovim/nvim-lspconfig",
+    cond = function()
+      -- % -> filename of current buffer
+      -- :e -> extensioon only
+      return vim.fn.expand("%:e") ~= "scd"
+    end,
     opts = {
       servers = {
         texlab = {
