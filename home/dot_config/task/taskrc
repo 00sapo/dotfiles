@@ -46,15 +46,15 @@ include light-256.theme
 journal.info=0
 
 # Custom urgencies
-urgency.user.project.Laudare.coefficient=1
-urgency.user.project.Laudare.Data.coefficient=2
-urgency.user.project.Laudare.DB.coefficient=2
-urgency.user.project.Composer.coefficient=1.5
+# urgency.user.project.Laudare.coefficient=1
+# urgency.user.project.Laudare.Data.coefficient=2
+# urgency.user.project.Laudare.DB.coefficient=2
+# urgency.user.project.Composer.coefficient=1.5
 urgency.active.coefficient = 1.5
 urgency.annotations.coefficient=0
 urgency.tags.coefficient=-2
 urgency.age.coefficient=3
-urgency.due.coefficient=16
+urgency.due.coefficient=20
 
 # priority
 uda.priority.label=Priority

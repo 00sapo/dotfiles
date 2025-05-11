@@ -35,7 +35,6 @@ bash
 bash-completion
 bc
 bespokesynth
-bitwig-studio
 bluetooth
 bluez-firmware
 bridge-utils
@@ -47,7 +46,6 @@ build-essential
 ca-certificates
 cabextract
 calf-plugins
-cardinal
 cardinal-lv2
 carla
 carla-lv2
@@ -585,6 +583,7 @@ p7zip
 p7zip-full
 packagekit
 packagekit-tools
+pandoc
 parted
 passwd
 pavucontrol
@@ -602,6 +601,7 @@ pipewire-jack
 pipx
 pkg-config
 plugdata
+plugdata-current-lv2
 plymouth
 plymouth-themes
 plymouth-x11
@@ -616,6 +616,7 @@ printer-driver-hpijs
 procps
 proj-data
 pulseaudio-utils
+puredata
 purple-discord
 purple-lurch
 purple-rocketchat
@@ -683,10 +684,12 @@ ripgrep
 rsync
 rtkit
 sane-utils
+sc3-plugins
 sdparm
 secure-delete
 sed
 sensible-utils
+sfizz
 shared-mime-info
 shim-signed
 simple-scan
@@ -700,6 +703,7 @@ ssh-askpass-gnome
 sshfs
 steam-installer
 sudo
+supercollider
 swtpm-tools
 synaptic
 syslinux
@@ -761,6 +765,7 @@ w3m-img
 wezterm
 wget
 whiptail
+wine
 wireguard
 wireless-regdb
 wmctrl

@@ -7,9 +7,9 @@ local M = {
       local map = scnvim.map
       local map_expr = scnvim.map_expr
       require("scnvim").setup({
-        documentation = {
-          cmd = "/usr/bin/pandoc",
-        },
+        -- documentation = {
+        --   cmd = "/usr/bin/pandoc",
+        -- },
         keymaps = {
           ["<M-e>"] = map("editor.send_line", { "i", "n" }),
           ["<C-e>"] = {
@@ -27,17 +27,6 @@ local M = {
           ["<F4>"] = map("sclang.recompile"),
         },
       })
-      -- -- map K to SCNvimHelp <current word> whenever entering supercollider filetype
-      -- vim.api.nvim_create_autocmd("FileType", {
-      --   pattern = "supercollider",
-      --   callback = function()
-      --     vim.keymap.set("n", "<M-k>", function()
-      --       local word = vim.fn.expand("<cword>")
-      --       scnvim.cmd("SCNvimHelp " .. word)
-      --       vim.print("Showing help for " .. word)
-      --     end, { desc = "SCNvimHelp <current word>" })
-      --   end,
-      -- })
     end,
     editor = {
       highlight = {
