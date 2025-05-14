@@ -17,6 +17,7 @@ return {
       colorscheme = "dawnfox",
     },
   },
+  { "jbyuki/quickmath.nvim" },
   -- {
   --   "catppuccin/nvim",
   --   name = "catppuccin",
