@@ -1,4 +1,4 @@
-function unlock_sudo_and_ssh
+function unlock_sudo_ssh_rbw
     # use pinentry to get a password and store it in a variable
     set -l pass (systemd-ask-password "Sudo/SSH password:")
     # unlock sudo
@@ -14,6 +14,9 @@ function unlock_sudo_and_ssh
     # erase the password
     rm /tmp/pass
     set -e pass
+
+    # unlock rbw
+    command -v rbw; and rbw unlock
 end
 
 function chezmoi_update
@@ -32,7 +35,7 @@ function mongodb_update
 end
 
 function mysync
-    unlock_sudo_and_ssh
+    unlock_sudo_ssh_rbw
     command -v chezmoi >/dev/null; and chezmoi_update
     command -v task >/dev/null; and task show taskd.server | grep -q wingtask; and task sync
     command -v rbw >/dev/null; and rbw sync
