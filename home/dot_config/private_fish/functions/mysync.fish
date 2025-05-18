@@ -24,8 +24,17 @@ function chezmoi_update
     and chezmoi apply
 end
 
+function mongodb_update
+    set -l pass (rbw get "cloud.mongodb.com librechat-cluster")
+    # create a backup of the database
+    set -l uri "mongodb+srv://sapo:$pass@librechat-cluster.d8wv42m.mongodb.net/LibreChat?retryWrites=true"
+    mongodump --uri $uri --out $HOME/MEGA/backups/mongo
+end
+
 function mysync
     unlock_sudo_and_ssh
     command -v chezmoi >/dev/null; and chezmoi_update
     command -v task >/dev/null; and task show taskd.server | grep -q wingtask; and task sync
+    command -v rbw >/dev/null; and rbw sync
+    command -v mongodump >/dev/null; and command -v rbw >/dev/null; and mongodb_update
 end
