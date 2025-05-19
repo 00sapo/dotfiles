@@ -43,6 +43,27 @@ local prompt_library = {
       ignore_system_prompt = true,
     },
   },
+  ["Auto critics (EU)"] = {
+    opts = {
+      short_name = "autocritics",
+    },
+    prompts = {
+      {
+        role = "user",
+        content = "Please, now put yourself in the foots of a reviewer of the EU commission and produce a report evaluating and criticizing the text that you have written, paying special importance to the EU priorities, to the grant call evaluation criteria, objectives, and policies.",
+        opts = {
+          auto_submit = true,
+        },
+      },
+      {
+        role = "user",
+        content = "Now rewrite the text that you have written making it stronger in respect to the weaknesses that you have identified.",
+        opts = {
+          auto_submit = true,
+        },
+      },
+    },
+  },
 }
 
 return {
