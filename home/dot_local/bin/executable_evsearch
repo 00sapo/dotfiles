@@ -1,0 +1,22 @@
+#!/bin/bash
+SEARCH_TERM="$1"
+
+# update notmuch db
+notmuch new
+
+# search with notmuch and display email threads with fzf
+# pressing <enter> will copy the mail subject to the clipboard
+if [ -z "$SEARCH_TERM" ]; then
+  echo "Please provide a search term"
+  echo "Usage: evsearch <search term>"
+  exit 1
+fi
+
+# Search emails using notmuch with the provided search term
+# Use fzf to display the results in an interactive way
+# When user selects an email with Enter, extract and copy the subject to clipboard
+notmuch search "$SEARCH_TERM" |
+  fzf --ansi --no-sort \
+    --prompt="ENTER to copy subject to clipboard > " \
+    --preview "notmuch show \$(echo {} | cut -d' ' -f1)" \
+    --bind "enter:execute(echo {} | cut -d' ' -f1 | xargs notmuch show | grep -i '^subject:' | sed 's/^subject: //i' | xclip -selection clipboard)"
