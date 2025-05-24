@@ -137,7 +137,10 @@ local M = {
       require("texlabconfig").setup()
     end,
     ft = { "tex", "bib" }, -- Lazy-load on filetype
-    keys = { { "<leader><", "<cmd>TexlabForward<cr>", desc = "Forward Search (LaTeX)" } },
+    keys = {
+      { "<leader><", "<cmd>TexlabForward<cr>", desc = "Forward Search (LaTeX)" },
+      { "<leader>>", "<cmd>TexlabBuild<cr>", desc = "Compile (LaTeX)" },
+    },
     -- build = "go build",
     build = "go build -o ~/.local/bin/",
   },

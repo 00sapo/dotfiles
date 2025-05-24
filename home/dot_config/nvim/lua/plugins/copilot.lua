@@ -93,8 +93,11 @@ end
 
 M = {
   {
-    "CopilotC-Nvim/CopilotChat.nvim",
+    -- "CopilotC-Nvim/CopilotChat.nvim",
+    "deathbeam/CopilotChat.nvim",
     -- branch = "canary",
+    branch = "tools",
+    build = "make tiktoken",
     dependencies = {
       { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
       { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
