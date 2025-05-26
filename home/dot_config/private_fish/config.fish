@@ -8,22 +8,6 @@ if status is-interactive
     bind -M insert -m default \cc ''
     bind -M visual -m default \cc ''
 
-    function aichat_preparser
-        # Preparse the input for AI chat
-        set -l input (commandline -p)
-        if string match -q '"*' $input
-            if string match -q -- -h $input
-                echo "Usage: aichat [options] [message]"
-                return 0
-            end
-            commandline -r "aichat -e $input"
-        end
-        commandline -f execute
-    end
-    bind -M insert \r aichat_preparser
-    bind -M visual \r aichat_preparser
-    bind -M normal \r aichat_preparser
-
     # zoxide
     command -v zoxide >/dev/null; and zoxide init fish | source
 
