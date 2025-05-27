@@ -1,0 +1,5 @@
+model: openai/claude-sonnet-4
+weak-model: openai/gpt-4.1
+show-model-warnings: false
+max-chat-history-tokens: 90000
+openai-api-base: https://api.individual.githubcopilot.com
