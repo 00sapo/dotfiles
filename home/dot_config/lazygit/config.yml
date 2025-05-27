@@ -7,3 +7,12 @@ os:
   editAtLine: "nvim +{{line}} {{filename}}"
   editAtLineAndWait: "nvim --block +{{line}} {{filename}}"
   editInTerminal: true
+customCommands:
+  - key: 'a'
+    context: 'files'
+    command: "git {{if .SelectedFile.HasUnstagedChanges}} add {{else}} reset {{end}} {{.SelectedFile.Name | quote}}"
+    description: 'Toggle file staged'
+  - key: 'x'
+    context: 'global'
+    command: "aider-copilot --commit"
+    output: terminal

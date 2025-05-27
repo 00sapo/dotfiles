@@ -24,33 +24,9 @@ vim.keymap.set("n", "<leader><leader>h", require("smart-splits").swap_buf_left)
 vim.keymap.set("n", "<leader><leader>j", require("smart-splits").swap_buf_down)
 vim.keymap.set("n", "<leader><leader>k", require("smart-splits").swap_buf_up)
 vim.keymap.set("n", "<leader><leader>l", require("smart-splits").swap_buf_right)
--- select last pasted text
--- i.e. in vim: nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
-vim.keymap.set("n", "gl", function()
-  local start_mark = vim.api.nvim_buf_get_mark(0, "[")
-  local end_mark = vim.api.nvim_buf_get_mark(0, "]")
-
-  -- Move cursor to start of last pasted text
-  vim.api.nvim_win_set_cursor(0, start_mark)
-
-  -- Get the register type to determine selection mode
-  local regtype = vim.fn.getregtype()
-  local selection_mode
-
-  if regtype:sub(1, 1) == "v" then
-    selection_mode = "v" -- characterwise
-  elseif regtype:sub(1, 1) == "V" then
-    selection_mode = "V" -- linewise
-  else
-    selection_mode = "\22" -- blockwise (Ctrl-V)
-  end
-
-  -- Enter visual mode and select to end mark
-  vim.cmd("normal! " .. selection_mode)
-  vim.api.nvim_win_set_cursor(0, end_mark)
-end, { desc = "Select last pasted text" })
 
 -- scratch buffer (don't know why, it's not enabled, maybe something is overriding it)
+-- close tab
 vim.keymap.set("n", "<leader>.", function()
   Snacks.scratch()
 end, { desc = "Open scratch buffer" })

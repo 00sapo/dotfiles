@@ -1,6 +1,5 @@
 local M = {
   { "jbyuki/quickmath.nvim" },
-  { "sindrets/diffview.nvim" },
   {
     "cosmicboots/unicode_picker.nvim",
     dependencies = {
