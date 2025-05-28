@@ -113,7 +113,7 @@ local M = {
             },
           },
         },
-        pyright = { enable = false, autostart = false, mason = false }, -- only use ruff
+        -- pyright = { enable = false, autostart = false, mason = false }, -- only use ruff
         ltex = {
           mason = true,
           autostart = true,
