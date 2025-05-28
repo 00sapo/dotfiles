@@ -3,3 +3,6 @@ weak-model: openai/gpt-4.1
 show-model-warnings: false
 max-chat-history-tokens: 75000
 openai-api-base: https://api.individual.githubcopilot.com
+auto-commits: false
+lint-cmd:
+  - "python: ruff-aider" # format + check
