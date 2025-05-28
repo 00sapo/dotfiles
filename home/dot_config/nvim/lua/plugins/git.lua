@@ -13,7 +13,6 @@ local M = {
     },
     keys = {
       { "<leader>gg", "<cmd>Neogit<cr>", desc = "Open Neogit" },
-      -- { "<leader>gG", "<cmd>!aider-copilot --commit<cr>", desc = "Auto commit message via aider" },
       {
         "<leader>gG",
         function()
