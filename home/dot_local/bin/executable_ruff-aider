@@ -1,0 +1,5 @@
+#!/bin/env sh
+# First format the files
+ruff format "$@" >/dev/null 2>&1 || ruff format "$@"
+# Then check for linting issues
+ruff check "$@"
