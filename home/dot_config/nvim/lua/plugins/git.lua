@@ -11,6 +11,7 @@ local M = {
       -- "echasnovski/mini.pick",         -- optional
       -- "folke/snacks.nvim",             -- optional
     },
+    cmd = "Neogit",
     keys = {
       { "<leader>gg", "<cmd>Neogit<cr>", desc = "Open Neogit" },
       {
