@@ -16,6 +16,7 @@ customCommands:
     context: 'global'
     command: "aider-copilot --commit"
     output: terminal
+    customCommands:
 
 # catpuccin latte red
 gui:
@@ -39,6 +40,16 @@ gui:
       - '#4c4f69'
     searchingActiveBorderColor:
       - '#df8e1d'
-
   authorColors:
     '*': '#7287fd'
+  expandFocusedSidePanel: true
+  expandedSidePanelWeight: 7
+  sidePanelWidth: 0.15
+  enlargedSideViewLocation: top
+
+keybinding:
+  universal:
+    scrollUpMain: <c-k>
+    scrollDownMain: <c-j>
+    nextScreenMode: '='
+    prevScreenMode: '-'
