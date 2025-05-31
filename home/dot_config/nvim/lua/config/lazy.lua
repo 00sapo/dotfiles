@@ -13,7 +13,7 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "plugins" },
     -- { "mini.pairs", enabled = false },
-    { "lazygit.nvim", enabled = false },
+    -- { "lazygit.nvim", enabled = false },
     { "vimtex", enabled = false },
     { "nvim-dap-virtual-text", enabled = false },
     -- { "nvim-notify", enabled = false },
