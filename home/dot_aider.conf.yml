@@ -1,8 +1,8 @@
-model: openai/claude-sonnet-4
+model: openai/o4-mini
 weak-model: openai/gpt-4.1
 show-model-warnings: false
 max-chat-history-tokens: 75000
 openai-api-base: https://api.individual.githubcopilot.com
 auto-commits: false
 lint-cmd:
-  - "python: ruff-aider" # format + check
+  - "python: ruff-aider" # format + automatic fix + check
