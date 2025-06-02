@@ -1,239 +1,212 @@
-#!/bin/env python3
-"""
-Usage:
-    bu backup <file> [... <file>] [-r/--replace]
-    bu restore <file> [... <file>] [-v/--version]
+#!/usr/bin/env python3
 
-This tool is used to backup any file or directory aside to the original one.
-It will create a backup file or directory with the same name as the original file,
-but with a timestamp and a number appended to the name.
-
-If `-r/--replace` is specified, it will replace potential existing backups with the new one.
-If `-v/--version` is specified, it will restore the specified backup file or directory. In this case, the version is the number.
-If no `-v/--version` is specified and multiple backups exist, it will ask the user to choose which one to restore.
-"""
-
-import os
-import sys
-import shutil
 import argparse
+import os
+import shutil
 import glob
+import time
 from datetime import datetime
 
 
-def get_backup_pattern(filepath):
-    """Get the pattern for backup files of the given filepath."""
-    return f"{filepath}.backup.*"
+def get_backup_name(path):
+    """Return the backup base name for a file or directory."""
+    base = os.path.basename(os.path.abspath(path))
+    return f"{base}.bak"
 
 
-def get_backup_name(filepath, replace=False):
-    """Generate a backup filename with timestamp and number."""
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+def get_backup_pattern(path):
+    """Return the glob pattern for all backups of a file or directory."""
+    dirname = os.path.dirname(os.path.abspath(path))
+    base = get_backup_name(path)
+    return os.path.join(dirname, f"{base}.*")
+
+
+def get_backup_dir(path):
+    """Return the directory where the backups are stored (same as original)."""
+    return os.path.dirname(os.path.abspath(path))
+
+
+def list_backups(path):
+    """Return a sorted list of (timestamp, backup_path) tuples for the given file/dir."""
+    pattern = get_backup_pattern(path)
+    backups = []
+    for backup_path in glob.glob(pattern):
+        try:
+            ts = backup_path.rsplit(".", 1)[-1]
+            # Accept only numeric timestamps
+            if ts.isdigit():
+                backups.append((int(ts), backup_path))
+        except Exception:
+            continue
+    backups.sort(reverse=True)
+    return backups
+
+
+def backup(path, replace=False):
+    """Create a backup of the given file or directory."""
+    if not os.path.exists(path):
+        print(f"Error: {path} does not exist.")
+        return False
+
+    backup_dir = get_backup_dir(path)
+    base = get_backup_name(path)
+    timestamp = int(time.time())
+    backup_name = f"{base}.{timestamp}"
+    backup_path = os.path.join(backup_dir, backup_name)
 
     if replace:
-        # Remove existing backups
-        existing_backups = glob.glob(get_backup_pattern(filepath))
-        for backup in existing_backups:
-            if os.path.isdir(backup):
-                shutil.rmtree(backup)
-            else:
-                os.remove(backup)
-        return f"{filepath}.backup.{timestamp}.1"
-
-    # Find the next available number
-    existing_backups = glob.glob(get_backup_pattern(filepath))
-    if not existing_backups:
-        return f"{filepath}.backup.{timestamp}.1"
-
-    # Extract numbers from existing backups
-    numbers = []
-    for backup in existing_backups:
-        try:
-            # Extract the number at the end
-            parts = backup.split(".")
-            if len(parts) >= 4 and parts[-1].isdigit():
-                numbers.append(int(parts[-1]))
-        except (ValueError, IndexError):
-            continue
-
-    next_num = max(numbers) + 1 if numbers else 1
-    return f"{filepath}.backup.{timestamp}.{next_num}"
-
-
-def list_backups(filepath):
-    """List all backup files for the given filepath."""
-    backups = glob.glob(get_backup_pattern(filepath))
-    backups.sort()
-
-    backup_info = []
-    for backup in backups:
-        try:
-            # Extract timestamp and number
-            parts = backup.split(".")
-            if len(parts) >= 4:
-                timestamp_str = parts[-2]
-                number = int(parts[-1])
-
-                # Parse timestamp
-                timestamp = datetime.strptime(timestamp_str, "%Y%m%d_%H%M%S")
-
-                backup_info.append(
-                    {
-                        "path": backup,
-                        "number": number,
-                        "timestamp": timestamp,
-                        "timestamp_str": timestamp_str,
-                    }
-                )
-        except (ValueError, IndexError):
-            continue
-
-    return sorted(backup_info, key=lambda x: (x["timestamp"], x["number"]))
-
-
-def backup_file(filepath, replace=False):
-    """Create a backup of the given file or directory."""
-    if not os.path.exists(filepath):
-        print(f"Error: {filepath} does not exist")
-        return False
-
-    backup_name = get_backup_name(filepath, replace)
+        # Remove all previous backups
+        for _, bkp in list_backups(path):
+            try:
+                if os.path.isdir(bkp):
+                    shutil.rmtree(bkp)
+                else:
+                    os.remove(bkp)
+            except Exception as e:
+                print(f"Warning: Could not remove {bkp}: {e}")
 
     try:
-        if os.path.isdir(filepath):
-            shutil.copytree(filepath, backup_name)
-            print(f"Directory backed up: {filepath} -> {backup_name}")
+        if os.path.isdir(path):
+            shutil.copytree(path, backup_path)
         else:
-            shutil.copy2(filepath, backup_name)
-            print(f"File backed up: {filepath} -> {backup_name}")
+            shutil.copy2(path, backup_path)
+        print(f"Backup created: {backup_path}")
         return True
     except Exception as e:
-        print(f"Error backing up {filepath}: {e}")
+        print(f"Error creating backup: {e}")
         return False
 
 
-def restore_file(filepath, version=None):
-    """Restore a file or directory from backup."""
-    backups = list_backups(filepath)
-
+def restore(path, version=None):
+    """Restore the file or directory from backup."""
+    backups = list_backups(path)
     if not backups:
-        print(f"No backups found for {filepath}")
+        print(f"No backups found for {path}")
         return False
 
-    # Select backup to restore
     if version is not None:
-        # Find backup with specific version number
-        selected_backup = None
-        for backup in backups:
-            if backup["number"] == version:
-                selected_backup = backup
+        # Find backup with matching timestamp
+        backup_path = None
+        for ts, bkp in backups:
+            if ts == version:
+                backup_path = bkp
                 break
-
-        if not selected_backup:
-            print(f"No backup with version {version} found for {filepath}")
-            print("Available versions:")
-            for i, backup in enumerate(backups, 1):
-                print(
-                    f"  {backup['number']}: {backup['timestamp'].strftime('%Y-%m-%d %H:%M:%S')}"
-                )
+        if not backup_path:
+            print(f"No backup with timestamp {version} found for {path}")
             return False
     else:
-        # Interactive selection if multiple backups exist
-        if len(backups) == 1:
-            selected_backup = backups[0]
-        else:
-            print(f"Multiple backups found for {filepath}:")
-            for i, backup in enumerate(backups, 1):
-                print(
-                    f"  {i}: Version {backup['number']} - {backup['timestamp'].strftime('%Y-%m-%d %H:%M:%S')}"
-                )
-
-            while True:
-                try:
-                    choice = input("Select backup to restore (number): ")
-                    idx = int(choice) - 1
-                    if 0 <= idx < len(backups):
-                        selected_backup = backups[idx]
-                        break
-                    else:
-                        print("Invalid selection")
-                except (ValueError, KeyboardInterrupt):
-                    print("\nOperation cancelled")
-                    return False
-
-    # Perform restore
-    backup_path = selected_backup["path"]
+        # Use the latest backup
+        backup_path = backups[0][1]
 
     try:
-        # Check if target exists and create a backup of current state
-        if os.path.exists(filepath):
-            temp_backup = (
-                f"{filepath}.restore_backup.{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-            )
-            if os.path.isdir(filepath):
-                shutil.move(filepath, temp_backup)
-            else:
-                shutil.copy2(filepath, temp_backup)
-            print(f"Current version backed up to: {temp_backup}")
-
-        # Restore from backup
         if os.path.isdir(backup_path):
-            shutil.copytree(backup_path, filepath)
-            print(f"Directory restored: {backup_path} -> {filepath}")
+            if os.path.exists(path):
+                shutil.rmtree(path)
+            shutil.copytree(backup_path, path)
         else:
-            shutil.copy2(backup_path, filepath)
-            print(f"File restored: {backup_path} -> {filepath}")
-
+            shutil.copy2(backup_path, path)
+        print(f"Restored {path} from {backup_path}")
         return True
     except Exception as e:
-        print(f"Error restoring {filepath}: {e}")
+        print(f"Error restoring {path}: {e}")
         return False
+
+
+def cleanup(path):
+    """Remove all backups for the given file or directory."""
+    backups = list_backups(path)
+    if not backups:
+        print(f"No backups found for {path}")
+        return False
+    for _, bkp in backups:
+        try:
+            if os.path.isdir(bkp):
+                shutil.rmtree(bkp)
+            else:
+                os.remove(bkp)
+            print(f"Removed backup: {bkp}")
+        except Exception as e:
+            print(f"Error removing backup {bkp}: {e}")
+    return True
+
+
+def show_backups(path):
+    """List all backups for the given file or directory."""
+    backups = list_backups(path)
+    if not backups:
+        print(f"No backups found for {path}")
+        return
+    print(f"Backups for {path}:")
+    for ts, bkp in backups:
+        dt = datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M:%S")
+        print(f"  {bkp} (created {dt})")
 
 
 def main():
-    parser = argparse.ArgumentParser(description="File backup and restore utility")
-    subparsers = parser.add_subparsers(dest="command", help="Commands")
+    parser = argparse.ArgumentParser(
+        description="Backup and restore files or directories."
+    )
+    subparsers = parser.add_subparsers(dest="command", required=True)
 
-    # Backup command
-    backup_parser = subparsers.add_parser("backup", help="Backup files or directories")
-    backup_parser.add_argument(
-        "files", nargs="+", help="Files or directories to backup"
-    )
-    backup_parser.add_argument(
-        "-r", "--replace", action="store_true", help="Replace existing backups"
+    # Backup
+    p_backup = subparsers.add_parser("backup", help="Backup files or directories")
+    p_backup.add_argument("targets", nargs="+", help="Files or directories to backup")
+    p_backup.add_argument(
+        "-r", "--replace", action="store_true", help="Replace all previous backups"
     )
 
-    # Restore command
-    restore_parser = subparsers.add_parser(
-        "restore", help="Restore files or directories"
+    # Restore
+    p_restore = subparsers.add_parser(
+        "restore", help="Restore files or directories from backup"
     )
-    restore_parser.add_argument(
-        "files", nargs="+", help="Files or directories to restore"
+    p_restore.add_argument("targets", nargs="+", help="Files or directories to restore")
+    p_restore.add_argument(
+        "-v",
+        "--version",
+        type=int,
+        help="Timestamp of backup to restore (default: latest)",
     )
-    restore_parser.add_argument(
-        "-v", "--version", type=int, help="Specific backup version to restore"
+
+    # Cleanup
+    p_cleanup = subparsers.add_parser(
+        "cleanup", help="Remove all backups for specified files or directories"
+    )
+    p_cleanup.add_argument(
+        "targets", nargs="+", help="Files or directories whose backups to remove"
+    )
+
+    # List
+    p_list = subparsers.add_parser(
+        "list", help="List all backups for specified files or directories"
+    )
+    p_list.add_argument(
+        "targets", nargs="+", help="Files or directories to list backups for"
     )
 
     args = parser.parse_args()
-
-    if not args.command:
-        parser.print_help()
-        return 1
-
     success = True
 
     if args.command == "backup":
-        for filepath in args.files:
-            if not backup_file(filepath, args.replace):
+        for t in args.targets:
+            if not backup(t, replace=args.replace):
                 success = False
 
     elif args.command == "restore":
-        for filepath in args.files:
-            if not restore_file(filepath, args.version):
+        for t in args.targets:
+            if not restore(t, version=args.version):
                 success = False
 
-    return 0 if success else 1
+    elif args.command == "cleanup":
+        for t in args.targets:
+            if not cleanup(t):
+                success = False
+
+    elif args.command == "list":
+        for t in args.targets:
+            show_backups(t)
+
+    exit(0 if success else 1)
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()

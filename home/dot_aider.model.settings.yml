@@ -5,6 +5,7 @@
       Copilot-Integration-Id: copilot-chat
 
 - name: openai/o4-mini 
+  edit_format: diff
   extra_params:
     extra_headers:
       Editor-Version: Aider/0.84
@@ -23,6 +24,7 @@
       Copilot-Integration-Id: copilot-chat
 
 - name: openai/gpt-4.1
+  edit_format: diff
   extra_params:
     extra_headers:
       Editor-Version: Aider/0.84

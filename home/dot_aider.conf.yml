@@ -1,7 +1,8 @@
-model: openai/o4-mini
+# model: openrouter/deepseek/deepseek-r1:free
+model: openai/gpt-4.1
 weak-model: openai/gpt-4.1
 show-model-warnings: false
-max-chat-history-tokens: 75000
+max-chat-history-tokens: 128000
 openai-api-base: https://api.individual.githubcopilot.com
 auto-commits: false
 lint-cmd:
