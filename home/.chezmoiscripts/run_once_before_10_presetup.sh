@@ -18,11 +18,11 @@ soar install rbw
 rm -f "~/.config/soar/config.toml"
 
 echo setup ssh key
-rbw config set email $(echo "feder" "icosi" "mon" "ett" "a+" "bitwarden" "@" "zoh" "o.com" | sed 's/ //g')
-rbw config set pinentry pinentry-curses
-rbw login
+$HOME/.local/share/soar/bin/rbw config set email $(echo "feder" "icosi" "mon" "ett" "a+" "bitwarden" "@" "zoh" "o.com" | sed 's/ //g')
+$HOME/.local/share/soar/bin/rbw config set pinentry pinentry-curses
+$HOME/.local/share/soar/bin/rbw login
 mkdir .ssh
-rbw get Claude >.ssh/id_rsa
+$HOME/.local/share/soar/bin/rbw get Claude >.ssh/id_rsa
 chmod 0400 .ssh/id_rsa
 
 echo install asdf
