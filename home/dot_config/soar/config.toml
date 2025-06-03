@@ -29,12 +29,7 @@ search_limit = 20
 cross_repo_updates = false
 # Glob patterns for package files that should be included during install.
 # Default: ["!*.log", "!SBUILD", "!*.json", "!*.version"]
-install_patterns = [
-    "!*.log",
-    "!SBUILD",
-    "!*.json",
-    "!*.version",
-]
+install_patterns = ["!*.log", "!SBUILD", "!*.json", "!*.version"]
 
 # A profile defines a local package store and its configuration.
 [profile.default]
@@ -79,13 +74,17 @@ pubkey = "https://meta.pkgforge.dev/pkgcache/minisign.pub"
 [[repositories]]
 name = "ivan-hc-am"
 url = "https://meta.pkgforge.dev/external/am/x86_64-Linux.json.zstd"
-desktop_integration = true
-signature_verification = false
-sync_interval = "3h"
+# desktop_integration = true
+# signature_verification = false
 
 [[repositories]]
 name = "appimage-github-io"
 url = "https://meta.pkgforge.dev/external/appimage.github.io/x86_64-Linux.json.zstd"
 desktop_integration = true
 signature_verification = false
-sync_interval = "3h"
+
+[[repositories]]
+name = "cargo-bins"
+url = "https://meta.pkgforge.dev/external/cargo-bins/x86_64-Linux.json.zstd"
+desktop_integration = false
+signature_verification = false
