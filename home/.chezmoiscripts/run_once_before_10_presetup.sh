@@ -3,6 +3,27 @@
 
 echo install soar
 curl -fsSL https://soar.qaidvoid.dev/install.sh | sh
+# adding cargo-bins repository to soar (needed for rbw)
+mkdir -pv "~/.config/soar" &&
+  tee -a "~/.config/soar/config.toml" <<EOF
+[[repositories]]
+name = "cargo-bins"
+url = "https://meta.pkgforge.dev/external/cargo-bins/x86_64-Linux.json.zstd"
+EOF
+
+echo install rbw
+soar sync
+soar install rbw
+# removing cargo-bins repository from soar (avoid conflicts with chezmoi configs)
+rm -f "~/.config/soar/config.toml"
+
+echo setup ssh key
+rbw config set email $(echo "feder" "icosi" "mon" "ett" "a+" "bitwarden" "@" "zoh" "o.com" | sed 's/ //g')
+rbw config set pinentry pinentry-curses
+rbw login
+mkdir .ssh
+rbw get Claude >.ssh/id_rsa
+chmod 0400 .ssh/id_rsa
 
 echo install asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
@@ -16,7 +37,3 @@ mkdir -p ~/.ssh/sockets
 echo import GPG keys
 rbw get "GPG-PUBLIC" | gpg --batch --import
 rbw get "GPG-PRIVATE" | gpg --batch --import
-
-echo install rbw
-
-echo setup ssh key
