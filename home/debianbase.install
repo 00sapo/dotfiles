@@ -54,6 +54,7 @@ cecilia
 chrome-gnome-shell
 clementine
 console-setup
+containerd.io
 coreutils
 cpio
 cpufrequtils
@@ -90,7 +91,10 @@ dmidecode
 dmsetup
 dnsmasq-base
 dnsutils
-docker.io
+docker-buildx-plugin
+docker-ce
+docker-ce-cli
+docker-compose-plugin
 dosfstools
 dpkg
 drawing
@@ -113,7 +117,6 @@ eog-plugin-slideshow-shuffle
 eog-plugins
 eog-plugins-common
 ethtool
-evince
 evolution
 evolution-plugins
 exfatprogs
@@ -603,6 +606,7 @@ nvidia-container-toolkit
 nvidia-cuda-toolkit
 nvidia-driver
 nvidia-driver-full
+nvidia-kernel-dkms
 nvidia-smi
 obsidian-icon-theme
 okular
@@ -819,6 +823,7 @@ xfonts-scalable
 xfsprogs
 xinit
 xinput
+xmlstarlet
 xorg
 xorriso
 xserver-xorg
@@ -835,7 +840,6 @@ xserver-xorg-video-qxl
 xvfb
 yaru-theme-gnome-shell
 yaru-theme-gtk
-zathura
 zenity
 zip
 zlib1g

@@ -74,8 +74,8 @@ pubkey = "https://meta.pkgforge.dev/pkgcache/minisign.pub"
 [[repositories]]
 name = "ivan-hc-am"
 url = "https://meta.pkgforge.dev/external/am/x86_64-Linux.json.zstd"
-# desktop_integration = true
-# signature_verification = false
+desktop_integration = true
+signature_verification = false
 
 [[repositories]]
 name = "appimage-github-io"
