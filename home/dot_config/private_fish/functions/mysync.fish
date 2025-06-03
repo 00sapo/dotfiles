@@ -26,6 +26,7 @@ end
 
 function mysync
     unlock_sudo_and_ssh
+    command -v appman >/dev/null; and appman -f --byname | awk '/◆/{print $2}' > ~/am.install
     command -v chezmoi >/dev/null; and chezmoi_update
     command -v task >/dev/null; and task show taskd.server | grep -q wingtask; and task sync
 end

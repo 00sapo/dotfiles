@@ -101,10 +101,6 @@ no_retry = true
 # Commands to run after anything
 [post_commands]
 # "Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
-{{- if eq .chezmoi.hostname "cucchia" }}
-"Export AppMan packages" = "appman -f --byname | awk '/◆/{print $2}' > ~/am.install"
-"Export Base packages" = "apt-mark showmanual > ~/debianbase.install"
-{{- end }}
 
 
 # Custom commands
