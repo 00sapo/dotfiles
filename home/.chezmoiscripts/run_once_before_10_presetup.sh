@@ -1,6 +1,9 @@
 #!/bin/sh
 # vim: ft=sh
 
+echo install soar
+curl -fsSL https://soar.qaidvoid.dev/install.sh | sh
+
 echo install asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 
@@ -13,3 +16,7 @@ mkdir -p ~/.ssh/sockets
 echo import GPG keys
 rbw get "GPG-PUBLIC" | gpg --batch --import
 rbw get "GPG-PRIVATE" | gpg --batch --import
+
+echo install rbw
+
+echo setup ssh key
