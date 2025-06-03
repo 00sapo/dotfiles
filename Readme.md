@@ -1,15 +1,6 @@
 # Installation
 
 ```
-curl -O https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER
-sh AM-INSTALLER
-appman -i rbw
-rbw config set email "mybitwarden@email.com"
-rbw config set pinentry pinentry-curses
-rbw login
-mkdir .ssh
-rbw get Claude > .ssh/id_rsa
-chmod 0400 .ssh/id_rsa
 sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --ssh --apply 00sapo
 ```
 
@@ -34,10 +25,10 @@ In general:
 - document utilities (okular, libreoffice, evolution)
 - any other tool: fish, nvim, apt, tlp, zram-tools, zoxide, ripgrep, openrgb, lsyncd, curl, earlyoom, etc.
 
-### Appman
+### Soar
 
-Install from `$HOME/am.install`:
-> `cat $HOME/am.install | xargs appman -i`
+Install from `$HOME/soar.install`:
+> `cat $HOME/soar.install | xargs soar install`
 
 ### asdf
 
@@ -54,4 +45,4 @@ end
 
 #### Trixie
 
-Trixie will include git-delta (currently using appman).
+Trixie will include git-delta (currently using soar).
