@@ -17,13 +17,13 @@
 
 # Disable specific steps - same options as the command line flag
 {{- if eq .chezmoi.hostname "amadeus" }}
-disable = ["mamba", "conda", "chezmoi", "vim", "pnpm", "asdf"]
+disable = ["uv", "mamba", "conda", "chezmoi", "vim", "pnpm", "asdf"]
 {{- else if eq .chezmoi.hostname "brian" }}
-disable = ["chezmoi", "vim", "pnpm", "asdf"]
+disable = ["uv", "chezmoi", "vim", "pnpm", "asdf"]
 {{- else if eq .chezmoi.hostname "cucchia" }}
-disable = ["chezmoi", "vim", "pnpm", "asdf"]
+disable = ["uv", "chezmoi", "vim", "pnpm", "asdf"]
 {{- else }}
-disable = ["chezmoi", "vim", "pnpm", "asdf"]
+disable = ["uv", "chezmoi", "vim", "pnpm", "asdf"]
 {{- end }}
 
 # Ignore failures for these steps
