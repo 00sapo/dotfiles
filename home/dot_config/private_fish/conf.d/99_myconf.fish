@@ -1,13 +1,13 @@
 # basic
-set --export PATH "$HOME/.local/bin:$HOME/.local/share/soar/bin/:$PATH"
+set --export PATH "$HOME/.local/bin:$PATH"
 
 # asdf
 source $HOME/.asdf/asdf.fish
 
 # editor
 if command -v nvim >/dev/null
-    set --export EDITOR (which nvim)
-    set --export SYSTEM_EDITOR (which nvim)
+    set --export EDITOR /home/federico/.flox/run/x86_64-linux.default.run/bin/nvim
+    set --export SYSTEM_EDITOR /home/federico/.flox/run/x86_64-linux.default.run/bin/nvim
 end
 
 # ruby
