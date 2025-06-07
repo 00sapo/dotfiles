@@ -33,6 +33,7 @@ topgrade.pkg-path = "topgrade"
 tor-browser.pkg-path = "tor-browser"
 neovim.pkg-path = "neovim"
 vscode.pkg-path = "vscode"
+glxinfo.pkg-path = "glxinfo"
 # gum.pkg-path = "gum"
 # gum.version = "^0.14.5"
 

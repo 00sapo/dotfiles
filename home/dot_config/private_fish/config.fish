@@ -28,6 +28,4 @@ if status is-interactive
     command -v usercheck.fish >/dev/null; and usercheck.fish
 
     command -v taskcheck >/dev/null; and taskcheck --report today
-
-    command -v flox >/dev/null; and flox activate -d ~ -m run | source
 end

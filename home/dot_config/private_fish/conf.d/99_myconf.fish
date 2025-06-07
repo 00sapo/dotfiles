@@ -4,10 +4,13 @@ set --export PATH "$HOME/.local/bin:$PATH"
 # asdf
 source $HOME/.asdf/asdf.fish
 
+# flox
+command -v flox >/dev/null; and flox activate -d ~ -m run | source
+
 # editor
 if command -v nvim >/dev/null
-    set --export EDITOR /home/federico/.flox/run/x86_64-linux.default.run/bin/nvim
-    set --export SYSTEM_EDITOR /home/federico/.flox/run/x86_64-linux.default.run/bin/nvim
+    set --export EDITOR (which nvim)
+    set --export SYSTEM_EDITOR (which nvim)
 end
 
 # ruby
