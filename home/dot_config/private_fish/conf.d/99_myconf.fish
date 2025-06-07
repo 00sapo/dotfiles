@@ -1,3 +1,10 @@
+# avoid double sourcing of this file
+if not set -q myconf_loaded
+    set -g myconf_loaded 1
+else
+    return
+end
+
 # basic
 set --export PATH "$HOME/.local/bin:$PATH"
 
@@ -5,7 +12,9 @@ set --export PATH "$HOME/.local/bin:$PATH"
 source $HOME/.asdf/asdf.fish
 
 # flox
-command -v flox >/dev/null; and flox activate -d ~ -m run | source
+if not set -q FLOX_ENV
+    command -v flox >/dev/null; and flox activate -d ~ -m run | source
+end
 
 # editor
 if command -v nvim >/dev/null

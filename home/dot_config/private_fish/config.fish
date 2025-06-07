@@ -1,3 +1,4 @@
+# avoid double sourcing of this file
 if status is-interactive
 
     # Set up vim mode
