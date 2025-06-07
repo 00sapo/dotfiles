@@ -5,9 +5,6 @@ else
     return
 end
 
-# basic
-set --export PATH "$HOME/.local/bin:$PATH"
-
 # asdf
 source $HOME/.asdf/asdf.fish
 
@@ -16,6 +13,9 @@ if not set -q FLOX_ENV
     command -v flox >/dev/null; and flox activate -d "$HOME" -m run | source
     set --export NIXPKGS_ALLOW_UNFREE 1
 end
+
+# basic (after flox so we can override it)
+set --export PATH "$HOME/.local/bin:$PATH"
 
 # editor
 if command -v nvim >/dev/null
