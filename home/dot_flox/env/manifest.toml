@@ -15,7 +15,6 @@ version = 1
 ##  $ flox show gum     <- show all versions of a package
 ## -------------------------------------------------------------------
 [install]
-beeper.pkg-path = "beeper"
 aichat.pkg-path = "aichat"
 chromium.pkg-path = "chromium"
 delta.pkg-path = "delta"
@@ -33,7 +32,9 @@ topgrade.pkg-path = "topgrade"
 tor-browser.pkg-path = "tor-browser"
 neovim.pkg-path = "neovim"
 vscode.pkg-path = "vscode"
+beeper.pkg-path = "beeper"
 glxinfo.pkg-path = "glxinfo"
+nixGLDefault.flake = "github:guibou/nixGL#nixGLDefault"
 # gum.pkg-path = "gum"
 # gum.version = "^0.14.5"
 
@@ -98,8 +99,8 @@ glxinfo.pkg-path = "glxinfo"
 [options]
 # Systems that environment is compatible with
 systems = ["x86_64-linux"]
-# Uncomment to disable CUDA detection.
-# cuda-detection = false
+allow.unfree = true
+cuda-detection = true
 
 [options.activate]
 mode = "run"

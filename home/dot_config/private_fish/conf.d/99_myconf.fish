@@ -13,7 +13,8 @@ source $HOME/.asdf/asdf.fish
 
 # flox
 if not set -q FLOX_ENV
-    command -v flox >/dev/null; and flox activate -d ~ -m run | source
+    command -v flox >/dev/null; and flox activate -d "$HOME" -m run | source
+    set --export NIXPKGS_ALLOW_UNFREE 1
 end
 
 # editor
