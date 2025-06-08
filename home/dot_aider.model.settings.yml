@@ -18,6 +18,7 @@
       Copilot-Integration-Id: copilot-chat
 
 - name: openai/claude-sonnet-4
+  edit_format: diff
   extra_params:
     extra_headers:
       Editor-Version: Aider/0.84
