@@ -1,2 +1,2 @@
 #!/bin/sh
-prime-run "$HOME"/.flox/run/x86_64-linux.default.run/bin/nixGL "$@"
+prime-run "$HOME"/.nix-profile/bin/nixGL "$@"
