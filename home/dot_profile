@@ -21,8 +21,12 @@ if [ -d "$HOME/bin" ]; then
   PATH="$HOME/bin:$PATH"
 fi
 
+if [ -d "$HOME/.nix-profile/" ]; then
+  PATH="$HOME/.nix-profile/bin:$PATH"
+  XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ]; then
-  PATH="$HOME/.local/bin:$HOME/.flox/run/x86_64-linux.default.run/bin:$PATH"
-  XDG_DATA_DIRS="$XDG_DATA_DIRS:$HOME/.flox/run/x86_64-linux.default.run/share/applications/"
+  PATH="$HOME/.local/bin:$PATH"
 fi

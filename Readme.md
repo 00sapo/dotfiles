@@ -1,6 +1,7 @@
 # Installation
 
 ```
+apt update; and apt install xz-utils
 sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --ssh --apply 00sapo
 ```
 
