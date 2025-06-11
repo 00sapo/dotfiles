@@ -1,5 +1,5 @@
 # model: openrouter/deepseek/deepseek-r1:free
-model: openai/gpt-4.1
+model: openai/claude-sonnet-4
 weak-model: openai/gpt-4.1
 show-model-warnings: false
 max-chat-history-tokens: 128000
