@@ -37,6 +37,7 @@ vim.keymap.set("n", "<leader>:", function()
     ft = "lua",
     icon = "💻",
     name = "Scratch Math",
+    noremap = false,
   })
   vim.cmd("Quickmath")
 end, { desc = "Scratch math" })
