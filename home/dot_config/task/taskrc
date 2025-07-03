@@ -87,7 +87,6 @@ report.ready.columns=id,start.age,entry.age,depends.indicator,priority,project,t
 report.ready.labels=ID,Active,Age,Deps,P,Proj,Tags,Rec,Sched,Due,Rem,Descr,Sched,Ur
 
 # other
-confirmation=off
 recurrence=on
 
 # taskcheck
