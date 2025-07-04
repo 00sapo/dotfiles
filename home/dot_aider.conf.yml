@@ -8,6 +8,7 @@ lint-cmd:
   - "python: ruff-aider" # format + automatic fix + check
 # Enable notifications
 notifications: true
+notifications-command: notify-send --hint int:transient:1 "Aider" "Waiting for input"
 # conventions, if available
 read: [CONVENTIONS.md]
 # voice language for transcription
