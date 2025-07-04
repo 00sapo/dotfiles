@@ -2,8 +2,18 @@
 model: openai/claude-sonnet-4
 weak-model: openai/gpt-4.1
 show-model-warnings: false
-max-chat-history-tokens: 128000
 openai-api-base: https://api.individual.githubcopilot.com
 auto-commits: false
 lint-cmd:
   - "python: ruff-aider" # format + automatic fix + check
+# Enable notifications
+notifications: true
+# conventions, if available
+read: [CONVENTIONS.md]
+# voice language for transcription
+voice-language: it
+# keybindings
+vim: true
+# colors
+light-mode: true
+# dark-mode: true

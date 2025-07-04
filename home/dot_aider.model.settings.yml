@@ -1,5 +1,6 @@
 - name: openai/o3-mini
   edit_format: diff
+  max_chat_history_tokens: 80000
   extra_params:
     extra_headers:
       Editor-Version: Aider/0.84
@@ -7,6 +8,7 @@
 
 - name: openai/o4-mini
   edit_format: diff
+  max_chat_history_tokens: 80000
   extra_params:
     extra_headers:
       Editor-Version: Aider/0.84
@@ -14,6 +16,7 @@
 
 - name: openai/gemini-2.5-pro
   edit_format: diff
+  max_chat_history_tokens: 80000
   extra_params:
     extra_headers:
       Editor-Version: Aider/0.84
@@ -21,6 +24,7 @@
 
 - name: openai/claude-sonnet-4
   edit_format: diff
+  max_chat_history_tokens: 80000
   extra_params:
     extra_headers:
       Editor-Version: Aider/0.84
@@ -28,6 +32,7 @@
 
 - name: openai/gpt-4.1
   edit_format: diff
+  max_chat_history_tokens: 80000
   extra_params:
     extra_headers:
       Editor-Version: Aider/0.84
