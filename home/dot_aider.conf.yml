@@ -2,7 +2,7 @@
 model: openai/gemini-2.5-pro
 weak-model: openai/gpt-4.1
 show-model-warnings: false
-auto-commits: false
+auto-commits: true
 openai-api-base: https://api.individual.githubcopilot.com
 lint-cmd:
   - "python: ruff-aider" # format + automatic fix + check
