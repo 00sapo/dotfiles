@@ -1,7 +1,10 @@
 model: gemini/gemini-2.5-pro
-weak-model: gemini/gemini-2.5-flash-lite-preview-06-17
+# editor-model: gemini/gemini-2.5-flash
+weak-model: gemini/gemini-2.5-flash-lite
 show-model-warnings: false
 auto-commits: true
+architect: true # use architect mode by default
+auto-accept-architect: false # ask for confirmation before editing
 openai-api-base: https://api.individual.githubcopilot.com
 lint-cmd:
   - "python: ruff-aider" # format + automatic fix + check
@@ -17,3 +20,5 @@ vim: true
 # colors
 light-mode: true
 # dark-mode: true
+reasoning-effort: high
+thinking-tokens: "8000"
