@@ -8,6 +8,7 @@ auto-accept-architect: false # ask for confirmation before editing
 openai-api-base: https://api.individual.githubcopilot.com
 lint-cmd:
   - "python: ruff-aider" # format + automatic fix + check
+  - "latex: latexindent -wd -m main.tex" # format
 # Enable notifications
 notifications: true
 notifications-command: notify-send --hint int:transient:1 "Aider" "Waiting for input"

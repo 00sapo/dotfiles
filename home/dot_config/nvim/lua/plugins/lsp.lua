@@ -84,7 +84,7 @@ local M = {
               formatterLineLength = 80,
               latexFormatter = "latexindent",
               latexindent = {
-                modifyLineBreaks = false,
+                modifyLineBreaks = true,
               },
               forwardSearch = {
                 -- see nvim-texlabconfig
