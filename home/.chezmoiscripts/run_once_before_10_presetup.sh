@@ -4,6 +4,7 @@
 echo install soar
 curl -fsSL https://soar.qaidvoid.dev/install.sh | sh
 # adding cargo-bins repository to soar (needed for rbw)
+soar defconfig --external
 mkdir -pv "$HOME/.config/soar" &&
   tee -a "$HOME/.config/soar/config.toml" <<EOF
 [[repositories]]
@@ -12,6 +13,7 @@ url = "https://meta.pkgforge.dev/external/cargo-bins/x86_64-Linux.json.zstd"
 EOF
 
 echo install rbw
+export PATH="$HOME/.local/bin/:$PATH"
 soar sync
 soar install rbw
 # fix rbw-agent (it's missing in the cargo-bins repo)
