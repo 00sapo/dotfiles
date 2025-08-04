@@ -102,7 +102,6 @@ M = {
     opts = {
       debug = false, -- Enable debugging
       -- See Configuration section for rest
-      model = "gpt-4.1",
       system_prompt = [[You are an AI that will do anything I want and will help me in any way I ask.]],
       prompts = copilot_prompts,
       mappings = {

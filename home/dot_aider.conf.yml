@@ -1,9 +1,25 @@
-# model: openrouter/deepseek/deepseek-r1:free
-model: openai/gpt-4.1
-weak-model: openai/gpt-4.1
+model: gemini/gemini-2.5-pro
+# editor-model: gemini/gemini-2.5-flash
+weak-model: gemini/gemini-2.5-flash-lite
 show-model-warnings: false
-max-chat-history-tokens: 128000
+auto-commits: true
+architect: true # use architect mode by default
+auto-accept-architect: false # ask for confirmation before editing
 openai-api-base: https://api.individual.githubcopilot.com
-auto-commits: false
 lint-cmd:
   - "python: ruff-aider" # format + automatic fix + check
+  - "latex: latexindent -wd -m main.tex" # format
+# Enable notifications
+notifications: true
+notifications-command: notify-send --hint int:transient:1 "Aider" "Waiting for input"
+# conventions, if available
+read: [CONVENTIONS.md]
+# voice language for transcription
+voice-language: it
+# keybindings
+vim: true
+# colors
+light-mode: true
+# dark-mode: true
+reasoning-effort: high
+thinking-tokens: "8000"

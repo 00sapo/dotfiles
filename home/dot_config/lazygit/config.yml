@@ -8,13 +8,13 @@ os:
   editAtLineAndWait: "nvim --block +{{line}} {{filename}}"
   editInTerminal: true
 customCommands:
-  - key: 'a'
-    context: 'files'
+  - key: "a"
+    context: "files"
     command: "git {{if .SelectedFile.HasUnstagedChanges}} add {{else}} reset {{end}} {{.SelectedFile.Name | quote}}"
-    description: 'Toggle file staged'
-  - key: 'x'
-    context: 'global'
-    command: "aider-copilot --commit"
+    description: "Toggle file staged"
+  - key: "x"
+    context: "global"
+    command: "GEMINI_API_KEY=$(rbw get gemini_key) aider --commit"
     output: terminal
     customCommands:
 
@@ -22,26 +22,26 @@ customCommands:
 gui:
   theme:
     activeBorderColor:
-      - '#d20f39'
+      - "#d20f39"
       - bold
     inactiveBorderColor:
-      - '#6c6f85'
+      - "#6c6f85"
     optionsTextColor:
-      - '#1e66f5'
+      - "#1e66f5"
     selectedLineBgColor:
-      - '#ccd0da'
+      - "#ccd0da"
     cherryPickedCommitBgColor:
-      - '#bcc0cc'
+      - "#bcc0cc"
     cherryPickedCommitFgColor:
-      - '#d20f39'
+      - "#d20f39"
     unstagedChangesColor:
-      - '#d20f39'
+      - "#d20f39"
     defaultFgColor:
-      - '#4c4f69'
+      - "#4c4f69"
     searchingActiveBorderColor:
-      - '#df8e1d'
+      - "#df8e1d"
   authorColors:
-    '*': '#7287fd'
+    "*": "#7287fd"
   expandFocusedSidePanel: true
   expandedSidePanelWeight: 7
   sidePanelWidth: 0.15
@@ -51,5 +51,5 @@ keybinding:
   universal:
     scrollUpMain: <c-k>
     scrollDownMain: <c-j>
-    nextScreenMode: '='
-    prevScreenMode: '-'
+    nextScreenMode: "="
+    prevScreenMode: "-"

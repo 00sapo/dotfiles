@@ -18,6 +18,16 @@ return {
     },
   },
   -- {
+  --   "lualine/lualine.nvim",
+  --   opts = {
+  --     options = {
+  --       sections = {
+  --         lualine_x = { { "searchcount", maxcount = 999999 } },
+  --       },
+  --     },
+  --   },
+  -- },
+  -- {
   --   "catppuccin/nvim",
   --   name = "catppuccin",
   --   opts = {
