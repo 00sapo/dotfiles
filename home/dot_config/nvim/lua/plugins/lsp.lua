@@ -70,7 +70,13 @@ local M = {
             texlab = {
               build = {
                 executable = "latexmk",
-                args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "-outdir=/tmp/texlab", "%f" },
+                args = {
+                  "-latex=lualatex",
+                  "-interaction=nonstopmode",
+                  "-synctex=1",
+                  "-outdir=/tmp/texlab",
+                  "%f",
+                },
                 auxDirectory = "/tmp/texlab",
                 pdfDirectory = "/tmp/texlab",
                 onSave = true,
@@ -114,19 +120,19 @@ local M = {
           },
         },
         -- pyright = { enable = false, autostart = false, mason = false }, -- only use ruff
-        ltex = {
-          mason = true,
-          autostart = true,
-          enable = true,
-          on_attach = function(client, bufnr)
-            -- setup ltex_extra
-            require("ltex_extra").setup({
-              load_langs = { "it", "en-US" },
-              init_check = true,
-              path = vim.fn.expand("~") .. "/.local/share/ltex",
-            })
-          end,
-        },
+        -- ltex = {
+        --   mason = true,
+        --   autostart = true,
+        --   enable = true,
+        --   on_attach = function(client, bufnr)
+        --     -- setup ltex_extra
+        --     require("ltex_extra").setup({
+        --       load_langs = { "it", "en-US" },
+        --       init_check = true,
+        --       path = vim.fn.expand("~") .. "/.local/share/ltex",
+        --     })
+        --   end,
+        -- },
       },
     },
   },
