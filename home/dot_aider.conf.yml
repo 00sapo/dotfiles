@@ -23,6 +23,4 @@ vim: true
 light-mode: true
 # dark-mode: true
 reasoning-effort: high
-thinking-tokens: "8000"
-# temporary
-git: false
+thinking-tokens: "8192"
