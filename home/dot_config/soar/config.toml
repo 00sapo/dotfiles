@@ -72,6 +72,18 @@ desktop_integration = true
 pubkey = "https://meta.pkgforge.dev/pkgcache/minisign.pub"
 
 [[repositories]]
+name = "pkgforge-cargo"
+url = "https://meta.pkgforge.dev/external/pkgforge-cargo/x86_64-Linux.sdb.zstd"
+desktop_integration = false
+signature_verification = false
+
+[[repositories]]
+name = "pkgforge-go"
+url = "https://meta.pkgforge.dev/external/pkgforge-go/x86_64-Linux.sdb.zstd"
+desktop_integration = false
+signature_verification = false
+
+[[repositories]]
 name = "ivan-hc-am"
 url = "https://meta.pkgforge.dev/external/am/x86_64-Linux.json.zstd"
 desktop_integration = true
