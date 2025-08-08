@@ -107,8 +107,12 @@ no_retry = true
 [commands]
 # "Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 # "Custom command using interactive shell (unix)" = "-i vim_upgrade"
+{{- if lookPath "soar" }}
 "Soar Package Manager" = "soar upgrade"
+{{- end }}
+{{- if lookPath "stew" }}
 "Stew Package Manager" = "stew upgrade --all"
+{{- end }}
 
 
 [python]
