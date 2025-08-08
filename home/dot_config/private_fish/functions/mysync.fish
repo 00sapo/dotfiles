@@ -26,8 +26,8 @@ end
 
 function mysync
     unlock_sudo_and_ssh
-    command -v soar >/dev/null; and soar info | head -n -1 | awk '{print $1}' >soar.install
-    command -v stew >/dev/null; and stew list --tags >stew.install
+    command -v soar >/dev/null; and soar info | head -n -1 | awk '{print $1}' >"$HOME/soar.install"
+    command -v stew >/dev/null; and stew list --tags >"$HOME/stew.install"
     command -v chezmoi >/dev/null; and chezmoi_update
     command -v task >/dev/null; and task show taskd.server | grep -q wingtask; and task sync
 end
