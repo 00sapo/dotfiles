@@ -6,7 +6,7 @@ auto-commits: true
 architect: true # use architect mode by default
 auto-accept-architect: false # ask for confirmation before editing
 openai-api-base: https://api.individual.githubcopilot.com
-multiline: true
+multiline: false
 lint-cmd:
   - "python: ruff-aider" # format + automatic fix + check
   - "latex: latexindent -wd -m main.tex" # format
