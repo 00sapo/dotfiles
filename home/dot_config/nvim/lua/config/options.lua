@@ -17,4 +17,3 @@ vim.opt.textwidth = 100
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.clipboard = "unnamedplus"
-vim.g.clipboard = "osc52"
