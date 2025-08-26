@@ -1,14 +1,15 @@
 local M = {
   { "jbyuki/quickmath.nvim" },
   {
-    "cosmicboots/unicode_picker.nvim",
-    dependencies = {
-      "uga-rosa/utf8.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
+    "ziontee113/icon-picker.nvim",
     config = function()
-      local unicode_picker = require("unicode_picker")
-      vim.keymap.set("i", "<c-u>", unicode_picker.unicode_chars, { noremap = true, silent = true })
+      require("icon-picker").setup({ disable_legacy_commands = true })
+
+      local opts = { noremap = true, silent = true }
+
+      -- vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal<cr>", opts)
+      -- vim.keymap.set("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
+      vim.keymap.set("i", "<C-u>", "<cmd>IconPickerInsert<cr>", opts)
     end,
   },
   {

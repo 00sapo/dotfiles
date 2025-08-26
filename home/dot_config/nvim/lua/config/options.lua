@@ -1,7 +1,7 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
-vim.opt.shell = "/bin/fish"
+vim.opt.shell = "/usr/bin/fish"
 vim.cmd("set wrap linebreak nolist")
 vim.opt.backup = true
 vim.opt.backupdir = vim.fn.expand("~/.cache/nvim/backups/")
@@ -16,25 +16,5 @@ vim.opt.textwidth = 100
 -- vim.o wants the standard vim's syntax for options
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.clipboard = vim.o.clipboard .. ",unnamedplus"
-
--- if vim.fn.has("nvim-0.10") == 1 then
---   -- otherwise, see editing.lua, "ojroques/nvim-osc52"
---   local function paste()
---     return {
---       vim.fn.split(vim.fn.getreg(""), "\n"),
---       vim.fn.getregtype(""),
---     }
---   end
---   vim.g.clipboard = {
---     name = "OSC 52",
---     copy = {
---       ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
---       ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
---     },
---     paste = {
---       ["+"] = paste,
---       ["*"] = paste,
---     },
---   }
--- end
+vim.o.clipboard = "unnamedplus"
+vim.g.clipboard = "osc52"
