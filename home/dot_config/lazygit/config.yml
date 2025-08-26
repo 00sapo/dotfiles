@@ -14,7 +14,7 @@ customCommands:
     description: "Toggle file staged"
   - key: "x"
     context: "global"
-    command: "GEMINI_API_KEY=$(rbw get gemini_key) aider --commit"
+    command: "aider --commit"
     output: terminal
     customCommands:
 
