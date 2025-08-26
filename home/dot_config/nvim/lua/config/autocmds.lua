@@ -35,22 +35,26 @@ vim.api.nvim_create_autocmd("OptionSet", {
 
 -- clipboard
 if vim.env.SSH_TTY or vim.env.TMUX then
-  -- for nvim >= 0.11, this can just be `vim.g.clipboard = 'osc52'`
-  local function paste()
-    return {
-      vim.fn.split(vim.fn.getreg(""), "\n"),
-      vim.fn.getregtype(""),
+  if vim.fn.has("nvim-0.11") == 1 then -- nvim 0.11+ has simpler osc52 support
+    vim.g.clipboard = "osc52"
+  else
+    local function paste()
+      return {
+        vim.fn.split(vim.fn.getreg(""), "\n"),
+        vim.fn.getregtype(""),
+      }
+    end
+    vim.g.clipboard = {
+      name = "OSC 52",
+      copy = {
+        ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+        ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+      },
+      -- for pasting, just use ctrl+shift+v, because many terminal don't support it via osc52
+      paste = {
+        ["+"] = paste,
+        ["*"] = paste,
+      },
     }
   end
-  vim.g.clipboard = {
-    name = "OSC 52",
-    copy = {
-      ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-      ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-    },
-    paste = {
-      ["+"] = paste,
-      ["*"] = paste,
-    },
-  }
 end
