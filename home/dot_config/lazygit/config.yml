@@ -14,7 +14,7 @@ customCommands:
     description: "Toggle file staged"
   - key: "x"
     context: "global"
-    command: "aider --commit"
+    command: "fish -c 'aider --commit'"
     output: terminal
     customCommands:
 

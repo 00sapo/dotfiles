@@ -1,8 +1,8 @@
 # model: github_copilot/gpt-5-mini
-model: deepseek/deepseek-reasoner
+model: deepseek/deepseek-chat
 # model: gemini/gemini-2.5-pro
 # editor-model: gemini/gemini-2.5-flash
-# weak-model: github_copilot/gpt-4o
+weak-model: github_copilot/gpt-5-mini
 show-model-warnings: false
 auto-commits: true
 architect: true # use architect mode by default
@@ -25,3 +25,11 @@ light-mode: true
 # dark-mode: true
 reasoning-effort: high
 thinking-tokens: "8192"
+alias:
+  - "chat:deepseek/deepseek-chat"
+  - "reasoner:deepseek/deepseek-reasoner"
+  - "sonnet:github_copilot/claude-sonnet-4"
+  - "gpt-5:github_copilot/gpt-5"
+  - "flash:gemini/gemini-2.5-flash"
+  - "pro:gemini/gemini-2.5-pro"
+  - "gpro:github_copilot/gemini-2.5-pro"

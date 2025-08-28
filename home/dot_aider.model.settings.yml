@@ -45,3 +45,11 @@
     extra_headers:
       Editor-Version: Aider/0.84
       Copilot-Integration-Id: copilot-chat
+
+- name: github_copilot/gpt-5
+  # edit_format: diff
+  extra_params:
+    max_tokens: 100000
+    extra_headers:
+      Editor-Version: Aider/0.84
+      Copilot-Integration-Id: copilot-chat
