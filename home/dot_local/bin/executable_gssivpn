@@ -1,5 +1,5 @@
 #!/bin/sh
 sudo openfortivpn \
   gssi-gw.gssi.it:10443 \
-  --cookie="$(openfortivpn-webview gssi-gw.gssi.it:10443)" \
-  --trusted-cert 6d6e1dc0453ed5b29d5b42a49093fb737eee54cba7a939fce452619451744324
+  --trusted-cert 6d6e1dc0453ed5b29d5b42a49093fb737eee54cba7a939fce452619451744324 \
+  --saml-login
