@@ -5,7 +5,7 @@ model: deepseek/deepseek-chat
 weak-model: github_copilot/gpt-5-mini
 show-model-warnings: false
 auto-commits: true
-architect: true # use architect mode by default
+ask: true # use ask mode by default
 auto-accept-architect: false # ask for confirmation before editing
 multiline: false
 lint-cmd:
