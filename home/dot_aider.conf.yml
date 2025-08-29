@@ -8,6 +8,12 @@ auto-commits: true
 architect: true # use architect mode by default
 auto-accept-architect: false # ask for confirmation before editing
 multiline: false
+# Suggested number of tokens to use for repo map, use 0 to disable
+map-tokens: "2048"
+# Control how often the repo map is refreshed. Options: auto, always, files, manual (default: auto)
+map-refresh: files
+# Multiplier for map tokens when no files are specified (default: 2)
+map-multiplier-no-files: "2"
 lint-cmd:
   - "python: ruff-aider" # format + automatic fix + check
   - "latex: latexindent -wd -m main.tex" # format
