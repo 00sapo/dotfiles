@@ -24,7 +24,7 @@
         <value type="int" value="7"/>
         <value type="int" value="8"/>
         <value type="int" value="28"/>
-        <value type="int" value="33"/>
+        <value type="int" value="1"/>
         <value type="int" value="55"/>
         <value type="int" value="54"/>
         <value type="int" value="39"/>
@@ -47,6 +47,12 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (76%)"/>
+        <value type="string" value="clipman"/>
+        <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (73%)"/>
+        <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (80%)"/>
+        <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (77%)"/>
+        <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (68%)"/>
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (83%)"/>
         <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (65%)"/>
@@ -101,7 +107,6 @@
         <property name="version" type="string" value="1.11.1"/>
       </property>
     </property>
-    <property name="plugin-33" type="string" value="xfce4-clipman-plugin"/>
     <property name="clipman" type="empty">
       <property name="settings" type="empty">
         <property name="show-qr-code" type="bool" value="true"/>
@@ -119,7 +124,7 @@
     <property name="plugin-55" type="string" value="power-manager-plugin"/>
     <property name="plugin-2" type="string" value="pager">
       <property name="rows" type="uint" value="1"/>
-      <property name="miniature-view" type="bool" value="false"/>
+      <property name="miniature-view" type="bool" value="true"/>
     </property>
     <property name="plugin-3" type="string" value="separator"/>
     <property name="plugin-4" type="string" value="docklike"/>
@@ -127,5 +132,6 @@
       <property name="style" type="uint" value="0"/>
       <property name="expand" type="bool" value="true"/>
     </property>
+    <property name="plugin-1" type="string" value="xfce4-clipman-plugin"/>
   </property>
 </channel>

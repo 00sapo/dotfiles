@@ -1,7 +1,7 @@
 [user]
-showPreviews=true
+showPreviews=false
 showWindowCount=true
 indicatorStyle=3
 inactiveIndicatorStyle=1
 indicatorOrientation=0
-onlyDisplayVisible=true
+onlyDisplayVisible=false

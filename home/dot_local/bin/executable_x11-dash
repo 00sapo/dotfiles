@@ -1,17 +1,17 @@
 #!/bin/env bash
 
-# keep the last word
-wm_showing_desktop=$(wmctrl -m | awk /"showing the desktop/{print \$NF}")
-# convert lowercase to uppercase
-wm_showing_desktop=${wm_showing_desktop^^}
-if [ -z "$wm_showing_desktop" ]; then
-  exit 1
-fi
-if [ "$wm_showing_desktop" = "ON" ]; then
-  wmctrl -k off
-  # killall rofi
-else
+# rofi grabs all keyboard input, so we need to have an internal rofi keybinding for closing it
+# however, when rofi is closed, Super_L is also sent to the window manager, which toggles the
+# overview mode again. To avoid this, we use a state file to ignore the second toggle. The trick is
+# to change the state back to "stopped" after a short delay, so that the next time this script
+# is run in a short time, it will be ignored.
+
+state=$(cat $HOME/.cache/x11-dash-state.txt)
+if [ "$state" != "started" ]; then
+  echo "started" >$HOME/.cache/x11-dash-state.txt
   wmctrl -k on
   rofi -show combi -kb-cancel 'Super_L'
-  # wmctrl -k off
+  wmctrl -k off
+  sleep 0.2 # this is the trick
+  echo "stopped" >$HOME/.cache/x11-dash-state.txt
 fi

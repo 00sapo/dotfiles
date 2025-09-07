@@ -14,5 +14,6 @@
     <property name="profile-on-battery" type="string" value="power-saver"/>
     <property name="critical-power-level" type="uint" value="20"/>
     <property name="brightness-exponential" type="bool" value="true"/>
+    <property name="profile-on-ac" type="string" value="performance"/>
   </property>
 </channel>
