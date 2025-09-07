@@ -10,7 +10,7 @@ state=$(cat $HOME/.cache/x11-dash-state.txt)
 if [ "$state" != "started" ]; then
   echo "started" >$HOME/.cache/x11-dash-state.txt
   wmctrl -k on
-  rofi -show combi -kb-cancel 'Super_L'
+  rofi -show combi -kb-cancel 'Super_L' -location 2
   wmctrl -k off
   sleep 0.2 # this is the trick
   echo "stopped" >$HOME/.cache/x11-dash-state.txt

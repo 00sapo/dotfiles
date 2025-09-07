@@ -47,6 +47,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="variety"/>
         <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (76%)"/>
         <value type="string" value="clipman"/>
         <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (73%)"/>
