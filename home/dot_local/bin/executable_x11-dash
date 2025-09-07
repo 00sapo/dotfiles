@@ -1,0 +1,17 @@
+#!/bin/env bash
+
+# keep the last word
+wm_showing_desktop=$(wmctrl -m | awk /"showing the desktop/{print \$NF}")
+# convert lowercase to uppercase
+wm_showing_desktop=${wm_showing_desktop^^}
+if [ -z "$wm_showing_desktop" ]; then
+  exit 1
+fi
+if [ "$wm_showing_desktop" = "ON" ]; then
+  wmctrl -k off
+  # killall rofi
+else
+  wmctrl -k on
+  rofi -show combi -kb-cancel 'Super_L'
+  # wmctrl -k off
+fi
