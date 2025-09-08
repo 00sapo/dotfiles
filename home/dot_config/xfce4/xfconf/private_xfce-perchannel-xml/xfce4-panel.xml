@@ -47,6 +47,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="ethernet network connection “wired connection 1” active"/>
         <value type="string" value="variety"/>
         <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (76%)"/>
         <value type="string" value="clipman"/>
@@ -115,7 +116,11 @@
       </property>
     </property>
     <property name="plugin-39" type="string" value="separator"/>
-    <property name="plugin-52" type="string" value="whiskermenu"/>
+    <property name="plugin-52" type="string" value="whiskermenu">
+      <property name="recent" type="array">
+        <value type="string" value="xfce-keyboard-settings.desktop"/>
+      </property>
+    </property>
     <property name="plugin-54" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="multimedia-keys-to-all" type="bool" value="false"/>
@@ -128,11 +133,11 @@
       <property name="miniature-view" type="bool" value="true"/>
     </property>
     <property name="plugin-3" type="string" value="separator"/>
-    <property name="plugin-4" type="string" value="docklike"/>
     <property name="plugin-9" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
       <property name="expand" type="bool" value="true"/>
     </property>
     <property name="plugin-1" type="string" value="xfce4-clipman-plugin"/>
+    <property name="plugin-4" type="string" value="docklike"/>
   </property>
 </channel>
