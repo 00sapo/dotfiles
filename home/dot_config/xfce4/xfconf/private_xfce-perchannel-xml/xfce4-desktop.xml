@@ -8,9 +8,9 @@
         <property name="color1" type="empty"/>
         <property name="color2" type="empty"/>
         <property name="color-style" type="empty"/>
-        <property name="image-path" type="string" value="/home/federico/Pictures/variety-copied-wallpaper-7f06e6108e0354439d4fe1e7e4dd47b5.jpg"/>
+        <property name="image-path" type="string" value="/home/federico/Pictures/variety-copied-wallpaper-516bda480aeef6c247bdcab3f9ad231c.jpg"/>
         <property name="image-show" type="empty"/>
-        <property name="last-image" type="string" value="/home/federico/Pictures/variety-copied-wallpaper-7f06e6108e0354439d4fe1e7e4dd47b5.jpg"/>
+        <property name="last-image" type="string" value="/home/federico/Pictures/variety-copied-wallpaper-516bda480aeef6c247bdcab3f9ad231c.jpg"/>
         <property name="last-single-image" type="empty"/>
       </property>
       <property name="monitor1" type="empty">
@@ -18,14 +18,14 @@
         <property name="color1" type="empty"/>
         <property name="color2" type="empty"/>
         <property name="color-style" type="empty"/>
-        <property name="image-path" type="string" value="/home/federico/Pictures/variety-copied-wallpaper-7f06e6108e0354439d4fe1e7e4dd47b5.jpg"/>
+        <property name="image-path" type="string" value="/home/federico/Pictures/variety-copied-wallpaper-516bda480aeef6c247bdcab3f9ad231c.jpg"/>
         <property name="image-show" type="empty"/>
-        <property name="last-image" type="string" value="/home/federico/Pictures/variety-copied-wallpaper-7f06e6108e0354439d4fe1e7e4dd47b5.jpg"/>
+        <property name="last-image" type="string" value="/home/federico/Pictures/variety-copied-wallpaper-516bda480aeef6c247bdcab3f9ad231c.jpg"/>
         <property name="last-single-image" type="empty"/>
       </property>
       <property name="monitoreDP-1" type="empty">
         <property name="workspace0" type="empty">
-          <property name="last-image" type="string" value="/home/federico/Pictures/variety-copied-wallpaper-7f06e6108e0354439d4fe1e7e4dd47b5.jpg"/>
+          <property name="last-image" type="string" value="/home/federico/Pictures/variety-copied-wallpaper-516bda480aeef6c247bdcab3f9ad231c.jpg"/>
           <property name="color-style" type="int" value="0"/>
           <property name="backdrop-cycle-enable" type="bool" value="true"/>
           <property name="backdrop-cycle-period" type="int" value="5"/>

@@ -6,8 +6,8 @@
     <value type="int" value="1"/>
     <property name="dark-mode" type="bool" value="true"/>
     <property name="panel-1" type="empty">
-      <property name="position" type="string" value="p=10;x=966;y=1060"/>
-      <property name="length" type="double" value="94.947916666666671"/>
+      <property name="position" type="string" value="p=10;x=951;y=1062"/>
+      <property name="length" type="double" value="87.34375"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="icon-size" type="uint" value="0"/>
       <property name="size" type="uint" value="33"/>
@@ -23,20 +23,23 @@
         <value type="int" value="6"/>
         <value type="int" value="7"/>
         <value type="int" value="8"/>
-        <value type="int" value="28"/>
-        <value type="int" value="1"/>
-        <value type="int" value="55"/>
-        <value type="int" value="54"/>
         <value type="int" value="39"/>
         <value type="int" value="10"/>
       </property>
       <property name="mode" type="uint" value="0"/>
-      <property name="autohide-behavior" type="uint" value="1"/>
+      <property name="autohide-behavior" type="uint" value="2"/>
       <property name="background-style" type="uint" value="0"/>
       <property name="enter-opacity" type="uint" value="100"/>
-      <property name="leave-opacity" type="uint" value="100"/>
+      <property name="leave-opacity" type="uint" value="0"/>
       <property name="length-adjust" type="bool" value="true"/>
       <property name="nrows" type="uint" value="1"/>
+      <property name="background-rgba" type="array">
+        <value type="double" value="0.96470588235294119"/>
+        <value type="double" value="0.96078431372549022"/>
+        <value type="double" value="0.95686274509803926"/>
+        <value type="double" value="1"/>
+      </property>
+      <property name="enable-struts" type="bool" value="false"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -47,6 +50,10 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="pasystray"/>
+        <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (74%)"/>
+        <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (63%)"/>
+        <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (75%)"/>
         <value type="string" value="variety"/>
         <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (76%)"/>
         <value type="string" value="clipman"/>
@@ -64,12 +71,23 @@
         <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (71%)"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="pasystray"/>
+        <value type="string" value="steam"/>
         <value type="string" value="MEGAsync"/>
         <value type="string" value="hp-systray"/>
         <value type="string" value="chrome_status_icon_1"/>
         <value type="string" value="albert"/>
         <value type="string" value="birdtray"/>
       </property>
+      <property name="icon-size" type="int" value="0"/>
+      <property name="single-row" type="bool" value="true"/>
+      <property name="hidden-items" type="array">
+      </property>
+      <property name="menu-is-primary" type="bool" value="true"/>
+      <property name="symbolic-icons" type="bool" value="true"/>
+      <property name="hidden-legacy-items" type="array">
+      </property>
+      <property name="hide-new-items" type="bool" value="false"/>
     </property>
     <property name="plugin-7" type="string" value="separator">
       <property name="style" type="uint" value="1"/>
@@ -102,7 +120,6 @@
       <property name="timeout" type="uint" value="5000"/>
       <property name="timeout-seconds" type="uint" value="10"/>
     </property>
-    <property name="plugin-28" type="string" value="xfce4-notes-plugin"/>
     <property name="notes" type="empty">
       <property name="global" type="empty">
         <property name="version" type="string" value="1.11.1"/>
@@ -116,13 +133,6 @@
     </property>
     <property name="plugin-39" type="string" value="separator"/>
     <property name="plugin-52" type="string" value="whiskermenu"/>
-    <property name="plugin-54" type="string" value="pulseaudio">
-      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="multimedia-keys-to-all" type="bool" value="false"/>
-      <property name="rec-indicator-persistent" type="bool" value="true"/>
-      <property name="known-players" type="string" value="chromium;chromium-browser"/>
-    </property>
-    <property name="plugin-55" type="string" value="power-manager-plugin"/>
     <property name="plugin-2" type="string" value="pager">
       <property name="rows" type="uint" value="1"/>
       <property name="miniature-view" type="bool" value="true"/>
@@ -133,6 +143,5 @@
       <property name="style" type="uint" value="0"/>
       <property name="expand" type="bool" value="true"/>
     </property>
-    <property name="plugin-1" type="string" value="xfce4-clipman-plugin"/>
   </property>
 </channel>
