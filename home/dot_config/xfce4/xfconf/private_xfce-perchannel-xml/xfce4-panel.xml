@@ -65,6 +65,7 @@
         <value type="string" value="wi-fi network connection “salvini merda” active: salvini merda (71%)"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="variety"/>
         <value type="string" value="MEGAsync"/>
         <value type="string" value="hp-systray"/>
         <value type="string" value="chrome_status_icon_1"/>

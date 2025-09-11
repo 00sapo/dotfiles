@@ -32,7 +32,7 @@ configs:
       row: 5
       col: 0
     "/home/federico/Desktop/language-support.desktop":
-      row: 3
+      row: 4
       col: 0
     "google-drive://fortea92@gmail.com/":
       row: 4
@@ -57,3 +57,7 @@ configs:
     "/home/federico/Desktop/firefox.desktop":
       row: 1
       col: 17
+    "162ad2b0-93a7-4b9c-9e91-bf279e691d58":
+      row: 3
+      col: 0
+      last_seen: 1757579207835461
