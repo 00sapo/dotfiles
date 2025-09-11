@@ -31,7 +31,8 @@ disable = ["uv", "chezmoi", "vim", "pnpm", "asdf"]
 
 # List of remote machines with Topgrade installed on them
 {{- if eq .chezmoi.hostname "cucchia" }}
-remote_topgrades = ["amadeus.lim.di.unimi.it", "brian.lim.di.unimi.it", ]
+remote_topgrades = ["amadeus.lim.di.unimi.it", ]
+# remote_topgrades = ["amadeus.lim.di.unimi.it", "brian.lim.di.unimi.it", ]
 {{- else }}
 remote_topgrades = []
 {{- end }}
