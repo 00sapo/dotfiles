@@ -41,3 +41,7 @@ vim.keymap.set("n", "<leader>:", function()
   })
   vim.cmd("Quickmath")
 end, { desc = "Scratch math" })
+
+-- expansion in the commandline
+vim.cmd([[cab cc CodeCompanion]])
+vim.cmd([[cab tex Texlab]])
