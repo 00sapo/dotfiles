@@ -9,7 +9,6 @@ local M = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "ravitemer/mcphub.nvim",
-      "franco-ruggeri/codecompanion-spinner.nvim",
     },
     cmd = { "CodeCompanion", "CodeCompanionChat", "CodeCompanionActions", "CodeCompanionCmd" },
     keys = {
@@ -36,6 +35,20 @@ local M = {
       chat = {
         adapter = "copilot",
         model = "gpt-4.1",
+      },
+      memory = {
+        default = {
+          description = "Collection of common files for all projects",
+          files = {
+            "ai/CONVENTIONS.md",
+            "ai/DESIGN.md",
+          },
+        },
+        opts = {
+          chat = {
+            enabled = true,
+          },
+        },
       },
       adapters = {
         http = {
@@ -92,7 +105,6 @@ local M = {
             show_result_in_chat = true,
           },
         },
-        spinner = {},
       },
     },
   },
