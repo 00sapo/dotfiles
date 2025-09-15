@@ -6,7 +6,9 @@ local M = {
       "nvim-treesitter/nvim-treesitter",
       "ravitemer/mcphub.nvim",
       "Davidyz/VectorCode",
+      "ravitemer/codecompanion-history.nvim",
     },
+    build = "uv tool install -U vectorcode", -- This helps keeping the CLI up-to-date
     cmd = { "CodeCompanion", "CodeCompanionChat", "CodeCompanionActions", "CodeCompanionCmd" },
     keys = {
       { "<leader>aa", "<cmd>CodeCompanionActions<cr>", desc = "List actions" },
@@ -42,14 +44,24 @@ local M = {
             show_result_in_chat = true,
           },
         },
+        vectorcode = {
+          opts = {
+            tool_group = {
+              -- this will register a tool group called `@vectorcode_toolbox` that contains all 3 tools
+              enabled = true,
+              -- a list of extra tools that you want to include in `@vectorcode_toolbox`.
+              -- if you use @vectorcode_vectorise, it'll be very handy to include
+              -- `file_search` here.
+              extras = { "file_search" },
+              collapse = false, -- whether the individual tools should be shown in the chat
+            },
+          },
+        },
+        history = {
+          enabled = true,
+        },
       },
     },
-  },
-  {
-    "Davidyz/VectorCode",
-    version = "*",
-    build = "uv tool install -U vectorcode", -- This helps keeping the CLI up-to-date
-    dependencies = { "nvim-lua/plenary.nvim" },
   },
 
   -- {
