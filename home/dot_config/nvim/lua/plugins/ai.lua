@@ -7,6 +7,8 @@ local M = {
       "ravitemer/mcphub.nvim",
       "Davidyz/VectorCode",
       "ravitemer/codecompanion-history.nvim",
+      "lalitmee/codecompanion-spinners.nvim",
+      "j-hui/fidget.nvim", -- For fidget spinner
     },
     build = "uv tool install -U vectorcode", -- This helps keeping the CLI up-to-date
     cmd = { "CodeCompanion", "CodeCompanionChat", "CodeCompanionActions", "CodeCompanionCmd" },
@@ -134,6 +136,14 @@ local M = {
         },
       },
       extensions = {
+        spinner = {
+          opts = {
+            style = "fidget", -- Choose your spinner style
+          },
+          -- opts = {
+          --   -- Full configuration available
+          -- },
+        },
         mcphub = {
           callback = "mcphub.extensions.codecompanion",
           opts = {
