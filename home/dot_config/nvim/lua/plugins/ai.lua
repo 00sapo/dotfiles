@@ -8,7 +8,7 @@ local M = {
       "Davidyz/VectorCode",
       "ravitemer/codecompanion-history.nvim",
       "lalitmee/codecompanion-spinners.nvim",
-      "j-hui/fidget.nvim", -- For fidget spinner
+      "folke/snacks.nvim",
     },
     build = "uv tool install -U vectorcode", -- This helps keeping the CLI up-to-date
     cmd = { "CodeCompanion", "CodeCompanionChat", "CodeCompanionActions", "CodeCompanionCmd" },
@@ -62,8 +62,13 @@ local M = {
               default_tools = {
                 "vectorcode_toolbox", -- from vectorcode extension
                 "full_stack_dev",
-                "fetch_webpage",
-                "search_web",
+              },
+            },
+            groups = {
+              ["web"] = {
+                description = "Web agent",
+                system_prompt = "These tools allow to access web and online information that are more up-to-date than the LLM knowledge and contains detail that the LLM may is missing.",
+                tools = { "fetch_webpage", "search_web" },
               },
             },
           },
@@ -138,7 +143,7 @@ local M = {
       extensions = {
         spinner = {
           opts = {
-            style = "fidget", -- Choose your spinner style
+            style = "snacks", -- Choose your spinner style
           },
           -- opts = {
           --   -- Full configuration available
@@ -161,7 +166,7 @@ local M = {
               -- if you use @vectorcode_vectorise, it'll be very handy to include
               -- `file_search` here.
               extras = { "file_search" },
-              collapse = false, -- whether the individual tools should be shown in the chat
+              collapse = true, -- whether the individual tools should be shown in the chat
             },
           },
         },
