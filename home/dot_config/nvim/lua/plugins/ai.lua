@@ -43,12 +43,12 @@ local M = {
       end
     end,
     opts = {
-      chat = {
-        adapter = "copilot",
-        model = "gpt-4.1",
-      },
       strategies = {
         chat = {
+          adapter = {
+            name = "copilot",
+            model = "gpt-4o",
+          },
           roles = {
             ---The header name for the LLM's messages
             llm = function(adapter)
@@ -60,22 +60,46 @@ local M = {
           tools = {
             opts = {
               default_tools = {
-                "vectorcode_toolbox", -- from vectorcode extension
-                "full_stack_dev",
+                "devtools",
               },
             },
             groups = {
               ["web"] = {
                 description = "Web agent",
                 system_prompt = "These tools allow to access web and online information that are more up-to-date than the LLM knowledge and contains detail that the LLM may is missing.",
-                tools = { "fetch_webpage", "search_web" },
+                tools = { "fetch_webpage", "serch_web" },
+              },
+              ["devtools"] = {
+                description = "A miniml set of dev tools",
+                system_prompt = "These tools allow to find files, read and write code, and run commands. Being in unix environment, you can use unix commands, such as `cat`, `head`, `tail`, `grep`, `awk`, `python`, `sed`, `git`, `ls`, `tree`, `find`, and more. Other tools are provided for easier, more efficient, and more secure code discovery and modification.",
+                tools = {
+                  "cmd_runner",
+                  "list_code_usages",
+                  -- "vectorcode_query",
+                  -- "vectorcode_ls",
+                  -- "vectorcode_files_ls",
+                  -- "vectorcode_vectorise",
+                  "insert_edit_into_file",
+                },
               },
             },
           },
         },
       },
       display = {
+        diff = {
+          enabled = true,
+          provider_opts = {
+            -- Options for inline diff provider
+            inline = {
+              layout = "split",
+            },
+          },
+        },
         chat = {
+          window = {
+            layout = "buffer",
+          },
           intro_message = "Welcome to Eleonora 🌳! Press ? for options",
         },
       },
