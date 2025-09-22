@@ -29,3 +29,8 @@ Pin-Priority: 300
 Package: *
 Pin: release a=bionic
 Pin-Priority: 300
+
+Package: ffmpeg
+Pin: release a=oldstable
+Pin-Priority: 950
+
