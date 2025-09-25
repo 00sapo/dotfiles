@@ -51,6 +51,16 @@
 			"binary": "nvim",
 			"url": "https://api.github.com/repos/neovim/neovim/releases/assets/288180209",
 			"binaryHash": "79e7e160f9505819a5e12f3d9366be94213f5309fb912ef4ef3af52df3982977"
+		},
+		{
+			"source": "github",
+			"owner": "asdf-vm",
+			"repo": "asdf",
+			"tag": "v0.18.0",
+			"asset": "asdf-v0.18.0-linux-amd64.tar.gz",
+			"binary": "asdf",
+			"url": "https://api.github.com/repos/asdf-vm/asdf/releases/assets/261832252",
+			"binaryHash": "306a80a19b3043502ac2ba772439ff25e9e1f54ca5d873347b1907ee52f9a4d8"
 		}
 	]
 }

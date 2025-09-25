@@ -1,9 +1,6 @@
 # basic
 set --export PATH "$HOME/.local/bin:$HOME/.local/share/soar/bin/:$PATH"
 
-# asdf
-source $HOME/.asdf/asdf.fish
-
 # editor
 if command -v nvim >/dev/null
     set --export EDITOR (which nvim)
