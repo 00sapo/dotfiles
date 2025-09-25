@@ -1,7 +1,7 @@
 # Installation
 
 ```
-sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --ssh --apply 00sapo
+sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply 00sapo
 ```
 
 ## System config
