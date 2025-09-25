@@ -13,8 +13,7 @@ fi
 
 # change chezmoi source to ssh
 curdir=$(pwd)
-path=$(chezmoi source-path)
-cd $path
+cd $HOME/.local/share/chezmoi
 git remote set-url origin git@github.com:00sapo/dotfiles.git
 git pull
 cd $curdir
