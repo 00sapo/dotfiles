@@ -18,7 +18,7 @@ rm stew*
 
 echo installing from stew applications from lock file
 export PATH="$HOME/.local/bin:$PATH"
-stew install "$(dirname $0)/../dot_config/stew/Stewfile.lock.json"
+stew install "$HOME/.local/share/chezmoi/home/dot_config/stew/Stewfile.lock.json"
 
 echo setup ssh key
 rbw config set email $(echo "feder" "icosi" "mon" "ett" "a+" "bitwarden" "@" "zoh" "o.com" | sed 's/ //g')
@@ -29,9 +29,11 @@ rbw get Claude >.ssh/id_rsa
 chmod 0400 .ssh/id_rsa
 
 echo install asdf
+rm -rf ~/.asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 
 echo install tmux TPM
+rm -rf ~/.tmux/plugins/tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo setup ssh sockets
