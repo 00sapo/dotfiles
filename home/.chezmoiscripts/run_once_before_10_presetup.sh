@@ -5,8 +5,8 @@ echo install soar
 curl -fsSL https://soar.qaidvoid.dev/install.sh | sh
 # adding cargo-bins repository to soar (needed for rbw)
 soar defconfig --external
-mkdir -pv "$HOME/.config/soar" &&
-  tee -a "$HOME/.config/soar/config.toml" <<EOF
+mkdir -pv "$HOME/.config/soar"
+tee -a "$HOME/.config/soar/config.toml" <<EOF
 [[repositories]]
 name = "cargo-bins"
 url = "https://meta.pkgforge.dev/external/cargo-bins/x86_64-Linux.json.zstd"

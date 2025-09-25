@@ -1,0 +1,56 @@
+{
+	"os": "linux",
+	"arch": "amd64",
+	"packages": [
+		{
+			"source": "github",
+			"owner": "doy",
+			"repo": "rbw",
+			"tag": "1.14.1",
+			"asset": "rbw_1.14.1_linux_amd64.tar.gz",
+			"binary": "rbw",
+			"url": "https://api.github.com/repos/doy/rbw/releases/assets/288340578",
+			"binaryHash": "217a23dc06b6c80e12187b17193358c5ced7a94a5d9db1bc4a2138920f689d61"
+		},
+		{
+			"source": "github",
+			"owner": "doy",
+			"repo": "rbw",
+			"tag": "1.14.1",
+			"asset": "rbw_1.14.1_linux_amd64.tar.gz",
+			"binary": "rbw-agent",
+			"url": "https://api.github.com/repos/doy/rbw/releases/assets/288340578",
+			"binaryHash": "e22ca3be193d3235bde4414d9b46cc2b2895854d5203865cbd652194c85bfddc"
+		},
+		{
+			"source": "github",
+			"owner": "topgrade-rs",
+			"repo": "topgrade",
+			"tag": "v16.0.4",
+			"asset": "topgrade-v16.0.4-x86_64-unknown-linux-gnu.tar.gz",
+			"binary": "topgrade",
+			"url": "https://api.github.com/repos/topgrade-rs/topgrade/releases/assets/264617395",
+			"binaryHash": "81af8ea891d86905bbcbf0f12bd153e9595424c4a1a522e51af48e3f81aa3384"
+		},
+		{
+			"source": "github",
+			"owner": "sigoden",
+			"repo": "aichat",
+			"tag": "v0.30.0",
+			"asset": "aichat-v0.30.0-x86_64-unknown-linux-musl.tar.gz",
+			"binary": "aichat",
+			"url": "https://api.github.com/repos/sigoden/aichat/releases/assets/270517432",
+			"binaryHash": "8378dfc295093efadc3ddddd17f2b49223f120a14ef3503159f375d68f287346"
+		},
+		{
+			"source": "github",
+			"owner": "neovim",
+			"repo": "neovim",
+			"tag": "v0.11.4",
+			"asset": "nvim-linux-x86_64.appimage",
+			"binary": "nvim",
+			"url": "https://api.github.com/repos/neovim/neovim/releases/assets/288180209",
+			"binaryHash": "79e7e160f9505819a5e12f3d9366be94213f5309fb912ef4ef3af52df3982977"
+		}
+	]
+}
