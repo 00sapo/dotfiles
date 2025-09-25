@@ -18,7 +18,7 @@ rm stew*
 
 echo installing from stew applications from lock file
 export PATH="$HOME/.local/bin:$PATH"
-stew install "$HOME/.local/share/chezmoi/home/dot_config/stew/Stewfile.lock.json"
+stew install "$HOME/.local/share/chezmoi/home/dot_local/share/stew/Stewfile.lock.json"
 
 echo setup ssh key
 rbw config set email $(echo "feder" "icosi" "mon" "ett" "a+" "bitwarden" "@" "zoh" "o.com" | sed 's/ //g')
