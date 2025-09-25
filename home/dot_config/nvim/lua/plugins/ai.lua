@@ -71,10 +71,10 @@ local M = {
               },
               ["devtools"] = {
                 description = "A miniml set of dev tools",
-                system_prompt = "These tools allow to find files, read and write code, and run commands. Being in unix environment, you can use unix commands, such as `cat`, `head`, `tail`, `grep`, `awk`, `python`, `sed`, `git`, `ls`, `tree`, `find`, and more. Other tools are provided for easier, more efficient, and more secure code discovery and modification.",
+                system_prompt = "These tools allow to find files, read and write code, and run commands. Being in unix environment, you can use unix commands, such as `cat`, `head`, `tail`, `grep`, `awk`, `python`, `sed`, `git`, `ls`, `tree`, `find`, and more. One command that is especially useful to navigate code is `ast-grep`. Other tools are provided for easier, more efficient, and more secure code discovery and modification.",
                 tools = {
                   "cmd_runner",
-                  "list_code_usages",
+                  -- "list_code_usages",
                   -- "vectorcode_query",
                   -- "vectorcode_ls",
                   -- "vectorcode_files_ls",
