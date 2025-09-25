@@ -21,11 +21,11 @@ export PATH="$HOME/.local/bin:$PATH"
 stew install "$(dirname 0)/../dot_config/stew/Stewfile.lock.json"
 
 echo setup ssh key
-"$HOME"/.local/share/soar/bin/rbw config set email $(echo "feder" "icosi" "mon" "ett" "a+" "bitwarden" "@" "zoh" "o.com" | sed 's/ //g')
-"$HOME"/.local/share/soar/bin/rbw config set pinentry pinentry-curses
-"$HOME"/.local/share/soar/bin/rbw login
+rbw config set email $(echo "feder" "icosi" "mon" "ett" "a+" "bitwarden" "@" "zoh" "o.com" | sed 's/ //g')
+rbw config set pinentry pinentry-curses
+rbw login
 mkdir .ssh
-"$HOME"/.local/share/soar/bin/rbw get Claude >.ssh/id_rsa
+rbw get Claude >.ssh/id_rsa
 chmod 0400 .ssh/id_rsa
 
 echo install asdf
