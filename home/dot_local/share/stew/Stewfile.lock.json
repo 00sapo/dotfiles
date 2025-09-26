@@ -61,6 +61,26 @@
 			"binary": "asdf",
 			"url": "https://api.github.com/repos/asdf-vm/asdf/releases/assets/261832252",
 			"binaryHash": "306a80a19b3043502ac2ba772439ff25e9e1f54ca5d873347b1907ee52f9a4d8"
+		},
+		{
+			"source": "github",
+			"owner": "dbeaver",
+			"repo": "dbeaver",
+			"tag": "25.2.1",
+			"asset": "dbeaver-ce-25.2.1-linux.gtk.x86_64-nojdk.tar.gz",
+			"binary": "dbeaver",
+			"url": "https://api.github.com/repos/dbeaver/dbeaver/releases/assets/295694779",
+			"binaryHash": "bcab54d6d59a95bf977a18d3b77775a85923b5ccb44d0a3ea6a3af07421f7413"
+		},
+		{
+			"source": "github",
+			"owner": "rustdesk",
+			"repo": "rustdesk",
+			"tag": "1.4.2",
+			"asset": "rustdesk-1.4.2-aarch64.AppImage",
+			"binary": "rustdesk",
+			"url": "https://api.github.com/repos/rustdesk/rustdesk/releases/assets/293355832",
+			"binaryHash": "7ee4ff8ebb898d3144e5c96b61ed15acafe05ae992c39a21a8e276513909243d"
 		}
 	]
 }
