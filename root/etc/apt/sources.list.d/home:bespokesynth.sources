@@ -1,0 +1,5 @@
+Types: deb
+URIs: http://download.opensuse.org/repositories/home:/bespokesynth/Debian_13/
+Suites: /
+Components: 
+Signed-By: /etc/apt/trusted.gpg.d/home_bespokesynth.gpg

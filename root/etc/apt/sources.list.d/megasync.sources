@@ -1,0 +1,5 @@
+Types: deb
+URIs: https://mega.nz/linux/repo/Debian_13/
+Suites: ./
+Components: 
+Signed-By: /usr/share/keyrings/meganz-archive-keyring.gpg

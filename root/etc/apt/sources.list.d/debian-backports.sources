@@ -1,0 +1,6 @@
+# Modernized from /etc/apt/sources.list
+Types: deb
+URIs: https://deb.debian.org/debian/
+Suites: stable-backports
+Components: main  contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
