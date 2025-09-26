@@ -17,13 +17,13 @@
 
 # Disable specific steps - same options as the command line flag
 {{- if eq .chezmoi.hostname "amadeus" }}
-disable = ["uv", "mamba", "conda", "chezmoi", "vim", "pnpm", "asdf"]
+disable = ["mamba", "conda", "chezmoi", "vim"]
 {{- else if eq .chezmoi.hostname "brian" }}
-disable = ["uv", "chezmoi", "vim", "pnpm", "asdf"]
+disable = ["chezmoi", "vim"]
 {{- else if eq .chezmoi.hostname "cucchia" }}
-disable = ["uv", "chezmoi", "vim", "pnpm", "asdf"]
+disable = ["chezmoi", "vim"]
 {{- else }}
-disable = ["uv", "chezmoi", "vim", "pnpm", "asdf"]
+disable = ["chezmoi", "vim"]
 {{- end }}
 
 # Ignore failures for these steps
@@ -108,13 +108,6 @@ no_retry = true
 [commands]
 # "Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 # "Custom command using interactive shell (unix)" = "-i vim_upgrade"
-{{- if lookPath "soar" }}
-"Soar Package Manager" = "soar upgrade"
-{{- end }}
-{{- if lookPath "stew" }}
-"Stew Package Manager" = "stew upgrade --all"
-{{- end }}
-
 
 [python]
 # enable_pip_review = true                         ###disabled by default
