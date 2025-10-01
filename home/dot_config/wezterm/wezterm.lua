@@ -3,7 +3,7 @@ local act = wezterm.action
 
 local config = {}
 -- config.enable_wayland = false
-config.default_prog = { "fish", "-l" }
+config.default_prog = { "ssh-agent", "fish", "-l" }
 
 -- appearance
 config.hide_tab_bar_if_only_one_tab = true

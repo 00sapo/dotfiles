@@ -17,6 +17,10 @@ return {
       colorscheme = "dawnfox",
     },
   },
+  {
+    "gbprod/yanky.nvim",
+    opts = { system_clipboard = { sync_with_ring = false } },
+  },
   -- {
   --   "lualine/lualine.nvim",
   --   opts = {
