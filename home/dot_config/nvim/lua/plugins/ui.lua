@@ -10,6 +10,12 @@ return {
       },
     },
   },
+  {
+    "snacks.nvim",
+    opts = {
+      scroll = { enabled = false },
+    },
+  },
   { "EdenEast/nightfox.nvim" },
   {
     "LazyVim/LazyVim",

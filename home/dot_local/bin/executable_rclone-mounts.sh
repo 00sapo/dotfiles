@@ -1,10 +1,10 @@
 #!/bin/env bash
 
 # array of remote names; mega with 2FA is not supported
-remotes=(laudare dropbox koofr)
+remotes=(laudare dropbox koofr koofr-vault)
 
 # array of local paths
-locals=($HOME/Rclone/laudare $HOME/Rclone/dropbox $HOME/Rclone/koofr)
+locals=($HOME/Rclone/laudare $HOME/Rclone/dropbox $HOME/Rclone/koofr $HOME/Rclone/koofr-vault)
 
 if [[ -e /run/.containerenv || -e /.dockerenv ]]; then
   # we are inside a container
@@ -41,9 +41,8 @@ create_backup() {
 _mount() {
   if [ ! -d "$1" ]; then
     mkdir -p "$1"
-  else
-    create_backup "$1"
   fi
+  create_backup "$1"
   parent=$(dirname "$1")
   nohup rclone mount --password-command="$cmd" \
     --vfs-cache-mode full \
