@@ -101,6 +101,16 @@
 			"binary": "opencode",
 			"url": "https://api.github.com/repos/sst/opencode/releases/assets/298387276",
 			"binaryHash": "ec5b0a4db00867532803372519ca53ea08e22cf6623660f949d70624b751a12d"
+		},
+		{
+			"source": "github",
+			"owner": "FilenCloudDienste",
+			"repo": "filen-desktop",
+			"tag": "v3.0.47",
+			"asset": "Filen_linux_x86_64.AppImage",
+			"binary": "filen-desktop",
+			"url": "https://api.github.com/repos/FilenCloudDienste/filen-desktop/releases/assets/227641127",
+			"binaryHash": "91e683e4f52392816b1530ae6a9e03be662ae57dd38e7abe9e3b622e0019f56f"
 		}
 	]
 }
