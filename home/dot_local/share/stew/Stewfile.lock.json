@@ -111,6 +111,36 @@
 			"binary": "filen-desktop",
 			"url": "https://api.github.com/repos/FilenCloudDienste/filen-desktop/releases/assets/227641127",
 			"binaryHash": "91e683e4f52392816b1530ae6a9e03be662ae57dd38e7abe9e3b622e0019f56f"
+		},
+		{
+			"source": "github",
+			"owner": "sharkdp",
+			"repo": "bat",
+			"tag": "v0.25.0",
+			"asset": "bat-v0.25.0-x86_64-unknown-linux-gnu.tar.gz",
+			"binary": "bat",
+			"url": "https://api.github.com/repos/sharkdp/bat/releases/assets/218683426",
+			"binaryHash": "5ef02209ddc4e565bfa0f914f502cc01ba74181f1b50a8cc7e2283092babde98"
+		},
+		{
+			"source": "github",
+			"owner": "probonopd",
+			"repo": "go-appimage",
+			"tag": "continuous",
+			"asset": "appimaged-904-x86_64.AppImage",
+			"binary": "appimaged",
+			"url": "https://api.github.com/repos/probonopd/go-appimage/releases/assets/281900993",
+			"binaryHash": "3e8795d2ddc2eb13bca90d4a9f656ae8891f06277ac9a967c7c874296dee26e0"
+		},
+		{
+			"source": "github",
+			"owner": "interstellar-app",
+			"repo": "interstellar",
+			"tag": "v0.10.1",
+			"asset": "interstellar-linux-x86_64.AppImage",
+			"binary": "interstellar-linux-x86_64.AppImage",
+			"url": "https://api.github.com/repos/interstellar-app/interstellar/releases/assets/296049763",
+			"binaryHash": "161327905750a4c33c26f04480b722142fdb20e610227a005cd7cd8ad963eec4"
 		}
 	]
 }
