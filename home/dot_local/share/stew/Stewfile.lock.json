@@ -128,7 +128,7 @@
       "repo": "go-appimage",
       "tag": "continuous",
       "asset": "appimaged-904-x86_64.AppImage",
-      "binary": "../share/applications/appimaged",
+      "binary": "appimaged",
       "url": "https://api.github.com/repos/probonopd/go-appimage/releases/assets/281900993",
       "binaryHash": "3e8795d2ddc2eb13bca90d4a9f656ae8891f06277ac9a967c7c874296dee26e0"
     },
