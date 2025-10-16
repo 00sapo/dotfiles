@@ -8,15 +8,10 @@ os:
   editAtLineAndWait: "nvim --block +{{line}} {{filename}}"
   editInTerminal: true
 customCommands:
-  - key: "a"
-    context: "files"
-    command: "git {{if .SelectedFile.HasUnstagedChanges}} add {{else}} reset {{end}} {{.SelectedFile.Name | quote}}"
-    description: "Toggle file staged"
-  - key: "x"
-    context: "global"
-    command: "fish -c 'aider --commit'"
-    output: terminal
-    customCommands:
+  - key: "e"
+    command: 'git show "{{.SelectedCommit.Hash}}:{{.SelectedPath}}" | nvim -'
+    context: "commitFiles"
+    subprocess: yes
 
 # catpuccin latte red
 gui:
