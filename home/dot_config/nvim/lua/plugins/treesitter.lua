@@ -2,7 +2,7 @@ M = {
   {
     "nvim-treesitter",
     opts = {
-      ensure_installed = { "dap_repl" },
+      -- ensure_installed = { "dap_repl" },
       textobjects = {
         select = {
           enable = true,
@@ -18,7 +18,7 @@ M = {
         },
       },
     },
-    dependencies = { "LiadOz/nvim-dap-repl-highlights" },
+    -- dependencies = { "LiadOz/nvim-dap-repl-highlights" },
   },
   {
     "Wansmer/sibling-swap.nvim",

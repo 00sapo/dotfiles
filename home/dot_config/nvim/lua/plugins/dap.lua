@@ -40,37 +40,37 @@ M = {
   --     })
   --   end,
   -- },
-  {
-    "rcarriga/nvim-dap-ui",
-    keys = {
-      { "<leader>dw", add_to_watches, desc = "Add to watches", mode = { "n", "v" } },
-    },
-    opts = {
-      layouts = {
-        {
-          elements = { "stacks", "console", "breakpoints" },
-          size = 40,
-          position = "right", -- Can be "left" or "right" or "top" or "bottom"
-        },
-        {
-          elements = {
-            { id = "watches", size = 0.5 },
-            { id = "repl", size = 0.5 },
-          },
-          size = 10,
-          position = "bottom",
-        },
-      },
-    },
-    dependencies = {
-      -- "rcarriga/cmp-dap",
-      "nvim-neotest/nvim-nio",
-      "LiadOz/nvim-dap-repl-highlights",
-    },
-  },
-  {
-    "LiadOz/nvim-dap-repl-highlights",
-    opts = true,
-  },
+  -- {
+  --   "rcarriga/nvim-dap-ui",
+  --   keys = {
+  --     { "<leader>dw", add_to_watches, desc = "Add to watches", mode = { "n", "v" } },
+  --   },
+  --   opts = {
+  --     layouts = {
+  --       {
+  --         elements = { "stacks", "console", "breakpoints" },
+  --         size = 40,
+  --         position = "right", -- Can be "left" or "right" or "top" or "bottom"
+  --       },
+  --       {
+  --         elements = {
+  --           { id = "watches", size = 0.5 },
+  --           { id = "repl", size = 0.5 },
+  --         },
+  --         size = 10,
+  --         position = "bottom",
+  --       },
+  --     },
+  --   },
+  --   dependencies = {
+  --     -- "rcarriga/cmp-dap",
+  --     "nvim-neotest/nvim-nio",
+  --     "LiadOz/nvim-dap-repl-highlights",
+  --   },
+  -- },
+  -- {
+  --   "LiadOz/nvim-dap-repl-highlights",
+  --   opts = true,
+  -- },
 }
 return M

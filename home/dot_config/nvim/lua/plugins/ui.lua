@@ -17,10 +17,11 @@ return {
     },
   },
   { "EdenEast/nightfox.nvim" },
+  { "p00f/alabaster.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "dawnfox",
+      colorscheme = "alabaster",
     },
   },
   {

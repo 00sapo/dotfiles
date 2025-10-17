@@ -119,7 +119,8 @@ local M = {
             },
           },
         },
-        -- pyright = { enable = false, autostart = false, mason = false }, -- only use ruff
+        -- pyright = { enable = false, autostart = false, mason = false }, -- most of pyright errors are spam
+        -- pylsp = { enable = true, autostart = true, mason = true },
         -- ltex = {
         --   mason = true,
         --   autostart = true,
