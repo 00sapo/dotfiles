@@ -151,6 +151,16 @@
 			"binary": "winboat",
 			"url": "https://api.github.com/repos/TibixDev/winboat/releases/assets/301836472",
 			"binaryHash": "7c32a6b8aa0cb02d1aad609332aedd37bb34a1ad525105349477535880669fcd"
+		},
+		{
+			"source": "github",
+			"owner": "ivan-hc",
+			"repo": "ArchImage",
+			"tag": "4.3",
+			"asset": "archimage-cli",
+			"binary": "archimage-cli",
+			"url": "https://api.github.com/repos/ivan-hc/ArchImage/releases/assets/258109371",
+			"binaryHash": "8d1feac4581c5de221d87d23bbd68f963e43df8ada97ff9874dcd87840546adc"
 		}
 	]
 }
