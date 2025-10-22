@@ -25,6 +25,11 @@ vim.keymap.set("n", "<leader><leader>j", require("smart-splits").swap_buf_down)
 vim.keymap.set("n", "<leader><leader>k", require("smart-splits").swap_buf_up)
 vim.keymap.set("n", "<leader><leader>l", require("smart-splits").swap_buf_right)
 
+-- git file history using lazygit
+vim.keymap.set("n", "<leader>gf", function()
+  Snacks.lazygit.log_file()
+end, { desc = "Git Current File History" })
+
 -- scratch buffer (don't know why, it's not enabled, maybe something is overriding it)
 -- close tab
 vim.keymap.set("n", "<leader>.", function()
@@ -43,5 +48,4 @@ vim.keymap.set("n", "<leader>:", function()
 end, { desc = "Scratch math" })
 
 -- expansion in the commandline
-vim.cmd([[cab cc CodeCompanion]])
 vim.cmd([[cab tex Texlab]])

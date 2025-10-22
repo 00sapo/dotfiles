@@ -1,69 +1,6 @@
 local M = {
   { "jbyuki/quickmath.nvim" },
   {
-    "tomasky/bookmarks.nvim",
-    dependencies = { "telescope.nvim" },
-    keys = {
-      {
-        "<leader>sm",
-        "<cmd>Telescope bookmarks list<cr>",
-        desc = "Show Bookmarks (telescope)",
-      },
-      {
-        "<leader>mm",
-        function()
-          require("bookmarks").bookmark_toggle()
-        end,
-        desc = "Toggle Bookmark",
-      },
-      {
-        "<leader>mc",
-        function()
-          require("bookmarks").bookmark_clean()
-        end,
-        desc = "Clean Bookmarks (buffer)",
-      },
-      {
-        "<leader>mi",
-        function()
-          require("bookmarks").bookmark_ann()
-        end,
-        desc = "Bookmark with Annotation",
-      },
-      {
-        "[m",
-        function()
-          require("bookmarks").bookmark_prev()
-        end,
-        desc = "Previous Bookmark",
-      },
-      {
-        "]m",
-        function()
-          require("bookmarks").bookmark_next()
-        end,
-        desc = "Next Bookmark",
-      },
-      {
-        "<leader>ml",
-        function()
-          require("bookmarks").bookmark_list()
-        end,
-        desc = "List Bookmarks (quickfix)",
-      },
-      {
-        "<leader>mx",
-        function()
-          require("bookmarks").bookmark_clear_all()
-        end,
-        desc = "Clear All Bookmarks",
-      },
-    },
-    opt = {
-      save_file = vim.fn.stdpath("data") .. "/bookmarks",
-    },
-  },
-  {
     "ziontee113/icon-picker.nvim",
     config = function()
       require("icon-picker").setup({ disable_legacy_commands = true })
@@ -199,14 +136,6 @@ local M = {
       end,
     },
     dependencies = { "folke/twilight.nvim" },
-    keys = {
-      {
-        "<leader>z",
-        "<cmd>ZenMode<cr>",
-        desc = "Toggle Zen Mode",
-      },
-    },
-    cmd = { "ZenMode" },
   },
 }
 

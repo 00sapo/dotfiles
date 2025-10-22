@@ -33,42 +33,11 @@ config.initial_cols = 120
 -- 	end
 -- end
 -- config.color_scheme = sync_theme()
-config.color_scheme = "NightFox"
-config.colors = {
-	-- Alabaster Dark
-	foreground = "#cecece",
-	background = "#0e1415",
-	cursor_bg = "#cd974b",
-	cursor_border = "#cd974b",
-	cursor_fg = "#0e1415",
-	selection_bg = "#293334",
-	selection_fg = "#cecece",
-	ansi = {
-		"#000000",
-		"#d2322d",
-		"#6abf40",
-		"#cd974b",
-		"#217EBC",
-		"#9B3596",
-		"#178F79",
-		"#cecece",
-	},
-	brights = {
-		"#333333",
-		"#c33c33",
-		"#95cb82",
-		"#dfdf8e",
-		"#71aed7",
-		"#cc8bc9",
-		"#47BEA9",
-		"#ffffff",
-	},
-}
-
--- override Dawnfox to get white and silver darker
--- config.colors = wezterm.color.get_builtin_schemes()["dawnfox"]
--- config.colors.ansi[8] = "#000000"
--- config.colors.brights[8] = "#000000"
+config.color_scheme = "dawnfox"
+-- override it to get white and silver darker
+config.colors = wezterm.color.get_builtin_schemes()["dawnfox"]
+config.colors.ansi[8] = "#000000"
+config.colors.brights[8] = "#000000"
 
 -- keybindings
 config.keys = {
@@ -113,14 +82,6 @@ config.keys = {
 		key = "s",
 		mods = "CTRL|ALT",
 		action = act.SplitVertical,
-	},
-	{
-		key = "u",
-		mods = "ALT|SHIFT",
-		action = wezterm.action.CharSelect({
-			copy_on_select = true,
-			copy_to = "ClipboardAndPrimarySelection",
-		}),
 	},
 }
 
