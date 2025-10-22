@@ -82,7 +82,7 @@ report.next.filter=status:pending or status:waiting
 report.next.sort=urgency-,priority-,due+,id+
 report.next.columns=id,start.age,entry.age,depends,recur,urgency,project,tags,description,estimated,scheduled,completion_date,due,time_map
 report.next.labels=ID,Active,Age,Deps,Rec,Ur,Proj,Tags,Descr,Est,Sched,Exp,Due,Time Map
-news.version=3.4.1
+news.version=2.6.0
 
 # sort ready report by urgency and add due date
 report.ready.sort=urgency-,priority-,due+,id+
