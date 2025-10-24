@@ -83,6 +83,14 @@ config.keys = {
 		mods = "CTRL|ALT",
 		action = act.SplitVertical,
 	},
+	{
+		key = "u",
+		mods = "ALT|SHIFT",
+		action = wezterm.action.CharSelect({
+			copy_on_select = true,
+			copy_to = "ClipboardAndPrimarySelection",
+		}),
+	},
 }
 
 -- navigation (nvim integration)
