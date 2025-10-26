@@ -37,7 +37,7 @@ vim.keymap.set("n", "<leader>.", function()
 end, { desc = "Open scratch buffer" })
 
 -- scratch math (i.e. snacks' scratch with lua ft and Quickmath enabled)
-vim.keymap.set("n", "<leader>:", function()
+vim.keymap.set("n", '<leader>"', function()
   Snacks.scratch({
     ft = "lua",
     icon = "💻",

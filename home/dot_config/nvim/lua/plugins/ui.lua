@@ -16,11 +16,12 @@ return {
       scroll = { enabled = false },
     },
   },
+  { "p00f/alabaster.nvim" },
   { "EdenEast/nightfox.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "dawnfox",
+      colorscheme = "alabaster",
     },
   },
   {
