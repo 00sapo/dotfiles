@@ -1,146 +1,136 @@
 {
-  "os": "linux",
-  "arch": "amd64",
-  "packages": [
-    {
-      "source": "github",
-      "owner": "topgrade-rs",
-      "repo": "topgrade",
-      "tag": "v16.0.4",
-      "asset": "topgrade-v16.0.4-x86_64-unknown-linux-gnu.tar.gz",
-      "binary": "topgrade",
-      "url": "https://api.github.com/repos/topgrade-rs/topgrade/releases/assets/264617395",
-      "binaryHash": "81af8ea891d86905bbcbf0f12bd153e9595424c4a1a522e51af48e3f81aa3384"
-    },
-    {
-      "source": "github",
-      "owner": "sigoden",
-      "repo": "aichat",
-      "tag": "v0.30.0",
-      "asset": "aichat-v0.30.0-x86_64-unknown-linux-musl.tar.gz",
-      "binary": "aichat",
-      "url": "https://api.github.com/repos/sigoden/aichat/releases/assets/270517432",
-      "binaryHash": "8378dfc295093efadc3ddddd17f2b49223f120a14ef3503159f375d68f287346"
-    },
-    {
-      "source": "github",
-      "owner": "neovim",
-      "repo": "neovim",
-      "tag": "v0.11.4",
-      "asset": "nvim-linux-x86_64.appimage",
-      "binary": "nvim",
-      "url": "https://api.github.com/repos/neovim/neovim/releases/assets/288180209",
-      "binaryHash": "79e7e160f9505819a5e12f3d9366be94213f5309fb912ef4ef3af52df3982977"
-    },
-    {
-      "source": "github",
-      "owner": "asdf-vm",
-      "repo": "asdf",
-      "tag": "v0.18.0",
-      "asset": "asdf-v0.18.0-linux-amd64.tar.gz",
-      "binary": "asdf",
-      "url": "https://api.github.com/repos/asdf-vm/asdf/releases/assets/261832252",
-      "binaryHash": "306a80a19b3043502ac2ba772439ff25e9e1f54ca5d873347b1907ee52f9a4d8"
-    },
-    {
-      "source": "github",
-      "owner": "dbeaver",
-      "repo": "dbeaver",
-      "tag": "25.2.1",
-      "asset": "dbeaver-ce-25.2.1-linux.gtk.x86_64-nojdk.tar.gz",
-      "binary": "dbeaver",
-      "url": "https://api.github.com/repos/dbeaver/dbeaver/releases/assets/295694779",
-      "binaryHash": "bcab54d6d59a95bf977a18d3b77775a85923b5ccb44d0a3ea6a3af07421f7413"
-    },
-    {
-      "source": "github",
-      "owner": "rustdesk",
-      "repo": "rustdesk",
-      "tag": "1.4.2",
-      "asset": "rustdesk-1.4.2-aarch64.AppImage",
-      "binary": "rustdesk.AppImage",
-      "url": "https://api.github.com/repos/rustdesk/rustdesk/releases/assets/293355832",
-      "binaryHash": "7ee4ff8ebb898d3144e5c96b61ed15acafe05ae992c39a21a8e276513909243d"
-    },
-    {
-      "source": "github",
-      "owner": "audacity",
-      "repo": "audacity",
-      "tag": "Audacity-3.7.5",
-      "asset": "audacity-linux-3.7.5-x64-22.04.AppImage",
-      "binary": "audacity.AppImage",
-      "url": "https://api.github.com/repos/audacity/audacity/releases/assets/280307751",
-      "binaryHash": "aa092571e6447b3e82d8cf6b9e31ee4907581e4925b791f49c8563e1cfa93716"
-    },
-    {
-      "source": "github",
-      "owner": "doy",
-      "repo": "rbw",
-      "tag": "1.14.0",
-      "asset": "rbw_1.14.0_linux_amd64.tar.gz",
-      "binary": "rbw",
-      "url": "https://api.github.com/repos/doy/rbw/releases/assets/285760681",
-      "binaryHash": "d4ebc8abfbdcb4991755b7da0219228c4d98cf08da766a94f882796b78f25c64"
-    },
-    {
-      "source": "github",
-      "owner": "doy",
-      "repo": "rbw",
-      "tag": "1.14.0",
-      "asset": "rbw_1.14.0_linux_amd64.tar.gz",
-      "binary": "rbw-agent",
-      "url": "https://api.github.com/repos/doy/rbw/releases/assets/285760681",
-      "binaryHash": "ed21f059809de90ff08f6b539a5ba26d111d083312a2cb17e579b03450a7d2fc"
-    },
-    {
-      "source": "github",
-      "owner": "sst",
-      "repo": "opencode",
-      "tag": "v0.13.4",
-      "asset": "opencode-linux-x64.zip",
-      "binary": "opencode",
-      "url": "https://api.github.com/repos/sst/opencode/releases/assets/298387276",
-      "binaryHash": "ec5b0a4db00867532803372519ca53ea08e22cf6623660f949d70624b751a12d"
-    },
-    {
-      "source": "github",
-      "owner": "FilenCloudDienste",
-      "repo": "filen-desktop",
-      "tag": "v3.0.47",
-      "asset": "Filen_linux_x86_64.AppImage",
-      "binary": "filen-desktop",
-      "url": "https://api.github.com/repos/FilenCloudDienste/filen-desktop/releases/assets/227641127",
-      "binaryHash": "91e683e4f52392816b1530ae6a9e03be662ae57dd38e7abe9e3b622e0019f56f"
-    },
-    {
-      "source": "github",
-      "owner": "sharkdp",
-      "repo": "bat",
-      "tag": "v0.25.0",
-      "asset": "bat-v0.25.0-x86_64-unknown-linux-gnu.tar.gz",
-      "binary": "bat",
-      "url": "https://api.github.com/repos/sharkdp/bat/releases/assets/218683426",
-      "binaryHash": "5ef02209ddc4e565bfa0f914f502cc01ba74181f1b50a8cc7e2283092babde98"
-    },
-    {
-      "source": "github",
-      "owner": "probonopd",
-      "repo": "go-appimage",
-      "tag": "continuous",
-      "asset": "appimaged-904-x86_64.AppImage",
-      "binary": "appimaged",
-      "url": "https://api.github.com/repos/probonopd/go-appimage/releases/assets/281900993",
-      "binaryHash": "3e8795d2ddc2eb13bca90d4a9f656ae8891f06277ac9a967c7c874296dee26e0"
-    },
-    {
-      "source": "github",
-      "owner": "interstellar-app",
-      "repo": "interstellar",
-      "tag": "v0.10.1",
-      "asset": "interstellar-linux-x86_64.AppImage",
-      "binary": "interstellar.AppImage",
-      "url": "https://api.github.com/repos/interstellar-app/interstellar/releases/assets/296049763",
-      "binaryHash": "161327905750a4c33c26f04480b722142fdb20e610227a005cd7cd8ad963eec4"
-    }
-  ]
+	"os": "linux",
+	"arch": "amd64",
+	"packages": [
+		{
+			"source": "github",
+			"owner": "topgrade-rs",
+			"repo": "topgrade",
+			"tag": "v16.0.4",
+			"asset": "topgrade-v16.0.4-x86_64-unknown-linux-gnu.tar.gz",
+			"binary": "topgrade",
+			"url": "https://api.github.com/repos/topgrade-rs/topgrade/releases/assets/264617395",
+			"binaryHash": "81af8ea891d86905bbcbf0f12bd153e9595424c4a1a522e51af48e3f81aa3384"
+		},
+		{
+			"source": "github",
+			"owner": "sigoden",
+			"repo": "aichat",
+			"tag": "v0.30.0",
+			"asset": "aichat-v0.30.0-x86_64-unknown-linux-musl.tar.gz",
+			"binary": "aichat",
+			"url": "https://api.github.com/repos/sigoden/aichat/releases/assets/270517432",
+			"binaryHash": "8378dfc295093efadc3ddddd17f2b49223f120a14ef3503159f375d68f287346"
+		},
+		{
+			"source": "github",
+			"owner": "neovim",
+			"repo": "neovim",
+			"tag": "v0.11.4",
+			"asset": "nvim-linux-x86_64.appimage",
+			"binary": "nvim",
+			"url": "https://api.github.com/repos/neovim/neovim/releases/assets/288180209",
+			"binaryHash": "79e7e160f9505819a5e12f3d9366be94213f5309fb912ef4ef3af52df3982977"
+		},
+		{
+			"source": "github",
+			"owner": "asdf-vm",
+			"repo": "asdf",
+			"tag": "v0.18.0",
+			"asset": "asdf-v0.18.0-linux-amd64.tar.gz",
+			"binary": "asdf",
+			"url": "https://api.github.com/repos/asdf-vm/asdf/releases/assets/261832252",
+			"binaryHash": "306a80a19b3043502ac2ba772439ff25e9e1f54ca5d873347b1907ee52f9a4d8"
+		},
+		{
+			"source": "github",
+			"owner": "dbeaver",
+			"repo": "dbeaver",
+			"tag": "25.2.3",
+			"asset": "dbeaver-ce-25.2.3-linux.gtk.x86_64-nojdk.tar.gz",
+			"binary": "dbeaver",
+			"url": "https://api.github.com/repos/dbeaver/dbeaver/releases/assets/306166520",
+			"binaryHash": "d7d0a675a686ac013882b447420feb316b48dafbe4ecb9c1b36badafd47ae7b7"
+		},
+		{
+			"source": "github",
+			"owner": "rustdesk",
+			"repo": "rustdesk",
+			"tag": "1.4.2",
+			"asset": "rustdesk-1.4.2-aarch64.AppImage",
+			"binary": "rustdesk.AppImage",
+			"url": "https://api.github.com/repos/rustdesk/rustdesk/releases/assets/293355832",
+			"binaryHash": "7ee4ff8ebb898d3144e5c96b61ed15acafe05ae992c39a21a8e276513909243d"
+		},
+		{
+			"source": "github",
+			"owner": "audacity",
+			"repo": "audacity",
+			"tag": "Audacity-3.7.5",
+			"asset": "audacity-linux-3.7.5-x64-22.04.AppImage",
+			"binary": "audacity.AppImage",
+			"url": "https://api.github.com/repos/audacity/audacity/releases/assets/280307751",
+			"binaryHash": "aa092571e6447b3e82d8cf6b9e31ee4907581e4925b791f49c8563e1cfa93716"
+		},
+		{
+			"source": "github",
+			"owner": "doy",
+			"repo": "rbw",
+			"tag": "1.14.1",
+			"asset": "rbw_1.14.1_linux_amd64.tar.gz",
+			"binary": "rbw",
+			"url": "https://api.github.com/repos/doy/rbw/releases/assets/288340578",
+			"binaryHash": "217a23dc06b6c80e12187b17193358c5ced7a94a5d9db1bc4a2138920f689d61"
+		},
+		{
+			"source": "github",
+			"owner": "doy",
+			"repo": "rbw",
+			"tag": "1.14.0",
+			"asset": "rbw_1.14.0_linux_amd64.tar.gz",
+			"binary": "rbw-agent",
+			"url": "https://api.github.com/repos/doy/rbw/releases/assets/285760681",
+			"binaryHash": "ed21f059809de90ff08f6b539a5ba26d111d083312a2cb17e579b03450a7d2fc"
+		},
+		{
+			"source": "github",
+			"owner": "sst",
+			"repo": "opencode",
+			"tag": "v0.15.18",
+			"asset": "opencode-linux-x64.zip",
+			"binary": "opencode",
+			"url": "https://api.github.com/repos/sst/opencode/releases/assets/308773547",
+			"binaryHash": "5693cf7a5b913b12d904f8a0799ac8dc8288171416c83047a823111b991d1b22"
+		},
+		{
+			"source": "github",
+			"owner": "FilenCloudDienste",
+			"repo": "filen-desktop",
+			"tag": "v3.0.47",
+			"asset": "Filen_linux_x86_64.AppImage",
+			"binary": "filen-desktop",
+			"url": "https://api.github.com/repos/FilenCloudDienste/filen-desktop/releases/assets/227641127",
+			"binaryHash": "91e683e4f52392816b1530ae6a9e03be662ae57dd38e7abe9e3b622e0019f56f"
+		},
+		{
+			"source": "github",
+			"owner": "sharkdp",
+			"repo": "bat",
+			"tag": "v0.26.0",
+			"asset": "bat-v0.26.0-x86_64-unknown-linux-gnu.tar.gz",
+			"binary": "bat",
+			"url": "https://api.github.com/repos/sharkdp/bat/releases/assets/306189863",
+			"binaryHash": "27b7a788ca0be630bd0d2637322a70bebaac7584e6b26838a74c9cb488a0e514"
+		},
+		{
+			"source": "github",
+			"owner": "interstellar-app",
+			"repo": "interstellar",
+			"tag": "v0.10.1",
+			"asset": "interstellar-linux-x86_64.AppImage",
+			"binary": "interstellar.AppImage",
+			"url": "https://api.github.com/repos/interstellar-app/interstellar/releases/assets/296049763",
+			"binaryHash": "161327905750a4c33c26f04480b722142fdb20e610227a005cd7cd8ad963eec4"
+		}
+	]
 }
