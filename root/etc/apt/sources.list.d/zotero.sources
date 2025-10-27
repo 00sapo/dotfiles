@@ -1,5 +1,0 @@
-Types: deb
-URIs: https://zotero.retorque.re/file/apt-package-archive/
-Suites: ./
-Components: 
-Signed-By: /usr/share/keyrings/zotero-archive-keyring.gpg
