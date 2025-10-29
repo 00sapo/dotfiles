@@ -96,11 +96,11 @@
 			"source": "github",
 			"owner": "sst",
 			"repo": "opencode",
-			"tag": "v0.15.18",
+			"tag": "v0.15.23",
 			"asset": "opencode-linux-x64.zip",
 			"binary": "opencode",
-			"url": "https://api.github.com/repos/sst/opencode/releases/assets/308773547",
-			"binaryHash": "5693cf7a5b913b12d904f8a0799ac8dc8288171416c83047a823111b991d1b22"
+			"url": "https://api.github.com/repos/sst/opencode/releases/assets/309932692",
+			"binaryHash": "434e06e98ca650ad2020d073cf2fbd2d234923b11e949125298e88fe833c70e8"
 		},
 		{
 			"source": "github",
@@ -131,6 +131,16 @@
 			"binary": "interstellar.AppImage",
 			"url": "https://api.github.com/repos/interstellar-app/interstellar/releases/assets/296049763",
 			"binaryHash": "161327905750a4c33c26f04480b722142fdb20e610227a005cd7cd8ad963eec4"
+		},
+		{
+			"source": "github",
+			"owner": "jacek-kurlit",
+			"repo": "pik",
+			"tag": "0.26.1",
+			"asset": "pik-0.26.1-x86_64-unknown-linux-gnu.tar.gz",
+			"binary": "pik",
+			"url": "https://api.github.com/repos/jacek-kurlit/pik/releases/assets/295390289",
+			"binaryHash": "2dc45bc02d63f5d919be7b96e6d3e7c8f15571fbc4bd562d339d61ed88294a7a"
 		}
 	]
 }
