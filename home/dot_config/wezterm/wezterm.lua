@@ -33,7 +33,7 @@ config.initial_cols = 120
 -- 	end
 -- end
 -- config.color_scheme = sync_theme()
-config.color_scheme = "alabaster"
+config.color_scheme = "dawnfox"
 -- override it to get white and silver darker
 config.colors = wezterm.color.get_builtin_schemes()["dawnfox"]
 config.colors.ansi[8] = "#000000"
