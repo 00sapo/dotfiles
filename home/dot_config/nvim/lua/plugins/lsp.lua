@@ -1,49 +1,3 @@
-require("lint").linters.cython = {
-  name = "cython",
-  cmd = "cython",
-  stdin = false, -- or false if it doesn't support content input via stdin. In that case the filename is automatically added to the arguments.
-  append_fname = true, -- Automatically append the file name to `args` if `stdin = false` (default: true)
-  -- add time to the output file
-  args = { "-Wextra", "-o", ".cython_linter_output" }, -- list of arguments. Can contain functions with zero arguments that will be evaluated once the linter is used.
-  stream = "both", -- ('stdout' | 'stderr' | 'both') configure the stream to which the linter outputs the linting result.
-  ignore_exitcode = true, -- set this to true if the linter exits with a code != 0 and that's considered normal.
-  env = nil, -- custom environment table to use with the external process. Note that this replaces the *entire* environment, it is not additive.
-  parser = function(output, bufnr, cwd)
-    local result = {}
-    local pattern1 = "([%w ]*):? ?([^:]+):(%d+):(%d+): (.+)"
-    local pattern2 = "([^:]+):(%d+):(%d+): (.+)"
-    for line in output:gmatch("[^\n]+") do
-      local severities = {
-        ["error"] = vim.diagnostic.severity.ERROR,
-        ["warning"] = vim.diagnostic.severity.WARN,
-        ["information"] = vim.diagnostic.severity.INFO,
-        ["performance hint"] = vim.diagnostic.severity.HINT,
-      }
-      local file, lnum, col, message
-      local severity = line:match("^[^:]+")
-      if severity == "warning" or severity == "information" or severity == "performance hint" then
-        severity, file, lnum, col, message = line:match(pattern1)
-      else
-        severity = "error"
-        file, lnum, col, message = line:match(pattern2)
-      end
-      if file then
-        local diagnostic = {
-          bufnr = bufnr,
-          file = file,
-          lnum = tonumber(lnum) - 1,
-          col = tonumber(col),
-          message = message,
-          severity = severities[severity],
-          source = "cython",
-        }
-        table.insert(result, diagnostic)
-      end
-    end
-    return result
-  end,
-}
-
 local M = {
   {
     "mfussenegger/nvim-lint",
@@ -51,8 +5,6 @@ local M = {
       linters_by_ft = {
         fish = { "fish" },
         cmake = { "cmakelint" },
-        pyrex = { "cython" },
-        -- python = { "cython" },
       },
     },
   },
@@ -119,20 +71,6 @@ local M = {
             },
           },
         },
-        -- pyright = { enable = false, autostart = false, mason = false }, -- only use ruff
-        -- ltex = {
-        --   mason = true,
-        --   autostart = true,
-        --   enable = true,
-        --   on_attach = function(client, bufnr)
-        --     -- setup ltex_extra
-        --     require("ltex_extra").setup({
-        --       load_langs = { "it", "en-US" },
-        --       init_check = true,
-        --       path = vim.fn.expand("~") .. "/.local/share/ltex",
-        --     })
-        --   end,
-        -- },
       },
     },
   },
@@ -147,7 +85,6 @@ local M = {
       { "<leader><", "<cmd>TexlabForward<cr>", desc = "Forward Search (LaTeX)" },
       { "<leader>>", "<cmd>TexlabBuild<cr>", desc = "Compile (LaTeX)" },
     },
-    -- build = "go build",
     build = "go build -o ~/.local/bin/",
   },
   {
@@ -155,18 +92,5 @@ local M = {
     cmd = { "VenvSelectCached" },
     keys = { { "<leader>cV", "<cmd>VenvSelectCached<cr>", desc = "Select cached virtualenv" } },
   },
-  {
-    "barreiroleo/ltex_extra.nvim",
-    ft = { "markdown", "tex" },
-    dependencies = { "neovim/nvim-lspconfig" },
-  },
-  -- {
-  --   "lervag/vimtex",
-  --   lazy = false,
-  --   init = function()
-  --     -- VimTeX configuration goes here, e.g.
-  --     vim.g.vimtex_view_method = "zathura"
-  --   end,
-  -- },
 }
 return M

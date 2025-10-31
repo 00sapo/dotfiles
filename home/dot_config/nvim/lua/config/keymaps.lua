@@ -47,5 +47,15 @@ vim.keymap.set("n", '<leader>"', function()
   vim.cmd("Quickmath")
 end, { desc = "Scratch math" })
 
+-- remap profiler mappings
+vim.keymap.del("n", "<leader>dpp") -- unmap default profiler keymaps
+vim.keymap.del("n", "<leader>dph") -- unmap default profiler keymaps
+vim.keymap.del("n", "<leader>dps") -- unmap default profiler keymaps
+Snacks.toggle.profiler():map("<leader>pp")
+Snacks.toggle.profiler_highlights():map("<leader>ph")
+vim.keymap.set("n", "<leader>ps", function()
+  Snacks.profiler.scratch()
+end, { desc = "Profiler Scratch Buffer" })
+
 -- expansion in the commandline
 vim.cmd([[cab tex Texlab]])

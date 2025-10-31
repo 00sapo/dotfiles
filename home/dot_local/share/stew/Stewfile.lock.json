@@ -96,11 +96,11 @@
 			"source": "github",
 			"owner": "sst",
 			"repo": "opencode",
-			"tag": "v0.15.23",
-			"asset": "opencode-linux-x64.zip",
+			"tag": "v0.15.30",
+			"asset": "opencode-linux-x64-baseline.zip",
 			"binary": "opencode",
-			"url": "https://api.github.com/repos/sst/opencode/releases/assets/309932692",
-			"binaryHash": "434e06e98ca650ad2020d073cf2fbd2d234923b11e949125298e88fe833c70e8"
+			"url": "https://api.github.com/repos/sst/opencode/releases/assets/310835697",
+			"binaryHash": "c43430adc151f6657d03748eba1c5c18428e7b5eab65bcfba0d685e0f8675894"
 		},
 		{
 			"source": "github",
