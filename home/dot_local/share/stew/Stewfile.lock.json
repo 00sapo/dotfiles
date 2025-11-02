@@ -14,16 +14,6 @@
 		},
 		{
 			"source": "github",
-			"owner": "sigoden",
-			"repo": "aichat",
-			"tag": "v0.30.0",
-			"asset": "aichat-v0.30.0-x86_64-unknown-linux-musl.tar.gz",
-			"binary": "aichat",
-			"url": "https://api.github.com/repos/sigoden/aichat/releases/assets/270517432",
-			"binaryHash": "8378dfc295093efadc3ddddd17f2b49223f120a14ef3503159f375d68f287346"
-		},
-		{
-			"source": "github",
 			"owner": "neovim",
 			"repo": "neovim",
 			"tag": "v0.11.4",

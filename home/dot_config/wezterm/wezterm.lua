@@ -17,27 +17,11 @@ config.font_size = 10.5
 config.initial_rows = 36
 config.initial_cols = 120
 
--- local function sync_theme()
--- 	local appearance
--- 	if wezterm.gui then
--- 		-- wezterm.gui is not available to the mux server, so take care to
--- 		-- do something reasonable when this config is evaluated by the mux
--- 		appearance = wezterm.gui.get_appearance()
--- 	else
--- 		appearance = "Light"
--- 	end
--- 	if appearance:find("Dark") then
--- 		config.color_scheme = "Selenized Dark (Gogh)"
--- 	else
--- 		config.color_scheme = "Selenized Light (Gogh)"
--- 	end
--- end
--- config.color_scheme = sync_theme()
-config.color_scheme = "dawnfox"
--- override it to get white and silver darker
-config.colors = wezterm.color.get_builtin_schemes()["dawnfox"]
-config.colors.ansi[8] = "#000000"
-config.colors.brights[8] = "#000000"
+config.color_scheme = "alabaster_dark"
+-- override it to get white and silver darker (for light schemes, e.g. Alabaster)
+-- config.colors = wezterm.color.get_builtin_schemes()["Alabaster"]
+-- config.colors.ansi[8] = "#000000"
+-- config.colors.brights[8] = "#000000"
 
 -- keybindings
 config.keys = {
@@ -85,10 +69,6 @@ config.keys = {
 	},
 }
 
--- navigation (nvim integration)
-local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
-smart_splits.apply_to_config(config)
-
 -- allow nvim-zenmode to setup wezterm
 wezterm.on("user-var-changed", function(window, pane, name, value)
 	local overrides = window:get_config_overrides() or {}
@@ -113,4 +93,6 @@ wezterm.on("user-var-changed", function(window, pane, name, value)
 	window:set_config_overrides(overrides)
 end)
 
+-- plugins
+require('plugins').apply_to_config(config)
 return config

@@ -1,7 +1,8 @@
 git:
   paging:
     colorArg: always
-    pager: delta --paging=never --side-by-side --light
+    # pager: delta --paging=never --side-by-side --light
+    pager: delta --paging=never --side-by-side
 os:
   edit: "nvim {{filename}}"
   editAtLine: "nvim +{{line}} {{filename}}"
