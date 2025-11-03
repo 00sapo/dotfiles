@@ -84,6 +84,7 @@ later(function()
   require("conform").setup({
     formatters_by_ft = {
       lua = { "stylua" },
+      python = { "yapf" },
     },
   })
 end)
@@ -238,6 +239,11 @@ later(function()
   -- better escape from insert mode (jk/kj, etc)
   add("max397574/better-escape.nvim")
   require("better_escape").setup()
+
+  -- nvim-spectre for multi-file replacements
+  add({source='nvim-pack/nvim-spectre', depends={"nvim-lua/plenary.nvim"}})
+  nmap_leader("fe", require('spectre').toggle, "Search&Replace multi-file")
+
 end)
 
 ------------ Other plugins non lazy loaded
