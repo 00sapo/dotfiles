@@ -243,7 +243,7 @@ later(function()
 	-- nvim-spectre for multi-file replacements
 	add({ source = "MagicDuck/grug-far.nvim" })
 	nmap_leader("fe", function()
-		require("grug-far").open({ transient = true, windowCreationCommand = 'tabnew'})
+		require("grug-far").open({ windowCreationCommand = 'tabnew'})
 	end, "Search&Replace multi-file")
 end)
 
