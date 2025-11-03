@@ -1,8 +1,0 @@
-return {
-  ["conform.nvim"] = "9fd3d5e0b689ec1bf400c53cbbec72c6fdf24081",
-  ["friendly-snippets"] = "572f5660cf05f8cd8834e096d7b4c921ba18e175",
-  ["mini.nvim"] = "429e5f9dc9cd59bf76cd98b687300f0a384a7f52",
-  ["nvim-lspconfig"] = "a89bfcfd0e44f898341ac8a80ba83ccf6218bef3",
-  ["nvim-treesitter"] = "55820833a32c61a423587e2826c5b59577aaddbb",
-  ["nvim-treesitter-textobjects"] = "1f29f2f788dbbf6573a0d968a6dfe75a0fa628d0"
-}
