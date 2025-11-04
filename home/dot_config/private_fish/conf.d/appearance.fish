@@ -1,20 +1,17 @@
-set CURRENT_APPEARANCE $OS_APPEARANCE # used to check if theme is changed
-
-function __change_theme
-  if string match $CURRENT_APPEARANCE "dark"
+function update_theme --on-variable OS_APPEARANCE
+  echo
+  echo "🖕OS theme changed!"
+  if string match $OS_APPEARANCE "dark" >/dev/null
     echo "󱢇 Setting dark Fish theme!"
     yes | fish_config theme save "Mono Smoke"
+    if test -f $HOME/.config/lazygit/config.yml.dark
+      cp $HOME/.config/lazygit/config.yml.dark $HOME/.config/lazygit/config.yml
+    end
   else
     echo "󱢇 Setting light Fish theme!"
     yes | fish_config theme save "Mono Lace"
-  end
-end
-
-function update_theme --on-event fish_prompt
-  if [ $CURRENT_APPEARANCE != $OS_APPEARANCE ]
-    echo
-    echo "🖕OS theme changed!"
-    set CURRENT_APPEARANCE $OS_APPEARANCE
-    __change_theme
+    if test -f $HOME/.config/lazygit/config.yml.light
+      cp $HOME/.config/lazygit/config.yml.light $HOME/.config/lazygit/config.yml
+    end
   end
 end
