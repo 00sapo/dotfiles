@@ -213,7 +213,13 @@ later(function()
 
 	add({ source = "kdheepak/lazygit.nvim", depends = { "nvim-lua/plenary.nvim" } })
 	nmap_leader("gg", "<cmd>LazyGit<cr>", "Lazygit")
-	nmap_leader("gh", "<cmd>LazyGitFilterCurrentFile<cr>", "Lazygit File History")
+	nmap_leader("gH", "<cmd>LazyGitFilterCurrentFile<cr>", "Lazygit File History")
+
+  add("sindrets/diffview.nvim" )
+  nmap_leader("gh", "<cmd>DiffviewFileHistory %<cr>", "Diffview File History")
+  nmap_leader("gd", "<cmd>DiffviewOpen<cr>", "Diffview")
+  nmap_leader("gD", "<cmd>DiffviewClose<cr>", "Diffview")
+
 	-- -- python's venv selection
 	-- add("linux-cultist/venv-selector.nvim")
 	-- require("venv-selector").setup()
