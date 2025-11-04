@@ -17,11 +17,25 @@ config.font_size = 10.5
 config.initial_rows = 36
 config.initial_cols = 120
 
-config.color_scheme = "alabaster_dark"
--- override it to get white and silver darker (for light schemes, e.g. Alabaster)
--- config.colors = wezterm.color.get_builtin_schemes()["Alabaster"]
+-- this function syncs the theme with the OS light/dark setting
+local function sync_theme()
+	local appearance
+	if wezterm.gui then
+		-- wezterm.gui is not available to the mux server, so take care to
+		-- do something reasonable when this config is evaluated by the mux
+		appearance = wezterm.gui.get_appearance()
+	else
+		appearance = "Light"
+	end
+	if appearance:find("Dark") then
+		config.color_scheme = "alabaster_dark" -- this has been added by me, see the colors/ dir
+	else
+		config.color_scheme = "Alabaster" -- the built-in theme is only light
 -- config.colors.ansi[8] = "#000000"
 -- config.colors.brights[8] = "#000000"
+	end
+end
+config.color_scheme = sync_theme()
 
 -- keybindings
 config.keys = {
