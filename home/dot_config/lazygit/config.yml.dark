@@ -1,0 +1,51 @@
+git:
+  paging:
+    colorArg: always
+    pager: delta --paging=never --side-by-side
+os:
+  edit: "nvim {{filename}}"
+  editAtLine: "nvim +{{line}} {{filename}}"
+  editAtLineAndWait: "nvim --block +{{line}} {{filename}}"
+  editInTerminal: true
+customCommands:
+  - key: "e"
+    command: 'git show "{{.SelectedCommit.Hash}}:{{.SelectedPath}}" | nvim -'
+    context: "commitFiles"
+    subprocess: yes
+
+gui:
+  # catpuccin mocha red (dark)
+  theme:
+    activeBorderColor:
+      - '#f38ba8'
+      - bold
+    inactiveBorderColor:
+      - '#a6adc8'
+    optionsTextColor:
+      - '#89b4fa'
+    selectedLineBgColor:
+      - '#313244'
+    cherryPickedCommitBgColor:
+      - '#45475a'
+    cherryPickedCommitFgColor:
+      - '#f38ba8'
+    unstagedChangesColor:
+      - '#f38ba8'
+    defaultFgColor:
+      - '#cdd6f4'
+    searchingActiveBorderColor:
+      - '#f9e2af'
+  authorColors:
+    '*': '#b4befe'
+
+  expandFocusedSidePanel: true
+  expandedSidePanelWeight: 7
+  sidePanelWidth: 0.15
+  enlargedSideViewLocation: top
+
+keybinding:
+  universal:
+    scrollUpMain: <c-k>
+    scrollDownMain: <c-j>
+    nextScreenMode: "="
+    prevScreenMode: "-"
