@@ -114,7 +114,6 @@ MiniDeps.now(function()
 	--   add('ellisonleao/gruvbox.nvim')
 	--
 	--   -- Enable only one
-	vim.o.background = "dark"
 	vim.g.alabaster_dim_comments = true
 	vim.g.alabaster_floatborder = false
 	vim.cmd("color alabaster")
@@ -264,4 +263,8 @@ MiniDeps.now(function()
 	vim.keymap.set("n", "<C-k>", require("smart-splits").move_cursor_up)
 	vim.keymap.set("n", "<C-l>", require("smart-splits").move_cursor_right)
 	vim.keymap.set("n", "<C-\\>", require("smart-splits").move_cursor_previous)
+
+  -- sync background with OS fark/light setting
+  add("f-person/auto-dark-mode.nvim")
+  require('auto-dark-mode').setup()
 end)
