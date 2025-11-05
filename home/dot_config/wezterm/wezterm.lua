@@ -49,7 +49,7 @@ wezterm.on("window-config-reloaded", function(window, pane)
 end)
 
 -- keybindings
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = { key = "a", mods = "ALT", timeout_milliseconds = 1000 }
 
 config.keys = {
 	{
