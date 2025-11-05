@@ -211,10 +211,6 @@ later(function()
 	nmap_leader("gur", "<cmd>GitHubURLBlame<cr>", "Copy GitHub Blame line URL")
 	nmap_leader("gur", "<cmd>GitHubURLBlob<cr>", "Copy GitHub Blob line URL")
 
-	add({ source = "kdheepak/lazygit.nvim", depends = { "nvim-lua/plenary.nvim" } })
-	nmap_leader("gg", "<cmd>LazyGit<cr>", "Lazygit")
-	nmap_leader("gH", "<cmd>LazyGitFilterCurrentFile<cr>", "Lazygit File History")
-
   add("sindrets/diffview.nvim" )
   nmap_leader("gh", "<cmd>DiffviewFileHistory %<cr>", "Diffview File History")
   nmap_leader("gd", "<cmd>DiffviewOpen<cr>", "Diffview")
