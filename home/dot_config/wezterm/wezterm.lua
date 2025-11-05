@@ -20,8 +20,7 @@ config.initial_cols = 120
 -- this function, called at every `window-config-reloaded`, allows to sync the theme with the OS'
 -- dark/light setting
 function scheme_for_appearance(window)
-
-  -- this is used to set a universal variable, which emits an event in fish
+	-- this is used to set a universal variable, which emits an event in fish
 	local function tell_clis_about_appearance(arg)
 		wezterm.background_child_process({
 			"fish",
@@ -51,11 +50,16 @@ end)
 
 -- keybindings
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
+
 config.keys = {
-	{ key = "u", mods = "LEADER", action = act.ScrollByPage(-0.5) },
+	{
+		key = "c",
+		mods = "LEADER",
+		action = wezterm.action.CharSelect,
+	},
 	{ key = "d", mods = "LEADER", action = act.ScrollByPage(0.5) },
-	{ key = "k", mods = "LEADER", action = act.ScrollToPrompt(-1) },
 	{ key = "j", mods = "LEADER", action = act.ScrollToPrompt(1) },
+	{ key = "k", mods = "LEADER", action = act.ScrollToPrompt(-1) },
 	{
 		key = "o",
 		mods = "LEADER",
@@ -71,20 +75,18 @@ config.keys = {
 		}),
 	},
 	{
-		key = "v",
-		action = act.SplitHorizontal,
-		mods = "LEADER",
-	},
-	{
 		key = "s",
 		mods = "LEADER",
 		action = act.SplitVertical,
 	},
+	{ key = "u", mods = "LEADER", action = act.ScrollByPage(-0.5) },
 	{
-		key = "c",
+		key = "v",
+		action = act.SplitHorizontal,
 		mods = "LEADER",
-		action = wezterm.action.CharSelect,
 	},
+
+	-- keybidnings not using LEADER
 	{ key = "d", mods = "ALT", action = act.ActivateLastTab },
 	{
 		key = "c",
@@ -105,4 +107,7 @@ config.keys = {
 
 -- plugins
 require("plugins").apply_to_config(config)
+
+-- side_pane
+require("side_pane").apply_to_config(config)
 return config
