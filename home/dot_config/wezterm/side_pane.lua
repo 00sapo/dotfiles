@@ -107,6 +107,11 @@ function M.apply_to_config(config)
 		mods = "LEADER",
 		action = wezterm.action_callback(toggle_side_pane(0.5, { "opencode" }, false, "opencode")),
 	})
+	table.insert(config.keys, {
+		key = "t",
+		mods = "LEADER",
+		action = wezterm.action_callback(toggle_side_pane(0.5, { "btop" }, true, "btop")),
+	})
 end
 
 return M
