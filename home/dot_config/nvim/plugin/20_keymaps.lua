@@ -25,6 +25,10 @@ nmap("]p", '<Cmd>exe "put "  . v:register<CR>', "Paste Below")
 -- The next part (until `-- stylua: ignore end`) is aligned manually for easier
 -- reading. Consider preserving this or remove `-- stylua` lines to autoformat.
 
+-- Cusom mapping ===============================================================
+vim.keymap.set("n", 'ZA', '<cmd>qa<cr>', { desc = "Quit all windows" })
+vim.keymap.set("n", 'ZAQ', '<cmd>qa!<cr>', { desc = "Quit all windows" })
+
 -- Leader mappings ============================================================
 
 -- Neovim has the concept of a Leader key (see `:h <Leader>`). It is a configurable
