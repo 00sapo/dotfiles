@@ -211,10 +211,10 @@ later(function()
 	nmap_leader("gur", "<cmd>GitHubURLBlame<cr>", "Copy GitHub Blame line URL")
 	nmap_leader("gur", "<cmd>GitHubURLBlob<cr>", "Copy GitHub Blob line URL")
 
-  add("sindrets/diffview.nvim" )
-  nmap_leader("gh", "<cmd>DiffviewFileHistory %<cr>", "Diffview File History")
-  nmap_leader("gd", "<cmd>DiffviewOpen<cr>", "Diffview")
-  nmap_leader("gD", "<cmd>DiffviewClose<cr>", "Diffview")
+	add("sindrets/diffview.nvim")
+	nmap_leader("gh", "<cmd>DiffviewFileHistory %<cr>", "Diffview File History")
+	nmap_leader("gd", "<cmd>DiffviewOpen<cr>", "Diffview")
+	nmap_leader("gD", "<cmd>DiffviewClose<cr>", "Diffview")
 
 	-- -- python's venv selection
 	-- add("linux-cultist/venv-selector.nvim")
@@ -244,11 +244,11 @@ later(function()
 	-- nvim-spectre for multi-file replacements
 	add({ source = "MagicDuck/grug-far.nvim" })
 	nmap_leader("fe", function()
-		require("grug-far").open({ windowCreationCommand = 'tabnew'})
+		require("grug-far").open({ windowCreationCommand = "tabnew" })
 	end, "Search&Replace multi-file")
 end)
 
------------- Other plugins non lazy loaded
+------------ Other plugins non lazy loaded ===========================================================================
 MiniDeps.now(function()
 	-- navigation between windows
 	add("mrjones2014/smart-splits.nvim") -- recommended mappings
@@ -266,7 +266,11 @@ MiniDeps.now(function()
 	vim.keymap.set("n", "<C-l>", require("smart-splits").move_cursor_right)
 	vim.keymap.set("n", "<C-\\>", require("smart-splits").move_cursor_previous)
 
-  -- sync background with OS fark/light setting
-  add("f-person/auto-dark-mode.nvim")
-  require('auto-dark-mode').setup()
+	-- sync background with OS fark/light setting
+	add("f-person/auto-dark-mode.nvim")
+	require("auto-dark-mode").setup()
+
+	-- hard time
+	add({ source = "m4xshen/hardtime.nvim", depends = { "MunifTanjim/nui.nvim" } })
+  require('hardtime').setup()
 end)

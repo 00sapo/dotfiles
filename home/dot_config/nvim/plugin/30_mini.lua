@@ -57,12 +57,12 @@ local now_if_args = _G.Config.now_if_args
 now(function()
 	require("mini.basics").setup({
 		-- Manage options in 'plugin/10_options.lua' for didactic purposes
-		options = { basic = false },
+		options = { basic = false, extra_ui = true },
 		mappings = {
 			-- Create `<C-hjkl>` mappings for window navigation
-			windows = true,
+			windows = false,
 			-- Create `<M-hjkl>` mappings for navigation in Insert and Command modes
-			move_with_alt = true,
+			move_with_alt = false,
 		},
 	})
 end)
@@ -671,8 +671,8 @@ later(function()
 	-- - It overrides `:h (` and `:h )`.
 	-- Explanation: `gx`-`ia`-`gx`-`ila` <=> exchange current and last argument
 	-- Usage: when on `a` in `(aa, bb)` press `)` followed by `(`.
-	vim.keymap.set("n", "(", "gxiagxila", { remap = true, desc = "Swap arg left" })
-	vim.keymap.set("n", ")", "gxiagxina", { remap = true, desc = "Swap arg right" })
+	-- vim.keymap.set("n", "(", "gxiagxila", { remap = true, desc = "Swap arg left" })
+	-- vim.keymap.set("n", ")", "gxiagxina", { remap = true, desc = "Swap arg right" })
 end)
 
 -- Autopairs functionality. Insert pair when typing opening character and go over
@@ -691,9 +691,6 @@ end)
 -- Pick anything with single window layout and fast matching. This is one of
 -- the main usability improvements as it powers a lot of "find things quickly"
 -- workflows. How to use a picker:
--- - Start picker, usually with `:Pick <picker-name>` command. Like `:Pick files`.
---   It shows a single window in the bottom left corner filled with possible items
---   to choose from. Current item has special full line highlighting.
 --   At the top there is a current query used to filter+sort items.
 -- - Type characters (appear at top) to narrow down items. There is fuzzy matching:
 --   characters may not match one-by-one, but they should be in correct order.
@@ -718,7 +715,13 @@ end)
 --   Execute one either with Lua function, `:Pick <picker-name>` command, or
 --   one of `<Leader>f` mappings defined in 'plugin/20_keymaps.lua'
 later(function()
-	require("mini.pick").setup()
+	require("mini.pick").setup({
+		mappings = {
+			choose_marked = "<C-CR>",
+			refine = "<C-S-Space>",
+			refine_marked = "<C-Space>",
+		},
+	})
 end)
 
 -- Manage and expand snippets (templates for a frequently used text).

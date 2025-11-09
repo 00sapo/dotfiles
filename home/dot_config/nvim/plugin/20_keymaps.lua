@@ -26,8 +26,8 @@ nmap("]p", '<Cmd>exe "put "  . v:register<CR>', "Paste Below")
 -- reading. Consider preserving this or remove `-- stylua` lines to autoformat.
 
 -- Cusom mapping ===============================================================
-vim.keymap.set("n", 'ZA', '<cmd>qa<cr>', { desc = "Quit all windows" })
-vim.keymap.set("n", 'ZAQ', '<cmd>qa!<cr>', { desc = "Quit all windows" })
+vim.keymap.set("n", 'ZZA', '<cmd>wqa<cr>', { desc = "Quit all windows (and write)" })
+vim.keymap.set("n", 'ZQQ', '<cmd>qa!<cr>', { desc = "Quit all windows (no question)" })
 
 -- Leader mappings ============================================================
 
