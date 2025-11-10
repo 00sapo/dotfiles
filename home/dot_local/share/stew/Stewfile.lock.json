@@ -84,16 +84,6 @@
 		},
 		{
 			"source": "github",
-			"owner": "sst",
-			"repo": "opencode",
-			"tag": "v0.15.30",
-			"asset": "opencode-linux-x64-baseline.zip",
-			"binary": "opencode",
-			"url": "https://api.github.com/repos/sst/opencode/releases/assets/310835697",
-			"binaryHash": "c43430adc151f6657d03748eba1c5c18428e7b5eab65bcfba0d685e0f8675894"
-		},
-		{
-			"source": "github",
 			"owner": "FilenCloudDienste",
 			"repo": "filen-desktop",
 			"tag": "v3.0.47",
@@ -131,6 +121,16 @@
 			"binary": "pik",
 			"url": "https://api.github.com/repos/jacek-kurlit/pik/releases/assets/295390289",
 			"binaryHash": "2dc45bc02d63f5d919be7b96e6d3e7c8f15571fbc4bd562d339d61ed88294a7a"
+		},
+		{
+			"source": "github",
+			"owner": "sst",
+			"repo": "opencode",
+			"tag": "v1.0.55",
+			"asset": "opencode-linux-x64.zip",
+			"binary": "opencode",
+			"url": "https://api.github.com/repos/sst/opencode/releases/assets/314596727",
+			"binaryHash": "58b4c1da62f22aa686c36ba37c2d167d15d27af84029b7909296276db0068c71"
 		}
 	]
 }
