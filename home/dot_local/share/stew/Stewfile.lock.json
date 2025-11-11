@@ -76,11 +76,11 @@
 			"source": "github",
 			"owner": "doy",
 			"repo": "rbw",
-			"tag": "1.14.0",
-			"asset": "rbw_1.14.0_linux_amd64.tar.gz",
+			"tag": "1.14.1",
+			"asset": "rbw_1.14.1_linux_amd64.tar.gz",
 			"binary": "rbw-agent",
-			"url": "https://api.github.com/repos/doy/rbw/releases/assets/285760681",
-			"binaryHash": "ed21f059809de90ff08f6b539a5ba26d111d083312a2cb17e579b03450a7d2fc"
+			"url": "https://api.github.com/repos/doy/rbw/releases/assets/288340578",
+			"binaryHash": "e22ca3be193d3235bde4414d9b46cc2b2895854d5203865cbd652194c85bfddc"
 		},
 		{
 			"source": "github",

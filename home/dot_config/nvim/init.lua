@@ -92,15 +92,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
--- in filetype lazygit
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = {"lazygit"},
-  callback = function(ev)
-    -- remove the timeout
-    vim.o.timeoutlen = 0
-  end
-})
-
 -- in grug-far, map q to bufwipe + tabclose
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {"grug-far"},

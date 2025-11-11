@@ -55,6 +55,7 @@ vim.keymap.set("n", 'ZA', '<cmd>qa!<cr>', { desc = "Quit all windows (no questio
 -- Add an entry if you create a new group.
 _G.Config.leader_group_clues = {
   { mode = 'n', keys = '<Leader>a', desc = '+AI' },
+  { mode = 'n', keys = '<Leader>at', desc = '+Grammar' },
   { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
   { mode = 'n', keys = '<Leader>d', desc = '+Debug' },
   { mode = 'n', keys = '<Leader>e', desc = '+Explore/Edit' },
