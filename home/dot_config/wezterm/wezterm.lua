@@ -16,6 +16,7 @@ config.window_padding = {
 config.font_size = 10.5
 config.initial_rows = 36
 config.initial_cols = 120
+config.warn_about_missing_glyphs = true
 
 -- this function, called at every `window-config-reloaded`, allows to sync the theme with the OS'
 -- dark/light setting

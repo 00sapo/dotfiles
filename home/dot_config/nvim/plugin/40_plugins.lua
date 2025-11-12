@@ -66,6 +66,8 @@ local default_lsp = {
 	"pylsp",
 	"ts_ls",
 	"texlab",
+  "lemminx",
+  "jsonls"
 }
 
 now_if_args(function()
@@ -85,6 +87,7 @@ later(function()
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "yapf" },
+      json = { "jq" }
 		},
 	})
 end)
@@ -256,27 +259,15 @@ later(function()
 		adapter = "gemini", -- one of: claude, gemini, openai_responses
 		model = "gemini-2.5-flash-lite",
 	})
-	nmap_leader("atg", "<Cmd>TaalGrammar scratch<Cr>", "Correct in scratch buffer") -- useful for applying all the corrections at once
+	nmap_leader("ats", "<Cmd>TaalGrammar scratch<Cr>", "Correct in scratch buffer") -- useful for applying all the corrections at once
 	nmap_leader("atl", "<Cmd>TaalGrammar inlay<Cr>"  , "Correct inline") -- useful for seeing them
 	-- nmap_leader("ata", "<Cmd>TaalHover<Cr>", "Correct current line") -- doesn't work (why?)
 	nmap_leader("ata", "<Cmd>TaalApplySuggestion<Cr>", "Apply correction") -- apply the correction under the cursor
-	nmap_leader("ats", "<Cmd>TaalSetSpelllang<Cr>"   , "Use language from spelllang")
+	nmap_leader("atS", "<Cmd>TaalSetSpelllang<Cr>"   , "Use language from spelllang")
 	nmap_leader("ati", "<Cmd>TaalInteract<Cr>"       , "Correct with your prompt")
-  -- let's reduce the time needed for auto triggering corrections
-  vim.api.nvim_create_autocmd("BufEnter", {
-		pattern = { "*.tex", "*.md", "*.rst" },
-    callback = function (ev)
-      vim.opt_local.updatetime = 1000
-    end
-  })
-  -- and let's set up automatic triggering of corrections
-	vim.api.nvim_create_autocmd("CursorHold", {
-		pattern = { "*.tex", "*.md", "*.rst" },
-		callback = function(ev)
-      vim.cmd("TaalGrammar inlay")
-		end,
-	})
+
 end)
+
 
 ------------ Other plugins non lazy loaded ===========================================================================
 MiniDeps.now(function()

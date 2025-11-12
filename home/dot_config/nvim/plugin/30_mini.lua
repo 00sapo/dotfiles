@@ -640,9 +640,9 @@ end)
 --
 -- Example usage in Visual mode:
 -- - `<M-h>`/`<M-j>`/`<M-k>`/`<M-l>` - move selection left/down/up/right
-later(function()
-	require("mini.move").setup()
-end)
+-- later(function()
+-- 	require("mini.move").setup()
+-- end)
 
 -- Text edit operators. All operators have mappings for:
 -- - Regular operator (waits for motion/textobject to use)
