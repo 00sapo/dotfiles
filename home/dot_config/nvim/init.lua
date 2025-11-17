@@ -92,14 +92,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
--- in grug-far, map q to bufwipe + tabclose
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = {"grug-far"},
-  callback = function(ev)
-    vim.keymap.set('n', 'q', '<cmd>bw | tabclose<cr>', {noremap = true})
-  end
-})
-
 -- clipboard
 if vim.env.SSH_TTY or vim.env.TMUX then
   if vim.fn.has("nvim-0.11") == 1 then -- nvim 0.11+ has simpler osc52 support

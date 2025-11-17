@@ -249,6 +249,13 @@ later(function()
 	nmap_leader("fe", function()
 		require("grug-far").open({ windowCreationCommand = "tabnew" })
 	end, "Search&Replace multi-file")
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {"grug-far"},
+  callback = function(ev)
+    vim.keymap.set('n', 'q', '<cmd>bw | tabclose<cr>', {noremap = true, buffer=true})
+  end
+})
+
 
 	-- taal.nvim for grammar
 	add({
@@ -294,4 +301,7 @@ MiniDeps.now(function()
 	-- hard time
 	add({ source = "m4xshen/hardtime.nvim", depends = { "MunifTanjim/nui.nvim" } })
 	require("hardtime").setup()
+
+  -- faster on big files
+  add('pteroctopus/faster.nvim')
 end)
