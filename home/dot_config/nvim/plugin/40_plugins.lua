@@ -195,7 +195,7 @@ later(function()
 			"#9538ff",
 		},
 		search_count = true,
-		navigation = true,
+		navigation = false,
 		search_key = "<leader>ks",
 		cancel_search_key = "<leader>kS",
 		color_key = "<leader>kk",
@@ -256,7 +256,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
-
 	-- taal.nvim for grammar
 	add({
 		source = "bennorichters/taal.nvim",
@@ -272,6 +271,10 @@ vim.api.nvim_create_autocmd("FileType", {
 	nmap_leader("ata", "<Cmd>TaalApplySuggestion<Cr>", "Apply correction") -- apply the correction under the cursor
 	nmap_leader("atS", "<Cmd>TaalSetSpelllang<Cr>"   , "Use language from spelllang")
 	nmap_leader("ati", "<Cmd>TaalInteract<Cr>"       , "Correct with your prompt")
+
+  -- stay centered: better than scrolloff=1000 and you always know where you end when using ctrl-d/ctrl-u
+  add("arnamak/stay-centered.nvim")
+  require('stay-centered').setup()
 
 end)
 

@@ -126,11 +126,11 @@
 			"source": "github",
 			"owner": "sst",
 			"repo": "opencode",
-			"tag": "v1.0.55",
+			"tag": "v1.0.72",
 			"asset": "opencode-linux-x64.zip",
 			"binary": "opencode",
-			"url": "https://api.github.com/repos/sst/opencode/releases/assets/314596727",
-			"binaryHash": "58b4c1da62f22aa686c36ba37c2d167d15d27af84029b7909296276db0068c71"
+			"url": "https://api.github.com/repos/sst/opencode/releases/assets/317742631",
+			"binaryHash": "7c1c13588946135776dc4e72bc6389d589c983a1c12a9f22417cbeba3311ef26"
 		}
 	]
 }

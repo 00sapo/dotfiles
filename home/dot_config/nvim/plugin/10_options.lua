@@ -24,7 +24,7 @@ vim.opt.inccommand = "nosplit" -- live substitution
 vim.opt.textwidth = 100
 
 vim.o.clipboard = "unnamedplus"
-vim.o.timeoutlen = 150
+vim.o.timeoutlen = 500
 
 -- General ====================================================================
 vim.g.mapleader = ' ' -- Use `<Space>` as <Leader> key
