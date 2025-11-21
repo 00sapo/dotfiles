@@ -526,9 +526,9 @@ later(function()
 		highlighters = {
 			-- Highlight a fixed set of common words. Will be highlighted in any place,
 			-- not like "only in comments".
-			fixme = hi_words({ "FIXME:", "Fixme:", "fixme:" }, "MiniHipatternsFixme"),
-			hack = hi_words({ "HACK:", "Hack:", "hack:" }, "MiniHipatternsHack"),
-			todo = hi_words({ "TODO:", "Todo:", "todo:" }, "MiniHipatternsTodo"),
+			fixme = hi_words({ "FIXME", "Fixme", "fixme" }, "MiniHipatternsFixme"),
+			hack = hi_words({ "HACK", "Hack", "hack" }, "MiniHipatternsHack"),
+			todo = hi_words({ "TODO", "Todo", "todo" }, "MiniHipatternsTodo"),
 			note = hi_words({ "NOTE:", "Note:", "note:" }, "MiniHipatternsNote"),
 
 			-- Highlight hex color string (#aabbcc) with that color as a background
@@ -572,9 +572,24 @@ end)
 -- - `:h MiniJump2d.gen_spotter` - list of available spotters
 later(function()
 	require("mini.jump2d").setup({
-		-- -- Characters used for labels of jump spots (in supplied order)
-		-- labels = "ciaofedrmnjhkl",
+		view = {
+			dim = true, -- dim lines
+			n_steps_ahead = 2, -- show next chars immediately
+		},
+		mappings = {
+			start_jumping = "", -- disable here, enable via vim.keymap.set
+		},
 	})
+end)
+
+-- Custom mapping
+-- start words
+vim.keymap.set("n", "<S-CR>", function()
+	MiniJump2d.start(MiniJump2d.builtin_opts.word_start)
+end)
+-- end words
+vim.keymap.set("n", "<CR>", function()
+	MiniJump2d.start(MiniJump2d.builtin_opts.single_character)
 end)
 
 -- Special key mappings. Provides helpers to map:
