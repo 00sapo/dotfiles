@@ -66,8 +66,8 @@ local default_lsp = {
 	"pylsp",
 	"ts_ls",
 	"texlab",
-  "lemminx",
-  "jsonls"
+	"lemminx",
+	"jsonls",
 }
 
 now_if_args(function()
@@ -87,7 +87,7 @@ later(function()
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "yapf" },
-      json = { "jq" }
+			json = { "jq" },
 		},
 	})
 end)
@@ -249,12 +249,12 @@ later(function()
 	nmap_leader("fe", function()
 		require("grug-far").open({ windowCreationCommand = "tabnew" })
 	end, "Search&Replace multi-file")
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = {"grug-far"},
-  callback = function(ev)
-    vim.keymap.set('n', 'q', '<cmd>bw | tabclose<cr>', {noremap = true, buffer=true})
-  end
-})
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = { "grug-far" },
+		callback = function(ev)
+			vim.keymap.set("n", "q", "<cmd>bw | tabclose<cr>", { noremap = true, buffer = true })
+		end,
+	})
 
 	-- taal.nvim for grammar
 	add({
@@ -266,18 +266,16 @@ vim.api.nvim_create_autocmd("FileType", {
 		model = "gemini-2.5-flash-lite",
 	})
 	nmap_leader("ats", "<Cmd>TaalGrammar scratch<Cr>", "Correct in scratch buffer") -- useful for applying all the corrections at once
-	nmap_leader("atl", "<Cmd>TaalGrammar inlay<Cr>"  , "Correct inline") -- useful for seeing them
+	nmap_leader("atl", "<Cmd>TaalGrammar inlay<Cr>", "Correct inline") -- useful for seeing them
 	-- nmap_leader("ata", "<Cmd>TaalHover<Cr>", "Correct current line") -- doesn't work (why?)
 	nmap_leader("ata", "<Cmd>TaalApplySuggestion<Cr>", "Apply correction") -- apply the correction under the cursor
-	nmap_leader("atS", "<Cmd>TaalSetSpelllang<Cr>"   , "Use language from spelllang")
-	nmap_leader("ati", "<Cmd>TaalInteract<Cr>"       , "Correct with your prompt")
+	nmap_leader("atS", "<Cmd>TaalSetSpelllang<Cr>", "Use language from spelllang")
+	nmap_leader("ati", "<Cmd>TaalInteract<Cr>", "Correct with your prompt")
 
-  -- stay centered: better than scrolloff=1000 and you always know where you end when using ctrl-d/ctrl-u
-  add("arnamak/stay-centered.nvim")
-  require('stay-centered').setup()
-
+	-- stay centered: better than scrolloff=1000 and you always know where you end when using ctrl-d/ctrl-u
+	add("arnamak/stay-centered.nvim")
+	require("stay-centered").setup()
 end)
-
 
 ------------ Other plugins non lazy loaded ===========================================================================
 MiniDeps.now(function()
@@ -299,12 +297,29 @@ MiniDeps.now(function()
 
 	-- sync background with OS fark/light setting
 	add("f-person/auto-dark-mode.nvim")
-	require("auto-dark-mode").setup()
+	require("auto-dark-mode").setup({
+		set_dark_mode = function()
+			vim.api.nvim_set_option_value("background", "dark", {})
+			-- making the bufferline more meaningful
+			vim.api.nvim_set_hl(0, "MiniTablineCurrent", { reverse=true })
+			vim.api.nvim_set_hl(0, "MiniTablineModifiedCurrent", { reverse=true, bold = true, italic = true })
+			vim.api.nvim_set_hl(0, "MiniTablineModifiedVisible", { bold = true, italic = true })
+			vim.api.nvim_set_hl(0, "MiniTablineModifiedHidden", { bold = true, italic = true })
+		end,
+		set_light_mode = function()
+			vim.api.nvim_set_option_value("background", "light", {})
+			-- making the bufferline more meaningful
+			vim.api.nvim_set_hl(0, "MiniTablineCurrent", {reverse=true})
+			vim.api.nvim_set_hl(0, "MiniTablineModifiedCurrent", { reverse=true, bold = true, italic = true })
+			vim.api.nvim_set_hl(0, "MiniTablineModifiedVisible", { bold = true, italic = true })
+			vim.api.nvim_set_hl(0, "MiniTablineModifiedHidden", { bold = true, italic = true })
+		end,
+	})
 
 	-- hard time
 	add({ source = "m4xshen/hardtime.nvim", depends = { "MunifTanjim/nui.nvim" } })
 	require("hardtime").setup()
 
-  -- faster on big files
-  add('pteroctopus/faster.nvim')
+	-- faster on big files
+	add("pteroctopus/faster.nvim")
 end)
