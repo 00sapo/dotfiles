@@ -104,16 +104,6 @@
 		},
 		{
 			"source": "github",
-			"owner": "interstellar-app",
-			"repo": "interstellar",
-			"tag": "v0.10.1",
-			"asset": "interstellar-linux-x86_64.AppImage",
-			"binary": "interstellar.AppImage",
-			"url": "https://api.github.com/repos/interstellar-app/interstellar/releases/assets/296049763",
-			"binaryHash": "161327905750a4c33c26f04480b722142fdb20e610227a005cd7cd8ad963eec4"
-		},
-		{
-			"source": "github",
 			"owner": "jacek-kurlit",
 			"repo": "pik",
 			"tag": "0.26.1",
