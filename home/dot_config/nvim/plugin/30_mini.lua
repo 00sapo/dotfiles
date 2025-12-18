@@ -575,6 +575,7 @@ later(function()
 		view = {
 			dim = true, -- dim lines
 			n_steps_ahead = 2, -- show next chars immediately
+      hl_group = 'Search'
 		},
 		mappings = {
 			start_jumping = "", -- disable here, enable via vim.keymap.set
@@ -583,14 +584,36 @@ later(function()
 end)
 
 -- Custom mapping
--- start words
-vim.keymap.set("n", "<S-CR>", function()
-	MiniJump2d.start(MiniJump2d.builtin_opts.word_start)
-end)
--- end words
+-- any char
 vim.keymap.set("n", "<CR>", function()
 	MiniJump2d.start(MiniJump2d.builtin_opts.single_character)
 end)
+
+-- start/end words
+local MiniJump2d = require('mini.jump2d')
+local word_start = MiniJump2d.gen_spotter.pattern('[^%s%p]+', 'start')
+local word_end = MiniJump2d.gen_spotter.pattern('[^%s%p]+', 'end')
+local spotter = MiniJump2d.gen_spotter.union(word_start, word_end)
+vim.keymap.set(
+  "n",
+  "<S-CR>",
+  function()
+    MiniJump2d.start({
+      spotter = spotter
+    })
+  end
+)
+
+-- punctuation
+vim.keymap.set(
+  "n",
+  "<C-CR>",
+  function ()
+    MiniJump2d.start({
+      spotter = MiniJump2d.gen_spotter.pattern('%p'),
+  })
+end
+)
 
 -- Special key mappings. Provides helpers to map:
 -- - Multi-step actions. Apply action 1 if condition is met; else apply

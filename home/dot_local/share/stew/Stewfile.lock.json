@@ -16,11 +16,11 @@
 			"source": "github",
 			"owner": "neovim",
 			"repo": "neovim",
-			"tag": "v0.11.4",
+			"tag": "v0.11.5",
 			"asset": "nvim-linux-x86_64.appimage",
 			"binary": "nvim",
-			"url": "https://api.github.com/repos/neovim/neovim/releases/assets/288180209",
-			"binaryHash": "79e7e160f9505819a5e12f3d9366be94213f5309fb912ef4ef3af52df3982977"
+			"url": "https://api.github.com/repos/neovim/neovim/releases/assets/311637685",
+			"binaryHash": "7a4adf657f0b775ee4f4de6c94353b4a0548a3c6b31049a20538e05d4eea411a"
 		},
 		{
 			"source": "github",
@@ -31,16 +31,6 @@
 			"binary": "asdf",
 			"url": "https://api.github.com/repos/asdf-vm/asdf/releases/assets/261832252",
 			"binaryHash": "306a80a19b3043502ac2ba772439ff25e9e1f54ca5d873347b1907ee52f9a4d8"
-		},
-		{
-			"source": "github",
-			"owner": "dbeaver",
-			"repo": "dbeaver",
-			"tag": "25.2.3",
-			"asset": "dbeaver-ce-25.2.3-linux.gtk.x86_64-nojdk.tar.gz",
-			"binary": "dbeaver",
-			"url": "https://api.github.com/repos/dbeaver/dbeaver/releases/assets/306166520",
-			"binaryHash": "d7d0a675a686ac013882b447420feb316b48dafbe4ecb9c1b36badafd47ae7b7"
 		},
 		{
 			"source": "github",
