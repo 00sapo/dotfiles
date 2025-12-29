@@ -586,6 +586,15 @@ end)
 -- Custom mapping
 -- any char
 vim.keymap.set("n", "<CR>", function()
+  -- check if filetype is not one of the excluded
+  -- send enter in that case, just not mapped
+  local excluded_ft = {'quickfix', 'qf', 'minifiles'}
+  for i, ft in ipairs(excluded_ft) do
+   if vim.bo.filetype == ft then
+     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, false, true), "n", false)
+     return
+   end
+  end
 	MiniJump2d.start(MiniJump2d.builtin_opts.single_character)
 end)
 
