@@ -4,16 +4,6 @@
 	"packages": [
 		{
 			"source": "github",
-			"owner": "topgrade-rs",
-			"repo": "topgrade",
-			"tag": "v16.0.4",
-			"asset": "topgrade-v16.0.4-x86_64-unknown-linux-gnu.tar.gz",
-			"binary": "topgrade",
-			"url": "https://api.github.com/repos/topgrade-rs/topgrade/releases/assets/264617395",
-			"binaryHash": "81af8ea891d86905bbcbf0f12bd153e9595424c4a1a522e51af48e3f81aa3384"
-		},
-		{
-			"source": "github",
 			"owner": "neovim",
 			"repo": "neovim",
 			"tag": "v0.11.5",
@@ -36,11 +26,11 @@
 			"source": "github",
 			"owner": "rustdesk",
 			"repo": "rustdesk",
-			"tag": "1.4.2",
-			"asset": "rustdesk-1.4.2-aarch64.AppImage",
+			"tag": "1.4.4",
+			"asset": "rustdesk-1.4.4-x86_64.AppImage",
 			"binary": "rustdesk.AppImage",
-			"url": "https://api.github.com/repos/rustdesk/rustdesk/releases/assets/293355832",
-			"binaryHash": "7ee4ff8ebb898d3144e5c96b61ed15acafe05ae992c39a21a8e276513909243d"
+			"url": "https://api.github.com/repos/rustdesk/rustdesk/releases/assets/318203532",
+			"binaryHash": "2ef71beb147ce44fa104e46aaab6ef326ac9bd0c4631ad04975149e762432023"
 		},
 		{
 			"source": "github",
@@ -56,21 +46,21 @@
 			"source": "github",
 			"owner": "doy",
 			"repo": "rbw",
-			"tag": "1.14.1",
-			"asset": "rbw_1.14.1_linux_amd64.tar.gz",
+			"tag": "1.15.0",
+			"asset": "rbw_1.15.0_linux_amd64.tar.gz",
 			"binary": "rbw",
-			"url": "https://api.github.com/repos/doy/rbw/releases/assets/288340578",
-			"binaryHash": "217a23dc06b6c80e12187b17193358c5ced7a94a5d9db1bc4a2138920f689d61"
+			"url": "https://api.github.com/repos/doy/rbw/releases/assets/334691176",
+			"binaryHash": "a2f3c2dcfcb8d39c5a493e5530a8206374722a80e87e3b24d4b6f7733bae498a"
 		},
 		{
 			"source": "github",
 			"owner": "doy",
 			"repo": "rbw",
-			"tag": "1.14.1",
-			"asset": "rbw_1.14.1_linux_amd64.tar.gz",
+			"tag": "1.15.0",
+			"asset": "rbw_1.15.0_linux_amd64.tar.gz",
 			"binary": "rbw-agent",
-			"url": "https://api.github.com/repos/doy/rbw/releases/assets/288340578",
-			"binaryHash": "e22ca3be193d3235bde4414d9b46cc2b2895854d5203865cbd652194c85bfddc"
+			"url": "https://api.github.com/repos/doy/rbw/releases/assets/334691176",
+			"binaryHash": "dd100b68897428829eefbe3191137ce4f899ee63c758d09730136a3442cd464d"
 		},
 		{
 			"source": "github",
@@ -86,31 +76,41 @@
 			"source": "github",
 			"owner": "sharkdp",
 			"repo": "bat",
-			"tag": "v0.26.0",
-			"asset": "bat-v0.26.0-x86_64-unknown-linux-gnu.tar.gz",
+			"tag": "v0.26.1",
+			"asset": "bat-v0.26.1-x86_64-unknown-linux-gnu.tar.gz",
 			"binary": "bat",
-			"url": "https://api.github.com/repos/sharkdp/bat/releases/assets/306189863",
-			"binaryHash": "27b7a788ca0be630bd0d2637322a70bebaac7584e6b26838a74c9cb488a0e514"
+			"url": "https://api.github.com/repos/sharkdp/bat/releases/assets/323549181",
+			"binaryHash": "753976acf8ce9b8bbb60c0304ab3a6b1cf63cbc7e009133a12dc8f5b47fcb4cc"
 		},
 		{
 			"source": "github",
 			"owner": "jacek-kurlit",
 			"repo": "pik",
-			"tag": "0.26.1",
-			"asset": "pik-0.26.1-x86_64-unknown-linux-gnu.tar.gz",
+			"tag": "0.27.0",
+			"asset": "pik-0.27.0-x86_64-unknown-linux-gnu.tar.gz",
 			"binary": "pik",
-			"url": "https://api.github.com/repos/jacek-kurlit/pik/releases/assets/295390289",
-			"binaryHash": "2dc45bc02d63f5d919be7b96e6d3e7c8f15571fbc4bd562d339d61ed88294a7a"
+			"url": "https://api.github.com/repos/jacek-kurlit/pik/releases/assets/315471158",
+			"binaryHash": "8b614f671edec0aa739a08de6c58764c9e6fadfcfb388c8df1c21a1914076a73"
 		},
 		{
 			"source": "github",
-			"owner": "sst",
+			"owner": "topgrade-rs",
+			"repo": "topgrade",
+			"tag": "v16.7.0",
+			"asset": "topgrade-v16.7.0-x86_64-unknown-linux-gnu.tar.gz",
+			"binary": "topgrade",
+			"url": "https://api.github.com/repos/topgrade-rs/topgrade/releases/assets/329751755",
+			"binaryHash": "b67d8c1c7ded2bd44adcda67ec36c751b21b150593de64d13d78a5c254c1607b"
+		},
+		{
+			"source": "github",
+			"owner": "anomalyco",
 			"repo": "opencode",
-			"tag": "v1.0.72",
-			"asset": "opencode-linux-x64.zip",
+			"tag": "v1.1.6",
+			"asset": "opencode-linux-x64.tar.gz",
 			"binary": "opencode",
-			"url": "https://api.github.com/repos/sst/opencode/releases/assets/317742631",
-			"binaryHash": "7c1c13588946135776dc4e72bc6389d589c983a1c12a9f22417cbeba3311ef26"
+			"url": "https://api.github.com/repos/anomalyco/opencode/releases/assets/337489620",
+			"binaryHash": "c77ae77309f83e1d057ca95ca1dc9b825dc231b867e6116cb1d66f339794a7ab"
 		}
 	]
 }

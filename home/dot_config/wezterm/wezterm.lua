@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 
 local config = {}
--- config.enable_wayland = false
+config.enable_wayland = false
 config.default_prog = { "ssh-agent", "fish", "-l" }
 
 -- appearance
