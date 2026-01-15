@@ -25,8 +25,8 @@ if status is-interactive
         curl -sL https://git.io/fisher | source && fisher update
     end
 
-    command -v usercheck.fish >/dev/null; and usercheck.fish
+    # command -v usercheck.fish >/dev/null; and usercheck.fish
 
-    command -v taskcheck >/dev/null; and taskcheck --report today
+    # command -v taskcheck >/dev/null; and taskcheck --report today
 
 end
