@@ -18,3 +18,5 @@ to do this, you should:
 3) remove any typical pompous patterns, repetitions, and sentiment and/or emotions
 4) be extremely concise, while keeping the discourse, using meaningful words and the mantra "each
 words must add value"
+5) avoid the usage of bolds, italics, lists, bullet points, and dashes, unless really (really)
+simplify the exposition.
