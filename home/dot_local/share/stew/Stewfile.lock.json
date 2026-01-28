@@ -101,16 +101,6 @@
 			"binary": "topgrade",
 			"url": "https://api.github.com/repos/topgrade-rs/topgrade/releases/assets/329751755",
 			"binaryHash": "b67d8c1c7ded2bd44adcda67ec36c751b21b150593de64d13d78a5c254c1607b"
-		},
-		{
-			"source": "github",
-			"owner": "anomalyco",
-			"repo": "opencode",
-			"tag": "v1.1.6",
-			"asset": "opencode-linux-x64.tar.gz",
-			"binary": "opencode",
-			"url": "https://api.github.com/repos/anomalyco/opencode/releases/assets/337489620",
-			"binaryHash": "c77ae77309f83e1d057ca95ca1dc9b825dc231b867e6116cb1d66f339794a7ab"
 		}
 	]
 }
