@@ -1,7 +1,7 @@
 ---
 description: Generic assistant
 mode: primary
-model: github-copilot/gpt-5-mini
+model: openai/gpt-5.2
 temperature: 0.1
 tools:
   write: true

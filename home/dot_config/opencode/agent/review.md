@@ -1,7 +1,7 @@
 ---
 description: Perform academic review of scientific articles
 mode: subagent
-model: github-copilot/gpt-5.2
+model: openai/gpt-5.2
 temperature: 0.1
 reasoningEffort: high
 textVerbosity: low

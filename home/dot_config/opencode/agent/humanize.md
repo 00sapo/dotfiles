@@ -1,7 +1,7 @@
 ---
 description: Make text more human and less LLM-made
 mode: subagent
-model: github-copilot/claude-haiku-4.5
+model: openai/gpt-5.2
 temperature: 0.1
 tools:
   write: true
