@@ -26,10 +26,11 @@ initial-command = fish
 theme = light:Alabaster,dark:Afterglow
 keybind = ctrl+alt+l=next_tab
 keybind = ctrl+alt+h=previous_tab
-keybind = ctrl+alt+s=new_split:auto
-keybind = ctrl+l=goto_split:right
-keybind = ctrl+k=goto_split:up
-keybind = ctrl+j=goto_split:down
-keybind = ctrl+h=goto_split:left
+keybind = alt+a>s=new_split:auto
+keybind = alt+a>l=goto_split:right
+keybind = alt+a>k=goto_split:up
+keybind = alt+a>j=goto_split:down
+keybind = alt+a>h=goto_split:left
 keybind = unconsumed:ctrl+space=unbind
 shell-integration-features = ssh-terminfo,ssh-env
+font-size = 10.5
